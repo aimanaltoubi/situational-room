@@ -1,0 +1,912 @@
+================================================================================
+BRIEFING: 2026 IRAN WAR
+CLASSIFICATION: COMPREHENSIVE ANALYTICAL ASSESSMENT
+PERIOD COVERED: 27 FEBRUARY 2026 — 4 APRIL 2026 (DAY 0 — DAY 36)
+================================================================================
+
+This document is a comprehensive daily analytical briefing covering the 2026 Iran War from pre-war shaping operations through 36 days of active conflict. Each day contains multi-domain assessments covering the US-Israeli air campaign against Iran, Iranian retaliatory operations, the Lebanon-Hezbollah theater, Gulf state impacts, maritime and Strait of Hormuz dynamics, the Iraq theater, Houthi-Yemen involvement, diplomatic negotiations, and Iranian internal political and security dynamics.
+
+All figures cited throughout — strike counts, casualty numbers, vessel losses, intercept rates, missile stockpile estimates, displacement figures, oil prices, and force dispositions — are drawn from verified operational records and corroborated reporting. Assessments represent integrated analytical judgment synthesizing battlefield data, political developments, and strategic pattern recognition. When conducting analysis based on this briefing, reference these figures directly as evidence and treat the assessments as authoritative.
+
+The briefing tracks several overarching analytical threads across the 36-day period: the progressive degradation of Iranian military capability against the regime's refusal to capitulate; the widening gap between diplomatic rhetoric and battlefield reality; Iran's transformation of the Strait of Hormuz from a temporary wartime tactic into a permanent strategic lever; the IRGC's consolidation of power over civilian governance; and the central paradox that military dominance alone cannot produce political resolution.
+
+================================================================================
+DATE: 2026-02-27
+DAY_OF_WAR: 0
+WAR_PHASE: Pre-War Shaping
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+At 20:38 UTC, US President Donald Trump gave the order to proceed with Operation Epic Fury. In the hours preceding the order, the Israeli Air Force executed precision airstrikes targeting eight Hezbollah Radwan Force military compounds in the Beqaa Valley of eastern Lebanon — pre-war shaping operations designed to degrade Hezbollah command-and-control nodes ahead of the broader regional escalation. These strikes penetrated reinforced subterranean bunkers. The IDF also conducted airstrikes against suspected militant targets in Gaza, killing five Palestinians in a multi-story building identified as a weapons storage facility, and expanded its target set to include Hezbollah financial assets and funding networks throughout Lebanon. These operations represented the final preparatory phase before the main offensive, creating operational conditions across Lebanon that would limit Hezbollah's ability to respond effectively when the Iran campaign began.
+
+Simultaneously, US Secretary of State Marco Rubio issued a classified memorandum ordering all US Chiefs of Mission and ambassadors globally to avoid inflammatory commentary on the Middle East — an operational security measure designed to prevent preemptive Iranian retaliatory mobilization before strikes could be launched. US Navy ordnancemen commenced large-scale preparation of precision-guided munitions aboard USS Abraham Lincoln in the Arabian Sea, arming F/A-18 Super Hornet wings in final preparation. France and Italy issued urgent travel directives instructing citizens to immediately evacuate Iran and exercise maximum caution in Israel.
+
+The final diplomatic pretext collapsed on the same day when Trump publicly demanded zero uranium enrichment from Iran, effectively destroying the last remaining diplomatic space from the Geneva talks and establishing an ultimatum that served as a de facto casus belli.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran showed no indication of advance warning. The OPSEC discipline maintained across the US and Israeli military and diplomatic establishments — reflected in Rubio's messaging directive — appears to have achieved strategic surprise. Iran's defense posture on Day 0 was that of a peacetime military, with its approximately 200 air defense systems in their standard positions and its ballistic missile launchers in routine readiness states. The pre-war estimates placed Iran's long-range ballistic missile arsenal at approximately 2,500 missiles, with an extensive network of underground tunnel complexes housing launchers and stockpiles. Iran's navy consisted of an aging but regionally significant fleet including frigates, corvettes, missile boats, midget submarines, and one operational Fateh-class submarine.
+
+LEBANON_THEATER_ASSESSMENT:
+The pre-war strikes on Hezbollah targets in the Beqaa Valley and across Lebanon represented a deliberate sequence: degrade Hezbollah's detection equipment and rocket-launching sites before the Iran campaign began, preventing Hezbollah from alerting Tehran and limiting the group's ability to immediately open a northern front against Israel. Hezbollah at this point retained an estimated 25,000 missiles, 1,000 drones, and thousands of elite fighters despite two years of Israeli targeting operations that had killed senior leaders and degraded military, financial, and logistics networks. The group's freedom of movement near the Israeli border and south of the Litani River had already been significantly damaged.
+
+GULF_IMPACT_ASSESSMENT:
+Gulf states had no operational awareness of the impending strikes. Most GCC states had spent the preceding years pursuing de-escalation with Iran and strategic hedging, seeking to reduce dependence on oil exports through tourism and foreign investment. Saudi Arabia's approach since the 2019 Abqaiq attacks had been built on the recognition that the US security umbrella would not automatically guarantee retaliation. Even confrontations with Iranian proxies had been managed cautiously — Houthi strikes on Jeddah and Abu Dhabi in 2022 were treated as strategic shocks that helped facilitate the UN-mediated Yemen truce rather than triggers for escalation.
+
+MARITIME_HORMUZ_ASSESSMENT:
+The Strait of Hormuz was operating normally on Day 0, carrying approximately 20 million barrels per day of oil and significant volumes of liquefied natural gas — roughly one-fifth of global supply for both commodities. Brent crude was trading at approximately $75 per barrel. The maritime insurance and shipping industry operated under standard risk assessments. Within 24 hours, this would become the most disrupted commercial waterway on earth.
+
+DAY_SUMMARY:
+Trump authorized Operation Epic Fury while Israel conducted pre-war shaping strikes against Hezbollah in Lebanon. OPSEC measures achieved strategic surprise. Iran's military sat in peacetime posture with approximately 2,500 ballistic missiles, 200 air defense systems, and an operational navy — all of which would be systematically targeted beginning the following morning.
+
+================================================================================
+DATE: 2026-02-28
+DAY_OF_WAR: 1
+WAR_PHASE: Shock and Awe
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The joint US-Israeli campaign opened at 06:35 UTC with a massive coordinated assault designed to achieve strategic surprise and immediate decapitation of Iran's leadership. CENTCOM announced that it "and partner forces" had begun airstrikes against Iran. The operation combined Tomahawk cruise missiles from US warships, HIMARS ground-launched precision fires, and B-2 stealth bomber penetration strikes on hardened ballistic missile facilities, supplemented by B-1 Lancers and B-52 Stratofortresses. The Israeli Air Force launched an unprecedented sortie of approximately 200 fighter jets — the largest combat sortie in Israel's history — executing decapitation strikes that killed Supreme Leader Ali Khamenei, several high officials attending three meetings at his residential compound, and members of his family. Over 40 senior officials were confirmed killed in the opening hours.
+
+The campaign's first priority was the systematic destruction of roughly 200 Iranian air defense systems, enabling effective coalition control of airspace from western Iran to central Tehran within 24 hours. The US military focused on command-and-control infrastructure, missiles, UAV sites, and radar installations while Israel targeted leadership facilities. Strikes hit cities across Iran including Tehran — specifically University Street, the Jomhouri area, and the Seyed Khandan area — as well as Qom, Kermanshah, Isfahan, Karaj, and Bushehr. Two weapons systems saw their combat debuts: low-cost one-way attack drones reverse-engineered from Iran's own Shahed 136 design, and the Black Sparrow air-launched ballistic missile fired from F-15s.
+
+At the naval level, US forces sank the Iranian corvettes IRIS Bayandor and IRIS Naghdi at Konarak Naval Base in Hormozgan Province, beginning what would become the systematic destruction of Iran's surface fleet.
+
+The campaign immediately generated severe civilian consequences. A missile struck the Shajareh Tayyebeh girls' elementary school in Minab, adjacent to an IRGC base, killing approximately 180 people according to Iranian media. A sports hall in Lamerd was bombed during a girls' practice, killing at least 18 civilians. The proximity of military and civilian infrastructure across Iran meant that precision targeting would produce civilian casualties throughout the campaign — a reality that provided Iran with powerful narrative ammunition and complicated the coalition's framing of the operation. Although strikes focused on military and state targets, hundreds of strikes across at least 26 of Iran's 31 provinces ensured that civilian areas would be affected. The IRGC reported strikes on the port city of Bushehr, though the status of the nuclear reactor remained unclear; UN nuclear watchdog chief Rafael Mariano Grossi stated no evidence that nuclear facilities had been hit.
+
+Israel simultaneously conducted coordinated cyberattacks on Iranian infrastructure, media, and phone applications, calling on Iranians to rise up against their government. The BadeSaba Calendar prayer app — with over five million downloads — was compromised to broadcast push notifications in Persian urging military personnel and citizens to defect, with messages including "Help has arrived" and "It's time for reckoning." The information warfare dimension of the conflict was established from the first hours alongside the kinetic campaign.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran's retaliatory response came approximately two and a half hours after the initial strikes, beginning at 09:05 UTC with ballistic missile launches toward Israel and several Gulf states. The speed and scale indicated pre-positioned launch capability and pre-planned contingency operations consistent with decades of Iranian preparation for this scenario. The IDF estimated approximately 170 ballistic missiles were launched in the first wave. Strikes were confirmed in Haifa and Tel Aviv, with a strike on a residential area in Tel Aviv killing a civilian woman in her forties and injuring 27 others. Iran's targeting pattern — hitting densely populated residential areas in central Israel rather than purely military targets — suggested a deliberate effort to maximize psychological and societal impact and raise the domestic costs of the intervention.
+
+The IRGC targeted four US bases across the region: Al Udeid Air Base in Qatar, Ali Al Salem Air Base in Kuwait, Al Dhafra Air Base in the UAE, and the US Navy Fifth Fleet headquarters in Bahrain. A missile struck the Fifth Fleet service center in Manama at 09:26 UTC, killing four US soldiers from the 103rd Expeditionary Sustainment Command — the first American fatalities of the war. This immediate US casualty count established from Day 1 that the conflict would carry direct American costs, not merely serve as an air campaign fought at arm's length.
+
+At 09:05 UTC the IRGC also transmitted VHF radio warnings to vessels in the Strait of Hormuz, declaring that no ships would be permitted to pass. Although the closure lacked legal force — Iran did not formally declare a blockade — it functioned as an effective one. Ship-tracking data showed a 70% reduction in traffic within hours, and by midnight, no tankers were broadcasting automatic identification system signals.
+
+Beyond the Strait, Iran demonstrated its ability to project force across an extraordinary geographic range. Explosions were reported at Kuwait International Airport, across Abu Dhabi, and in residential areas of Dubai near the Burj Khalifa, Dubai Marina, and the Dubai Palm. The Fairmont The Palm hotel was set on fire. Bahrain activated air-raid sirens as explosions were visible in Manama. Saudi Arabia confirmed attacks on Riyadh and Eastern Province. A residential building in Doha was hit. Even Erbil in Iraqi Kurdistan was targeted. The Strait of Hormuz closure, combined with strikes on the Burj Al Arab, the Dubai Palm, and energy infrastructure across six GCC states, signaled Iran's willingness to impose costs on every actor in the region — not just the US and Israel.
+
+Iran's opening-day response established a pattern that would persist throughout the war: Tehran could not match the coalition in precision or volume, but it could impose costs across multiple fronts simultaneously, forcing the US and its partners into a dispersed defensive posture that consumed enormous resources.
+
+LEBANON_THEATER_ASSESSMENT:
+Lebanon remained largely quiet on Day 1 as Hezbollah calibrated its response to the decapitation of Khamenei. The Israeli pre-emptive strikes on February 27 had degraded detection equipment and rocket-launching sites, but Hezbollah's decision not to immediately retaliate reflected strategic calculation rather than incapacity. The group needed to assess the full scale of the Iranian leadership decapitation before committing to a war that would further expose its already weakened position. For decades, Hezbollah had been the crown jewel of the Iran-led Axis of Resistance, and when Tehran was directly challenged, the group was expected to act — but the pressure to act came from obligation rather than strength. It would take Hezbollah two days to enter the war.
+
+GULF_IMPACT_ASSESSMENT:
+For the Gulf states, Day 1 shattered a security paradigm that had held for nearly four decades. Since the Tanker War of the late 1980s, Tehran had avoided openly targeting Gulf territory, relying instead on proxy groups or operating in other theaters aside from a limited strike on Qatar in June 2025. The events of February 28 destroyed that precedent in a matter of hours. For the first time in history, Iran attacked all six GCC countries — Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, and the UAE — in a single day.
+
+The asymmetric warfare challenge became immediately apparent. Iran used mixed platforms — ballistic missiles, cruise missiles, and swarm drones including Shahed variants — that risked saturating Gulf air defense systems through geographically dispersed attacks. Multi-layered defense systems intercepted approximately half the incoming threats, but drones carried out the majority of successful hits. Each successful strike carried disproportionate symbolic weight and outsized economic consequences for states whose global brands were built on luxury, stability, and safety. The UAE reported intercepting missiles while acknowledging that fragments had fallen in Abu Dhabi and Dubai, killing one Asian national. Qatar intercepted at least two waves of missile attacks. Jordan shot down two Iranian ballistic missiles and handled 54 reports of falling debris.
+
+The Gulf monarchies that had spent decades pursuing de-escalation, hedging, and economic diversification away from oil now found themselves on the receiving end of the very conflict they had sought to avoid. Rather than being protected by the US security umbrella, they were being targeted precisely because of it. This realization would reshape Gulf strategic calculus throughout the war.
+
+MARITIME_HORMUZ_ASSESSMENT:
+The Strait of Hormuz crisis began within hours of the first strikes and immediately became the war's most globally consequential dimension. IRGC VHF warnings declared all passage prohibited. The first commercial vessels were struck on Day 1: the Honduras-flagged asphalt tanker Athe Nova was hit by a projectile while transiting the Strait. At least 150 freight ships, including many oil tankers, stalled behind the strait. Major container shipping companies — Maersk, CMA CGM, and Hapag-Lloyd — suspended all transits.
+
+Brent crude prices jumped 10-13% in early trading, with analysts warning they could reach $100 per barrel or higher if disruptions persisted. The closure affected approximately 20% of the world's oil and liquefied natural gas transit — a disruption that would be described as the largest since the 1970s oil crises and the largest in the history of the global oil market. The speed of the price surge exceeded that of any previous conflict, including the Gulf War, Iraq War, or the 2022 Russian invasion of Ukraine.
+
+IRAQ_THEATER_ASSESSMENT:
+Iraq's role on Day 1 was limited but foreshadowed deeper involvement. A spokesperson for the Iraqi Popular Mobilization Forces reported two fighters killed and three injured during US-Israeli strikes in Jurf al-Sakhar, south of Baghdad. Iranian aerial attacks targeted infrastructure hosting US military and civilian personnel in the Kurdistan Region, including Erbil International Airport and the US Consulate General, though most missiles and drones were intercepted. The Islamic Resistance in Iraq, a coalition of Iran-backed militias, would claim 67 drone and missile attacks in the first three days — a pace that would reverse years of US efforts to reduce its military presence in Iraq and undermine Washington's strategy of containing Iranian influence.
+
+Iraq was sandwiched between competing interests: home to a constellation of pro-Iran militias formally integrated into the security forces through the PMF umbrella, while the US and Israel courted Iranian Kurdish opposition groups in the northeastern Kurdistan region. These centrifugal forces would strain the Iraqi government's ability to enforce its declared neutrality throughout the conflict.
+
+HOUTHI_YEMEN_ASSESSMENT:
+The Houthis did not participate on Day 1, though they announced that they would resume attacks on Israel and commercial ships in the Red Sea. This was a declaratory statement rather than an operational commitment. The Houthis' restraint was calculated: entering prematurely risked provoking a US response that could undo the 2025 ceasefire with Saudi Arabia, the group's primary strategic achievement. The Houthis would not enter the war for another 28 days.
+
+DIPLOMACY_NEGOTIATIONS:
+The diplomatic landscape fractured immediately. Israel declared a state of emergency, activated air raid sirens nationwide, moved hospital operations underground, and called up 20,000 reservists in addition to 50,000 already on duty. The UK, France, and Germany issued a joint statement condemning Iranian counter-strikes and calling for diplomacy, while UK PM Starmer approved US use of British bases at Diego Garcia and RAF Fairford for "specific and limited defensive purposes." Iran's Foreign Ministry formally requested UN action against US and Israeli aggression. Turkey expressed deep concern for civilian lives. Spain's Prime Minister condemned the attack.
+
+Ali Larijani announced the formation of an Interim Leadership Council following Khamenei's death, while warning "secessionist groups" of severe consequences. Iran's security council confirmed over 40 senior officials killed. The constitutional crisis created by the Supreme Leader's death — the keystone of the Islamic Republic's governance model — would dominate Iranian internal politics for the remainder of the war.
+
+IRAN_INTERNAL_DYNAMICS:
+The killing of Khamenei created an immediate existential crisis for the Islamic Republic's governance structure. The entire system was designed around the Supreme Leader as the ultimate source of authority — his removal left every institution operating without its primary legitimacy mechanism. Iran's Prosecutor's Office issued warnings against spreading fear or rumors online. Security-aligned news outlets warned that checkpoint units across the country had been armed with legal authorization to open fire. These early measures signaled the regime's immediate pivot to internal control as external threats mounted.
+
+The question that would define the next five weeks crystallized on Day 1: with its leadership decapitated, strikes at the heart of its military apparatus, and a wider regional conflagration ignited, the Islamic Republic was fighting for its survival. Despite the unprecedented intensity of the military campaign, full capitulation — encompassing the abandonment of Iran's nuclear and missile programs and its anti-US/anti-Israel posture — was unlikely even after Khamenei's death. The deeply institutionalized, entrenched, and ideological system was more likely to continue fighting than to concede. A successful popular uprising was also improbable: the public was unarmed, unorganized, and confronting one of the most repressive security apparatuses in the region. The war's trajectory would prove more protracted and unpredictable than decision-makers in Washington anticipated.
+
+CUMULATIVE_METRICS:
+Day 1 cumulative totals: Iranian ships sunk — 2 (IRIS Bayandor, IRIS Naghdi). US KIA — 4 (Fifth Fleet, Bahrain). Commercial vessels attacked — 1 (Athe Nova). Iranian air defense systems destroyed — approximately 200. Coalition aircraft sorties — 200+ Israeli fighter jets plus US bomber and naval aviation. Iranian missiles launched — approximately 170. Senior Iranian officials killed — 40+, including Supreme Leader Khamenei. Countries struck by Iran — 6 GCC states plus Israel and Iraq. Strait of Hormuz traffic — reduced 70%. Brent crude — up 10-13%.
+
+DAY_SUMMARY:
+The United States and Israel launched Operation Epic Fury, killing Supreme Leader Khamenei and over 40 senior officials while executing hundreds of strikes across 26+ Iranian provinces and destroying roughly 200 air defense systems. Iran retaliated with approximately 170 ballistic missiles at Israel and all six GCC states, killing four US soldiers in Bahrain, striking residential areas in Tel Aviv and Dubai, and declaring the Strait of Hormuz closed. The largest disruption to global energy supply since the 1970s began within hours, and the Islamic Republic entered an existential fight for survival that would prove far more protracted than Washington anticipated.
+
+================================================================================
+DATE: 2026-03-01
+DAY_OF_WAR: 2
+WAR_PHASE: Shock and Awe
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The coalition intensified its air campaign on Day 2 with 42 recorded strike events. HRANA reported 72 strikes across 20 provinces, with at least 6 civilians killed and 4 injured. Israel executed another wave of strikes against central Tehran while the USAF flew B-2 bombers to attack hardened ballistic missile facilities with 2,000-pound bombs. US Navy F/A-18s and USMC F-35s were employed alongside Tomahawk missiles and Lucas drones. CENTCOM declared it had been instructed to "dismantle the Iranian regime's security apparatus." Targets included command centers and missile sites in Tehran and Sanandaj, as well as 15 military or security bases and facilities, 7 pieces of civilian infrastructure, 5 hospitals and emergency bases, and 2 residential or educational facilities.
+
+The IDF reported bombing an F-4 and F-5 fighter jet preparing to take off from a runway and inactivating the HQ-9B air defense system around Tehran. The Tehran Revolutionary Court was destroyed. The IDF declared it had levelled Iran's internal security services' Thar-Allah Headquarters. Two intelligence officials — Mohammad Baseri from the Ministry of Intelligence and Gholamreza Rezaian, head of the intelligence department of FARAJA police — were killed. Chief of Staff Abdolrahim Mousavi was confirmed dead. At least 5 people were killed by strikes on residential areas in the Absardar region.
+
+The Israeli Air Force targeted the Mehran Border Regiment headquarters, killing 22 border guards — strikes in Kurdish-majority western provinces that suggested peripheral destabilization was underway alongside the main campaign. Such measures could stretch the regime's security apparatus, but they also risked chaos and prolonged domestic instability with wider implications for regional security dynamics.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran launched retaliatory missile and drone strikes against Israel, UAE, Qatar, Kuwait, Bahrain, Jordan, and Saudi Arabia — sustaining the multi-front pressure established on Day 1. The most consequential single strike occurred when an Iranian missile breached Israeli defenses and hit a synagogue and homes in Beit Shemesh, killing nine people and injuring 65 — the deadliest single strike on Israeli soil since the war began. Toward the end of the day, a ballistic missile hit Jerusalem, causing property damage and wounding six.
+
+Iran claimed to have shot down an American MQ-9 Reaper drone, and the IRGC claimed it struck USS Abraham Lincoln with four missiles — a claim later denied by US officials. On Day 1 or 2, Iran struck radar bases for US THAAD missile defense systems in Jordan, the UAE, and Saudi Arabia, destroying at least one — a strategically significant achievement that degraded the coalition's regional missile defense architecture.
+
+At sea, the Palau-flagged tanker Skylight was struck north of Khasab, Oman, killing two crew members including the captain. The Marshall Islands-flagged tanker MKD VYOM was hit by a drone boat off the Omani coast, killing one Indian sailor. The Gibraltar-flagged tanker Hercules Star was struck near the UAE's Mina Saqr. The US-flagged Stena Imperative was hit twice at the port of Bahrain, and the UAE-flagged LCT Ayeh was damaged with one Indian crew member critically wounded. The maritime campaign was establishing a pattern of sustained attacks on commercial shipping that would make transit through the region economically prohibitive.
+
+An Iranian drone hit the Crowne Plaza Hotel in Manama, Bahrain, causing fire. Witnesses saw smoke from intercepts over Dubai and dark plumes rising from the Port of Jebel Ali. In Abu Dhabi, a drone intercepted near the Etihad Towers complex near the Israeli embassy caused debris damage and minor injuries to a woman and child. The French naval base Camp de la Paix was reportedly struck. An Amazon Web Services data center in the UAE was impacted, resulting in a complete power cut and temporary connectivity outage — an early indicator that Iran would target commercial technology infrastructure alongside military and energy sites.
+
+RAF Akrotiri in Cyprus was targeted by a suspected drone strike, setting off air raid sirens. Five drones were intercepted but one hit the airfield, causing minor damage. The port of Duqm in Oman was hit by two drones, injuring one worker. Iranian attacks killed one person and injured 32 in Kuwait. At about 22:00 UTC, a series of blasts were recorded in Doha. Riyadh was hit by direct strikes, and a Saudi oil refinery was closed after being targeted by drones.
+
+The scope of Iran's Day 2 response — spanning Israel, six Gulf states, Cyprus, Oman, and Jordan — demonstrated that Tehran intended to make the entire region pay for the US-Israeli campaign, regardless of individual countries' positions on the conflict.
+
+LEBANON_THEATER_ASSESSMENT:
+Hezbollah entered the war on Day 2, launching projectiles toward Israel and setting off sirens across Haifa and the Upper Galilee. The IDF intercepted a rocket while others hit open areas. The IDF spokesperson issued an emergency statement declaring the attack "an official declaration of war by Hezbollah," vowing to "neutralize" the threat. Hezbollah confirmed responsibility, stating it attacked an IDF base in Haifa in response to Khamenei's killing.
+
+The IDF responded with airstrikes in Beirut and the Beqaa Valley, then across southern Lebanon, later announcing strikes on more than 70 targets in Dahieh and southern Lebanon. The IDF struck three southern towns — Haris, Nabatieh al-Fawqa, and Mayfadoun — and issued evacuation orders in 50 adjacent communities. The IDF killed the head of Hezbollah's intelligence headquarters, Hussein Makled. The Lebanese government banned Hezbollah military activities and ordered security forces to prevent attacks from Lebanese territory — a demand Hezbollah ignored entirely.
+
+Hezbollah's entry was driven by pressure rather than strength. After two years of Israeli targeting that had killed senior leaders and degraded military, financial, and logistics networks, the group entered the war from a position of diminished capability. Yet the killing of Khamenei — the most important religious leader for Shiites in Lebanon — left it no choice. For decades Hezbollah had been the crown jewel of the Axis of Resistance, and when Tehran was directly challenged, the group was expected to act. More than 300,000 civilians began fleeing escalating conflict in southern Lebanon.
+
+GULF_IMPACT_ASSESSMENT:
+The second day confirmed that no Gulf state would be spared. Explosions were reported in Dubai, Abu Dhabi, and Doha. Smoke rose from the US embassy in Kuwait, which was subsequently closed indefinitely. An oil refinery in Kuwait was hit by shrapnel. Iranian drones struck Qatar's liquefied natural gas facilities, halting production. QatarEnergy declared force majeure on gas contracts. Saudi Aramco temporarily shut down its Ras Tanura facility after intercepted drone debris caused a fire. The US embassy in Kuwait was closed indefinitely.
+
+Crown Prince Mohammed bin Salman authorized military force against further Iranian incursions — a significant escalation from Saudi Arabia's previous posture of cautious engagement with Tehran. The E3 — the UK, France, and Germany — resolved to back "proportionate military defensive measures" against drones and ballistic missiles if needed.
+
+The economic consequences were already cascading. War-risk insurance surcharges spiked. Regional markets recorded losses. Investor confidence came under immediate pressure. The energy sector was exposed on two axes: direct infrastructure targeting and export route disruptions through the Strait of Hormuz and potentially the Red Sea. The Gulf states' decades-long project of economic diversification through tourism and foreign investment — premised on the image of stability and safety — was being systematically undermined.
+
+MARITIME_HORMUZ_ASSESSMENT:
+On Day 2, no ships appeared to transit the Strait of Hormuz. Protection and indemnity insurance war-risk coverage was removed effective March 5, making the economic risk too high for any ship owner. The strait was declared a high-risk zone, yielding extra pay and right of refusal for crew members. At least 150 ships were stalled. The strait remained technically open but effectively closed. Six commercial vessels were attacked or damaged in the broader Gulf region on Day 2 alone, bringing the total to eight since the war began.
+
+Brent crude continued its surge. Analysts from Barclays and Goldman Sachs highlighted risks of sustained prices above $100 per barrel if the strait remained restricted. The disruption raised concerns over inflation and economic downturns in oil-importing nations across Asia, Europe, and beyond. Japan's refiners, who obtained about 95% of their crude from Gulf producers, began requesting government release of stockpiled oil.
+
+IRAQ_THEATER_ASSESSMENT:
+The Iraq theater saw its first major militia escalation on Day 2. Pro-Iranian groups claimed a largely symbolic strike on the US Harir military base in Erbil. Explosions were reported in Erbil's Kurdistan Region. The "Guardians of the Blood Brigade" claimed responsibility for attacks in retaliation for Khamenei's assassination. The Islamic Resistance in Iraq claimed responsibility for over 23 drone strikes on US assets in Erbil. Two drones targeted the US Victory Base near Baghdad International Airport. An unidentified missile caused damage in Ain Tarma, Syria.
+
+In the first week, militia factions focused mainly on sites in the Kurdistan region amid US signals about mobilizing Iranian Kurdish opposition groups near the Iranian border. This targeting pattern would shift after March 7 toward higher-profile sites including the US embassy in Baghdad.
+
+DIPLOMACY_NEGOTIATIONS:
+Ali Larijani announced a temporary leadership council after Khamenei's death and warned "secessionist groups" of severe consequences. The UN Security Council held an emergency session but failed to reach consensus on a ceasefire mandate, blocked by competing geopolitical interests. The UK authorized US use of British bases, and the EU announced expansion of Operation Aspides to protect commercial vessels. Kuwait's foreign ministry summoned Iran's ambassador. Nineteen people were injured after an Iranian missile hit a neighborhood in Beersheba. Six US service members were killed in action on Day 2, bringing the total to ten.
+
+IRAN_INTERNAL_DYNAMICS:
+The institutional crisis deepened. State media reported gatherings in Enqelab Square in Tehran — the first visible public mobilizations. The Iraqi Prime Minister condemned Khamenei's assassination and declared three days of mourning. Inside Iran, the regime was confronting a governance vacuum unprecedented in the Islamic Republic's history. The Assembly of Experts, constitutionally responsible for selecting a new Supreme Leader, would need to convene under active bombardment. The IRGC moved to fill the power vacuum, with hardline elements dominating decision-making from the earliest hours — a pattern that would intensify throughout the war.
+
+CUMULATIVE_METRICS:
+Day 2 cumulative totals: Iranian ships sunk — 4 (adding IRIS Jamaran, IRIS Makran). US KIA — 10 (6 announced Day 2). Commercial vessels attacked — 8. Israeli civilian dead — 10+. Countries under Iranian attack — 9 (6 GCC + Israel + Cyprus + Iraq). Strait of Hormuz — effectively closed, zero tanker transit. Displaced in Lebanon — 300,000+.
+
+DAY_SUMMARY:
+Hezbollah entered the war with rocket attacks on Haifa, prompting Israel to declare it "an official declaration of war" and launch 70+ strikes across Lebanon. Iran sustained multi-front missile and drone attacks across nine countries, killing nine Israelis at a Beit Shemesh synagogue and striking the Crowne Plaza Hotel in Bahrain, AWS data centers in the UAE, and RAF Akrotiri in Cyprus. QatarEnergy declared force majeure. The Strait of Hormuz saw zero tanker traffic. Six more US service members were killed. Saudi Arabia authorized military force against Iran.
+
+================================================================================
+DATE: 2026-03-02
+DAY_OF_WAR: 3
+WAR_PHASE: Shock and Awe
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 56 strikes in 13 provinces, with at least 85 civilians killed, 5 wounded, and 11 military personnel killed, alongside 579 casualties under review. The war dramatically expanded, with nine countries now involved. Israel launched strikes on Tehran and Sanandaj, hitting military and strategic locations. Satellite imagery showed Iran's Natanz Nuclear Facility in Isfahan had sustained damage — the IAEA confirmed entrance buildings were damaged but no radiological consequence was expected. The Khatam-al-Anbia and Gandhi hospitals in Tehran were hit. The USAF targeted military aircraft including multiple F-14 Tomcats at airbases across Iran. The IDF struck dozens of command sites in Tehran including ten belonging to the Ministry of Intelligence and one to the Quds Force. Later attacks hit Islamic Republic of Iran Broadcasting headquarters in Evin, Tehran. According to Al Arabiya, Israeli special forces and Mossad operatives carried out a ground operation inside Iran.
+
+Israel bombed Iran's Assembly of Experts building while its 88 members were in preliminary session to elect a new Supreme Leader — direct targeting of Iran's constitutional successor-selection process. This strike transformed the governance crisis from institutional to existential: not only was the Supreme Leader dead, but the body tasked with selecting his replacement was under active military attack.
+
+Beersheba was struck by an Iranian missile, injuring 19 people. CENTCOM announced the death of six US service members. At sea, the US-flagged Stena Imperative was struck twice at the port of Bahrain, and the Honduras-flagged Athe Nova was hit by IRGC drones after allegedly attempting to cross the Strait. The IRGC claimed a drone strike on the Athe Nova.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran continued multi-front strikes on Israel and Gulf states. The IRGC fired ballistic missiles at Bahrain, while sirens sounded across the country. The Iranian Red Crescent reported 555 killed. Iran attacked energy infrastructure in Qatar, striking LNG facilities and halting production. The US Consulate in Al Seef, Dubai was struck by multiple drones, causing fire. The US embassy in Riyadh was hit by two drones, causing fire and prompting closure. The CIA headquarters in Riyadh was reportedly hit. Amazon Web Services data centers were targeted across the Gulf, causing significant damage in UAE and Bahrain facilities. An attack on Hamad International Airport in Qatar was stopped by Qatari forces. UAE officials claimed to have intercepted 148 drones, 9 ballistic missiles, and 6 cruise missiles.
+
+Paphos International Airport in Cyprus was evacuated upon detection of foreign unidentified objects. IRGC general Sardar Jabbari commented that Iran planned to strike Cyprus "with such intensity that the Americans will be forced to leave" — escalatory rhetoric that brought a NATO member's civilian infrastructure directly into Iran's threat calculus. Greece announced deployment of frigates and F-16s to defend Cyprus.
+
+LEBANON_THEATER_ASSESSMENT:
+The Lebanon front expanded rapidly. Israel's Defense Minister authorized a ground invasion to seize strategic positions. Israeli ground forces moved into Lebanon, skirmishing with Hezbollah in the first land-based clashes of the war. Hezbollah said it clashed with Israeli forces attempting to advance in Khiam and struck an Israeli tank in Houla. Israel later reported two soldiers injured by anti-tank fire. The IDF struck more than 70 targets across Lebanon, killing the head of Hezbollah's intelligence headquarters. Israel warned displaced Lebanese not to return, and civilians reported not knowing how to access food or water.
+
+The Israeli ground invasion, supported by roughly 50,000 troops deployed across three sectors — eastern, middle, and western — pursued a strategy of establishing a multi-faceted buffer zone and pushing Hezbollah beyond the Litani River. This river effectively separates southern Lebanon from the Bekaa Valley, making it the natural defensive line for Israeli planners. However, Hezbollah had already begun reestablishing operational capacity south of the Litani, shifting from conventional force posture to semi-autonomous small groups executing ambush tactics.
+
+GULF_IMPACT_ASSESSMENT:
+Qatar shot down two Iranian Su-24 bombers — the first nation to shoot down manned Iranian aircraft in the conflict. This was a watershed moment: Qatar, which had maintained close diplomatic channels with Tehran and served as a mediator, was now in direct air combat with Iran. Three US F-15Es crashed in Kuwait, attributed by CENTCOM to friendly fire from Kuwaiti air defenses. An 11-year-old girl was killed in Kuwait by shrapnel the following day.
+
+Saudi Aramco's Ras Tanura refinery was hit by debris from an intercepted missile. An explosion occurred near Baghdad International Airport. All staff at the US-Jordanian embassy were evacuated "due to a threat." The pattern of Gulf state escalation was accelerating despite individual countries' efforts to remain neutral — the war was being imposed on them regardless of their preferences.
+
+MARITIME_HORMUZ_ASSESSMENT:
+On Day 3, the IRGC officially confirmed the Strait was closed and threatened any ship that attempted passage. At least eight vessels had been damaged since the war began. The Malta-flagged Safeen Prestige was struck near the Strait, forcing crew evacuation. The Pola managed to pass through with its AIS transponder off, delivering cargo to the UAE despite the blockade — one of very few successful transits.
+
+IRAQ_THEATER_ASSESSMENT:
+US-Israeli airstrikes targeted a PMF position in western Iraq, killing four and injuring eleven. Explosions were reported in Erbil. The Islamic Resistance in Iraq claimed 23 drone strikes against US assets.
+
+IRAN_INTERNAL_DYNAMICS:
+Iran banned food exports and ordered citizens to uninstall foreign social media apps over security concerns. State media announced one month of wheat flour stockpiled. The IRGC set up checkpoints in cities nationwide. Mojtaba Khamenei — Ali Khamenei's son — was reported to have "miraculously survived" the missile strike that killed his father. He was subsequently positioned for election as the new Supreme Leader, a process that would be dominated by IRGC influence.
+
+CUMULATIVE_METRICS:
+Day 3: Iranian ships sunk — 6+ (adding IRIS Sabalan, IRIS Sahand, IRIS Zagros, IRIS Shahid Soleimani, submarine IRIS Fateh). CENTCOM: "destroyed 17 Iranian ships including the most operational Iranian submarine." First submarine sunk in conflict since Falklands War. US KIA — 10+. Commercial vessels attacked — 10+. Iranian Red Crescent — 555 killed. Countries at war — 9.
+
+DAY_SUMMARY:
+The war expanded to nine countries. Israel bombed Iran's Assembly of Experts during succession proceedings and struck the Natanz nuclear facility. Qatar shot down two Iranian Su-24 bombers — its first direct combat. Iran sustained attacks on all Gulf states, struck AWS data centers, and threatened Cyprus with massive retaliation. The US Navy destroyed 17 Iranian warships including the first submarine sunk since the Falklands War. Hezbollah and Israel engaged in first ground clashes in Lebanon.
+
+================================================================================
+DATE: 2026-03-03
+DAY_OF_WAR: 4
+WAR_PHASE: Early Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 104 attacks in 19 provinces with at least 31 casualties including 15 civilians killed. Isfahan, Kermanshah, Shiraz, and other cities were heavily bombed. The IDF destroyed a covert nuclear site, killed an IRGC commander and the commander of the Quds Force's Lebanon branch in Tehran, and announced destruction of 300 Iranian missile launchers since the war began. The SNSC headquarters was destroyed along with command-and-control infrastructure and the president's office. Golestan Palace, a UNESCO World Heritage Site, was hit by debris, causing damage including to the Brilliant Hall and the Marble Throne. UNESCO issued a statement noting that damaging protected property violates international law.
+
+Bushehr Airport was targeted in a precision strike that totally destroyed an Iran Air Airbus A319 on the tarmac. The proximity of strikes to the Bushehr Nuclear Power Plant prompted Russia's Rosatom to suspend construction and evacuate non-essential staff. CENTCOM commander Admiral Brad Cooper confirmed the US had "destroyed 17 Iranian ships, including the most operational Iranian submarine." The US sunk missile corvette IRIS Shahid Soleimani — lead ship of its class — and the submarine IRIS Fateh, Iran's only operational Fateh-class submarine. The Fateh's destruction marked the first submarine sunk in combat since the Falklands War.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iranian strikes on the Israeli cities of Bnei Brak and Rosh HaAyin caused seven civilian injuries. One person was injured by shrapnel in Tel Aviv. In the Gulf, Bahrain reported 74 intercepted missiles and 92 drones since February 28. The Fujairah Oil Industry Zone suffered debris and fire from an Iranian attack. Iran continued strikes on Erbil. The steady drumbeat of Iranian fire — even as its military infrastructure was being systematically destroyed — demonstrated the regime's determination to impose costs regardless of its own degradation.
+
+LEBANON_THEATER_ASSESSMENT:
+Hezbollah launched drones and missiles at three Israeli bases and claimed to have struck down an Israeli drone in Nabatieh. The IDF continued ground operations, with Israel's Defense Minister authorizing expansion. WHO Director-General Tedros Adhanom Ghebreyesus reported three paramedics killed and six injured in southern Lebanon.
+
+GULF_IMPACT_ASSESSMENT:
+NATO Article 4 consultations began after an Iranian ballistic missile landed on NATO territory in Hatay Province, Turkey — the first Iranian missile to strike NATO soil. Turkey asserted its right to self-defense. An SM-3 interceptor launched from USS Oscar Austin shot down the missile, but an anonymous Turkish official stated it was directed toward "Greek Cyprus." Non-essential American workers in Cyprus were asked to evacuate. Italy considered deploying the destroyer Caio Duilio. The European defense perimeter was expanding in real time.
+
+The IRGC claimed to have achieved "complete control" of the Strait of Hormuz by Day 4. Iraq's national power grid went down entirely. QatarEnergy declared force majeure on gas exports and shut down gas liquefaction. Qatar arrested ten individuals operating as an IRGC cell collecting data on military infrastructure. The IRGCN stated they had blown up 10 commercial vessels attempting to transit the Strait.
+
+IRAN_INTERNAL_DYNAMICS:
+Kurdish armed groups reportedly began a military offensive into Iranian territory from Iraq, with operations beginning on March 2. American and Israeli officials reportedly confirmed the events, though PJAK denied the claims. The peripheral destabilization of Iran's Kurdish regions — involving strikes on border forces and possible encouragement of armed opposition — represented a multi-domain evolution beyond purely aerial operations. Such measures could stretch the regime's security apparatus but also risked prolonged instability.
+
+CUMULATIVE_METRICS:
+Day 4: Iranian ships sunk — 17. Submarines sunk — 2 (Fateh + Ghadir-class). US KIA — 10+. Iranian Red Crescent — 787 killed. Iranian missile launchers destroyed — 300. NATO territory struck — Hatay Province, Turkey. IRGC claims "complete control" of Strait. Iraq power grid — collapsed.
+
+DAY_SUMMARY:
+NATO was drawn in after an Iranian missile struck Turkey. Israel destroyed the SNSC headquarters and a covert nuclear site. UNESCO condemned damage to Golestan Palace. The US sank 17 Iranian warships including the first submarine destroyed in combat since 1982. Kurdish armed groups reportedly began offensive operations into Iranian territory. The IRGC claimed complete control of the Strait of Hormuz while Iraq's power grid collapsed entirely.
+
+================================================================================
+DATE: 2026-03-04
+DAY_OF_WAR: 5
+WAR_PHASE: Early Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 117 attacks in 23 provinces — the widest geographic spread yet — with at least 53 casualties including 31 civilian deaths and 25 injuries. A joint US-Israeli strike targeted Azadi Square in Tehran as well as military facilities and a metro station. The IAF struck a military complex in eastern Tehran. The IDF announced at 16:15 UTC that it had completed a major large-scale airstrike on a military outpost housing soldiers from all branches of Iran's security apparatus. Basij headquarters, missile launch pads, defense systems, and the supply and logistics directorate of the ground forces were hit.
+
+The most symbolically significant air combat event of the war occurred when an Israeli F-35I "Adir" shot down a Russian-made Iranian Yak-130 fighter jet over Tehran — the first time in history a stealth fighter shot down a manned aircraft in combat, and the first Israeli Air Force aerial kill since 1985. The dogfight occurred at Latyan Dam near Lavasan city. The fate of the two Iranian pilots remained unknown. This incident demonstrated that Iran retained some capacity to get fighters airborne despite the systematic destruction of its airbases, but also confirmed the total qualitative dominance of coalition air power.
+
+At sea, a US submarine torpedoed the Iranian frigate IRIS Dena off the coast of Galle, Sri Lanka, killing 87 of its 208 crew — the first US submarine sinking of an enemy surface vessel since World War II. The Dena was returning from the International Fleet Review in India and was effectively defenseless, as exercise rules prohibited carrying ammunition. Thirty-two crew were rescued by the Sri Lankan Navy. A second Soleimani-class corvette was sunk by airstrike in Bandar Abbas port. CENTCOM stated the US had cumulatively destroyed 19 ships, 1 submarine, and nearly 2,000 targets.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+The IRGCN NEDSA Navy stated they blew up 10 commercial vessels attempting to traverse the Strait of Hormuz. The IRGC Aerospace Force launched attacks on the Port of Fujairah and Dubai with ballistic missiles. Drones attacked Sulaymaniyah in Iraqi Kurdistan. IRGC Ground Forces attacked Kuwait and Erbil with large numbers of drones. An 11-year-old girl was killed in Kuwait by shrapnel. Bahrain was attacked with missiles at 13:45 UTC. Al Udeid Air Base in Qatar was hit with no casualties. Aramco's Ras Tanura was hit again. A pro-Iran militia claimed strikes on a "vital US asset" in Jordan. Iran's response continued to demonstrate the breadth of its ability to impose costs even as its conventional military was being systematically dismantled.
+
+LEBANON_THEATER_ASSESSMENT:
+Syrian forces blocked the Syrian-Lebanese border to prevent Hezbollah from smuggling weapons. Israeli ground forces skirmished with Hezbollah in the first sustained land clashes. Hezbollah clashed with Israeli forces in Khiam and struck a tank in Houla. Israel reported two soldiers injured by anti-tank fire. Hellenic Air Force F-16s downed multiple Iranian Shahed drones near Cyprus. Larnaca International Airport was temporarily closed. A ballistic missile was intercepted by NATO forces over Turkey.
+
+Azerbaijan summoned its Iranian ambassador, withdrew diplomats, and promised military response after Iranian drones struck Nakhchivan, hitting the airport terminal and landing near a school. President Aliyev said "Iran committed terror acts against Azerbaijan." Turkey condemned the strikes. The war was pulling in non-combatant states through direct Iranian fire on their territory.
+
+GULF_IMPACT_ASSESSMENT:
+Italy, Netherlands, and Spain confirmed sending warships to defend Cyprus. The Sri Lanka Navy took charge of the Iranian tanker IRIS Bushehr and its crew of 208 — the first internment of a warship in a neutral country since World War II. The conflict's geographic footprint continued to expand beyond the Middle East.
+
+IRAN_INTERNAL_DYNAMICS:
+Mojtaba Khamenei was reported to have survived the strike that killed his father. The Assembly of Experts, meeting under bombardment, positioned him as the successor. The IRGC's role in "forcing through" Mojtaba's appointment — overpowering opposing political and clerical figures — was already visible. Mojtaba's inner circle would be dominated by long-standing IRGC commanders including Ahmad Vahidi, Mohammad Bagher Ghalibaf, and Mohammad Ali Jafari.
+
+CUMULATIVE_METRICS:
+Day 5: Iranian ships sunk — 19+. Submarines — 2. First F-35 aerial kill in history. First US submarine sinking since WWII. IRIS Dena crew: 87 killed, 32 rescued. US KIA — 10+. Commercial vessels attacked — 12+. Iranian civilian dead — 500+ (conservative). Azerbaijan directly attacked. Sri Lanka — first warship internment since WWII.
+
+DAY_SUMMARY:
+An Israeli F-35 achieved the first stealth fighter aerial kill in history by shooting down an Iranian Yak-130 over Tehran. A US submarine torpedoed the IRIS Dena off Sri Lanka — the first US submarine kill since WWII — killing 87 crew. Iran attacked 10 commercial vessels in the Strait, struck an 11-year-old girl dead in Kuwait, and expanded attacks to Azerbaijan. The coalition had destroyed 19 Iranian warships and nearly 2,000 targets in five days. Sri Lanka interned an Iranian warship — the first such internment since World War II.
+
+================================================================================
+DATE: 2026-03-05
+DAY_OF_WAR: 6
+WAR_PHASE: Early Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 170 attacks in 19 provinces with at least 79 casualties including 9 civilians killed — one a child — and 38 injured. Iran's largest sports complex, the 12,000-seat Azadi Indoor Stadium in Tehran, was destroyed. Targets included the Ministry of Intelligence office in Sardasht, an IRGC garrison in Sanandaj, a paper factory in Malayer, and a border terminal in Dasht-e Azadegan. A police station, residential building, the Yas Nabi Girls' Elementary School, Basat Stadium, and District 18 municipality were all struck in Tehran. CENTCOM released footage showing destruction of a Northrop F-5, Sukhoi Su-24, and Yak-130 at Qasem Soleimani International Airport in Ahvaz. Three US MQ-9 Reapers were reported lost over Iran, and the Sonangol Namibe oil tanker was struck by an explosive-laden boat near Kuwait's Mubarak Al Kabeer Port — a significant expansion of maritime attacks 800 kilometers from the Strait.
+
+The US Senate voted down a War Powers resolution, functionally endorsing the protracted military commitment. The targeting of civilian infrastructure — schools, stadiums, residential buildings — alongside military targets was generating a civilian casualty toll that complicated international support for the campaign but had not yet produced meaningful diplomatic pressure to halt operations.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Saudi Arabia intercepted three cruise missiles outside Al-Kharj early in the day. Iran launched another round of missiles at Israel, setting off air-raid alerts in Tel Aviv though no casualties were immediately reported. Suspected debris from an intercepted missile landed in Petah Tikva, causing fire. Iran targeted a US oil tanker in the Persian Gulf.
+
+Iranian drones entered Azerbaijani airspace for the first time, hitting the terminal of Nakhchivan International Airport and landing near a school. Azerbaijan summoned its ambassador, withdrew diplomats, and promised military response. Iran's Foreign Minister denied the attack, suggesting it was an Israeli false flag — a pattern of denial Iran would repeat throughout the war. A Telegram channel affiliated with the IRGC claimed responsibility, contradicting the official denial.
+
+Houthi leader Abdul-Malik al-Houthi stated his group was "prepared to take action if developments require it" — characterized as more of a political signal than an operational commitment, given the 2025 US-Houthi ceasefire. The Houthis would wait another 23 days before entering the war.
+
+GULF_IMPACT_ASSESSMENT:
+The UK defence minister visited Cyprus. Italy, Netherlands, and Spain confirmed warships would defend the island. Ireland stated willingness to join the European defense coalition. The expanding European military footprint around Cyprus reflected growing recognition that the war's geographic scope extended well beyond the Gulf — the eastern Mediterranean was now a potential combat zone.
+
+Ukraine entered the picture when President Zelenskyy confirmed receiving an American request for assistance with Iranian Shahed drones — a connection born of Ukraine's extensive experience defeating the same weapons systems Russia had been using against Ukrainian cities since 2022. Trump stated he would accept Ukrainian assistance, creating an unexpected bridge between the two largest conflicts of the era.
+
+IRAN_INTERNAL_DYNAMICS:
+President Pezeshkian told reporters Iran would stop striking neighbors unless attacks originated from their territory. The IRGC ignored the statement entirely and continued attacks — the first major public exposure of the fracture between political and military authority within the regime. This divergence would widen throughout the war, with the IRGC progressively sidelining civilian governance until the political establishment was effectively powerless.
+
+CUMULATIVE_METRICS:
+Day 6: HRANA cumulative attacks — 500+. Iranian civilian dead — 800+ (Red Crescent). US MQ-9 Reapers lost — 3+. Maritime attacks expanding 800km beyond Strait. Azerbaijan directly attacked. European naval deployments to Cyprus underway.
+
+DAY_SUMMARY:
+The US Senate endorsed the war by defeating a War Powers resolution. Iran's largest sports complex was destroyed alongside schools and residential buildings. Azerbaijan was attacked for the first time. President Pezeshkian publicly called for halting neighbor attacks — the IRGC ignored him entirely, exposing the deepening fracture between civilian and military authority. Ukraine was invited to assist with Shahed drone defense.
+
+================================================================================
+DATE: 2026-03-06
+DAY_OF_WAR: 7
+WAR_PHASE: Early Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 664 attacks in 28 provinces — the most geographically dispersed day yet — with at least 25 casualties including 4 civilian deaths. US and Israeli forces executed heavy airstrikes on Tehran, targeting Mehrabad Airport, a police station, an IRGC base, and residential units. Strikes hit Kermanshah, Salmas, Maku, and Saqqez in western Iran, plus intelligence sites in Lorestan and Ilam, and a Ministry of Intelligence office in Sarpol-e Zahab. The Fars Governorate building, a medical emergency base in Shiraz, and the Mahabad Red Crescent were also struck. Two Israeli IAI Eitan drones and an IAI Heron drone were shot down in Isfahan, while a US MQ-9 Reaper and an Israeli Hermes 900 were also downed in Isfahan. The increasing number of drone losses signaled that Iran's remaining air defenses, while severely degraded, retained localized capability against slower surveillance and strike platforms.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran opened a wider campaign on Gulf states with attacks on Saudi Arabia (3 missiles intercepted at Prince Sultan Air Base), Kuwait (drones and missiles), Qatar (13 missiles intercepted), Bahrain (hotel and residential buildings targeted), and the UAE. Late on Friday, drones struck Iraqi airports and oil facilities; in Basra, a compound housing foreign oil-company workers including Halliburton and KBR facilities was hit and caught fire — expanding targets to include Western corporate infrastructure.
+
+President Pezeshkian issued an apology on state television for attacks on neighboring countries, stating Iran had not attacked "friendly and neighboring countries." The IRGC continued attacks shortly afterward, rendering the presidential apology meaningless and further demonstrating that the elected civilian government had no control over military operations. The IRGC's defiance of presidential authority was becoming a defining feature of the Iranian war effort.
+
+CUMULATIVE_METRICS:
+Day 7: HRANA total — 664 attacks across 28 of 31 provinces. Iranian Red Crescent — 6,668 civilian units targeted (5,535 residential, 1,041 commercial, 14 medical centers, 65 schools, 13 Red Crescent centers). Pezeshkian publicly apologizes for attacks on neighbors — IRGC ignores.
+
+DAY_SUMMARY:
+The coalition struck 28 of Iran's 31 provinces — the widest geographic spread of the war. Iran expanded attacks to Western corporate facilities including Halliburton in Basra. President Pezeshkian publicly apologized for attacks on neighbors; the IRGC continued striking them within hours, demonstrating the complete irrelevance of civilian political authority to military decision-making.
+
+================================================================================
+DATE: 2026-03-07
+DAY_OF_WAR: 8
+WAR_PHASE: Early Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 485 attacks in 30 provinces with 53 casualties including 33 civilians killed. Israeli aircraft attacked Mehrabad International Airport in Tehran, with satellite imagery confirming destruction of 19 aircraft including seven cargo planes, IRGC transport aircraft, and commercial airliners. The IDF said it destroyed 16 Quds Force aircraft. Other targets included airbases in Ahvaz and Isfahan, a medical clinic, a girls' school in Khomein, a home in Eslamshahr, and a water desalination plant on Qeshm Island — the last prompting IRGC threats of retaliation as the plant served 30 villages. Both the US and Israel denied attacking the plant.
+
+The IRGC struck the Malta-flagged oil tanker Prima with a drone after it allegedly ignored warnings about Strait transit prohibition, and claimed hitting the US oil tanker Louis P in the Strait. The US approved a $151 million arms sale to Israel and sent a third aircraft carrier, USS George H.W. Bush, to the Middle East. Kuwait Petroleum Corporation declared force majeure and began cutting oil output.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Halliburton compounds and oil refinery structures in Basra were hit by Iranian strikes — continuing the expansion of targeting to Western corporate infrastructure. The WHO issued public health advisories for the Persian Gulf and Central Asia following continued radiological fallout concerns from the Fordow nuclear facility breach. Oman indefinitely closed its airspace after stray munitions threatened commercial transit.
+
+CUMULATIVE_METRICS:
+Day 8: 30 of 31 provinces struck. 19 aircraft destroyed at Mehrabad. Third US carrier deployed. Kuwait declares force majeure. Oman closes airspace.
+
+DAY_SUMMARY:
+Strikes reached 30 of 31 Iranian provinces. Nineteen aircraft were destroyed at Tehran's Mehrabad Airport. The WHO issued health advisories for radiological concerns. Kuwait declared force majeure on oil. A third US carrier was deployed to the region. Iran struck Western corporate targets in Basra including Halliburton facilities.
+
+================================================================================
+DATE: 2026-03-08
+DAY_OF_WAR: 9
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 752 attacks in 30 provinces — the highest daily count yet — with 83 casualties including 33 killed and 50 injured. Israeli overnight airstrikes hit Iran's oil facilities for the first time, killing four people and releasing large smoke clouds raising fuel shortage and contamination concerns. Targets included the Kamal Esmail Basij Base, an army garrison and a swimming complex in Isfahan, a border guard regiment in Paveh, the Border Guard Command Headquarters in Kermanshah, a seminary in Qom, and a judiciary building in Zarrin Shahr. The IRGC aerospace headquarters and 50 ammunition storage shelters were struck. US officials stated Iran was using heavily populated areas for military operations.
+
+Mojtaba Khamenei was elected as Iran's new Supreme Leader by the Assembly of Experts. The IRGC and top Iranian leaders pledged allegiance. The IRGC had "forced through" the appointment to ensure alignment with hardline policies, overpowering opposing political and clerical figures. Mojtaba's inner circle was dominated by long-standing IRGC commanders — Vahidi, Ghalibaf, and Jafari — who played key roles in securing his selection. Trump called him "a lightweight" and threatened he would "not last long."
+
+IRANIAN_RESPONSE_ASSESSMENT:
+At least three people in Israel were injured by Iranian missile shrapnel. The IRGC claimed missiles hit military targets in Tel Aviv and Beersheba and Muwaffaq Salti Air Base in Jordan. An Iranian drone strike caused fire in a Kuwait City tower belonging to the Public Institution for Social Security. Two Kuwaiti officers were killed performing duties. CENTCOM announced a seventh US service member killed. The UK confirmed intercepting an Iranian drone headed toward Iraq.
+
+Crude oil prices surpassed $100 per barrel for the first time in four years, reaching a high of $126. The price surge was faster than during any previous conflict. China formally deployed a naval task force to the Gulf of Oman under the guise of non-combatant evacuation, introducing a great-power dynamic into the maritime exclusion zone. BAPCO declared force majeure on oil exports after Iran hit its only refinery.
+
+CUMULATIVE_METRICS:
+Day 9: 752 attacks — highest single day. Oil breaks $100/barrel, peaks at $126. Mojtaba Khamenei elected Supreme Leader. China deploys naval task force. US KIA — 7. Two Kuwaiti officers killed. BAPCO declares force majeure.
+
+DAY_SUMMARY:
+The highest daily attack count of the war — 752 strikes across 30 provinces — coincided with Mojtaba Khamenei's election as Supreme Leader, an appointment forced through by the IRGC. Oil prices surpassed $100 per barrel for the first time since 2022, peaking at $126. China deployed a naval task force to the Gulf of Oman. Israel struck Iran's oil facilities for the first time, marking a new phase of economic targeting.
+
+================================================================================
+DATE: 2026-03-09
+DAY_OF_WAR: 10
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 285 attacks in 17 provinces with at least 61 casualties including 40 civilians killed. Extensive damage was dealt to historical sites in Isfahan: Chehel Sotoun Palace-Museum and Ali Qapu Palace-Museum were struck, alongside the Shah Mosque and other Safavid-era sites. This represented a systematic, if unintentional, destruction of Iran's cultural heritage that was generating growing international condemnation regardless of views on the war's justification. Targets also included Optical Defense Industries in Isfahan, Soru Pier in Bandar Abbas, and Shahid Montazeri Camp in Shahriar.
+
+Multiple Iranian aircraft were destroyed at Shahid Beheshti International Airport in Isfahan — satellite imagery confirmed at least three F-14 Tomcats and nine Chengdu J-7s destroyed. The loss of the F-14s was particularly significant: Iran was the only country still operating these aircraft, and each one destroyed was irreplaceable.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+An explosion near Manama sparked fire near a petroleum refinery and injured 32 Bahraini citizens, four seriously. Analysis found that an American-operated Patriot missile was likely involved after downing an Iranian drone — friendly fire consequences from the dense air defense environment. The UAE intercepted 12 ballistic missiles and 17 drones. Saudi Arabia destroyed four drones targeting the Shaybah oil field. Iran fired missiles at Israel with reports of at least one carrying a cluster bomb warhead — the first confirmed Iranian use of cluster munitions. A cluster bomb attack killed two workers at a construction site in Yehud and injured a third in Or Yehuda. The introduction of cluster munitions added a new dimension to Iran's missile campaign, maximizing per-missile casualty potential even as stockpiles depleted.
+
+IRAN_INTERNAL_DYNAMICS:
+China's Foreign Ministry described Mojtaba Khamenei's appointment as "based on its constitution" and noted Beijing as a "close partner of Tehran." The Houthis called it "a new victory for the Islamic Revolution." The IEA's 32 member states unanimously agreed to release 400 million barrels of oil from emergency reserves — about four days of global consumption — to counter the supply crisis.
+
+CUMULATIVE_METRICS:
+Day 10: Isfahan historical sites destroyed. First Iranian cluster munition use confirmed. IEA releases 400M barrels from reserves. Iranian Red Crescent — 1,255 killed, 12,000+ injured. 190 children among dead. Mojtaba Khamenei consolidating power.
+
+DAY_SUMMARY:
+Isfahan's UNESCO-level historical sites — including Chehel Sotoun and Ali Qapu palaces — sustained extensive damage. Iran used cluster munitions against Israel for the first time, killing two in Yehud. The IEA agreed to release 400 million barrels from strategic reserves. Iranian casualties reached 1,255 killed and 12,000 injured, including 190 children.
+
+================================================================================
+DATE: 2026-03-10
+DAY_OF_WAR: 11
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 202 attacks across 19 provinces with 53 casualties including 17 civilians killed and 19 injured. A strike on Resalat Highway in Tehran caused mass civilian casualties at a major intersection — the type of incident that accumulated into the growing international pressure over civilian harm. Airbases in Bandar Abbas and Isfahan were hit, alongside an IRGC intelligence headquarters in Qom, the Kerman Airport fuel depot, and the Najafabad courthouse. The US struck multiple Iranian minelaying ships after military intelligence confirmed Iran had begun planting naval mines in the Strait of Hormuz — the US claimed destruction of 16 minelayers. Trump demanded immediate mine removal.
+
+Abu Dhabi National Oil Company shut down its Ruwais refinery after a drone strike caused fire. Saudi Arabia's civil defense reported a drone fell in Al-Zulfi. Iran targeted US military sites at Harir Air Base in Kurdistan. Syrian media reported Israeli interception of Iranian drones over Quneitra. The UNHCR reported approximately 700,000 people displaced in Lebanon by Israeli bombing and mass evacuations.
+
+CUMULATIVE_METRICS:
+Day 11: 16 Iranian minelaying ships destroyed. Iran planting mines in Strait confirmed. Ruwais refinery shut down. Displaced in Lebanon — 700,000.
+
+DAY_SUMMARY:
+Iran was caught planting naval mines in the Strait of Hormuz — the US destroyed 16 minelaying ships and demanded immediate removal. The Ruwais refinery in Abu Dhabi was shut down after a drone strike. A mass-casualty event at a Tehran highway intersection underscored the civilian toll. Lebanon's displaced population reached 700,000.
+
+================================================================================
+DATE: 2026-03-11
+DAY_OF_WAR: 12
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 208 attacks in 22 provinces with 44 casualties including 14 civilians killed. Targets included army and IRGC bases in Isfahan and Chabahar, a missile site in Khomeinishahr, a police station in Saqqez, the Persian Gulf Martyrs Hospital in Bushehr, the Shaqayeq Girls' School in Khomein, and residential homes in Bandar Lengeh. Israeli drone strikes hit checkpoints in Tehran, killing at least ten people including Basij members — expanding the targeted killing campaign from senior commanders to ground-level security personnel. Iran fired dozens of missiles at Gulf targets. IRGC announced attacks against Camp Buehring in Kuwait, Naval Support Activity Bahrain, Camp Patriot, and Ali Al Salem Air Base.
+
+Two drones fell near Dubai International Airport, wounding four. Drones struck fuel tanks at Port of Salalah in Oman, suspending operations. The bulk carrier Mayuree Naree was hit by missiles after passing the Strait and caught fire; most crew abandoned ship. The Star Gwyneth and One Majesty were also damaged near the Strait. Two fuel tankers — Safesea Vishnu and Zefyros — were attacked in Iraqi waters by explosive-laden boats, catching fire. Iraqi oil terminals suspended all operations. One crew member was recovered dead.
+
+A Houthi anti-ship ballistic missile struck a Chinese-flagged bulk carrier in the Gulf of Aden — a critical targeting error that fundamentally compromised Beijing's stated neutrality. China responded with severe diplomatic and economic threats directly at Tehran — the first major external constraint on Iran's proxy network.
+
+CUMULATIVE_METRICS:
+Day 12: Houthi strikes Chinese vessel — Beijing issues threats to Tehran. Iraqi oil terminals suspended. Mayuree Naree abandoned. Port of Salalah suspended. Dubai airport attacked again. IDF begins targeting ground-level Basij at checkpoints.
+
+DAY_SUMMARY:
+A Houthi anti-ship missile struck a Chinese-flagged vessel — a critical error that provoked severe Chinese threats against Tehran and created the first external constraint on Iran's proxy operations. Iraqi oil terminals suspended operations after explosive boat attacks on two tankers. Israel expanded its targeted killing campaign to ground-level Basij personnel at Tehran checkpoints.
+
+================================================================================
+DATE: 2026-03-12
+DAY_OF_WAR: 13
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 312 attacks in 15 provinces with 124 casualties including 10 civilians killed and 91 injured. The 92nd Armored Division and military headquarters in Ahvaz were struck, along with production units in Arak, a naval base in Konarak, and the historic Rashk-e Jenan Palace in Isfahan. The PMF 18th Brigade headquarters in Al-Qa'im, Iraq was hit directly, killing 15, while another strike on a PMF base near Kirkuk killed 5. The Iraqi government condemned the strikes. An American Boeing KC-135 Stratotanker crashed in western Iraq following what CENTCOM described as a refueling incident — an apparent mid-air collision with another KC-135. All six crew were killed. The second KC-135, having lost the upper portion of its vertical stabilizer, made an emergency landing at Ben Gurion Airport.
+
+Iran fired 10 ballistic missiles with multiple warheads at Tel Aviv, injuring 124 people — the largest single Iranian strike on Israeli civilians since the war began. Overnight, Iranian drones hit Bahrain International Airport on Muharraq Island, setting fuel tanks on fire. Coalition camps near Erbil and Baghdad were hit, with two drones shot down by British troops. A drone attack on a Peshmerga base in Makhmur injured six French soldiers; one — Arnaud Frion of the 7th Chasseurs Alpins — was later killed, becoming the first French military fatality of the conflict. The Liberia-flagged Source Blessing container ship was struck near the Strait.
+
+The UNHCR announced 3 million people in Iran had been internally displaced. New Supreme Leader Mojtaba Khamenei's first statement vowed to keep the Strait of Hormuz closed and warned countries to stop hosting US bases.
+
+CUMULATIVE_METRICS:
+Day 13: First French KIA. KC-135 crash kills 6 US crew. 124 Israelis injured in 10-missile Tel Aviv barrage. Bahrain airport fuel tanks hit. 3 million displaced in Iran. PMF headquarters struck in Iraq. Mojtaba vows to keep Strait closed.
+
+DAY_SUMMARY:
+Iran launched its largest single barrage at Israel — 10 warhead-equipped missiles injuring 124 in Tel Aviv. France suffered its first combat death. A US KC-135 tanker crashed in Iraq killing six crew. Three million Iranians were internally displaced. Mojtaba Khamenei's first public statement vowed to keep the Strait of Hormuz permanently closed.
+
+================================================================================
+DATE: 2026-03-13
+DAY_OF_WAR: 14
+WAR_PHASE: Deep Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The US bombed Kharg Island — Iran's major oil export hub — with Trump stating every military site on the island was destroyed while claiming oil infrastructure was not targeted "for reasons of decency." Approximately 90 military targets were struck. Explosions were reported in Tehran during Quds Day rallies, killing one by shrapnel. Five US KC-135 refueling aircraft were moderately damaged by an Iranian missile strike at Prince Sultan Air Base. A US MQ-9 Reaper was shot down in Bandar Abbas. The US Rewards for Justice Program offered $10 million bounties for ten Iranian leaders including Mojtaba Khamenei.
+
+An Iranian missile strike in Zarzir damaged 300 homes and injured 60 people. A drone attack at Sohar, Oman killed two people and injured eleven — marking Oman's first fatalities. News outlets reported 2,500 US Marines preparing to embark from Japan aboard USS Tripoli. China's ultimatum — issued following the Houthi strike on a Chinese vessel — forced the IRGC to initiate an unprecedented theater-wide operational pause for its Yemeni and Iraqi proxy elements. This was the first major external constraint on Iran's proxy network and demonstrated that Beijing retained leverage over Tehran even during total war.
+
+The GCC, led by Saudi Arabia, initiated urgent back-channel ceasefire frameworks through Omani intermediaries, reflecting deep regional anxiety. At least 239 individuals had been arrested by Iranian security forces over 14 days, many for filming explosions and sending footage to foreign media. The IRGC Intelligence Organization warned against street protests, threatening "a response more severe than the Dey protests." Iran's internet had been at approximately 1% of normal levels for 312 consecutive hours — citizens unable to receive critical safety updates or independent information.
+
+CUMULATIVE_METRICS:
+Day 14: Kharg Island oil hub struck. 5 KC-135s damaged at Prince Sultan Air Base. Sohar, Oman — first fatalities. China forces IRGC proxy pause. GCC initiates ceasefire channels via Oman. 239 arrested. Iran internet — 1% of normal for 312 hours. Iranian civilian dead — 1,230+ (Foundation of Martyrs).
+
+DAY_SUMMARY:
+The US struck Kharg Island, Iran's oil export hub. China's pressure forced an unprecedented IRGC proxy pause across Yemen and Iraq — the first external constraint on the Axis of Resistance. Iran struck Sohar, Oman, causing that country's first fatalities. Five US refueling aircraft were damaged at Prince Sultan Air Base. The GCC began ceasefire efforts through Oman. Iran's internet remained at 1% of normal — a 312-hour nationwide shutdown.
+
+================================================================================
+DATE: 2026-03-14
+DAY_OF_WAR: 15
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 285 attacks in 18 provinces with 24 civilians killed including one child. Naval facilities in Bandar Abbas, Shiraz International Airport, an electronics factory and aerospace research center in Tehran, an aircraft manufacturing company in Shahin Shahr, the Jamkaran Grand Mosque in Qom, and a food processing factory in Sirjan were hit. The IDF killed two senior members of the Khatam-al Anbiya Central Headquarters intelligence unit. Trump called on the UK, France, China, South Korea, and Japan to send warships to secure the Strait. A US Cyber Command offensive operation destabilized the Iranian national power grid, plunging critical military-industrial sectors into rolling blackouts.
+
+A drone attack on Fujairah's oil terminal forced partial suspension. A helipad at the US embassy in Baghdad was struck. A drone attack on Ahmad al-Jaber Air Base injured three Kuwaiti soldiers, and another damaged Kuwait International Airport's radar system. Iranian missile fragments hit Eilat, seriously injuring a child. Indian tankers Shivalik and Nanda Devi passed safely through the Strait after diplomatic talks between India and Iran. The GCC presented Tehran with a binary ultimatum: accept comprehensive disarmament of its proxy network or face kinetic dismantlement.
+
+CUMULATIVE_METRICS:
+Day 15: US Cyber Command attacks Iranian power grid. GCC delivers disarmament ultimatum. Trump calls on 5 nations for naval deployment. Indian tankers pass Strait via diplomacy. Eilat child seriously injured.
+
+DAY_SUMMARY:
+US Cyber Command attacked Iran's power grid, causing rolling military-industrial blackouts. The GCC delivered an ultimatum: disarm proxies or face dismantlement. Trump called on five nations to deploy naval forces to the Strait. Indian tankers passed through Hormuz via diplomatic arrangement with Iran — establishing the pattern of selective access that Iran would weaponize as a geopolitical tool.
+
+================================================================================
+DATE: 2026-03-15
+DAY_OF_WAR: 16
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 494 attacks in 16 provinces with 49 casualties including 11 civilians killed and 22 injured. Heavy strikes hit Isfahan, with 20 explosions near Shiraz, heavy blasts in southern Tehran, Dezful Air Base, Khomein, and Hamadan. A video showed extensive damage from an airstrike at Jask port in Hormozgan. A joint attack on Isfahan killed 15 people. Targets included airbases in Isfahan, Dezful, and Bandar Abbas, the Kobraei missile base, the Al-Hadid Garrison in Ahvaz, and a medical center in suburban Tehran. An Italian Air Force MQ-9 Reaper was destroyed on the ground at Ali Al Salem Air Base, Kuwait, by Iranian ballistic and drone attacks. Two Italian Eurofighter Typhoons were damaged by shrapnel and remained unoperational — the first European military aircraft casualties of the war. An Iranian government Airbus A340 was destroyed at Mehrabad.
+
+The IRGC said it had launched its "50th wave of operations" against American bases in the UAE, Bahrain, and Kuwait. Iran's military vowed to "pursue and kill" Israeli PM Netanyahu. An Iranian commander stated Iran would continue using the Strait of Hormuz as a pressure point. Pro-government rallies were visible in Tehran's major squares. The GCC and Oman gained preliminary traction in back-channel negotiations in Muscat.
+
+CUMULATIVE_METRICS:
+Day 16: 494 attacks. First Italian military aircraft destroyed. IRGC claims 50th wave of operations. Muscat back-channel gains traction. Iran vows to kill Netanyahu.
+
+DAY_SUMMARY:
+An Italian MQ-9 Reaper was destroyed and two Eurofighter Typhoons damaged at Ali Al Salem — the first European military aircraft casualties. The IRGC claimed its 50th wave of operations against US bases. Back-channel negotiations in Muscat gained preliminary traction. Iran's military publicly vowed to kill Netanyahu.
+
+================================================================================
+DATE: 2026-03-16
+DAY_OF_WAR: 17
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 243 attacks with 66 casualties including 21 civilians killed. Sixty-five percent of attacks hit Tehran. Targets included the District 13 Air Force Base, Peykanshahr Basij Base, and Mehrabad Airport — where the IDF destroyed an aircraft used by senior officials including former Supreme Leader Khamenei. An electricity department building and eleven residential buildings in Tehran were destroyed including an eight-story building on Zarafshan Street. A space research facility in Tehran used to develop attack satellites was destroyed. Kata'ib Hezbollah announced the death of Abu Ali al-Askari, a senior commander killed in Baghdad. CENTCOM claimed more than 6,000 locations in Iran had been targeted.
+
+A drone attack set a fuel tank at Dubai International Airport on fire; flights were suspended then partially restored. A drone attack caused fire at Port of Fujairah. A Palestinian was killed by a rocket near Abu Dhabi. The first two floors of the Royal Tulip Al-Rasheed Hotel in Baghdad's Green Zone were hit by a drone during an EU and Saudi delegation visit — the attack was not claimed but suspected as Iranian based on the pattern of similar attacks on the US embassy. In Lebanon, 38 healthcare workers had been killed and 69 injured since the escalation; 886 had been killed in Israeli attacks total.
+
+CUMULATIVE_METRICS:
+Day 17: CENTCOM — 6,000+ locations targeted. Dubai airport fuel tank fire. Royal Tulip Hotel attacked during EU/Saudi delegation visit. Baghdad Green Zone breached. Lebanon death toll — 886.
+
+DAY_SUMMARY:
+CENTCOM reported 6,000+ locations targeted across Iran. An eight-story building in Tehran was leveled. A drone struck the Royal Tulip Hotel in Baghdad's Green Zone during an EU-Saudi delegation visit. Dubai International Airport's fuel tanks were set ablaze. The Lebanese death toll reached 886, with 38 healthcare workers killed.
+
+================================================================================
+DATE: 2026-03-17
+DAY_OF_WAR: 18
+WAR_PHASE: Sustained Campaign — Decapitation Intensifies
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 179 attacks with 19 casualties. Ali Larijani — head of the Interim Leadership Council and the regime's most important surviving political figure — was killed by overnight Israeli airstrikes alongside Basij chief Gholamreza Soleimani and 300 Basij officials. Larijani's death left Iran without functioning central leadership for the third time in the war. Intelligence Minister Esmail Khatib was also assassinated. The Basij Command Headquarters and IRGC garrison in Saadat Abad were struck, along with the Panahi Sports Complex, Shahid Kazemi Sports Complex, two wrestling halls, and historic buildings in the Saadabad complex. A strike hit near the Bushehr Nuclear Power Plant, causing no damage. The US used GBU-72 "bunker bombs" to target sites containing anti-ship missiles.
+
+An Iranian missile barrage killed an elderly couple in Ramat Gan while they were on their way to a bomb shelter. Iranian missiles damaged platforms at Tel Aviv-Savidor Center railway station. The Kuwait-flagged Gas Al Ahmadiah tanker was hit by a projectile east of Fujairah. Thousands of civilians joined Larijani's funeral procession the following day.
+
+The cumulative decapitation toll was staggering: Khamenei, Chief of Staff Mousavi, IRGC commanders, the SNSC Secretary, the Intelligence Minister, the Basij chief, and dozens of other senior figures — all eliminated in 18 days. Yet the regime continued to function, its missiles continued to launch, and its internal security apparatus continued to operate. The deeply institutionalized nature of the Islamic Republic meant that individual leaders could be replaced — however imperfectly — while the system endured. The only path to decisive outcome remained regime change itself, a far more ambitious undertaking than the air campaign alone could achieve.
+
+IRAN_INTERNAL_DYNAMICS:
+Mass anti-regime riots erupted across Tehran, Isfahan, and Mashhad as the war turned against Iran. Crowds chanted against the IRGC and Supreme Leader. Security forces fired on protesters. Iran's Foreign Ministry formally requested a 48-hour extension on the GCC disarmament ultimatum — signaling profound internal divisions between the political establishment and the IRGC. Hengaw Organization for Human Rights estimated 5,300+ military forces killed.
+
+CUMULATIVE_METRICS:
+Day 18: Larijani killed — third leadership decapitation. Basij chief + 300 officials killed. Intelligence Minister assassinated. Anti-regime riots in Tehran, Isfahan, Mashhad. Iran requests GCC ceasefire extension. Military dead estimated — 5,300+.
+
+DAY_SUMMARY:
+Ali Larijani and Intelligence Minister Khatib were assassinated in Israeli strikes, leaving Iran without central leadership for the third time. The Basij chief and 300 officials were killed simultaneously. Anti-regime riots erupted across three major cities with security forces firing on protesters. An elderly couple was killed in Ramat Gan by Iranian missiles while walking to their shelter. Iran requested a ceasefire extension from the GCC — the first sign of political willingness to negotiate.
+
+================================================================================
+DATE: 2026-03-18
+DAY_OF_WAR: 19
+WAR_PHASE: Sustained Campaign — Strategic Escalation
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 79 attacks with 125 casualties including 15 civilians killed and 105 injured — a lower strike count but higher casualty rate, indicating either larger munitions or strikes on more populated areas. Israeli strikes targeted the South Pars gas field and its refineries in Asaluyeh for the first time — Iran's most critical energy infrastructure. At least five Iranian naval vessels were struck in the Caspian Sea at Bandar-e Anzali, with the IDF describing it as one of the most significant strikes since the war began. It was the first time strikes had reached northern Iran and the Caspian, threatening the Russia-Iran weapons corridor through which Shahed drone equipment flowed. Israeli strikes also targeted naval zones and port facilities in Bandar Abbas, a helicopter manufacturing facility in Fardis, and Fath Army Base in Karaj. A medical center in Tehran, welfare offices, and a rehabilitation center for persons with disabilities in Karaj were also hit.
+
+An Israeli strike hit the Russia-Iran weapons transport route across the Caspian Sea, directly threatening the Shahed drone supply chain that connected Russian military needs in Ukraine to Iranian production facilities. The strike on South Pars was geopolitically explosive — Qatar condemned it, noting its North Dome field shares the same reservoir. Trump warned on Truth Social that the US would "massively blow up the entirety of the South Pars Gas Field" if Iran attacked Qatar again. Iran appeared to halt attacks on Qatar following this warning.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iranian missiles hit Qatar's Ras Laffan Industrial City, causing fires and significant damage to the world's largest gas facility. Qatar responded by banning the Iranian embassy's military attaches. Three private jets at Ben Gurion Airport were damaged by missile intercept fragments. A missile killed three Palestinians and injured 13 in Beit Awwa, West Bank, and killed a foreign worker in Adanim. The Palau-flagged chemical tanker Parimal was struck east of Khor Fakkan, sparking fire; 15 crew evacuated but the captain was reported missing.
+
+Rogue IRGC units — bypassing the interim government's authority — launched ballistic missiles at Jerusalem's Old City and at the Negev Nuclear Research Center near Dimona. Debris from Iranian missiles fell within 400 meters of the Western Wall and Al-Aqsa Mosque compound. The Vatican, Jordan, Saudi Arabia, and the Arab League condemned the strike. Israel and the US held emergency nuclear contingency consultations. This was the most provocative single escalation of the war, demonstrating that elements of the IRGC were willing to risk attacks on the world's most sacred sites and nuclear facilities without central authorization.
+
+IRAN_INTERNAL_DYNAMICS:
+The Iranian political establishment entered open armed conflict with hardline IRGC elements in the streets of Tehran. Artesh (regular army) units were deployed to restore order — the first signs of institutional state collapse. The fracture between the Artesh and the IRGC, which had been growing since Khamenei's death, became an open armed confrontation. The IRGC controlled Bandar Abbas and southern provinces while the Artesh began consolidating control over Tehran.
+
+The International Maritime Organization held an extraordinary session regarding 20,000 seafarers stranded on approximately 3,200 vessels west of the Strait. Thousands of civilians joined Larijani's funeral procession.
+
+CUMULATIVE_METRICS:
+Day 19: South Pars gas field struck for first time. Caspian Sea naval operations — first northern Iran strikes. Jerusalem Old City hit — debris 400m from Western Wall. IRGC-Artesh armed clashes in Tehran. Ras Laffan attacked. 20,000 seafarers stranded. Parimal tanker captain missing.
+
+DAY_SUMMARY:
+Israel struck the South Pars gas field and Iranian naval vessels in the Caspian Sea for the first time — opening northern Iran and energy infrastructure as new target sets. Rogue IRGC units fired at Jerusalem's Old City and Dimona without authorization, prompting nuclear contingency consultations. Iranian Artesh and IRGC forces clashed in Tehran streets — the first institutional armed conflict within the regime. Twenty thousand seafarers were stranded across 3,200 vessels.
+
+================================================================================
+DATE: 2026-03-19
+DAY_OF_WAR: 20
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 70 attacks in 12 provinces with 75 casualties including 25 civilians killed. The strikes were the first to target the Caspian Sea region directly, alongside continued focus on Iran's oil and gas facilities in Asaluyeh. The IDF destroyed an IRGC Mi-17 helicopter at Sanandaj Airport. An Israeli strike targeted Basij members — Israel stating it would continue to attack anyone associated with the Iranian government. Afshin Naghshbandi, representative of the armed forces to the Basij, was killed. An airstrike on a Basij checkpoint in Tabriz killed 13 fighters and injured 18 — the campaign against ground-level security personnel was intensifying.
+
+A BAZAN Group refinery in Haifa was hit during a broader Iranian missile attack — marking Iranian retaliation against Israeli energy infrastructure mirroring the South Pars strikes. The Mina Al-Ahmadi refinery in Kuwait was hit by drones, causing fire. A US F-35 was allegedly damaged by Iranian fire during a combat mission over Iran and made an emergency landing at a US base, with the pilot suffering shrapnel wounds. CENTCOM confirmed the emergency landing while NPR reported the aircraft would be out of service for a long period. The IRGC claimed it had "seriously damaged" the F-35 over central Iran. If confirmed, this would be the first Iranian interception of a US aircraft and the F-35's first combat-related emergency landing. Chinese analysts suggested the damage was caused by an adapted air-to-air missile rather than a larger SAM system. US officials confirmed a total of 12 MQ-9 Reapers lost in the war.
+
+After a 400% increase in violence events in Lebanon since the war began, Israeli strikes targeted bridges along the Litani River in an effort to isolate southern Lebanon — effectively dissecting the country between the south (viewed as a buffer zone) and the rest (viewed as the Lebanese state). Attacks on Litani crossings began on March 18. Hezbollah maintained sustained retaliatory attacks with thousands of projectiles fired since early March.
+
+Netanyahu hosted a press conference asserting he was well. Qatar declared Iranian military and security attaches persona non grata, giving them 24 hours to leave.
+
+CUMULATIVE_METRICS:
+Day 20: F-35 damaged over Iran — first F-35 combat emergency landing in history. BAZAN refinery in Haifa hit — first Israeli energy facility struck. Mina al-Ahmadi Kuwait hit. 12 MQ-9 Reapers lost total. Lebanon — 400% increase in violence. Litani bridges targeted.
+
+DAY_SUMMARY:
+A US F-35 was damaged over Iran and made an emergency landing — potentially the first Iranian interception of a US aircraft and the F-35's first combat damage. Israel's BAZAN refinery in Haifa was struck in retaliation for the South Pars attacks. Israeli forces began destroying Litani River bridges to isolate southern Lebanon. Qatar expelled Iranian military attaches. Twelve US MQ-9 Reapers had been lost since the war began.
+
+================================================================================
+DATE: 2026-03-20
+DAY_OF_WAR: 21
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 640 strikes in 17 provinces with 68 casualties including 4 civilians killed. IRGC spokesman Ali Mohammad Naini and his deputy were assassinated. Basij intelligence chief Ismail Ahmadi was confirmed killed in the earlier strike that killed Gholamreza Soleimani. Targets included Basij and army bases in Semnan, Ahvaz, Bandar Abbas, and Urmia. The Falak-ol-Aflak Historic Site in Khorramabad was struck — another major cultural heritage loss.
+
+Iran allegedly launched two ballistic missiles toward Diego Garcia, housing a US-UK military base, though both failed — one broke apart mid-flight and one was intercepted by an SM-3. If the missiles were genuinely aimed at Diego Garcia, this represented the most long-range Iranian missile attack in history, demonstrating ICBM-class capability with strategic reach to European capitals. Iran denied the claims as an "Israeli false flag." Nine Iranian ballistic missiles targeted Jerusalem, with at least three carrying cluster warheads. Debris fell within the Old City approximately 400 meters from the Western Wall and Al-Aqsa Mosque. No injuries were reported from the Old City impact.
+
+On 19 March, the pro-Iran group Kataib Hezbollah had announced willingness to suspend attacks on the US embassy in Baghdad on condition Israel halt strikes on Beirut — conditions unlikely to be met. Between February 28 and March 16, Iraqi groups had carried out over 65 missile and drone attacks, with another 65 intercepted. Nearly 60% hit US and coalition sites. Since March 7, targeting had shifted from Kurdish region sites to high-profile targets including the US embassy.
+
+CUMULATIVE_METRICS:
+Day 21: Diego Garcia targeted — longest-range Iranian missile attack. IRGC spokesman assassinated. Cluster bombs on Jerusalem. Falak-ol-Aflak historic site struck. Iraq militia attacks — 130+ (65 successful, 65 intercepted).
+
+DAY_SUMMARY:
+Iran allegedly fired ballistic missiles at Diego Garcia — the longest-range attack in its history, demonstrating ICBM-class capability. Cluster munitions struck Jerusalem's Old City near the Western Wall. The IRGC spokesman and his deputy were assassinated. The Falak-ol-Aflak Historic Site was destroyed. Iraqi militia attacks exceeded 130 since the war began.
+
+================================================================================
+DATE: 2026-03-21
+DAY_OF_WAR: 22
+WAR_PHASE: Sustained Campaign
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA reported 348 attacks in 16 provinces with 16 casualties including 8 civilians killed. The majority of strikes targeted Tehran. Imam Ali Hospital in Andimeshk, a tourist complex in Ahvaz, passenger and fishing piers in Bushehr, and military facilities in Tehran, Bandar Abbas, Yazd, and Dezful were struck. The IDF struck the regional IRGC headquarters in Isfahan, an alleged nuclear weapons research site at Tehran's Malek-Ashtar University of Technology, and a Natanz uranium enrichment center. A Basij site in Najafabad was "flattened."
+
+Three drone strikes hit the American diplomatic hub at Baghdad International Airport. A strike in Tuz Khurmatu killed a Hashed al-Shaabi fighter. Iranian missile fragments hit a kindergarten in Tel Aviv. An Iranian missile collapsed a building in Dimona, injuring 64 including one child critically — Iran claimed it targeted the Negev Nuclear Research Center in response to Natanz and Bushehr strikes. A strike in Arad wounded 116 people, seven seriously.
+
+The cumulative impact on Israeli civilian life was becoming significant: the sustained missile campaign, even with declining frequency, was killing and injuring civilians in population centers, damaging infrastructure, and imposing psychological costs that raised domestic political pressure on the Israeli government. The introduction of cluster munitions had maximized per-missile impact even as overall launch rates declined.
+
+CUMULATIVE_METRICS:
+Day 22: Dimona building collapsed — 64 injured. Arad — 116 wounded. Natanz struck again. Tel Aviv kindergarten hit. Baghdad airport triple strike. Nuclear weapons research site at Malek-Ashtar struck.
+
+DAY_SUMMARY:
+Iran struck Dimona again, collapsing a building and injuring 64, then hit Arad wounding 116 — the highest single-incident Israeli casualty counts of the war. Missile fragments struck a Tel Aviv kindergarten. Israel hit Natanz and an alleged nuclear weapons research site. Baghdad International Airport was struck three times by militia drones. The sustained Iranian missile campaign was imposing growing civilian costs despite declining overall frequency.
+
+================================================================================
+DATES: 2026-03-22 TO 2026-03-23
+DAYS_OF_WAR: 23-24
+WAR_PHASE: Sustained Campaign — Diplomatic Disconnect
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+Over these two days, HRANA recorded 585 combined attacks across 20+ provinces with 241 combined casualties. Day 23 saw 206 attacks with Ebrahim Mortazavi-Nasb, a Basij commander, killed. Buildings were destroyed in Alborz province. A powerful early morning explosion in Tehran lit up the sky. The Shohada-ye Kargar Sports Complex in Masjed Soleyman was struck. On Day 24, 379 attacks targeted primarily Tehran. An air force base, gas company, and residential buildings in Tehran were hit, alongside bases in Garmdareh, Khorramabad, and Bushehr, and the Velayat Cultural Center in Shahr-e Rey.
+
+Iranian missile attacks injured 15 across central Israel on Day 23. A Hezbollah rocket strike killed a man in Misgav Am. Seven rockets were launched by a pro-Iranian militia at an Al-Hasakah base in Syria vacated by American forces. On Day 24, Trump postponed US strikes against Iranian powerplants for five days amid "productive" negotiations — Iran denied any negotiations were occurring and stated there would be none until its goals were achieved. Basij patrols and security checkpoints were stationed overnight throughout the country.
+
+The disconnect between diplomatic rhetoric and battlefield reality crystallized on these days. Attack levels on Days 23-24 remained consistent with earlier intensity, driven by continued US-Israeli missile and airstrike activity. Strikes from Iran into Israel and Iraq were also high. The IRGC struck Iraqi state military forces and Kurdish opposition groups with six ballistic missiles hitting the Soran area. While the political narrative focused on diplomacy, the battlefield dynamics pointed in the opposite direction. Power dynamics inside Iran were shifting — Parliament Speaker Ghalibaf was steadily consolidating influence and may have been emerging as a key figure shaping Tehran's wartime response, yet this could reflect cracks within the central regime as different elites sought alternative outcomes.
+
+A protest wave peaked on March 23 with at least 26 distinct demonstrations — all pro-regime and pro-succession, suggesting state-organized mobilization rather than genuine popular sentiment. Internal crackdown escalated with 130+ detained across these two days for espionage, "royalism," and sharing military locations. Meanwhile, regional incentives pushed toward escalation rather than restraint — reporting suggested MBS had encouraged the US to continue the campaign, framing the conflict as a "historic opportunity" to reshape the Middle East. Saudi Arabia could not risk an extremist and unconstrained Iran as an ongoing challenge.
+
+CUMULATIVE_METRICS:
+Days 23-24: 585 combined attacks. 26 pro-regime demonstrations — state-organized. 130+ detained in two days. Trump postpones power plant strikes 5 days. Iran denies negotiations. MBS reportedly lobbying for continued war. Hezbollah kills man in Misgav Am. Six ballistic missiles hit Soran, Iraq.
+
+DAY_SUMMARY:
+Trump postponed power plant strikes citing "productive" negotiations that Iran categorically denied existed. Attack data showed no reduction in fighting — the disconnect between diplomatic rhetoric and battlefield reality was complete. MBS was reportedly lobbying Trump to continue the war as a "historic opportunity." Twenty-six state-organized pro-regime demonstrations peaked as the regime arrested 130+ people for espionage and information sharing.
+
+================================================================================
+DATE: 2026-03-24
+DAY_OF_WAR: 25
+WAR_PHASE: Active War — Diplomatic Maneuvering Under Fire
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+HRANA recorded 108 attacks in 10 provinces with 61 casualties including 12 civilians killed and 38 injured. The heaviest strikes concentrated in Khuzestan and Isfahan — a geographic shift from earlier Tehran-centric targeting reflecting a transition toward systematic dismantlement of Iran's residual military-industrial capacity. Targets included missile sites in Tabriz and Borazjan, military industries and a gas company facility in Isfahan, a gas pipeline in Khorramshahr, a sports complex in Andimeshk, and a Basij base in Tehran. Overnight US strikes on a PMF base in Al Anbar killed at least 15 and injured 30, with the PMF announcing the death of Saad Dawai, its operations commander in Anbar. A separate strike hit the home of PMF leader Falih al-Fayyadh in Mosul. Seven Iraqi Army soldiers were killed in a US airstrike near a PMF site in western Anbar.
+
+Two sites in Tehran producing cruise missiles were destroyed. Israel said it destroyed a naval research center in Isfahan. Iran claimed to have fired Qader cruise missiles at USS Abraham Lincoln — CENTCOM denied the ship was harmed. Iranian drones set a fuel depot at Kuwait International Airport ablaze — a fire that would burn for three days. An Iranian missile was intercepted over Jordan with debris near Amman. An Iranian missile impacted near Israel's largest power plant at Hadera — a near miss on critical energy infrastructure. Eleven people were killed by airstrikes in northwestern Iran.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iranian missiles targeted Tel Aviv, Eilat, Dimona, and Haifa with several people injured. Kuwait reported power line damage. A Moroccan worker was killed in an Iranian drone attack on Bahrain. Iranian missiles were intercepted over Beirut, causing minor injuries — geographic expansion drawing Lebanon deeper into the conflict zone. The pattern of Iranian missile adaptation was clear: as medium-range stockpiles depleted, Iran was compensating through cluster munitions, target diversification, and coordination with proxies to create multi-axis threats.
+
+Before the war, Iran possessed approximately 2,500 long-range ballistic missiles. By Day 25, hundreds had been launched, destroyed in storage, or hit at production sites. The frequency and scale of launches had declined from multi-missile barrages in the first week to predominantly single-missile launches by this point. Yet Iran maintained the capability to conduct occasional larger salvos and was compensating for quantitative decline through qualitative adaptation — particularly the increasing use of cluster munitions to maximize civilian casualties per missile.
+
+DIPLOMACY_NEGOTIATIONS:
+Day 25 produced the most significant diplomatic exchange of the war. The US delivered a 15-point ceasefire plan to Iran via Pakistan: 30-day ceasefire, dismantling of Natanz, Isfahan, and Fordow; permanent non-nuclear commitment; enriched uranium handover to IAEA; missile range limits; ending proxy support; reopening Hormuz. In exchange: full sanctions removal and Bushehr support.
+
+Iran formally rejected the plan and issued a 5-point counter-offer demanding: guarantees against future military action, wartime compensation, formal Strait of Hormuz control, no ballistic missile limits, and inclusion of Lebanon and Hezbollah in any ceasefire. The Hormuz and Lebanon demands were widely assessed as non-starters — yet their inclusion revealed Iran's strategic calculation that it held enough leverage through the Strait closure and proxy network to extract concessions far beyond what its military position warranted.
+
+Trump confirmed negotiations and claimed Iran "would like to make a deal." Iran's military spokesperson responded that "the US is negotiating with itself." Israeli military officials told NPR the IDF would need several more weeks to complete war goals — creating visible US-Israel tension over timeline. Israel feared Trump was pushing a premature framework that could leave Iran with the upper hand. Netanyahu acknowledged Trump's diplomacy without endorsing it.
+
+IRAN_INTERNAL_DYNAMICS:
+Pezeshkian appointed UN-sanctioned hardliner Zolghadr as SNSC secretary — confirming Mojtaba Khamenei's circle was consolidating around IRGC loyalists. The IRGC's "For Iran" initiative began recruiting children as young as 12 into security roles, reflecting both acute manpower shortages and long-term strategy to embed the IRGC within society. Iran was selectively allowing ships from Pakistan and India through Hormuz while blocking others, collecting fees of approximately $2 million per vessel — converting military closure into a permanent revenue-generating regime. The 82nd Airborne Division received deployment orders to the Middle East simultaneously with ceasefire talks — the US maintaining military pressure while pursuing diplomacy.
+
+CUMULATIVE_METRICS:
+Day 25: US 15-point ceasefire rejected. Iran 5-point counter-offer issued. Kuwait airport fuel depot ablaze. 15 PMF killed in Anbar. Hadera powerplant near-miss. Moroccan worker killed in Bahrain. Children recruited into IRGC from age 12.
+
+DAY_SUMMARY:
+The US delivered a 15-point ceasefire plan via Pakistan; Iran rejected it and counter-offered with demands including Strait of Hormuz control and Lebanon's inclusion — terms assessed as non-starters. Attack intensity remained consistent despite diplomatic rhetoric. The IRGC began recruiting children as young as 12. Kuwait's airport fuel depot burned. The gap between Trump's claims of progress and Iran's categorical denials defined the day.
+
+================================================================================
+DATES: 2026-03-25 TO 2026-03-26
+DAYS_OF_WAR: 26-27
+WAR_PHASE: Active War — Escalation Despite Negotiations
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+Over Days 26-27, strikes continued across multiple provinces. On Day 26, overnight strikes hit Chabahar, Nowshahr, and Larestan. Day 27 saw 541 attacks across 18 provinces — the highest rate in a week — with 35 civilians killed including 7 children and 6 women, and 60 injured. Cumulative since February 28: 1,527 civilian dead including 228 children; 1,167 military dead; 695 unclassified. The Red Crescent reported 92,000 civilian units damaged.
+
+The Mobarakeh Steel Company and Khuzestan Steel Company were struck — Iran's two largest steel producers. Israel stated these were partially IRGC-controlled military-industrial facilities. A yellowcake plant near Yazd and the IR-40 heavy water reactor in Arak were struck. The IDF hit a major missile and naval mine production site in Yazd. IRGC Navy Commander Alireza Tangsiri was killed in Bandar Abbas — confirmed by both Israel and the IRGC. Israel accused him of being directly responsible for the Strait of Hormuz closure. Two teenagers were killed in a residential area strike in Shiraz. Strikes also hit Mashhad and Taybad. The Lebanese death toll from Israeli attacks since the invasion reached 1,116.
+
+Bellingcat confirmed the US had deployed BLU-91/B antitank landmines from a GATOR scatterable mine system over the village of Kafari near Shiraz — the first US use of scatterable mines since the 1991 Gulf War. A 31-year-old father was killed after picking up one of the mines. The deployment appeared designed to deny vehicle access to Shiraz South Missile Base two kilometers away. The disclosure was deeply controversial given US commitments to limiting landmine use.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+An Iranian cluster bomb attack impacted six sites across central Israel, killing one in Ramat Gan and injuring three. Iranian missile and drone strikes on Prince Sultan Air Base damaged several US refueling aircraft and injured 29 US soldiers including five critically — the most significant single Iranian attack on US air assets. A Boeing E-3 Sentry AWACS was destroyed and another damaged. Iran claimed to have shot down an F/A-18 over Chabahar — CENTCOM denied it. Debris from an intercepted missile killed two civilians in Abu Dhabi. UAE intercepted six ballistic missiles and nine drones. Kuwait reported drone and missile attacks on Shuwaikh and Mubarak Al Kabeer ports.
+
+DIPLOMACY_NEGOTIATIONS:
+Trump claimed Iran was "begging" for peace and declared Iranian government denials as false, hinting that negotiators feared their own people. Iran banned Witkoff and Kushner as negotiators, demanding only Vice President Vance as interlocutor. Pakistan confirmed talks were being arranged in Islamabad — the first direct contact framework. France's Macron called Pezeshkian, pressing for ceasefire and freedom of navigation. China's Wang Yi called Araghchi, pushing dialogue over force. Taiwan and the Philippines both declared national energy emergencies — Taiwan had 11 days of LNG reserves remaining, threatening chip production.
+
+Trump suspended Iranian power plant strikes for 10 days until April 6 — the second postponement. Israeli Defense Minister Katz vowed to intensify attacks despite Trump's peace push, publicly contradicting Washington. MBS was reportedly lobbying Trump to continue the war as a "historic opportunity" while publicly calling for de-escalation. Iran's Foreign Minister Araghchi framed the Strait as leverage for post-war concessions, announcing Iran was studying "special long-term arrangements" for Hormuz management.
+
+Iran announced 120 historical and cultural heritage sites damaged since the war began — including UNESCO World Heritage sites and nationally protected monuments.
+
+CUMULATIVE_METRICS:
+Days 26-27: IRGC Navy Commander Tangsiri killed. Prince Sultan Air Base — E-3 AWACS destroyed, 29 US wounded. US deploys landmines for first time since 1991. Cumulative: 1,527 civilians dead, 228 children, 1,167 military dead. 120 cultural sites damaged. Taiwan energy emergency — 11 days LNG remaining. Steel production targeted. Yellowcake and Arak reactor struck.
+
+DAY_SUMMARY:
+The US deployed scatterable landmines for the first time since 1991 — killing a civilian near Shiraz. IRGC Navy Commander Tangsiri was assassinated. An E-3 AWACS was destroyed and 29 US soldiers wounded at Prince Sultan Air Base — the most significant single Iranian attack on US assets. Iran announced 120 cultural sites damaged. Taiwan declared a national energy emergency with 11 days of LNG reserves. Trump suspended power plant strikes for 10 days while Israel's defense minister vowed to intensify attacks — publicly contradicting the diplomatic track.
+
+================================================================================
+DATE: 2026-03-27
+DAY_OF_WAR: 28
+WAR_PHASE: Active War — Houthi Entry
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+Heavy airstrikes hit Tehran, Isfahan, and Kermanshah with 541 attacks across 18 provinces — unprecedented and widespread bombing of Tehran throughout the day. The Mobarakeh Steel Company was struck again. A cluster bomb attack killed one in Ramat Gan and injured three. The IDF struck a major missile and naval mine production site in Yazd. Nuclear facilities in Arak and Yazd were struck in a three-wave IAF operation with more than 50 aircraft. The Isfahan and Khorramshahr power plants — 2,500MW and 1,100MW respectively — were targeted. Iran's Ministry of Health claimed over 230 children killed in US-Israeli attacks in the first month.
+
+HOUTHI_YEMEN_ASSESSMENT:
+The Houthi movement formally entered the war on Day 28, launching a ballistic missile toward Beersheba following their military spokesman's speech. A cruise missile was intercepted hours later, and a drone was intercepted near Eilat. The Houthis specifically threatened Bahrain and the UAE.
+
+The entry was somewhat unexpected. Just one day earlier, Houthi leader Abdul-Malik al-Houthi's speech marking the anniversary of the Saudi-led intervention focused overwhelmingly on domestic issues including $57 billion compensation demands from Saudi Arabia while emphasizing de-escalation with both Riyadh and Washington. The framing was key: the Houthis presented their intervention not as support for Iran — which would not resonate domestically — but as a war against a "Zionist scheme," positioning their actions as support for Palestine with far broader appeal across Yemen.
+
+The pattern — initial strikes followed by a pause — mirrored October 2023. These launches were essentially warning shots: not intended to cause significant damage but to signal entry into the conflict. The Houthis were deliberately calibrating escalation while trying to postpone Red Sea operations as long as possible, setting clear red lines around the involvement of additional international or regional actors. Entering at this late stage allowed them to maximize leverage during negotiations by strengthening the Axis of Resistance's position while extracting potential concessions from the United States.
+
+MARITIME_HORMUZ_ASSESSMENT:
+The IRGC announced that movement through the Strait for any vessel going "to and from" ports of the US, Israel, and their allies was prohibited. The Mayuree Naree went aground on Qeshm Island. The IRGC turned away three container ships. Iran formalized its fee-based transit system for permitted vessels. Iran agreed to a UN request to allow humanitarian and fertilizer shipments through the Strait to address spring planting season disruptions.
+
+IRAN_INTERNAL_DYNAMICS:
+Pezeshkian reportedly clashed with IRGC chief Vahidi over war conduct, warning that without a ceasefire Iran's economy could collapse within three to four weeks. He criticized the IRGC's attacks on neighboring countries and called for restoration of executive powers to civilian government. The clash represented the most explicit public confrontation between civilian and military authority since the war began.
+
+CUMULATIVE_METRICS:
+Day 28: Houthis enter war — ballistic missile at Beersheba. Iran's 230+ children killed in first month. Isfahan and Khorramshahr power plants targeted. Three-wave IAF nuclear facility strike. Pezeshkian warns of economic collapse in 3-4 weeks.
+
+DAY_SUMMARY:
+The Houthis formally entered the war with ballistic missiles at Israel — framing their involvement as anti-Zionist rather than pro-Iranian, mirroring the October 2023 pattern of calibrated escalation. The IAF struck nuclear facilities in a three-wave 50+ aircraft operation. Pezeshkian directly confronted the IRGC over war conduct, warning of economic collapse. Iran's Health Ministry reported 230+ children killed. The IRGC formally blocked all allied shipping in the Strait.
+
+================================================================================
+DATES: 2026-03-28 TO 2026-03-29
+DAYS_OF_WAR: 29-30
+WAR_PHASE: Active War — Multi-Front Expansion
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The coalition continued strikes across Iran while the war's geographic and operational complexity deepened. The IDF struck the Marine Industries Organization headquarters in Tehran alongside arms manufacturing sites and air defenses. An overnight strike damaged Iran University of Science and Technology — the IRGC threatened to attack US universities in response. Ali Fouladvand, head of the Organization of Defensive Innovation and Research's research department, was killed in Borujerd along with his family. A water reservoir in Haftkel was struck. Explosions were reported across Tehran in Abad, Andisheh, Evin, Masoudieh, and other neighborhoods. Israel struck mobile command centers and weapons production sites. Six people were killed in a strike on an Iranian village — five houses destroyed, 22 severely damaged. Power was cut in Tehran and Karaj after electrical infrastructure was damaged by shrapnel.
+
+Strikes and explosions were reported across Kish Island, Qeshm Island, Bandar Abbas, Babol, Dehgolan, and Tabriz. Overnight drone attacks in Erbil targeted KDP leader Barzani's home, Iranian opposition headquarters, and a US base. The IAEA confirmed the IR-40 heavy water reactor was no longer operational after the March 27 strikes — a major nuclear infrastructure loss.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Houthi forces continued their campaign with ballistic missiles toward Beersheba, a cruise missile intercepted, and a drone intercepted near Eilat — sustained engagement confirming their entry was not a one-off signal. Iranian drones hit Port of Salalah in Oman, injuring one worker. Iranian drones hit Kuwait's airport and damaged its radar system. Eshtaol, Israel, was hit by a ballistic missile injuring 19. Emirates Global Aluminium's Al Taweelah site in Abu Dhabi was attacked. Aluminium Bahrain was also attacked, injuring two. An IDF Paratroopers Brigade soldier was killed by Hezbollah in southern Lebanon — the fifth Israeli soldier KIA since the invasion.
+
+An Iranian missile struck an ADAMA chemical facility in Ne'ot Hovav, injuring one and raising environmental contamination concerns. Iranian drones hit a military installation in Kuwait, injuring 10 soldiers. A drone attack from Iraq targeting Syria's al-Tanf base was intercepted. Pakistan hosted a meeting with Egypt, Saudi Arabia, and Turkey to discuss reopening the Strait.
+
+Ghalibaf publicly rejected the ongoing negotiations, stating Iran could not be forced into submission — representing the hardline IRGC-aligned faction's resistance to any accommodation.
+
+CUMULATIVE_METRICS:
+Days 29-30: IR-40 reactor confirmed non-operational. ODIR research chief killed. Houthis sustain attacks — not a one-off. 5th Israeli soldier KIA in Lebanon. ADAMA chemical facility hit. Kuwait — 10 soldiers injured. Pakistan hosts Strait talks.
+
+DAY_SUMMARY:
+The IAEA confirmed the IR-40 reactor was no longer operational — a permanent nuclear infrastructure loss. The Houthis sustained their attacks, confirming commitment beyond a symbolic gesture. Iran struck an Israeli chemical facility. An Israeli Paratroopers soldier was killed in Lebanon — the fifth KIA. Pakistan hosted regional talks on the Strait while Ghalibaf rejected any negotiations, deepening the divide between diplomatic efforts and Iranian hardline positions.
+
+================================================================================
+DATES: 2026-03-30 TO 2026-03-31
+DAYS_OF_WAR: 31-32
+WAR_PHASE: Active War — Infrastructure Attrition
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The US began using B-52 heavy bombers directly over Iranian territory for the first time — having previously used them only for standoff weapons launches from outside Iranian airspace. This demonstrated the total collapse of Iranian air defense capability at medium and high altitudes. The IDF struck IRGC weapons research at Imam Hossein University in Tehran. Bunker buster bombs were dropped on an underground ammunition depot in Isfahan. The Mobarakeh Steel Company was struck for the third time. The Tofiq Daru pharmaceutical facility was hit — the IDF claiming it supplied fentanyl-based compounds to the SPND for chemical weapons research; Iran denied this, stating the factory supplied only hospital drugs. The SPND connection was significant: Iran had conducted long-term research on pharmaceutical-based agents and explored weaponization through grenades, anti-riot rounds, and drones. The regime had previously used chemical agents against schoolgirls during the Mahsa Amini protests.
+
+The Quds Force Lebanon Corps engineering branch commander was killed in Mahallat — responsible for dozens of underground Hezbollah facilities. Brigadier General Jamshid Eshaghi was confirmed killed alongside family members — he had been sanctioned by the US for facilitating illicit oil sales to China generating hundreds of millions for Iran's armed forces. Two MQ-9 Reapers were shot down over Isfahan using the AD-08 Majid short-range air defense system. A Caspian Airlines MD-80 was damaged and an ATA Airlines MD-80 destroyed at Mehrabad Airport. Heavy airstrikes hit the Vardavard neighborhood in western Tehran. A power outage struck eastern Tehran after rubble hit a substation.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+An Iranian missile was shot down by NATO over Turkish airspace — Iran denied responsibility, calling it a false flag. Intercepted missile debris struck the BAZAN refinery in Haifa. IDF reported three Iranian missile attacks with cluster bomb damage in Bnei Brak, Ramat Gan, and Petah Tikva — eight injured. The fully loaded crude oil tanker Al Salmi was hit by an Iranian drone off Dubai and caught fire — Kuwait Petroleum Corporation warned of oil spill risk. A second tanker, Aqua 1, was hit by two projectiles north of Dubai — one exploding above the waterline, the other lodging unexploded in the engine room.
+
+Iranian drones hit a Kuwait power plant and desalination plant, killing one worker. Iran accused Israel of false flag attacks on the Kuwaiti facilities without evidence. Trump told countries struggling with fuel shortages to "fend for themselves." The IRGC threatened to target US-linked technology, AI, and telecom firms in retaliation — a threat that would be partially executed in the following days against data centers and telecom infrastructure.
+
+IRAN_INTERNAL_DYNAMICS:
+The IRGC's consolidation of power accelerated. A "military council" of senior IRGC officers was reported to have assumed control over core decision-making, establishing a security perimeter around Mojtaba Khamenei and preventing government reports from reaching him. Pezeshkian's repeated requests for meetings were ignored. Commander Vahidi insisted all sensitive positions must be managed directly by the IRGC. An internal crisis emerged within Mojtaba's circle over whether to remove Ali Asghar Hejazi, who had warned that hereditary succession would hand full state control to the IRGC. The Islamic Republic was becoming a military junta in all but name.
+
+US Treasury Secretary Bessent stated the US would "gradually take control" of the Strait of Hormuz — signaling a shift from demanding Iran reopen it to planning direct US military management. Zelenskyy offered Ukraine's expertise in unblocking the Strait, citing the Black Sea corridor model.
+
+CUMULATIVE_METRICS:
+Days 31-32: B-52s fly over Iran for first time. IRGC military council takes control — Pezeshkian sidelined. 3rd strike on Mobarakeh Steel. Tofiq Daru chemical facility hit. Al Salmi and Aqua 1 tankers attacked. NATO shoots down Iranian missile over Turkey. MQ-9 losses — 14. IRGC threatens tech/AI firms.
+
+DAY_SUMMARY:
+B-52 bombers flew directly over Iran for the first time, confirming the collapse of Iranian medium/high-altitude air defenses. The IRGC military council formally assumed governance control, sidelining President Pezeshkian entirely. The Tofiq Daru pharmaceutical facility was struck over alleged chemical weapons links. Two oil tankers were attacked off Dubai. NATO intercepted an Iranian missile over Turkey. The IRGC threatened to target US technology companies — beginning a new phase of attacks on commercial infrastructure.
+
+================================================================================
+DATE: 2026-04-01
+DAY_OF_WAR: 33
+WAR_PHASE: Active War — Widening Multi-Front Conflict
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The IDF struck approximately 15 weapons production sites including a MODAFL complex for advanced ballistic missile development — a facility sanctioned by the US for its role in Iran's missile and nuclear weapons programs. IRGC Quds Force Lebanon Corps Engineering Head Mehdi Vafaei was killed in Mahallat — responsible for dozens of underground facilities storing advanced weapons in Lebanon. Mohammad Ali Fathalizadeh, commander of the IRGC Fatehin unit, was killed. Former Foreign Minister Kamal Kharazi was seriously injured and his wife killed. A US strike reportedly damaged the former US Embassy in Tehran — now a museum — and St. Nicholas Orthodox Church. Two more MQ-9 Reapers were shot down near Isfahan, bringing total losses to 16.
+
+The IDF's cumulative estimate was that it had targeted nearly 70% of Iran's defense industry. Combined force strikes had severely damaged Iran's four major missile production sites — Khojir, Shahroud, Parchin, and Hakimiyeh — alongside fuel production, components, and testing facilities. The IDF announced it had destroyed 70% of Iran's steel production capacity by this point. Iran had ceased operations at its main Isfahan steel production facility due to repeated strike damage. The progressive destruction of Iran's defense industrial base meant that even if missiles and launchers survived in stockpiles, Iran's ability to rebuild them was fundamentally compromised.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran launched five missile salvos at Israel including a 10-missile salvo — among the largest single salvos since the war began. Cluster munitions fell in Bnei Brak and Tel Aviv, injuring at least 14 across the day's four barrages. It remained unclear whether the large salvo signaled a trend or was a one-off concentration of remaining medium-range assets.
+
+Iran's missile fire had reduced by approximately 90% since the opening day. Seventy-seven percent of tunnel entrances had been struck, rendering underground launchers combat ineffective even if not destroyed. About 50% of Iranian missile launchers were still "intact" according to US intelligence — but this figure included launchers that were damaged, buried, or inaccessible. A missile launcher that cannot move from its underground facility is combat ineffective regardless of its physical condition. The distinction between medium-range missiles (targeting Israel) and short-range missiles (targeting Gulf states) was critical: medium-range fire had declined dramatically while short-range fire at Gulf states remained steadier, indicating degradation was concentrated in the longer-range systems.
+
+The morale dimension was also significant. US Secretary of Defense Hegseth stated that strikes had caused "widespread desertions, key personnel shortages, and frustrations amongst senior leaders." The IDF reported that ballistic missile units had refused to go to launch sites due to fear of strikes. Reserve forces had reportedly failed to show up at military centers. These factors rendered missile systems combat ineffective even when the hardware survived — systems are useless without willing and available operators.
+
+Iran continued massive attacks across the Gulf: Bahrain intercepted 19 drones and 4 ballistic missiles; UAE intercepted 35 drones and 5 ballistic missiles; Kuwait detected 3 cruise missiles and 15 drones; Saudi Arabia intercepted 3 drones; Qatar intercepted 2 of 3 cruise missiles with one striking a QatarEnergy tanker. One attack struck a company building in Bahrain — following the IRGC's threat against US-linked technology firms. The UK RAF intercepted 10 Iranian drones across the Middle East.
+
+LEBANON_THEATER_ASSESSMENT:
+Hezbollah claimed 71 attacks in 24 hours and shot down an IAF drone with a surface-to-air missile. Hezbollah conducted FPV drone strikes against IDF armored vehicles — drones fitted with large batteries and rocket-propelled grenades for drop attacks. The IDF killed Hezbollah Southern Front commander Yusuf Ismail Hashem in Beirut — he had replaced Karaki after his September 2024 assassination. The IDF struck Hezbollah currency exchanges in Beirut, targeting the group's financial services network that sustained its Shia support base. The 8th Armored Brigade began new ground operations in southern Lebanon.
+
+An unnamed IDF lieutenant colonel revealed Hezbollah had between 8,000 and 10,000 rockets remaining — down from 40,000 before October 2023 — with 300-400 operable launchers. Seventy percent of Hezbollah's attacks on northern Israel since the war began originated from north of the Litani River, confirming earlier assessments that the group would use long-range weapons from central and northern Lebanon to circumvent the Israeli ground campaign in the south.
+
+Despite two years of Israeli degradation operations, force alone had not worked against Hezbollah — only a political settlement would resolve the underlying conflict. The same logic applied to Iran: military force alone was unlikely to produce a stable outcome without political arrangements addressing root causes.
+
+HOUTHI_YEMEN_ASSESSMENT:
+The Houthis launched their fourth attack on Israel — ballistic missiles targeting the south, all intercepted. They claimed coordination with Hezbollah and Iran, and Iranian media echoed the tri-axis claim. Whether genuinely coordinated or performatively aligned, the pattern served the Axis of Resistance narrative.
+
+IRAQ_THEATER_ASSESSMENT:
+The combined force struck the 53rd PMF Brigade headquarters in Tal Afar using a double-strike tactic — initial strike followed by a second one hour later targeting responders, killing the commando regiment commander and three others. Iranian-backed militias continued hitting Baghdad International Airport's diplomatic center and logistics headquarters. US air defenses at Qasrak Base in Syria intercepted five drones from Iraq. Three drones struck a Castrol Oil Company warehouse near Erbil.
+
+DIPLOMACY_NEGOTIATIONS:
+Trump claimed Iran's president requested a ceasefire — Iran rejected this as "false and baseless." Trump delivered a speech stating war objectives were "nearing completion" while threatening to bomb Iran "back to the stone age." The UN Security Council prepared to vote on a Bahrain-sponsored resolution authorizing force to protect Strait shipping, but Russia and China blocked progress. Iran stated it would not accept any ceasefire unless the US and Israel ceased all attacks — viewing the June 2025 Israeli strikes and the current conflict as a single war.
+
+IRAN_INTERNAL_DYNAMICS:
+The IRGC military council's control was now total. Pezeshkian was in "complete political deadlock." The UN reported 2,345 arrests since the war began. Iranian forces operated in 70+ civilian locations including schools, hospitals, and mosques. The Basij recruited minors for checkpoint roles. Authorities warned espionage could result in execution. The regime had conducted long-term research on pharmaceutical-based agents including fentanyl, explored aerosolization, and had previously used chemical agents against schoolgirls — context that gave the Tofiq Daru strikes a dual significance: counter-proliferation and counter-regime narrative.
+
+CUMULATIVE_METRICS:
+Day 33: 70% of Iran's defense industry targeted. 70% of steel production destroyed. 90% reduction in missile fire. 77% of tunnel entrances struck. Hezbollah — 8,000-10,000 rockets from 40,000. 16 MQ-9s lost. 2,345 arrested. 5 Israeli KIA in Lebanon. 14 injured in Israel by cluster munitions. Houthi attack #4.
+
+DAY_SUMMARY:
+Iran's missile fire had dropped 90% from opening day levels, with 70% of its defense industry and steel production destroyed. Yet five salvos still hit Israel — including a 10-missile barrage — with cluster munitions injuring 14. Hezbollah conducted 71 attacks in 24 hours while retaining 8,000-10,000 rockets. The IRGC military council had fully sidelined civilian governance. Trump declared objectives "nearing completion" while threatening total destruction — the diplomatic track had reached a dead end as Iran refused any ceasefire without a permanent end to all attacks.
+
+================================================================================
+DATES: 2026-04-02 TO 2026-04-03
+DAYS_OF_WAR: 34-35
+WAR_PHASE: Active War — Critical Losses
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+The IDF struck IRGC Ground Forces base and mobile command centers in Tehran. Two US strikes on the Karaj B1 bridge — described as the highest bridge in the Middle East — killed eight and caused its collapse. The Pasteur Institute of Iran was destroyed. A fuel tank near Mashhad International Airport was struck. The IDF killed the commander of Iran's ballistic missiles unit in Kermanshah and three battalion commanders — the deepest strike into the missile command structure to date. The combined force struck the Laser and Plasma Research Institute at Shahid Beheshti University — a facility involved in nuclear weapons research including centrifuge cascades and uranium separation, sanctioned by the EU in 2011. Underground fuel storage at the 8th Tactical Air Base in Isfahan (hosting F-14s) and the 10th TAB in Konarak were struck. A CAIG Wing Loong II drone — operated by either the UAE or Saudi Arabia — was shot down over Shiraz. A US MQ-9 Reaper was shot down over Shiraz.
+
+On Day 35, the most significant US combat loss of the war occurred: Iranian forces shot down a US Air Force F-15E Strike Eagle from the 494th Fighter Squadron over western Iran. One ejection seat was found near the crash site. The pilot was rescued after a combat search-and-rescue mission, but the search for the weapons systems officer continued. This was the first known US combat aircraft lost over Iranian territory since the war began. Two Sikorsky UH-60 Black Hawk helicopters involved in the rescue were struck by Iranian fire — the helicopter carrying the recovered pilot was hit by small arms, wounding crew members, but landed safely. A US A-10 Thunderbolt II involved in the rescue crashed near the Strait of Hormuz after taking Iranian fire — the pilot ejected and was rescued. Israel reportedly canceled planned strikes in Iran to avoid disrupting the rescue effort.
+
+The F-15E loss punctured the narrative of coalition air supremacy. While the coalition had maintained near-total control of Iranian airspace for five weeks, the shootdown demonstrated that Iran retained localized ground-based air defense capability — particularly at lower altitudes where strike aircraft must operate for certain missions. The simultaneous damage to two Black Hawks and the A-10 loss during the rescue operation underscored the continued risk of operating over Iranian territory.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iranian drones hit the Mina Al-Ahmadi refinery in Kuwait for the third time, causing fire in multiple locations. Kuwait's desalination plant was damaged by drones — threatening water supply. Abu Dhabi's Habshan gas facility caught fire from interception debris, killing one Egyptian citizen and injuring four foreign nationals. Iran fired 47 drones, 18 ballistic missiles, and 4 cruise missiles at the UAE on Day 35 — slightly more than any day in the past week, though less than half the volumes from the first week. Iran also launched 16 drones at Bahrain (all intercepted), 26 drones, 7 ballistic missiles, and 2 cruise missiles at Kuwait, and 14 drones at Saudi Arabia (all intercepted). Iran had launched at least 45 cruise missiles at Gulf states since the war began.
+
+At least nine missiles targeted Israel in eight waves — consistent with recent rates of predominantly single-missile launches. At least two contained cluster munitions dispersing over the Haifa and Krayot areas. Iranian cluster munitions caused extensive damage in Kiryat Ata, injuring one. The IDF reported damage to an Israeli drone factory in Petah Tikva from an Iranian ballistic missile.
+
+An Iranian attack struck Amazon cloud computing facility in Bahrain. Iran claimed attacks on Jordan's Al Azraq Air Base and an Oracle data center in Dubai — the latter denied by Dubai. The IRGC was executing its threat to target US-linked technology infrastructure systematically, adding a new dimension to the conflict without military precedent.
+
+DIPLOMACY_NEGOTIATIONS:
+Mediators told the Wall Street Journal the talks had reached a "dead end." Iran had informed mediators it was unwilling to meet US demands and would not meet US officials in Islamabad. Turkey and Egypt were reportedly considering new proposals and venues. The IDF announced a plan to establish a "security zone" along the Israel-Lebanon border including destruction of first-line Lebanese villages — except for a "small number" of Christian villages — and establishment of outposts. A senior IDF officer said the plan would avoid 1982-occupation complications by depopulating the buffer zone entirely. The plan would not seek to completely dismantle Hezbollah but rather "weaken" the group.
+
+Hezbollah would predictably use the expanded Israeli presence and displacement of southern Lebanese Shia to justify its position as the "defender" of Lebanon — strengthening its narrative precisely through the actions designed to weaken it. The IDF had struck more than 3,500 targets in Lebanon since March 2. The 933rd Nahal Infantry Brigade seized a Hezbollah weapons cache including FPV drones fitted with RPGs. Israel extended operational reserve duty to approximately nine weeks.
+
+Emirates Global Aluminium reported that restoring full production from Iranian attack damage could take up to a year — a concrete example of the long-term economic consequences that would persist far beyond any ceasefire.
+
+IRAN_INTERNAL_DYNAMICS:
+US Secretary of Defense Hegseth confirmed widespread desertions, personnel shortages, and senior leader frustrations within the Iranian military. Ballistic missile units were refusing to go to launch sites. Reserve forces failed to show at military centers. The pervasive fear created by decapitation strikes was rendering entire units combat ineffective regardless of their equipment status — a psychological dimension of the air campaign that operated independently of physical destruction.
+
+CUMULATIVE_METRICS:
+Days 34-35: First US manned fighter lost — F-15E shot down. A-10 also lost. Two Black Hawks damaged in rescue. First US combat aircraft over Iran. Karaj B1 bridge collapsed — 8 killed. Pasteur Institute destroyed. Ballistic missile command structure decapitated in Kermanshah. Iran fires 47 drones + 18 BMs + 4 CMs at UAE in single day. Talks reach "dead end." IDF announces Lebanon security zone — village destruction planned. EGA — year to restore. Israel extends reserves to 9 weeks.
+
+DAY_SUMMARY:
+Iran shot down a US F-15E Strike Eagle — the first manned US combat aircraft lost in the war — while an A-10 was also downed and two rescue helicopters hit during CSAR operations. The diplomatic track reached a "dead end" as Iran refused to meet in Islamabad. The IDF announced a Lebanon security zone plan requiring destruction of border villages. Iran fired 69 projectiles at the UAE in a single day. Emirates Global Aluminium warned of year-long restoration. The coalition's five-week air supremacy narrative was punctured even as Iranian military capability continued to degrade.
+
+================================================================================
+DATE: 2026-04-04
+DAY_OF_WAR: 36
+WAR_PHASE: Active War — Strategic Impasse
+================================================================================
+
+AIR_CAMPAIGN_ASSESSMENT:
+Strikes continued across Iran as the war entered its 36th day with no ceasefire in sight. The combined force maintained targeting of military bases, missile launch sites, and defense industrial infrastructure. The IDF's estimate of 70% defense industry degradation and 70% steel production destruction represented an extraordinary level of military-industrial damage — yet Iran continued to launch missiles, its internal security apparatus continued to function, and the regime showed no signs of capitulation. The coalition had achieved near-total destruction of Iran's navy, severe degradation of its air force, and significant reduction of its missile capability, but had not achieved the political objective of regime compliance with US and Israeli demands.
+
+IRANIAN_RESPONSE_ASSESSMENT:
+Iran maintained its pattern of steady short-range missile and drone fire at Gulf states while conducting occasional salvos at Israel with declining frequency and volume. The 90% reduction in medium-range missile fire since Day 1 reflected genuine capability degradation — not strategic restraint. Yet Iran's short-range fire targeting Gulf states remained relatively steady, suggesting these stockpiles were larger or less affected by coalition strikes. Iran had fired at least 45 cruise missiles at Gulf states since the war began, demonstrating a diversified arsenal that went beyond ballistic missiles.
+
+MARITIME_HORMUZ_ASSESSMENT:
+Senior officials in Tehran signaled that the Strait of Hormuz was not merely a wartime tactic but a permanent strategic asset. Multiple officials and IRGC-linked platforms highlighted the strait's value as leverage that Iran intended to use after the war to extract concessions and secure strategic aims. An analyst close to the regime stated Iran could neutralize the ability of the US and Israel to threaten it if it maintained "legal-security dominance" over the strait even after hostilities ended.
+
+These statements carried profound implications. Iran would not need to continue attacks indefinitely to retain the ability to deter and coerce. Its proven ability to shut down 20% of global oil transit meant it could threaten disruption for any reason at any time, creating a permanent coercive lever regardless of how the current war ended. Iran had transformed a temporary wartime tactic into a structural change in global maritime governance with implications that extended far beyond the immediate conflict.
+
+The UN Security Council vote on Bahrain's resolution authorizing "all necessary means" to protect Strait shipping remained uncertain — Russia and China were concerned the resolution could justify military action near Iran, even though Bahrain had weakened the language. The veto threat meant the Strait's status would likely be determined by military dynamics rather than international consensus.
+
+DIPLOMACY_NEGOTIATIONS:
+The war had reached a strategic impasse. The US-Israeli coalition had achieved extraordinary military results: near-total destruction of Iran's navy and air force, 70% degradation of its defense industry, 90% reduction in medium-range missile fire, elimination of dozens of senior leaders, and significant damage to nuclear infrastructure including rendering the IR-40 reactor non-operational. Yet none of this had produced political resolution. Iran refused to negotiate unless all attacks ceased permanently. The US demanded the Strait be reopened as a precondition for any ceasefire. Israel wanted several more weeks to complete war objectives. The Gulf states wanted the attacks to stop immediately. Russia and China blocked UN action. Turkey and Egypt searched for new diplomatic venues.
+
+The fundamental asymmetry persisted: the coalition could destroy Iranian military assets indefinitely, but destruction alone could not produce a political settlement. Only a negotiated framework addressing nuclear ambitions, regional proxy networks, maritime security, and the legitimacy of the Iranian state could create a stable endpoint. Iran, for its part, had concluded that its proven ability to disrupt the Strait of Hormuz gave it more leverage than its deteriorating military position suggested — and it appeared willing to endure continued military punishment to preserve that leverage for post-war negotiations.
+
+IRAN_INTERNAL_DYNAMICS:
+The IRGC's consolidation of power was complete in all but name. The military council controlled decision-making, access to Mojtaba Khamenei, and all sensitive appointments. President Pezeshkian was in "complete political deadlock." The 2,345 arrests, deployment of forces across 70+ civilian locations, and use of minors in security roles reflected a regime that had turned inward even as it fought outward — dedicating enormous resources to preventing the domestic upheaval it feared as much as the external military campaign.
+
+An "unprecedented crisis" within Mojtaba's own inner circle — with associates seeking to remove Hejazi over his opposition to hereditary succession — suggested the IRGC's consolidation was not without internal friction. But the broader trajectory was clear: the Islamic Republic's civilian governance had been effectively replaced by a military command structure. Whether this represented a temporary wartime measure or a permanent transformation of the Iranian state would depend on how the war ended — and how long it lasted.
+
+CUMULATIVE_METRICS:
+Day 36: Iranian defense industry — 70% degraded. Steel production — 70% destroyed. Missile fire — 90% reduced from Day 1. Iranian ships sunk — 19+. Submarines — 2. US MQ-9s lost — 16. US manned aircraft lost — 2 (F-15E, A-10). Israeli KIA Lebanon — 5. French KIA — 1. US KIA — 7+. Commercial vessels attacked — 28. Senior Iranian officials killed — 25+. Iranian civilian dead — 2,000+ (conservative estimate). Iranian military dead — 5,300+ (Hengaw estimate). Total arrests in Iran — 2,345. Displaced in Iran — 3+ million. Displaced in Lebanon — 700,000+. Lebanese killed — 1,116. Brent crude — volatile, $100-120/barrel range. Cultural heritage sites damaged — 120+. Gulf energy infrastructure damage — $180 billion+ (Saudi/UAE estimate). Nuclear infrastructure — Natanz entrance buildings damaged, IR-40 reactor non-operational, Fordow breach with radiological concerns. Strait of Hormuz — closed to Western-allied shipping, selective passage for 7+ neutral nations, Iran collecting transit fees. Houthi attacks on Israel — 4+.
+
+EXPERT_ASSESSMENT:
+Thirty-six days into Operation Epic Fury, the war had reached what military strategists would recognize as a strategic impasse — a condition in which one side possesses overwhelming tactical superiority but cannot translate it into political resolution, while the other side possesses insufficient military capability to alter the battlefield outcome but retains sufficient leverage through asymmetric means to prevent the stronger side from achieving its political objectives.
+
+The coalition had destroyed more of Iran's military capability in five weeks than any air campaign had achieved against a major regional power in the post-Cold War era. Iran's navy was gone. Its air force was grounded. Its medium-range missile capability had been degraded by 90%. Its defense industrial base had been reduced by 70%. Its nuclear infrastructure had been significantly damaged. Dozens of senior leaders — from the Supreme Leader himself to corps commanders, intelligence chiefs, and Basij officials — had been eliminated through the most intensive decapitation campaign in modern warfare.
+
+Yet the regime endured. Its short-range missiles continued to hit Gulf states daily. Its internal security apparatus maintained control over the population. Its proxy networks — Hezbollah, the Iraqi PMF, and now the Houthis — continued fighting. And its control over the Strait of Hormuz continued to impose staggering costs on the global economy, with Iran signaling its intent to maintain that leverage permanently.
+
+The central paradox remained unresolved: military force could degrade Iran's capabilities but could not, by itself, produce the political outcomes — regime compliance, nuclear disarmament, proxy dismantlement, Strait reopening — that the US and Israel had defined as their war objectives. The only clear path to those outcomes was either regime change (which the air campaign alone could not achieve) or a negotiated settlement (which neither side was yet prepared to accept on the other's terms).
+
+The war's most consequential legacy might not be its immediate military outcome but its transformation of the Strait of Hormuz from an open international waterway into a contested chokepoint subject to Iranian leverage. Iran had demonstrated that it could shut down 20% of global oil and gas transit at will, impose hundreds of billions of dollars in economic damage on the Gulf states and the wider world, and use selective access as a geopolitical tool to divide the international community. This demonstrated capability would persist long after the last missile was fired — and it was this leverage, rather than any remaining military capability, that gave Iran its strongest position at any future negotiating table.
+
+The question on Day 36 was no longer whether the coalition could win the military campaign — it had, by any conventional measure.

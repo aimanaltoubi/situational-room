@@ -1,0 +1,27 @@
+# Core
+requests
+pandas
+numpy
+
+# Satellite propagation
+skyfield
+
+# HTML parsing (Telegram feed)
+beautifulsoup4
+
+# WebSocket (AIS vessel data)
+websockets
+nest_asyncio
+
+# ML model
+h2o
+scipy
+
+# Web server
+flask
+
+# Environment variables
+python-dotenv
+
+# Jupyter (optional — only needed if running notebook)
+# ipython

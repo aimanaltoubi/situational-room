@@ -1,0 +1,553 @@
+WEEK,COUNTRY,ADMIN1,EVENT_TYPE,SUB_EVENT_TYPE,EVENTS,ID,CENTROID_LATITUDE,CENTROID_LONGITUDE
+2026-02-28,Bahrain,Capital,Explosions/Remote violence,Air/drone strike,9,285.0,26.1927,50.5508
+2026-02-28,Bahrain,Capital,Explosions/Remote violence,Shelling/artillery/missile attack,2,285.0,26.1927,50.5508
+2026-02-28,Bahrain,Muharraq,Explosions/Remote violence,Air/drone strike,1,286.0,26.2547,50.6428
+2026-02-28,Bahrain,Muharraq,Explosions/Remote violence,Shelling/artillery/missile attack,2,286.0,26.2547,50.6428
+2026-02-28,Bahrain,Southern,Explosions/Remote violence,Air/drone strike,1,288.0,25.9954,50.5421
+2026-02-28,Iran,Alborz,Battles,Armed clash,1,1329.0,35.9457,50.906
+2026-02-28,Iran,Alborz,Explosions/Remote violence,Air/drone strike,21,1329.0,35.9457,50.906
+2026-02-28,Iran,Ardabil,Explosions/Remote violence,Air/drone strike,1,1330.0,38.4066,47.9857
+2026-02-28,Iran,Bushehr,Explosions/Remote violence,Air/drone strike,14,1331.0,28.7846,51.5038
+2026-02-28,Iran,Chaharmahal and Bakhtiari,Explosions/Remote violence,Air/drone strike,1,1332.0,31.979,50.8101
+2026-02-28,Iran,East Azerbaijan,Explosions/Remote violence,Air/drone strike,16,1333.0,38.0858,46.6924
+2026-02-28,Iran,Fars,Explosions/Remote violence,Air/drone strike,15,1334.0,29.3576,53.3176
+2026-02-28,Iran,Gilan,Explosions/Remote violence,Air/drone strike,2,1335.0,37.5092,49.0189
+2026-02-28,Iran,Hamadan,Explosions/Remote violence,Air/drone strike,8,1337.0,34.8698,48.559
+2026-02-28,Iran,Hormozgan,Explosions/Remote violence,Air/drone strike,29,1338.0,27.1422,55.0325
+2026-02-28,Iran,Hormozgan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1338.0,27.1422,55.0325
+2026-02-28,Iran,Ilam,Explosions/Remote violence,Air/drone strike,21,1339.0,33.0433,46.8724
+2026-02-28,Iran,Isfahan,Explosions/Remote violence,Air/drone strike,27,1340.0,32.6094,52.0477
+2026-02-28,Iran,Kerman,Explosions/Remote violence,Air/drone strike,2,1341.0,29.2326,57.3392
+2026-02-28,Iran,Kermanshah,Battles,Armed clash,1,1342.0,34.4871,46.8086
+2026-02-28,Iran,Kermanshah,Explosions/Remote violence,Air/drone strike,38,1342.0,34.4871,46.8086
+2026-02-28,Iran,Kermanshah,Explosions/Remote violence,Shelling/artillery/missile attack,1,1342.0,34.4871,46.8086
+2026-02-28,Iran,Khuzestan,Explosions/Remote violence,Air/drone strike,28,1343.0,31.4636,48.9916
+2026-02-28,Iran,Kurdistan,Explosions/Remote violence,Air/drone strike,26,1345.0,35.6014,47.0057
+2026-02-28,Iran,Kurdistan,Explosions/Remote violence,Shelling/artillery/missile attack,2,1345.0,35.6014,47.0057
+2026-02-28,Iran,Lorestan,Explosions/Remote violence,Air/drone strike,16,1346.0,33.5164,48.3219
+2026-02-28,Iran,Markazi,Explosions/Remote violence,Air/drone strike,7,1347.0,34.4772,49.5818
+2026-02-28,Iran,Mazandaran,Explosions/Remote violence,Air/drone strike,8,1348.0,36.3633,52.3677
+2026-02-28,Iran,Qazvin,Explosions/Remote violence,Air/drone strike,3,1350.0,36.1089,50.0386
+2026-02-28,Iran,Qom,Explosions/Remote violence,Air/drone strike,13,1351.0,34.6674,51.002
+2026-02-28,Iran,Razavi Khorasan,Explosions/Remote violence,Air/drone strike,1,1352.0,35.7792,59.0295
+2026-02-28,Iran,Semnan,Explosions/Remote violence,Air/drone strike,1,1353.0,35.7868,54.9676
+2026-02-28,Iran,Sistan and Baluchestan,Battles,Armed clash,2,1354.0,28.2728,60.8613
+2026-02-28,Iran,Sistan and Baluchestan,Explosions/Remote violence,Air/drone strike,19,1354.0,28.2728,60.8613
+2026-02-28,Iran,Tehran,Battles,Armed clash,1,1356.0,35.5022,51.3269
+2026-02-28,Iran,Tehran,Explosions/Remote violence,Air/drone strike,157,1356.0,35.5022,51.3269
+2026-02-28,Iran,Tehran,Explosions/Remote violence,Shelling/artillery/missile attack,3,1356.0,35.5022,51.3269
+2026-02-28,Iran,West Azerbaijan,Explosions/Remote violence,Air/drone strike,32,1357.0,37.8742,44.7003
+2026-02-28,Iran,Yazd,Explosions/Remote violence,Air/drone strike,7,1358.0,31.4825,54.4162
+2026-02-28,Iran,Zanjan,Explosions/Remote violence,Air/drone strike,6,1359.0,36.4014,48.422
+2026-02-28,Iraq,Al Anbar,Explosions/Remote violence,Air/drone strike,5,1360.0,33.1774,41.3987
+2026-02-28,Iraq,Al Basrah,Battles,Armed clash,1,1361.0,30.2047,47.5084
+2026-02-28,Iraq,Al Basrah,Explosions/Remote violence,Air/drone strike,6,1361.0,30.2047,47.5084
+2026-02-28,Iraq,Al Basrah,Explosions/Remote violence,Shelling/artillery/missile attack,1,1361.0,30.2047,47.5084
+2026-02-28,Iraq,Al Muthanna,Explosions/Remote violence,Air/drone strike,2,1362.0,30.4107,45.3606
+2026-02-28,Iraq,Al Najaf,Battles,Armed clash,1,1363.0,31.0697,43.38
+2026-02-28,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Air/drone strike,6,1365.0,35.5263,45.379
+2026-02-28,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Shelling/artillery/missile attack,2,1365.0,35.5263,45.379
+2026-02-28,Iraq,Babil,Explosions/Remote violence,Air/drone strike,7,1366.0,32.5765,44.6371
+2026-02-28,Iraq,Baghdad,Explosions/Remote violence,Air/drone strike,3,1367.0,33.278,44.3783
+2026-02-28,Iraq,Baghdad,Explosions/Remote violence,Shelling/artillery/missile attack,2,1367.0,33.278,44.3783
+2026-02-28,Iraq,Diyala,Explosions/Remote violence,Air/drone strike,4,1368.0,34.0711,44.8903
+2026-02-28,Iraq,Diyala,Explosions/Remote violence,Shelling/artillery/missile attack,1,1368.0,34.0711,44.8903
+2026-02-28,Iraq,Duhok,Explosions/Remote violence,Air/drone strike,1,1369.0,37.0446,43.1386
+2026-02-28,Iraq,Duhok,Explosions/Remote violence,Shelling/artillery/missile attack,1,1369.0,37.0446,43.1386
+2026-02-28,Iraq,Erbil,Explosions/Remote violence,Air/drone strike,25,1370.0,36.3791,44.2104
+2026-02-28,Iraq,Erbil,Explosions/Remote violence,Shelling/artillery/missile attack,4,1370.0,36.3791,44.2104
+2026-02-28,Iraq,Kirkuk,Explosions/Remote violence,Air/drone strike,4,1372.0,35.2858,44.0603
+2026-02-28,Iraq,Kirkuk,Explosions/Remote violence,Shelling/artillery/missile attack,1,1372.0,35.2858,44.0603
+2026-02-28,Iraq,Maysan,Explosions/Remote violence,Air/drone strike,2,1373.0,31.999,47.135
+2026-02-28,Iraq,Ninewa,Battles,Armed clash,4,1374.0,35.9879,42.3496
+2026-02-28,Iraq,Ninewa,Explosions/Remote violence,Air/drone strike,11,1374.0,35.9879,42.3496
+2026-02-28,Iraq,Ninewa,Explosions/Remote violence,Shelling/artillery/missile attack,2,1374.0,35.9879,42.3496
+2026-02-28,Iraq,Salah Al Din,Explosions/Remote violence,Air/drone strike,1,1375.0,34.6687,43.6316
+2026-02-28,Iraq,Salah Al Din,Explosions/Remote violence,Shelling/artillery/missile attack,1,1375.0,34.6687,43.6316
+2026-02-28,Iraq,Thi Qar,Explosions/Remote violence,Air/drone strike,2,1376.0,31.2876,46.2732
+2026-02-28,Israel,HaDarom,Explosions/Remote violence,Shelling/artillery/missile attack,9,1405.0,30.6783,34.8831
+2026-02-28,Israel,HaMerkaz,Explosions/Remote violence,Shelling/artillery/missile attack,17,1407.0,32.085,34.9167
+2026-02-28,Israel,HaZafon,Explosions/Remote violence,Air/drone strike,4,1408.0,32.839,35.3807
+2026-02-28,Israel,HaZafon,Explosions/Remote violence,Shelling/artillery/missile attack,17,1408.0,32.839,35.3807
+2026-02-28,Israel,Haifa,Explosions/Remote violence,Shelling/artillery/missile attack,5,1406.0,32.6278,34.9819
+2026-02-28,Israel,Jerusalem,Explosions/Remote violence,Shelling/artillery/missile attack,9,1409.0,31.7281,34.9945
+2026-02-28,Israel,Tel Aviv,Explosions/Remote violence,Shelling/artillery/missile attack,19,1410.0,32.0984,34.8103
+2026-02-28,Jordan,Amman,Explosions/Remote violence,Shelling/artillery/missile attack,2,1511.0,31.6696,36.3151
+2026-02-28,Jordan,Az Zarqa,Explosions/Remote violence,Shelling/artillery/missile attack,1,1513.0,31.8608,36.8739
+2026-02-28,Kuwait,Al Ahmadi,Explosions/Remote violence,Air/drone strike,3,1589.0,28.8688,47.9227
+2026-02-28,Kuwait,Al Asimah,Explosions/Remote violence,Air/drone strike,4,1590.0,29.3474,47.9688
+2026-02-28,Kuwait,Al Asimah,Explosions/Remote violence,Shelling/artillery/missile attack,3,1590.0,29.3474,47.9688
+2026-02-28,Kuwait,Al Farwaniyah,Explosions/Remote violence,Air/drone strike,1,1591.0,29.2476,47.9119
+2026-02-28,Kuwait,Al Jahra,Battles,Armed clash,1,1592.0,29.4988,47.3671
+2026-02-28,Kuwait,Al Jahra,Explosions/Remote violence,Air/drone strike,3,1592.0,29.4988,47.3671
+2026-02-28,Kuwait,Al Jahra,Explosions/Remote violence,Shelling/artillery/missile attack,2,1592.0,29.4988,47.3671
+2026-02-28,Kuwait,Hawalli,Explosions/Remote violence,Air/drone strike,1,1593.0,29.3117,48.0552
+2026-02-28,Kuwait,North Persian Gulf,Explosions/Remote violence,Remote explosive/landmine/IED,1,4142.0,29.1958,49.6063
+2026-02-28,Lebanon,Al Nabatieh,Battles,Armed clash,4,1741.0,33.2832,35.4971
+2026-02-28,Lebanon,Al Nabatieh,Explosions/Remote violence,Air/drone strike,175,1741.0,33.2832,35.4971
+2026-02-28,Lebanon,Al Nabatieh,Explosions/Remote violence,Shelling/artillery/missile attack,39,1741.0,33.2832,35.4971
+2026-02-28,Lebanon,Baalbek-Hermel,Battles,Armed clash,1,1737.0,34.1673,36.2993
+2026-02-28,Lebanon,Baalbek-Hermel,Explosions/Remote violence,Air/drone strike,27,1737.0,34.1673,36.2993
+2026-02-28,Lebanon,Baalbek-Hermel,Explosions/Remote violence,Shelling/artillery/missile attack,1,1737.0,34.1673,36.2993
+2026-02-28,Lebanon,Bekaa,Explosions/Remote violence,Air/drone strike,7,1739.0,33.6407,35.8097
+2026-02-28,Lebanon,Mount Lebanon,Explosions/Remote violence,Air/drone strike,27,1740.0,33.8513,35.6478
+2026-02-28,Lebanon,Mount Lebanon,Explosions/Remote violence,Shelling/artillery/missile attack,1,1740.0,33.8513,35.6478
+2026-02-28,Lebanon,North,Explosions/Remote violence,Shelling/artillery/missile attack,1,1742.0,34.3195,35.9369
+2026-02-28,Lebanon,South,Battles,Armed clash,1,1743.0,33.3416,35.3035
+2026-02-28,Lebanon,South,Explosions/Remote violence,Air/drone strike,125,1743.0,33.3416,35.3035
+2026-02-28,Lebanon,South,Explosions/Remote violence,Shelling/artillery/missile attack,4,1743.0,33.3416,35.3035
+2026-02-28,Oman,Al Wusta,Explosions/Remote violence,Air/drone strike,2,2276.0,20.4761,56.9042
+2026-02-28,Oman,Gulf of Oman,Explosions/Remote violence,Air/drone strike,1,4154.0,24.5876,58.5161
+2026-02-28,Oman,Gulf of Oman,Explosions/Remote violence,Remote explosive/landmine/IED,1,4154.0,24.5876,58.5161
+2026-02-28,Oman,Indian Ocean,Explosions/Remote violence,Shelling/artillery/missile attack,1,,11.609,62.227
+2026-02-28,Oman,Musandam,Explosions/Remote violence,Air/drone strike,1,2280.0,25.9953,56.303
+2026-02-28,Oman,Musandam,Explosions/Remote violence,Shelling/artillery/missile attack,2,2280.0,25.9953,56.303
+2026-02-28,Oman,Muscat,Explosions/Remote violence,Air/drone strike,1,2281.0,23.2501,58.7601
+2026-02-28,Palestine,Gaza Strip,Battles,Armed clash,2,2289.0,31.407,34.3577
+2026-02-28,Palestine,Gaza Strip,Explosions/Remote violence,Air/drone strike,17,2289.0,31.407,34.3577
+2026-02-28,Palestine,Gaza Strip,Explosions/Remote violence,Remote explosive/landmine/IED,1,2289.0,31.407,34.3577
+2026-02-28,Palestine,Gaza Strip,Explosions/Remote violence,Shelling/artillery/missile attack,28,2289.0,31.407,34.3577
+2026-02-28,Palestine,West Bank,Explosions/Remote violence,Shelling/artillery/missile attack,13,2290.0,31.9475,35.267
+2026-02-28,Qatar,Ad Dawnah,Explosions/Remote violence,Air/drone strike,2,2501.0,25.2934,51.5014
+2026-02-28,Qatar,Ad Dawnah,Explosions/Remote violence,Shelling/artillery/missile attack,2,2501.0,25.2934,51.5014
+2026-02-28,Qatar,Al Khor,Explosions/Remote violence,Air/drone strike,1,3853.0,25.7618,51.3405
+2026-02-28,Qatar,Al Wakrah,Explosions/Remote violence,Air/drone strike,1,2503.0,24.8527,51.2992
+2026-02-28,Qatar,Ar Rayyan,Explosions/Remote violence,Shelling/artillery/missile attack,2,2504.0,24.931,50.9784
+2026-02-28,Qatar,Ash Sheehaniya,Explosions/Remote violence,Air/drone strike,1,2506.0,25.4451,51.0111
+2026-02-28,Qatar,Coast of Doha,Battles,Armed clash,1,,25.4241,51.8033
+2026-02-28,Qatar,Coast of Doha,Explosions/Remote violence,Shelling/artillery/missile attack,1,,25.4241,51.8033
+2026-02-28,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Air/drone strike,3,2719.0,23.4556,45.232
+2026-02-28,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Shelling/artillery/missile attack,1,2719.0,23.4556,45.232
+2026-02-28,Saudi Arabia,Asir,Battles,Armed clash,1,2720.0,19.2036,42.9532
+2026-02-28,Saudi Arabia,Eastern,Explosions/Remote violence,Air/drone strike,2,2721.0,23.1567,50.3153
+2026-02-28,Syria,Al Hasakeh,Battles,Armed clash,1,3180.0,36.4131,40.5519
+2026-02-28,Syria,Al Hasakeh,Explosions/Remote violence,Remote explosive/landmine/IED,6,3180.0,36.4131,40.5519
+2026-02-28,Syria,Aleppo,Battles,Armed clash,4,3181.0,36.1445,37.3978
+2026-02-28,Syria,Aleppo,Explosions/Remote violence,Remote explosive/landmine/IED,4,3181.0,36.1445,37.3978
+2026-02-28,Syria,Ar Raqqa,Battles,Armed clash,2,3182.0,36.0265,38.922
+2026-02-28,Syria,Ar Raqqa,Explosions/Remote violence,Remote explosive/landmine/IED,5,3182.0,36.0265,38.922
+2026-02-28,Syria,As Sweida,Battles,Armed clash,6,3183.0,32.7624,36.8919
+2026-02-28,Syria,As Sweida,Explosions/Remote violence,Air/drone strike,4,3183.0,32.7624,36.8919
+2026-02-28,Syria,As Sweida,Explosions/Remote violence,Remote explosive/landmine/IED,1,3183.0,32.7624,36.8919
+2026-02-28,Syria,Damascus,Battles,Armed clash,1,3184.0,33.5153,36.2738
+2026-02-28,Syria,Dara,Explosions/Remote violence,Air/drone strike,3,3185.0,32.831,36.1112
+2026-02-28,Syria,Dara,Explosions/Remote violence,Grenade,1,3185.0,32.831,36.1112
+2026-02-28,Syria,Dara,Explosions/Remote violence,Remote explosive/landmine/IED,1,3185.0,32.831,36.1112
+2026-02-28,Syria,Dara,Explosions/Remote violence,Shelling/artillery/missile attack,3,3185.0,32.831,36.1112
+2026-02-28,Syria,Deir ez Zor,Battles,Armed clash,4,3186.0,35.2318,40.2761
+2026-02-28,Syria,Deir ez Zor,Explosions/Remote violence,Remote explosive/landmine/IED,4,3186.0,35.2318,40.2761
+2026-02-28,Syria,Hama,Explosions/Remote violence,Remote explosive/landmine/IED,4,3187.0,35.3165,37.3411
+2026-02-28,Syria,Homs,Explosions/Remote violence,Grenade,2,3188.0,34.4708,38.2063
+2026-02-28,Syria,Homs,Explosions/Remote violence,Remote explosive/landmine/IED,3,3188.0,34.4708,38.2063
+2026-02-28,Syria,Homs,Explosions/Remote violence,Shelling/artillery/missile attack,1,3188.0,34.4708,38.2063
+2026-02-28,Syria,Lattakia,Explosions/Remote violence,Remote explosive/landmine/IED,1,3190.0,35.5854,35.9916
+2026-02-28,Syria,Quneitra,Explosions/Remote violence,Shelling/artillery/missile attack,6,3191.0,33.0113,35.7989
+2026-02-28,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Air/drone strike,13,3472.0,23.7727,53.7133
+2026-02-28,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Shelling/artillery/missile attack,2,3472.0,23.7727,53.7133
+2026-02-28,United Arab Emirates,Al Fujayrah,Explosions/Remote violence,Air/drone strike,3,3474.0,25.4363,56.2301
+2026-02-28,United Arab Emirates,Ash Shariqah,Explosions/Remote violence,Air/drone strike,1,3475.0,25.1368,55.8094
+2026-02-28,United Arab Emirates,Dubai,Explosions/Remote violence,Air/drone strike,5,3476.0,24.9904,55.3711
+2026-02-28,United Arab Emirates,Dubai,Explosions/Remote violence,Shelling/artillery/missile attack,2,3476.0,24.9904,55.3711
+2026-02-28,United Arab Emirates,Persian Gulf,Explosions/Remote violence,Air/drone strike,3,,26.971,51.251
+2026-02-28,United Arab Emirates,Persian Gulf,Explosions/Remote violence,Shelling/artillery/missile attack,2,,26.971,51.251
+2026-02-28,United Arab Emirates,Ras Al Khaymah,Explosions/Remote violence,Air/drone strike,1,3477.0,25.698,55.9686
+2026-02-28,Yemen,Abyan,Battles,Armed clash,1,3674.0,13.6274,46.228
+2026-02-28,Yemen,Ad Dali,Battles,Armed clash,3,3675.0,13.8943,44.7825
+2026-02-28,Yemen,Ad Dali,Explosions/Remote violence,Shelling/artillery/missile attack,1,3675.0,13.8943,44.7825
+2026-02-28,Yemen,Aden,Battles,Armed clash,2,3676.0,12.8058,44.788
+2026-02-28,Yemen,Al Bayda,Battles,Armed clash,2,3677.0,14.326,45.216
+2026-02-28,Yemen,Al Hudaydah,Battles,Armed clash,1,3678.0,14.7791,43.2181
+2026-02-28,Yemen,Al Jawf,Explosions/Remote violence,Remote explosive/landmine/IED,1,3679.0,16.5962,45.5989
+2026-02-28,Yemen,Ibb,Explosions/Remote violence,Grenade,1,3687.0,14.0881,44.175
+2026-02-28,Yemen,Lahij,Battles,Armed clash,2,3688.0,13.3204,44.7623
+2026-02-28,Yemen,Lahij,Explosions/Remote violence,Shelling/artillery/missile attack,1,3688.0,13.3204,44.7623
+2026-02-28,Yemen,Marib,Battles,Armed clash,1,3689.0,15.3329,45.4523
+2026-02-28,Yemen,Marib,Explosions/Remote violence,Air/drone strike,1,3689.0,15.3329,45.4523
+2026-02-28,Yemen,Sadah,Explosions/Remote violence,Air/drone strike,1,3691.0,17.0883,44.0424
+2026-02-28,Yemen,Sadah,Explosions/Remote violence,Shelling/artillery/missile attack,1,3691.0,17.0883,44.0424
+2026-02-28,Yemen,Shabwah,Battles,Armed clash,2,3693.0,14.651,46.62
+2026-02-28,Yemen,Taizz,Battles,Armed clash,1,3695.0,13.2949,43.7855
+2026-03-07,Bahrain,Capital,Explosions/Remote violence,Air/drone strike,7,285.0,26.1927,50.5508
+2026-03-07,Bahrain,Muharraq,Explosions/Remote violence,Air/drone strike,3,286.0,26.2547,50.6428
+2026-03-07,Iran,Alborz,Explosions/Remote violence,Air/drone strike,31,1329.0,35.9457,50.906
+2026-03-07,Iran,Bushehr,Explosions/Remote violence,Air/drone strike,19,1331.0,28.7846,51.5038
+2026-03-07,Iran,Bushehr,Explosions/Remote violence,Shelling/artillery/missile attack,2,1331.0,28.7846,51.5038
+2026-03-07,Iran,Chaharmahal and Bakhtiari,Explosions/Remote violence,Air/drone strike,2,1332.0,31.979,50.8101
+2026-03-07,Iran,East Azerbaijan,Explosions/Remote violence,Air/drone strike,12,1333.0,38.0858,46.6924
+2026-03-07,Iran,Fars,Explosions/Remote violence,Air/drone strike,21,1334.0,29.3576,53.3176
+2026-03-07,Iran,Hamadan,Explosions/Remote violence,Air/drone strike,9,1337.0,34.8698,48.559
+2026-03-07,Iran,Hormozgan,Explosions/Remote violence,Air/drone strike,40,1338.0,27.1422,55.0325
+2026-03-07,Iran,Ilam,Explosions/Remote violence,Air/drone strike,10,1339.0,33.0433,46.8724
+2026-03-07,Iran,Isfahan,Explosions/Remote violence,Air/drone strike,47,1340.0,32.6094,52.0477
+2026-03-07,Iran,Kerman,Explosions/Remote violence,Air/drone strike,4,1341.0,29.2326,57.3392
+2026-03-07,Iran,Kerman,Explosions/Remote violence,Shelling/artillery/missile attack,1,1341.0,29.2326,57.3392
+2026-03-07,Iran,Kermanshah,Explosions/Remote violence,Air/drone strike,27,1342.0,34.4871,46.8086
+2026-03-07,Iran,Khuzestan,Explosions/Remote violence,Air/drone strike,32,1343.0,31.4636,48.9916
+2026-03-07,Iran,Khuzestan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1343.0,31.4636,48.9916
+2026-03-07,Iran,Kohgiluyeh and Boyer-Ahmad,Battles,Armed clash,1,1344.0,30.7032,51.0949
+2026-03-07,Iran,Kurdistan,Battles,Armed clash,1,1345.0,35.6014,47.0057
+2026-03-07,Iran,Kurdistan,Explosions/Remote violence,Air/drone strike,20,1345.0,35.6014,47.0057
+2026-03-07,Iran,Lorestan,Explosions/Remote violence,Air/drone strike,15,1346.0,33.5164,48.3219
+2026-03-07,Iran,Markazi,Explosions/Remote violence,Air/drone strike,14,1347.0,34.4772,49.5818
+2026-03-07,Iran,Mazandaran,Explosions/Remote violence,Air/drone strike,4,1348.0,36.3633,52.3677
+2026-03-07,Iran,Persian Gulf,Explosions/Remote violence,Air/drone strike,1,4137.0,27.0645,51.452
+2026-03-07,Iran,Qazvin,Explosions/Remote violence,Air/drone strike,4,1350.0,36.1089,50.0386
+2026-03-07,Iran,Qom,Explosions/Remote violence,Air/drone strike,8,1351.0,34.6674,51.002
+2026-03-07,Iran,Razavi Khorasan,Explosions/Remote violence,Air/drone strike,2,1352.0,35.7792,59.0295
+2026-03-07,Iran,Semnan,Explosions/Remote violence,Air/drone strike,2,1353.0,35.7868,54.9676
+2026-03-07,Iran,Sistan and Baluchestan,Battles,Armed clash,2,1354.0,28.2728,60.8613
+2026-03-07,Iran,Sistan and Baluchestan,Explosions/Remote violence,Air/drone strike,16,1354.0,28.2728,60.8613
+2026-03-07,Iran,Sistan and Baluchestan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1354.0,28.2728,60.8613
+2026-03-07,Iran,South Khorasan,Explosions/Remote violence,Air/drone strike,1,1355.0,32.8019,58.24
+2026-03-07,Iran,Strait of Hormuz,Explosions/Remote violence,Air/drone strike,5,4138.0,26.6719,56.4867
+2026-03-07,Iran,Tehran,Battles,Armed clash,1,1356.0,35.5022,51.3269
+2026-03-07,Iran,Tehran,Explosions/Remote violence,Air/drone strike,189,1356.0,35.5022,51.3269
+2026-03-07,Iran,Tehran,Explosions/Remote violence,Shelling/artillery/missile attack,2,1356.0,35.5022,51.3269
+2026-03-07,Iran,West Azerbaijan,Explosions/Remote violence,Air/drone strike,5,1357.0,37.8742,44.7003
+2026-03-07,Iran,West Azerbaijan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1357.0,37.8742,44.7003
+2026-03-07,Iran,Yazd,Explosions/Remote violence,Air/drone strike,9,1358.0,31.4825,54.4162
+2026-03-07,Iran,Zanjan,Explosions/Remote violence,Air/drone strike,4,1359.0,36.4014,48.422
+2026-03-07,Iraq,Al Anbar,Explosions/Remote violence,Air/drone strike,7,1360.0,33.1774,41.3987
+2026-03-07,Iraq,Al Basrah,Battles,Armed clash,2,1361.0,30.2047,47.5084
+2026-03-07,Iraq,Al Basrah,Explosions/Remote violence,Air/drone strike,3,1361.0,30.2047,47.5084
+2026-03-07,Iraq,Al Basrah,Explosions/Remote violence,Remote explosive/landmine/IED,1,1361.0,30.2047,47.5084
+2026-03-07,Iraq,Al Basrah,Explosions/Remote violence,Shelling/artillery/missile attack,3,1361.0,30.2047,47.5084
+2026-03-07,Iraq,Al Qadissiya,Explosions/Remote violence,Air/drone strike,1,1364.0,31.8451,45.1666
+2026-03-07,Iraq,Al Sulaymaniyah,Battles,Armed clash,1,1365.0,35.5263,45.379
+2026-03-07,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Air/drone strike,8,1365.0,35.5263,45.379
+2026-03-07,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Shelling/artillery/missile attack,2,1365.0,35.5263,45.379
+2026-03-07,Iraq,Babil,Explosions/Remote violence,Air/drone strike,4,1366.0,32.5765,44.6371
+2026-03-07,Iraq,Baghdad,Explosions/Remote violence,Air/drone strike,8,1367.0,33.278,44.3783
+2026-03-07,Iraq,Erbil,Explosions/Remote violence,Air/drone strike,23,1370.0,36.3791,44.2104
+2026-03-07,Iraq,Erbil,Explosions/Remote violence,Shelling/artillery/missile attack,4,1370.0,36.3791,44.2104
+2026-03-07,Iraq,Kerbala,Explosions/Remote violence,Air/drone strike,1,1371.0,32.49,43.8069
+2026-03-07,Iraq,Kirkuk,Battles,Armed clash,2,1372.0,35.2858,44.0603
+2026-03-07,Iraq,Kirkuk,Explosions/Remote violence,Air/drone strike,6,1372.0,35.2858,44.0603
+2026-03-07,Iraq,Kirkuk,Explosions/Remote violence,Shelling/artillery/missile attack,2,1372.0,35.2858,44.0603
+2026-03-07,Iraq,Maysan,Battles,Armed clash,1,1373.0,31.999,47.135
+2026-03-07,Iraq,Maysan,Explosions/Remote violence,Air/drone strike,1,1373.0,31.999,47.135
+2026-03-07,Iraq,Ninewa,Explosions/Remote violence,Air/drone strike,9,1374.0,35.9879,42.3496
+2026-03-07,Iraq,Salah Al Din,Explosions/Remote violence,Air/drone strike,6,1375.0,34.6687,43.6316
+2026-03-07,Iraq,Thi Qar,Explosions/Remote violence,Air/drone strike,1,1376.0,31.2876,46.2732
+2026-03-07,Iraq,Wassit,Explosions/Remote violence,Air/drone strike,1,1377.0,32.7059,45.704
+2026-03-07,Israel,HaDarom,Explosions/Remote violence,Shelling/artillery/missile attack,2,1405.0,30.6783,34.8831
+2026-03-07,Israel,HaMerkaz,Explosions/Remote violence,Shelling/artillery/missile attack,18,1407.0,32.085,34.9167
+2026-03-07,Israel,HaZafon,Explosions/Remote violence,Air/drone strike,14,1408.0,32.839,35.3807
+2026-03-07,Israel,HaZafon,Explosions/Remote violence,Shelling/artillery/missile attack,59,1408.0,32.839,35.3807
+2026-03-07,Israel,Haifa,Explosions/Remote violence,Air/drone strike,4,1406.0,32.6278,34.9819
+2026-03-07,Israel,Haifa,Explosions/Remote violence,Shelling/artillery/missile attack,7,1406.0,32.6278,34.9819
+2026-03-07,Israel,Jerusalem,Explosions/Remote violence,Air/drone strike,1,1409.0,31.7281,34.9945
+2026-03-07,Israel,Jerusalem,Explosions/Remote violence,Shelling/artillery/missile attack,5,1409.0,31.7281,34.9945
+2026-03-07,Israel,Tel Aviv,Explosions/Remote violence,Shelling/artillery/missile attack,16,1410.0,32.0984,34.8103
+2026-03-07,Jordan,Az Zarqa,Explosions/Remote violence,Shelling/artillery/missile attack,1,1513.0,31.8608,36.8739
+2026-03-07,Kuwait,Al Ahmadi,Explosions/Remote violence,Air/drone strike,2,1589.0,28.8688,47.9227
+2026-03-07,Kuwait,Al Asimah,Explosions/Remote violence,Air/drone strike,6,1590.0,29.3474,47.9688
+2026-03-07,Kuwait,Al Asimah,Explosions/Remote violence,Shelling/artillery/missile attack,3,1590.0,29.3474,47.9688
+2026-03-07,Kuwait,Al Farwaniyah,Explosions/Remote violence,Air/drone strike,2,1591.0,29.2476,47.9119
+2026-03-07,Kuwait,Al Jahra,Explosions/Remote violence,Air/drone strike,2,1592.0,29.4988,47.3671
+2026-03-07,Lebanon,Al Nabatieh,Battles,Armed clash,9,1741.0,33.2832,35.4971
+2026-03-07,Lebanon,Al Nabatieh,Explosions/Remote violence,Air/drone strike,252,1741.0,33.2832,35.4971
+2026-03-07,Lebanon,Al Nabatieh,Explosions/Remote violence,Shelling/artillery/missile attack,82,1741.0,33.2832,35.4971
+2026-03-07,Lebanon,Baalbek-Hermel,Battles,Armed clash,2,1737.0,34.1673,36.2993
+2026-03-07,Lebanon,Baalbek-Hermel,Explosions/Remote violence,Air/drone strike,19,1737.0,34.1673,36.2993
+2026-03-07,Lebanon,Beirut,Explosions/Remote violence,Air/drone strike,3,1738.0,33.8886,35.5016
+2026-03-07,Lebanon,Beirut,Explosions/Remote violence,Shelling/artillery/missile attack,1,1738.0,33.8886,35.5016
+2026-03-07,Lebanon,Bekaa,Explosions/Remote violence,Air/drone strike,8,1739.0,33.6407,35.8097
+2026-03-07,Lebanon,Mount Lebanon,Explosions/Remote violence,Air/drone strike,34,1740.0,33.8513,35.6478
+2026-03-07,Lebanon,South,Battles,Armed clash,1,1743.0,33.3416,35.3035
+2026-03-07,Lebanon,South,Explosions/Remote violence,Air/drone strike,144,1743.0,33.3416,35.3035
+2026-03-07,Lebanon,South,Explosions/Remote violence,Shelling/artillery/missile attack,16,1743.0,33.3416,35.3035
+2026-03-07,Oman,Al Batinah North,Explosions/Remote violence,Air/drone strike,2,2273.0,24.2357,56.5739
+2026-03-07,Oman,Al Wusta,Explosions/Remote violence,Air/drone strike,1,2276.0,20.4761,56.9042
+2026-03-07,Oman,Dhofar,Explosions/Remote violence,Air/drone strike,1,2279.0,18.8597,54.5566
+2026-03-07,Oman,Strait of Hormuz,Explosions/Remote violence,Air/drone strike,2,4156.0,26.6719,56.4867
+2026-03-07,Palestine,Gaza Strip,Battles,Armed clash,1,2289.0,31.407,34.3577
+2026-03-07,Palestine,Gaza Strip,Explosions/Remote violence,Air/drone strike,30,2289.0,31.407,34.3577
+2026-03-07,Palestine,Gaza Strip,Explosions/Remote violence,Shelling/artillery/missile attack,26,2289.0,31.407,34.3577
+2026-03-07,Palestine,West Bank,Battles,Armed clash,2,2290.0,31.9475,35.267
+2026-03-07,Palestine,West Bank,Explosions/Remote violence,Remote explosive/landmine/IED,1,2290.0,31.9475,35.267
+2026-03-07,Palestine,West Bank,Explosions/Remote violence,Shelling/artillery/missile attack,1,2290.0,31.9475,35.267
+2026-03-07,Qatar,Ad Dawnah,Explosions/Remote violence,Shelling/artillery/missile attack,2,2501.0,25.2934,51.5014
+2026-03-07,Qatar,Coast of Doha,Explosions/Remote violence,Shelling/artillery/missile attack,1,,25.4241,51.8033
+2026-03-07,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Air/drone strike,2,2719.0,23.4556,45.232
+2026-03-07,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Shelling/artillery/missile attack,1,2719.0,23.4556,45.232
+2026-03-07,Saudi Arabia,Eastern,Explosions/Remote violence,Air/drone strike,2,2721.0,23.1567,50.3153
+2026-03-07,Syria,Al Hasakeh,Explosions/Remote violence,Remote explosive/landmine/IED,2,3180.0,36.4131,40.5519
+2026-03-07,Syria,Aleppo,Battles,Armed clash,2,3181.0,36.1445,37.3978
+2026-03-07,Syria,Aleppo,Explosions/Remote violence,Remote explosive/landmine/IED,4,3181.0,36.1445,37.3978
+2026-03-07,Syria,Ar Raqqa,Explosions/Remote violence,Remote explosive/landmine/IED,1,3182.0,36.0265,38.922
+2026-03-07,Syria,As Sweida,Battles,Armed clash,5,3183.0,32.7624,36.8919
+2026-03-07,Syria,As Sweida,Explosions/Remote violence,Shelling/artillery/missile attack,5,3183.0,32.7624,36.8919
+2026-03-07,Syria,Damascus,Explosions/Remote violence,Grenade,1,3184.0,33.5153,36.2738
+2026-03-07,Syria,Dara,Battles,Armed clash,1,3185.0,32.831,36.1112
+2026-03-07,Syria,Dara,Explosions/Remote violence,Shelling/artillery/missile attack,1,3185.0,32.831,36.1112
+2026-03-07,Syria,Deir ez Zor,Battles,Armed clash,9,3186.0,35.2318,40.2761
+2026-03-07,Syria,Hama,Explosions/Remote violence,Remote explosive/landmine/IED,1,3187.0,35.3165,37.3411
+2026-03-07,Syria,Homs,Battles,Armed clash,1,3188.0,34.4708,38.2063
+2026-03-07,Syria,Homs,Explosions/Remote violence,Remote explosive/landmine/IED,2,3188.0,34.4708,38.2063
+2026-03-07,Syria,Idleb,Explosions/Remote violence,Remote explosive/landmine/IED,1,3189.0,35.8547,36.5648
+2026-03-07,Syria,Lattakia,Explosions/Remote violence,Remote explosive/landmine/IED,2,3190.0,35.5854,35.9916
+2026-03-07,Syria,Quneitra,Explosions/Remote violence,Shelling/artillery/missile attack,1,3191.0,33.0113,35.7989
+2026-03-07,Syria,Rural Damascus,Battles,Armed clash,1,3192.0,33.4538,37.4305
+2026-03-07,Syria,Rural Damascus,Explosions/Remote violence,Air/drone strike,1,3192.0,33.4538,37.4305
+2026-03-07,Syria,Rural Damascus,Explosions/Remote violence,Shelling/artillery/missile attack,1,3192.0,33.4538,37.4305
+2026-03-07,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Air/drone strike,7,3472.0,23.7727,53.7133
+2026-03-07,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Shelling/artillery/missile attack,4,3472.0,23.7727,53.7133
+2026-03-07,United Arab Emirates,Al Fujayrah,Explosions/Remote violence,Air/drone strike,1,3474.0,25.4363,56.2301
+2026-03-07,United Arab Emirates,Dubai,Explosions/Remote violence,Air/drone strike,7,3476.0,24.9904,55.3711
+2026-03-07,United Arab Emirates,Persian Gulf,Explosions/Remote violence,Air/drone strike,4,,26.971,51.251
+2026-03-07,Yemen,Abyan,Battles,Armed clash,1,3674.0,13.6274,46.228
+2026-03-07,Yemen,Ad Dali,Battles,Armed clash,3,3675.0,13.8943,44.7825
+2026-03-07,Yemen,Al Bayda,Battles,Armed clash,3,3677.0,14.326,45.216
+2026-03-07,Yemen,Amran,Battles,Armed clash,2,3683.0,16.1156,43.9414
+2026-03-07,Yemen,Hajjah,Explosions/Remote violence,Remote explosive/landmine/IED,1,3686.0,16.0944,43.2039
+2026-03-07,Yemen,Lahij,Battles,Armed clash,1,3688.0,13.3204,44.7623
+2026-03-07,Yemen,Marib,Battles,Armed clash,1,3689.0,15.3329,45.4523
+2026-03-07,Yemen,Sadah,Battles,Armed clash,2,3691.0,17.0883,44.0424
+2026-03-07,Yemen,Sanaa,Battles,Armed clash,1,3692.0,15.3931,44.4753
+2026-03-07,Yemen,Shabwah,Battles,Armed clash,2,3693.0,14.651,46.62
+2026-03-07,Yemen,Taizz,Battles,Armed clash,5,3695.0,13.2949,43.7855
+2026-03-07,Yemen,Taizz,Explosions/Remote violence,Remote explosive/landmine/IED,1,3695.0,13.2949,43.7855
+2026-03-14,Bahrain,Capital,Explosions/Remote violence,Air/drone strike,1,285.0,26.1927,50.5508
+2026-03-14,Bahrain,Muharraq,Explosions/Remote violence,Air/drone strike,1,286.0,26.2547,50.6428
+2026-03-14,Bahrain,Southern,Explosions/Remote violence,Air/drone strike,2,288.0,25.9954,50.5421
+2026-03-14,Iran,Alborz,Explosions/Remote violence,Air/drone strike,18,1329.0,35.9457,50.906
+2026-03-14,Iran,Bushehr,Explosions/Remote violence,Air/drone strike,20,1331.0,28.7846,51.5038
+2026-03-14,Iran,East Azerbaijan,Explosions/Remote violence,Air/drone strike,13,1333.0,38.0858,46.6924
+2026-03-14,Iran,East Azerbaijan,Explosions/Remote violence,Grenade,1,1333.0,38.0858,46.6924
+2026-03-14,Iran,Fars,Explosions/Remote violence,Air/drone strike,30,1334.0,29.3576,53.3176
+2026-03-14,Iran,Gilan,Explosions/Remote violence,Air/drone strike,14,1335.0,37.5092,49.0189
+2026-03-14,Iran,Hamadan,Explosions/Remote violence,Air/drone strike,9,1337.0,34.8698,48.559
+2026-03-14,Iran,Hormozgan,Explosions/Remote violence,Air/drone strike,32,1338.0,27.1422,55.0325
+2026-03-14,Iran,Hormozgan,Explosions/Remote violence,Shelling/artillery/missile attack,4,1338.0,27.1422,55.0325
+2026-03-14,Iran,Ilam,Explosions/Remote violence,Air/drone strike,2,1339.0,33.0433,46.8724
+2026-03-14,Iran,Isfahan,Explosions/Remote violence,Air/drone strike,30,1340.0,32.6094,52.0477
+2026-03-14,Iran,Kerman,Explosions/Remote violence,Air/drone strike,12,1341.0,29.2326,57.3392
+2026-03-14,Iran,Kermanshah,Explosions/Remote violence,Air/drone strike,6,1342.0,34.4871,46.8086
+2026-03-14,Iran,Khuzestan,Explosions/Remote violence,Air/drone strike,18,1343.0,31.4636,48.9916
+2026-03-14,Iran,Kurdistan,Explosions/Remote violence,Air/drone strike,5,1345.0,35.6014,47.0057
+2026-03-14,Iran,Lorestan,Explosions/Remote violence,Air/drone strike,7,1346.0,33.5164,48.3219
+2026-03-14,Iran,Markazi,Explosions/Remote violence,Air/drone strike,5,1347.0,34.4772,49.5818
+2026-03-14,Iran,Mazandaran,Explosions/Remote violence,Air/drone strike,6,1348.0,36.3633,52.3677
+2026-03-14,Iran,Qazvin,Explosions/Remote violence,Air/drone strike,3,1350.0,36.1089,50.0386
+2026-03-14,Iran,Qom,Explosions/Remote violence,Air/drone strike,4,1351.0,34.6674,51.002
+2026-03-14,Iran,Razavi Khorasan,Explosions/Remote violence,Air/drone strike,1,1352.0,35.7792,59.0295
+2026-03-14,Iran,Semnan,Explosions/Remote violence,Air/drone strike,4,1353.0,35.7868,54.9676
+2026-03-14,Iran,Sistan and Baluchestan,Battles,Armed clash,2,1354.0,28.2728,60.8613
+2026-03-14,Iran,Sistan and Baluchestan,Explosions/Remote violence,Air/drone strike,6,1354.0,28.2728,60.8613
+2026-03-14,Iran,Sistan and Baluchestan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1354.0,28.2728,60.8613
+2026-03-14,Iran,South Khorasan,Explosions/Remote violence,Air/drone strike,2,1355.0,32.8019,58.24
+2026-03-14,Iran,Strait of Hormuz,Explosions/Remote violence,Air/drone strike,2,4138.0,26.6719,56.4867
+2026-03-14,Iran,Tehran,Battles,Armed clash,1,1356.0,35.5022,51.3269
+2026-03-14,Iran,Tehran,Explosions/Remote violence,Air/drone strike,135,1356.0,35.5022,51.3269
+2026-03-14,Iran,West Azerbaijan,Explosions/Remote violence,Air/drone strike,5,1357.0,37.8742,44.7003
+2026-03-14,Iran,Yazd,Explosions/Remote violence,Air/drone strike,6,1358.0,31.4825,54.4162
+2026-03-14,Iraq,Al Anbar,Explosions/Remote violence,Air/drone strike,7,1360.0,33.1774,41.3987
+2026-03-14,Iraq,Al Basrah,Battles,Armed clash,1,1361.0,30.2047,47.5084
+2026-03-14,Iraq,Al Basrah,Explosions/Remote violence,Air/drone strike,2,1361.0,30.2047,47.5084
+2026-03-14,Iraq,Al Muthanna,Explosions/Remote violence,Air/drone strike,2,1362.0,30.4107,45.3606
+2026-03-14,Iraq,Al Qadissiya,Battles,Armed clash,1,1364.0,31.8451,45.1666
+2026-03-14,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Air/drone strike,7,1365.0,35.5263,45.379
+2026-03-14,Iraq,Babil,Explosions/Remote violence,Air/drone strike,2,1366.0,32.5765,44.6371
+2026-03-14,Iraq,Baghdad,Explosions/Remote violence,Air/drone strike,13,1367.0,33.278,44.3783
+2026-03-14,Iraq,Baghdad,Explosions/Remote violence,Shelling/artillery/missile attack,3,1367.0,33.278,44.3783
+2026-03-14,Iraq,Diyala,Explosions/Remote violence,Air/drone strike,2,1368.0,34.0711,44.8903
+2026-03-14,Iraq,Duhok,Explosions/Remote violence,Air/drone strike,1,1369.0,37.0446,43.1386
+2026-03-14,Iraq,Erbil,Explosions/Remote violence,Air/drone strike,16,1370.0,36.3791,44.2104
+2026-03-14,Iraq,Erbil,Explosions/Remote violence,Shelling/artillery/missile attack,4,1370.0,36.3791,44.2104
+2026-03-14,Iraq,Kirkuk,Explosions/Remote violence,Air/drone strike,7,1372.0,35.2858,44.0603
+2026-03-14,Iraq,Kirkuk,Explosions/Remote violence,Remote explosive/landmine/IED,1,1372.0,35.2858,44.0603
+2026-03-14,Iraq,Kirkuk,Explosions/Remote violence,Shelling/artillery/missile attack,1,1372.0,35.2858,44.0603
+2026-03-14,Iraq,Maysan,Battles,Armed clash,1,1373.0,31.999,47.135
+2026-03-14,Iraq,Ninewa,Explosions/Remote violence,Air/drone strike,4,1374.0,35.9879,42.3496
+2026-03-14,Iraq,Salah Al Din,Explosions/Remote violence,Air/drone strike,6,1375.0,34.6687,43.6316
+2026-03-14,Iraq,Thi Qar,Battles,Armed clash,1,1376.0,31.2876,46.2732
+2026-03-14,Iraq,Wassit,Explosions/Remote violence,Remote explosive/landmine/IED,1,1377.0,32.7059,45.704
+2026-03-14,Israel,HaDarom,Explosions/Remote violence,Air/drone strike,1,1405.0,30.6783,34.8831
+2026-03-14,Israel,HaDarom,Explosions/Remote violence,Shelling/artillery/missile attack,6,1405.0,30.6783,34.8831
+2026-03-14,Israel,HaMerkaz,Explosions/Remote violence,Shelling/artillery/missile attack,24,1407.0,32.085,34.9167
+2026-03-14,Israel,HaZafon,Explosions/Remote violence,Air/drone strike,5,1408.0,32.839,35.3807
+2026-03-14,Israel,HaZafon,Explosions/Remote violence,Shelling/artillery/missile attack,69,1408.0,32.839,35.3807
+2026-03-14,Israel,Haifa,Explosions/Remote violence,Air/drone strike,2,1406.0,32.6278,34.9819
+2026-03-14,Israel,Haifa,Explosions/Remote violence,Shelling/artillery/missile attack,7,1406.0,32.6278,34.9819
+2026-03-14,Israel,Jerusalem,Explosions/Remote violence,Shelling/artillery/missile attack,7,1409.0,31.7281,34.9945
+2026-03-14,Israel,Tel Aviv,Explosions/Remote violence,Shelling/artillery/missile attack,21,1410.0,32.0984,34.8103
+2026-03-14,Jordan,Irbid,Explosions/Remote violence,Shelling/artillery/missile attack,1,1514.0,32.4735,35.8353
+2026-03-14,Kuwait,Al Ahmadi,Explosions/Remote violence,Air/drone strike,4,1589.0,28.8688,47.9227
+2026-03-14,Kuwait,Al Asimah,Explosions/Remote violence,Air/drone strike,7,1590.0,29.3474,47.9688
+2026-03-14,Kuwait,Al Farwaniyah,Explosions/Remote violence,Air/drone strike,1,1591.0,29.2476,47.9119
+2026-03-14,Kuwait,Al Jahra,Explosions/Remote violence,Air/drone strike,4,1592.0,29.4988,47.3671
+2026-03-14,Lebanon,Al Nabatieh,Battles,Armed clash,14,1741.0,33.2832,35.4971
+2026-03-14,Lebanon,Al Nabatieh,Explosions/Remote violence,Air/drone strike,222,1741.0,33.2832,35.4971
+2026-03-14,Lebanon,Al Nabatieh,Explosions/Remote violence,Shelling/artillery/missile attack,122,1741.0,33.2832,35.4971
+2026-03-14,Lebanon,Baalbek-Hermel,Explosions/Remote violence,Air/drone strike,9,1737.0,34.1673,36.2993
+2026-03-14,Lebanon,Beirut,Explosions/Remote violence,Air/drone strike,3,1738.0,33.8886,35.5016
+2026-03-14,Lebanon,Bekaa,Explosions/Remote violence,Air/drone strike,11,1739.0,33.6407,35.8097
+2026-03-14,Lebanon,Mount Lebanon,Explosions/Remote violence,Air/drone strike,9,1740.0,33.8513,35.6478
+2026-03-14,Lebanon,South,Battles,Armed clash,1,1743.0,33.3416,35.3035
+2026-03-14,Lebanon,South,Explosions/Remote violence,Air/drone strike,107,1743.0,33.3416,35.3035
+2026-03-14,Lebanon,South,Explosions/Remote violence,Shelling/artillery/missile attack,30,1743.0,33.3416,35.3035
+2026-03-14,Palestine,Gaza Strip,Battles,Armed clash,3,2289.0,31.407,34.3577
+2026-03-14,Palestine,Gaza Strip,Explosions/Remote violence,Air/drone strike,10,2289.0,31.407,34.3577
+2026-03-14,Palestine,Gaza Strip,Explosions/Remote violence,Shelling/artillery/missile attack,13,2289.0,31.407,34.3577
+2026-03-14,Palestine,West Bank,Explosions/Remote violence,Shelling/artillery/missile attack,3,2290.0,31.9475,35.267
+2026-03-14,Qatar,Ad Dawnah,Explosions/Remote violence,Shelling/artillery/missile attack,2,2501.0,25.2934,51.5014
+2026-03-14,Qatar,Al Khor,Explosions/Remote violence,Air/drone strike,1,3853.0,25.7618,51.3405
+2026-03-14,Qatar,Al Khor,Explosions/Remote violence,Shelling/artillery/missile attack,2,3853.0,25.7618,51.3405
+2026-03-14,Saudi Arabia,Al Madinah,Explosions/Remote violence,Air/drone strike,1,2717.0,25.0041,39.9162
+2026-03-14,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Air/drone strike,1,2719.0,23.4556,45.232
+2026-03-14,Syria,Al Hasakeh,Battles,Armed clash,1,3180.0,36.4131,40.5519
+2026-03-14,Syria,Al Hasakeh,Explosions/Remote violence,Remote explosive/landmine/IED,1,3180.0,36.4131,40.5519
+2026-03-14,Syria,Aleppo,Battles,Armed clash,2,3181.0,36.1445,37.3978
+2026-03-14,Syria,Ar Raqqa,Battles,Armed clash,1,3182.0,36.0265,38.922
+2026-03-14,Syria,Ar Raqqa,Explosions/Remote violence,Remote explosive/landmine/IED,2,3182.0,36.0265,38.922
+2026-03-14,Syria,As Sweida,Battles,Armed clash,3,3183.0,32.7624,36.8919
+2026-03-14,Syria,As Sweida,Explosions/Remote violence,Air/drone strike,3,3183.0,32.7624,36.8919
+2026-03-14,Syria,As Sweida,Explosions/Remote violence,Remote explosive/landmine/IED,1,3183.0,32.7624,36.8919
+2026-03-14,Syria,As Sweida,Explosions/Remote violence,Shelling/artillery/missile attack,2,3183.0,32.7624,36.8919
+2026-03-14,Syria,Dara,Battles,Armed clash,1,3185.0,32.831,36.1112
+2026-03-14,Syria,Dara,Explosions/Remote violence,Air/drone strike,3,3185.0,32.831,36.1112
+2026-03-14,Syria,Dara,Explosions/Remote violence,Grenade,1,3185.0,32.831,36.1112
+2026-03-14,Syria,Dara,Explosions/Remote violence,Remote explosive/landmine/IED,1,3185.0,32.831,36.1112
+2026-03-14,Syria,Deir ez Zor,Battles,Armed clash,8,3186.0,35.2318,40.2761
+2026-03-14,Syria,Deir ez Zor,Explosions/Remote violence,Remote explosive/landmine/IED,2,3186.0,35.2318,40.2761
+2026-03-14,Syria,Homs,Battles,Armed clash,1,3188.0,34.4708,38.2063
+2026-03-14,Syria,Homs,Explosions/Remote violence,Remote explosive/landmine/IED,2,3188.0,34.4708,38.2063
+2026-03-14,Syria,Idleb,Battles,Armed clash,2,3189.0,35.8547,36.5648
+2026-03-14,Syria,Lattakia,Explosions/Remote violence,Grenade,1,3190.0,35.5854,35.9916
+2026-03-14,Syria,Quneitra,Explosions/Remote violence,Shelling/artillery/missile attack,6,3191.0,33.0113,35.7989
+2026-03-14,Syria,Rural Damascus,Explosions/Remote violence,Grenade,1,3192.0,33.4538,37.4305
+2026-03-14,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Air/drone strike,4,3472.0,23.7727,53.7133
+2026-03-14,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Shelling/artillery/missile attack,2,3472.0,23.7727,53.7133
+2026-03-14,United Arab Emirates,Al Fujayrah,Explosions/Remote violence,Air/drone strike,3,3474.0,25.4363,56.2301
+2026-03-14,United Arab Emirates,Ash Shariqah,Explosions/Remote violence,Air/drone strike,1,3475.0,25.1368,55.8094
+2026-03-14,United Arab Emirates,Dubai,Explosions/Remote violence,Air/drone strike,2,3476.0,24.9904,55.3711
+2026-03-14,United Arab Emirates,Dubai,Explosions/Remote violence,Shelling/artillery/missile attack,1,3476.0,24.9904,55.3711
+2026-03-14,United Arab Emirates,Gulf of Oman,Explosions/Remote violence,Air/drone strike,1,,24.387,59.216
+2026-03-14,Yemen,Abyan,Battles,Armed clash,1,3674.0,13.6274,46.228
+2026-03-14,Yemen,Ad Dali,Explosions/Remote violence,Grenade,1,3675.0,13.8943,44.7825
+2026-03-14,Yemen,Al Bayda,Battles,Armed clash,1,3677.0,14.326,45.216
+2026-03-14,Yemen,Al Hudaydah,Battles,Armed clash,2,3678.0,14.7791,43.2181
+2026-03-14,Yemen,Al Hudaydah,Explosions/Remote violence,Remote explosive/landmine/IED,2,3678.0,14.7791,43.2181
+2026-03-14,Yemen,Al Hudaydah,Explosions/Remote violence,Shelling/artillery/missile attack,3,3678.0,14.7791,43.2181
+2026-03-14,Yemen,Dhamar,Explosions/Remote violence,Remote explosive/landmine/IED,1,3684.0,14.5395,44.3063
+2026-03-14,Yemen,Hajjah,Explosions/Remote violence,Shelling/artillery/missile attack,1,3686.0,16.0944,43.2039
+2026-03-14,Yemen,Lahij,Battles,Armed clash,2,3688.0,13.3204,44.7623
+2026-03-14,Yemen,Marib,Battles,Armed clash,1,3689.0,15.3329,45.4523
+2026-03-14,Yemen,Marib,Explosions/Remote violence,Air/drone strike,1,3689.0,15.3329,45.4523
+2026-03-14,Yemen,Shabwah,Explosions/Remote violence,Remote explosive/landmine/IED,1,3693.0,14.651,46.62
+2026-03-14,Yemen,Taizz,Battles,Armed clash,2,3695.0,13.2949,43.7855
+2026-03-21,Bahrain,Capital,Explosions/Remote violence,Air/drone strike,1,285.0,26.1927,50.5508
+2026-03-21,Bahrain,Southern,Explosions/Remote violence,Shelling/artillery/missile attack,1,288.0,25.9954,50.5421
+2026-03-21,Iran,Alborz,Explosions/Remote violence,Air/drone strike,46,1329.0,35.9457,50.906
+2026-03-21,Iran,Alborz,Explosions/Remote violence,Shelling/artillery/missile attack,1,1329.0,35.9457,50.906
+2026-03-21,Iran,Ardabil,Explosions/Remote violence,Air/drone strike,2,1330.0,38.4066,47.9857
+2026-03-21,Iran,Bushehr,Explosions/Remote violence,Air/drone strike,25,1331.0,28.7846,51.5038
+2026-03-21,Iran,Chaharmahal and Bakhtiari,Explosions/Remote violence,Air/drone strike,2,1332.0,31.979,50.8101
+2026-03-21,Iran,East Azerbaijan,Explosions/Remote violence,Air/drone strike,15,1333.0,38.0858,46.6924
+2026-03-21,Iran,Fars,Explosions/Remote violence,Air/drone strike,29,1334.0,29.3576,53.3176
+2026-03-21,Iran,Gilan,Explosions/Remote violence,Air/drone strike,8,1335.0,37.5092,49.0189
+2026-03-21,Iran,Hamadan,Battles,Armed clash,1,1337.0,34.8698,48.559
+2026-03-21,Iran,Hamadan,Explosions/Remote violence,Air/drone strike,3,1337.0,34.8698,48.559
+2026-03-21,Iran,Hormozgan,Explosions/Remote violence,Air/drone strike,37,1338.0,27.1422,55.0325
+2026-03-21,Iran,Hormozgan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1338.0,27.1422,55.0325
+2026-03-21,Iran,Ilam,Explosions/Remote violence,Air/drone strike,2,1339.0,33.0433,46.8724
+2026-03-21,Iran,Isfahan,Explosions/Remote violence,Air/drone strike,47,1340.0,32.6094,52.0477
+2026-03-21,Iran,Isfahan,Explosions/Remote violence,Shelling/artillery/missile attack,2,1340.0,32.6094,52.0477
+2026-03-21,Iran,Kerman,Explosions/Remote violence,Air/drone strike,4,1341.0,29.2326,57.3392
+2026-03-21,Iran,Kermanshah,Explosions/Remote violence,Air/drone strike,4,1342.0,34.4871,46.8086
+2026-03-21,Iran,Khuzestan,Explosions/Remote violence,Air/drone strike,28,1343.0,31.4636,48.9916
+2026-03-21,Iran,Kurdistan,Explosions/Remote violence,Air/drone strike,2,1345.0,35.6014,47.0057
+2026-03-21,Iran,Lorestan,Explosions/Remote violence,Air/drone strike,6,1346.0,33.5164,48.3219
+2026-03-21,Iran,Markazi,Explosions/Remote violence,Air/drone strike,16,1347.0,34.4772,49.5818
+2026-03-21,Iran,Mazandaran,Explosions/Remote violence,Air/drone strike,20,1348.0,36.3633,52.3677
+2026-03-21,Iran,Mazandaran,Explosions/Remote violence,Shelling/artillery/missile attack,2,1348.0,36.3633,52.3677
+2026-03-21,Iran,North Khorasan,Explosions/Remote violence,Air/drone strike,1,1349.0,37.4249,57.178
+2026-03-21,Iran,Qazvin,Explosions/Remote violence,Air/drone strike,9,1350.0,36.1089,50.0386
+2026-03-21,Iran,Qazvin,Explosions/Remote violence,Shelling/artillery/missile attack,1,1350.0,36.1089,50.0386
+2026-03-21,Iran,Qom,Explosions/Remote violence,Air/drone strike,1,1351.0,34.6674,51.002
+2026-03-21,Iran,Razavi Khorasan,Explosions/Remote violence,Air/drone strike,12,1352.0,35.7792,59.0295
+2026-03-21,Iran,Semnan,Explosions/Remote violence,Air/drone strike,5,1353.0,35.7868,54.9676
+2026-03-21,Iran,Sistan and Baluchestan,Explosions/Remote violence,Air/drone strike,10,1354.0,28.2728,60.8613
+2026-03-21,Iran,South Khorasan,Explosions/Remote violence,Air/drone strike,1,1355.0,32.8019,58.24
+2026-03-21,Iran,South Khorasan,Explosions/Remote violence,Shelling/artillery/missile attack,1,1355.0,32.8019,58.24
+2026-03-21,Iran,Tehran,Battles,Armed clash,1,1356.0,35.5022,51.3269
+2026-03-21,Iran,Tehran,Explosions/Remote violence,Air/drone strike,162,1356.0,35.5022,51.3269
+2026-03-21,Iran,Tehran,Explosions/Remote violence,Shelling/artillery/missile attack,2,1356.0,35.5022,51.3269
+2026-03-21,Iran,West Azerbaijan,Explosions/Remote violence,Air/drone strike,5,1357.0,37.8742,44.7003
+2026-03-21,Iran,Yazd,Explosions/Remote violence,Air/drone strike,9,1358.0,31.4825,54.4162
+2026-03-21,Iraq,Al Anbar,Explosions/Remote violence,Air/drone strike,11,1360.0,33.1774,41.3987
+2026-03-21,Iraq,Al Anbar,Explosions/Remote violence,Shelling/artillery/missile attack,1,1360.0,33.1774,41.3987
+2026-03-21,Iraq,Al Basrah,Battles,Armed clash,1,1361.0,30.2047,47.5084
+2026-03-21,Iraq,Al Basrah,Explosions/Remote violence,Air/drone strike,3,1361.0,30.2047,47.5084
+2026-03-21,Iraq,Al Muthanna,Explosions/Remote violence,Air/drone strike,2,1362.0,30.4107,45.3606
+2026-03-21,Iraq,Al Sulaymaniyah,Explosions/Remote violence,Air/drone strike,4,1365.0,35.5263,45.379
+2026-03-21,Iraq,Babil,Explosions/Remote violence,Air/drone strike,1,1366.0,32.5765,44.6371
+2026-03-21,Iraq,Baghdad,Explosions/Remote violence,Air/drone strike,7,1367.0,33.278,44.3783
+2026-03-21,Iraq,Baghdad,Explosions/Remote violence,Shelling/artillery/missile attack,1,1367.0,33.278,44.3783
+2026-03-21,Iraq,Erbil,Explosions/Remote violence,Air/drone strike,6,1370.0,36.3791,44.2104
+2026-03-21,Iraq,Erbil,Explosions/Remote violence,Shelling/artillery/missile attack,3,1370.0,36.3791,44.2104
+2026-03-21,Iraq,Kirkuk,Explosions/Remote violence,Air/drone strike,2,1372.0,35.2858,44.0603
+2026-03-21,Iraq,Kirkuk,Explosions/Remote violence,Remote explosive/landmine/IED,1,1372.0,35.2858,44.0603
+2026-03-21,Iraq,Maysan,Battles,Armed clash,1,1373.0,31.999,47.135
+2026-03-21,Iraq,Maysan,Explosions/Remote violence,Air/drone strike,1,1373.0,31.999,47.135
+2026-03-21,Iraq,Ninewa,Explosions/Remote violence,Air/drone strike,2,1374.0,35.9879,42.3496
+2026-03-21,Iraq,Salah Al Din,Explosions/Remote violence,Air/drone strike,5,1375.0,34.6687,43.6316
+2026-03-21,Iraq,Thi Qar,Battles,Armed clash,1,1376.0,31.2876,46.2732
+2026-03-21,Iraq,Thi Qar,Explosions/Remote violence,Air/drone strike,1,1376.0,31.2876,46.2732
+2026-03-21,Israel,HaDarom,Explosions/Remote violence,Shelling/artillery/missile attack,10,1405.0,30.6783,34.8831
+2026-03-21,Israel,HaMerkaz,Explosions/Remote violence,Shelling/artillery/missile attack,16,1407.0,32.085,34.9167
+2026-03-21,Israel,HaZafon,Explosions/Remote violence,Air/drone strike,28,1408.0,32.839,35.3807
+2026-03-21,Israel,HaZafon,Explosions/Remote violence,Shelling/artillery/missile attack,71,1408.0,32.839,35.3807
+2026-03-21,Israel,Haifa,Explosions/Remote violence,Shelling/artillery/missile attack,11,1406.0,32.6278,34.9819
+2026-03-21,Israel,Jerusalem,Explosions/Remote violence,Shelling/artillery/missile attack,1,1409.0,31.7281,34.9945
+2026-03-21,Israel,Tel Aviv,Explosions/Remote violence,Shelling/artillery/missile attack,16,1410.0,32.0984,34.8103
+2026-03-21,Kuwait,Al Ahmadi,Explosions/Remote violence,Air/drone strike,1,1589.0,28.8688,47.9227
+2026-03-21,Kuwait,Al Asimah,Explosions/Remote violence,Air/drone strike,4,1590.0,29.3474,47.9688
+2026-03-21,Kuwait,Al Asimah,Explosions/Remote violence,Shelling/artillery/missile attack,3,1590.0,29.3474,47.9688
+2026-03-21,Kuwait,Al Farwaniyah,Explosions/Remote violence,Air/drone strike,1,1591.0,29.2476,47.9119
+2026-03-21,Kuwait,Al Jahra,Explosions/Remote violence,Air/drone strike,1,1592.0,29.4988,47.3671
+2026-03-21,Lebanon,Al Nabatieh,Battles,Armed clash,11,1741.0,33.2832,35.4971
+2026-03-21,Lebanon,Al Nabatieh,Explosions/Remote violence,Air/drone strike,189,1741.0,33.2832,35.4971
+2026-03-21,Lebanon,Al Nabatieh,Explosions/Remote violence,Shelling/artillery/missile attack,129,1741.0,33.2832,35.4971
+2026-03-21,Lebanon,Baalbek-Hermel,Explosions/Remote violence,Air/drone strike,4,1737.0,34.1673,36.2993
+2026-03-21,Lebanon,Bekaa,Explosions/Remote violence,Air/drone strike,6,1739.0,33.6407,35.8097
+2026-03-21,Lebanon,Bekaa,Explosions/Remote violence,Shelling/artillery/missile attack,1,1739.0,33.6407,35.8097
+2026-03-21,Lebanon,Mount Lebanon,Explosions/Remote violence,Air/drone strike,15,1740.0,33.8513,35.6478
+2026-03-21,Lebanon,South,Battles,Armed clash,5,1743.0,33.3416,35.3035
+2026-03-21,Lebanon,South,Explosions/Remote violence,Air/drone strike,121,1743.0,33.3416,35.3035
+2026-03-21,Lebanon,South,Explosions/Remote violence,Shelling/artillery/missile attack,29,1743.0,33.3416,35.3035
+2026-03-21,Palestine,Gaza Strip,Battles,Armed clash,3,2289.0,31.407,34.3577
+2026-03-21,Palestine,Gaza Strip,Explosions/Remote violence,Air/drone strike,12,2289.0,31.407,34.3577
+2026-03-21,Palestine,Gaza Strip,Explosions/Remote violence,Shelling/artillery/missile attack,21,2289.0,31.407,34.3577
+2026-03-21,Palestine,West Bank,Explosions/Remote violence,Shelling/artillery/missile attack,6,2290.0,31.9475,35.267
+2026-03-21,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Air/drone strike,4,2719.0,23.4556,45.232
+2026-03-21,Saudi Arabia,Ar Riyadh,Explosions/Remote violence,Shelling/artillery/missile attack,2,2719.0,23.4556,45.232
+2026-03-21,Saudi Arabia,Eastern,Explosions/Remote violence,Shelling/artillery/missile attack,1,2721.0,23.1567,50.3153
+2026-03-21,Syria,Al Hasakeh,Explosions/Remote violence,Air/drone strike,1,3180.0,36.4131,40.5519
+2026-03-21,Syria,Al Hasakeh,Explosions/Remote violence,Shelling/artillery/missile attack,1,3180.0,36.4131,40.5519
+2026-03-21,Syria,Aleppo,Battles,Armed clash,5,3181.0,36.1445,37.3978
+2026-03-21,Syria,Aleppo,Explosions/Remote violence,Remote explosive/landmine/IED,6,3181.0,36.1445,37.3978
+2026-03-21,Syria,Ar Raqqa,Battles,Armed clash,1,3182.0,36.0265,38.922
+2026-03-21,Syria,Ar Raqqa,Explosions/Remote violence,Remote explosive/landmine/IED,6,3182.0,36.0265,38.922
+2026-03-21,Syria,As Sweida,Battles,Armed clash,3,3183.0,32.7624,36.8919
+2026-03-21,Syria,Dara,Battles,Armed clash,1,3185.0,32.831,36.1112
+2026-03-21,Syria,Dara,Explosions/Remote violence,Grenade,1,3185.0,32.831,36.1112
+2026-03-21,Syria,Dara,Explosions/Remote violence,Remote explosive/landmine/IED,3,3185.0,32.831,36.1112
+2026-03-21,Syria,Deir ez Zor,Battles,Armed clash,1,3186.0,35.2318,40.2761
+2026-03-21,Syria,Deir ez Zor,Explosions/Remote violence,Remote explosive/landmine/IED,10,3186.0,35.2318,40.2761
+2026-03-21,Syria,Idleb,Battles,Armed clash,1,3189.0,35.8547,36.5648
+2026-03-21,Syria,Idleb,Explosions/Remote violence,Remote explosive/landmine/IED,1,3189.0,35.8547,36.5648
+2026-03-21,Syria,Lattakia,Battles,Armed clash,1,3190.0,35.5854,35.9916
+2026-03-21,Syria,Quneitra,Explosions/Remote violence,Shelling/artillery/missile attack,6,3191.0,33.0113,35.7989
+2026-03-21,Syria,Rural Damascus,Explosions/Remote violence,Remote explosive/landmine/IED,1,3192.0,33.4538,37.4305
+2026-03-21,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Air/drone strike,5,3472.0,23.7727,53.7133
+2026-03-21,United Arab Emirates,Abu Dhabi,Explosions/Remote violence,Shelling/artillery/missile attack,1,3472.0,23.7727,53.7133
+2026-03-21,United Arab Emirates,Ash Shariqah,Explosions/Remote violence,Air/drone strike,1,3475.0,25.1368,55.8094
+2026-03-21,United Arab Emirates,Dubai,Explosions/Remote violence,Air/drone strike,1,3476.0,24.9904,55.3711
+2026-03-21,Yemen,Abyan,Explosions/Remote violence,Remote explosive/landmine/IED,1,3674.0,13.6274,46.228
+2026-03-21,Yemen,Al Bayda,Battles,Armed clash,2,3677.0,14.326,45.216
+2026-03-21,Yemen,Al Jawf,Battles,Armed clash,1,3679.0,16.5962,45.5989
+2026-03-21,Yemen,Ibb,Explosions/Remote violence,Grenade,1,3687.0,14.0881,44.175
+2026-03-21,Yemen,Marib,Explosions/Remote violence,Air/drone strike,1,3689.0,15.3329,45.4523
+2026-03-21,Yemen,Taizz,Battles,Armed clash,3,3695.0,13.2949,43.7855
