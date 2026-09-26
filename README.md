@@ -1,5 +1,7 @@
 # FusionIntell — Middle East Conflict Situational Room
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aimanaltoubi/situational-room/blob/main/FusionIntell_Colab.ipynb)
+
 A self-hosted intelligence dashboard for tracking the Middle East conflict in
 real time. It fuses satellite tracking, GPS jamming detection, live flight
 and marine vessel monitoring, war/political event timelines, and AI-generated
@@ -10,6 +12,10 @@ analytical reports into a single 3D Cesium globe interface.
 > with a description of the system and a **"Load System"** button that
 > opens the live dashboard. Nothing will appear until you run the server —
 > simply browsing the GitHub repository will not show the button.
+>
+> Don't want to install anything? Click **"Open in Colab"** above — it
+> clones the repo, asks for your API keys, builds the data, and loads the
+> dashboard inline inside the notebook. No local Python setup required.
 
 ## Features
 
