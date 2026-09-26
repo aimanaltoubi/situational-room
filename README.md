@@ -21,6 +21,7 @@ analytical reports into a single 3D Cesium globe interface.
   - [D — Deploy Online (Permanent)](#option-d--deploy-online-permanent)
 - [Data Files](#data-files)
 - [API Keys Required](#api-keys-required)
+- [Incidents Database](#incidents-database)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
 - [Troubleshooting](#troubleshooting)
@@ -35,6 +36,7 @@ analytical reports into a single 3D Cesium globe interface.
 - 📰 **Telegram intelligence feed** — curated live updates
 - 📊 **Analytics panel** — event timelines, casualty/impact stats, risk indicators
 - 🤖 **AI-powered reporting** — Claude-generated weekly prediction reports
+- 🗃️ **Incidents database** — add, edit, and delete war incidents from the browser
 
 ## Choose How to Load the System
 
@@ -167,6 +169,17 @@ All keys are loaded from `.env` (never hardcoded):
 | `CESIUM_TOKEN` | Cesium Ion | 3D globe rendering |
 | `ADSBX_KEY` | RapidAPI | ADS-B flights + GPS jamming |
 | `DATALASTIC_KEY` | Datalastic | Marine vessel tracking |
+
+## Incidents Database
+
+From the main page, click **"Manage Incidents Database"** (or go to
+`/database`) to add, edit, or delete war incidents directly in the browser
+— no manual CSV editing required. There's no separate database file:
+`data/iran_war_clean.csv` itself is the store, so every add/edit/delete is
+written straight to that CSV.
+
+Click **"Rebuild Dashboard"** on that page after making changes to rerun
+the pipeline so the globe/timeline reflect the latest incidents.
 
 ## Project Structure
 
