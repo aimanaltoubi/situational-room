@@ -4,7 +4,7 @@
 
 ######################################################################
 # CELL 8 — Part 4 of 4  [REDESIGNED]
-# generateReport() — calls Claude API with war events context
+# generateReport() — calls Gemini API with war events context
 # Opens full-screen professional Arabic report overlay
 # Final assembly: HTML_TEMPLATE = _P1 + _P2 + _P3 + _P4
 ######################################################################
@@ -13,7 +13,7 @@ _P4 = ("""
 <script>
 // ══════════════════════════════════════════════════════════════════
 // REPORT GENERATION
-// Calls Claude API with war context from WAR_EVENTS + analytics
+// Calls Gemini API with war context from WAR_EVENTS + analytics
 // Opens overlay in same tab (no popup blockers)
 // ══════════════════════════════════════════════════════════════════
 
@@ -56,7 +56,7 @@ async function generateReport(){
     return;
   }
 
-  // ── FALLBACK: C8.5 not run yet — call Claude for text analysis ─
+  // ── FALLBACK: C8.5 not run yet — call Gemini for text analysis ─
   if(btn) btn.disabled = true;
   if(loader) loader.style.display = 'block';
 
@@ -133,20 +133,21 @@ VIP رحلات: ${vi.total_vip||0} | وجهات: ${vipDests||'—'}
 
     setStep(1); await new Promise(r=>setTimeout(r,300)); setStep(2);
 
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent?key=${GEMINI_KEY}`, {
       method:'POST',
       headers:{
         'Content-Type':'application/json',
-        'x-api-key': ANTHROPIC_KEY,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true',
       },
-      body: JSON.stringify({model:'claude-opus-4-6',max_tokens:8000,
-        messages:[{role:'user',content:prompt}]})
+      body: JSON.stringify({
+        contents:[{role:'user',parts:[{text:prompt}]}],
+        // gemini-3.1-pro-preview always "thinks" — cap its budget so the
+        // visible answer isn't starved of tokens
+        generationConfig:{maxOutputTokens:16000,thinkingConfig:{thinkingBudget:4000}}
+      })
     });
     const data = await resp.json();
     if(data.error) throw new Error(data.error.message);
-    const narrative = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\\n').trim();
+    const narrative = (data.candidates?.[0]?.content?.parts||[]).map(b=>b.text||'').join('\\n').trim();
     setStep(3); await new Promise(r=>setTimeout(r,200));
 
     const formatted = narrative.split('\\n').map(line=>{

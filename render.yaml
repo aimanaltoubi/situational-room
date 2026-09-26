@@ -6,7 +6,7 @@ services:
     plan: free
     healthCheckPath: /status
     envVars:
-      - key: ANTHROPIC_API_KEY
+      - key: GEMINI_API_KEY
         sync: false
       - key: CESIUM_TOKEN
         sync: false

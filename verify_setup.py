@@ -42,7 +42,7 @@ else:
     fail(".env not found — run: cp .env.example .env")
 
 keys = {
-    "ANTHROPIC_API_KEY": ("Required", "Claude report generation"),
+    "GEMINI_API_KEY":    ("Required", "Gemini report generation"),
     "CESIUM_TOKEN":      ("Required", "3D globe rendering"),
     "ADSBX_KEY":         ("Required", "ADS-B flights + jamming"),
     "DATALASTIC_KEY":    ("Required", "Marine vessel tracking"),

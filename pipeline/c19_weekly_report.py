@@ -9,7 +9,7 @@ import os
 # THREE-PHASE ARCHITECTURE:
 #   Phase 1: "ما وقع" — factual recap from ALL data sources
 #   Phase 2: "التوقعات" — H2O model predictions (2 weeks ahead)
-#   Claude: narrative grounded in Cell 10 intelligence patterns
+#   Gemini: narrative grounded in Cell 10 intelligence patterns
 #   Output: standalone HTML report with embedded Chart.js graphs
 #
 # READS FROM:
@@ -242,15 +242,17 @@ model_cp_txt = "\n".join(f"  {r.COUNTRY:<25} risk={r.risk_level}" for _,r in cp_
 h2o.shutdown(prompt=False)
 
 # ══════════════════════════════════════════════════════════════
-# PART 3 — CLAUDE PROMPT
+# PART 3 — GEMINI PROMPT
 # ══════════════════════════════════════════════════════════════
-print("\n[3] Calling Claude Opus...")
+print("\n[3] Calling Gemini...")
 try:
-    ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
+    GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 except:
-    ANTHROPIC_API_KEY = ''
+    GEMINI_API_KEY = ''
 
-# ── Build maritime data for Claude ────────────────────────────
+GEMINI_MODEL = 'gemini-3.1-pro-preview'
+
+# ── Build maritime data for Gemini ────────────────────────────
 _mp = globals().get("MARITIME_PRESENCE",{})
 _sc_data = globals().get("SHIP_CASUALTIES",{})
 mp_countries = _mp.get("countries",{})
@@ -338,7 +340,7 @@ total_events = sum(d.get('n',0) for d in _ea.get('days',[]))
 total_countries = len(cr) if cr else len(set(e.get('country','') for e in globals().get('WAR_DATA',{}).get('events',[])))
 peak_day = _ea.get('peak_day', max((d for d in _ea.get('days',[])), key=lambda x: x.get('n',0), default={'day':0}).get('day',0) if _ea.get('days') else 0)
 
-# ── Build chart summaries + observations for Claude ──────────
+# ── Build chart summaries + observations for Gemini ──────────
 
 # Escalation chart data summary
 esc_days = _ea.get('days',[])
@@ -520,39 +522,47 @@ print(f"  Predictions: {len(pred_lines)} countries")
 t0 = time.time()
 narrative = ""
 print("  Streaming response", end="", flush=True)
-with requests.post("https://api.anthropic.com/v1/messages",
-    headers={"Content-Type":"application/json","x-api-key":ANTHROPIC_API_KEY,
-             "anthropic-version":"2023-06-01"},
-    json={"model":"claude-opus-4-6","max_tokens":12000,"stream":True,
-          "messages":[{"role":"user","content":prompt}]},
+gemini_url = (
+    f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:streamGenerateContent"
+    f"?alt=sse&key={GEMINI_API_KEY}"
+)
+with requests.post(gemini_url,
+    headers={"Content-Type":"application/json"},
+    json={"contents":[{"role":"user","parts":[{"text":prompt}]}],
+          # gemini-3.1-pro-preview always "thinks" — cap its budget so the
+          # visible answer isn't starved of tokens
+          "generationConfig":{"maxOutputTokens":24000,"thinkingConfig":{"thinkingBudget":4000}}},
     timeout=600, stream=True) as resp:
     resp.raise_for_status()
-    buf = ""
-    for chunk in resp.iter_lines(decode_unicode=True):
-        if not chunk or not chunk.startswith("data: "):
+    # NOTE: iterate raw bytes, not iter_lines(decode_unicode=True) — the
+    # latter can split multi-byte UTF-8 (Arabic) chars across chunk
+    # boundaries and corrupt the JSON payload.
+    for raw_line in resp.iter_lines():
+        if not raw_line:
+            continue
+        chunk = raw_line.decode("utf-8", errors="replace")
+        if not chunk.startswith("data: "):
             continue
         payload = chunk[6:]
         if payload == "[DONE]":
             break
         try:
             evt = json.loads(payload)
-            etype = evt.get("type","")
-            if etype == "content_block_delta":
-                txt = evt.get("delta",{}).get("text","")
-                narrative += txt
-                if len(narrative) % 500 < len(txt):
-                    print(".", end="", flush=True)
-            elif etype == "message_stop":
-                break
-            elif etype == "error":
-                raise RuntimeError(f"Stream error: {evt}")
         except json.JSONDecodeError:
             continue
+        candidates = evt.get("candidates",[])
+        if not candidates:
+            continue
+        for part in candidates[0].get("content",{}).get("parts",[]):
+            txt = part.get("text","")
+            narrative += txt
+            if len(narrative) % 500 < len(txt):
+                print(".", end="", flush=True)
 narrative = narrative.strip()
 elapsed = round(time.time()-t0,1)
 print(f"\n  Done {elapsed}s | {len(narrative):,} chars")
 if not narrative:
-    raise RuntimeError("Empty response from Claude")
+    raise RuntimeError("Empty response from Gemini")
 
 # ══════════════════════════════════════════════════════════════
 # PART 4 — BUILD HTML WITH CHARTS
@@ -619,7 +629,7 @@ total_countries = len(cr)
 
 
 # ══════════════════════════════════════════════════════════════
-# BUILD REPORT — data-driven explanations + Claude findings
+# BUILD REPORT — data-driven explanations + Gemini findings
 # ══════════════════════════════════════════════════════════════
 
 # ── Auto-generate chart explanations from data ───────────────
@@ -657,7 +667,7 @@ jam_explain = (
 )
 
 
-# ── Split Claude narrative into sections by header ────────────
+# ── Split Gemini narrative into sections by header ────────────
 def _fmt_block(text):
     """Format a block of text as HTML."""
     html_lines = []
@@ -682,7 +692,7 @@ def _fmt_block(text):
     return "\n".join(html_lines)
 
 def split_narrative(text):
-    """Split Claude's narrative by # headers into a dict."""
+    """Split Gemini's narrative by # headers into a dict."""
     sections = {}
     current_key = "_intro"
     current_lines = []
@@ -700,7 +710,7 @@ def split_narrative(text):
     return sections
 
 nsecs = split_narrative(narrative)
-print(f"  Claude sections: {list(nsecs.keys())}")
+print(f"  Gemini sections: {list(nsecs.keys())}")
 
 def R(*keys):
     """Get a formatted section card by partial key match (multiple keys, first match wins)."""
@@ -1009,7 +1019,7 @@ print(f"  REPORT COMPLETE")
 print(f"  Charts  : escalation, political, jamming, jam-corr")
 print(f"  Tables  : risk levels, coincidences, corridors, satellites")
 print(f"  Map     : Leaflet prediction heatmap")
-print(f"  Analysis: Claude findings ({len(narrative):,} chars)")
+print(f"  Analysis: Gemini findings ({len(narrative):,} chars)")
 print(f"  Saved   > {out}")
 print(f"{'='*60}")
 # webbrowser.open(f"file://{out}")  # disabled in production

@@ -6,7 +6,7 @@ _P3 = ("""
 
 <script>
 const CESIUM_TOKEN  = '__TOKEN__';
-const ANTHROPIC_KEY = '__ANTHROPIC_KEY__';
+const GEMINI_KEY    = '__GEMINI_KEY__';
 const _war_day_num  = __WAR_DAY__;
 const SAT_DATA      = __SAT_JSON__;
 const JAM_DATA      = __JAM_JSON__;

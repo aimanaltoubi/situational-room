@@ -42,7 +42,7 @@ HIST_POSITIONS_CACHE = os.path.join(CACHE_DIR, "ifs_hist_positions.json")
 TELEGRAM_CACHE       = os.path.join(CACHE_DIR, "ifs_telegram_cache.json")
 
 # ── API Keys (from .env) ──────────────────────────────────────
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+GEMINI_API_KEY    = os.environ.get("GEMINI_API_KEY", "")
 CESIUM_TOKEN      = os.environ.get("CESIUM_TOKEN", "")
 ADSBX_KEY         = os.environ.get("ADSBX_KEY", "")
 AERODATABOX_KEY   = os.environ.get("AERODATABOX_KEY", "")
@@ -66,7 +66,7 @@ print(f"  Data dir    : {DATA_DIR}")
 print(f"  Cache dir   : {CACHE_DIR}")
 print(f"  Output HTML : {OUTPUT_HTML}")
 _keys = {
-    "ANTHROPIC_API_KEY": ANTHROPIC_API_KEY,
+    "GEMINI_API_KEY":    GEMINI_API_KEY,
     "CESIUM_TOKEN":      CESIUM_TOKEN,
     "ADSBX_KEY":         ADSBX_KEY,
     "DATALASTIC_KEY":    DATALASTIC_KEY,
@@ -155,7 +155,7 @@ def _csv_append(path, header, row):
 print("[CELL 1] ✓ Config complete")
 print(f"         Output HTML         : {OUTPUT_HTML}")
 print(f"         Hist positions cache: {HIST_POSITIONS_CACHE}")
-print(f"         API key             : {'SET (' + str(len(ANTHROPIC_API_KEY)) + ' chars)' if ANTHROPIC_API_KEY else 'NOT SET'}")
+print(f"         API key             : {'SET (' + str(len(GEMINI_API_KEY)) + ' chars)' if GEMINI_API_KEY else 'NOT SET'}")
 print(f"         Conflict start      : {WAR_START.date()}  (28 Feb 2026)")
 print(f"         Region box          : lat {MIDDLE_EAST_BOX['lat_min']}–{MIDDLE_EAST_BOX['lat_max']}N  lon {MIDDLE_EAST_BOX['lon_min']}–{MIDDLE_EAST_BOX['lon_max']}E")
 print("         Ready — run Cell 2 next")

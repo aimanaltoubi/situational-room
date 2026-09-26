@@ -35,7 +35,7 @@ analytical reports into a single 3D Cesium globe interface.
 - 🚢 **Marine/vessel tracking** — AIS shipping data and attacked-vessel markers
 - 📰 **Telegram intelligence feed** — curated live updates
 - 📊 **Analytics panel** — event timelines, casualty/impact stats, risk indicators
-- 🤖 **AI-powered reporting** — Claude-generated weekly prediction reports
+- 🤖 **AI-powered reporting** — Gemini-generated weekly prediction reports
 - 🗃️ **Incidents database** — add, edit, and delete war incidents from the browser
 
 ## Choose How to Load the System
@@ -132,7 +132,7 @@ platform health checks.
 2. In Render, choose "New Blueprint" and point it at the repo — it reads
    [`render.yaml`](render.yaml) and builds the included [`Dockerfile`](Dockerfile)
    automatically.
-3. Fill in the env vars it prompts for (`ANTHROPIC_API_KEY`, `CESIUM_TOKEN`,
+3. Fill in the env vars it prompts for (`GEMINI_API_KEY`, `CESIUM_TOKEN`,
    `ADSBX_KEY`, `DATALASTIC_KEY`, `SITE_USERNAME`, `SITE_PASSWORD`).
 
 **Any Docker host (VPS, Fly.io, ECS, etc.):**
@@ -165,7 +165,7 @@ All keys are loaded from `.env` (never hardcoded):
 
 | Key | Service | Purpose |
 |-----|---------|---------|
-| `ANTHROPIC_API_KEY` | Anthropic | Claude report generation |
+| `GEMINI_API_KEY` | Google Gemini | AI report generation |
 | `CESIUM_TOKEN` | Cesium Ion | 3D globe rendering |
 | `ADSBX_KEY` | RapidAPI | ADS-B flights + GPS jamming |
 | `DATALASTIC_KEY` | Datalastic | Marine vessel tracking |

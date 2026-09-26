@@ -32,8 +32,8 @@ def build_html():
 
     # ── API key ───────────────────────────────────────────────────
     api_key = ""
-    if "ANTHROPIC_API_KEY" in globals() and ANTHROPIC_API_KEY:
-        api_key = ANTHROPIC_API_KEY
+    if "GEMINI_API_KEY" in globals() and GEMINI_API_KEY:
+        api_key = GEMINI_API_KEY
         # API key loaded from .env via config.py
     if not api_key:
         print("      WARNING: No API key found — report button will show error")
@@ -245,7 +245,7 @@ def build_html():
         attacked_json = '{"vessels":[],"count":0,"total_killed":0,"total_injured":0}'
 
     html = html.replace("__TOKEN__",          CESIUM_TOKEN)
-    html = html.replace("__ANTHROPIC_KEY__",  api_key)
+    html = html.replace("__GEMINI_KEY__",     api_key)
     html = html.replace("__WAR_DAY__",        str(war_day))
     html = html.replace("__BUILD_TIME__",     build_ts)
     html = html.replace("__SAT_JSON__",       sat_json)
@@ -336,7 +336,7 @@ def build_html():
 
     # ── Unreplaced token check ────────────────────────────────────
     remaining = [t for t in [
-        "__TOKEN__", "__ANTHROPIC_KEY__", "__WAR_DAY__", "__BUILD_TIME__",
+        "__TOKEN__", "__GEMINI_KEY__", "__WAR_DAY__", "__BUILD_TIME__",
         "__SAT_JSON__", "__JAM_JSON__", "__GPSJAM_JSON__", "__FLIGHT_JSON__",
         "__INTEL_JSON__", "__WAR_JSON__", "__HIST_SAT_JSON__",
         "__TELEGRAM_JSON__", "__MARINE_JSON__", "__POLITICAL_JSON__", "__PREDICTION_JSON__", "__REPORT_TEXT__",
