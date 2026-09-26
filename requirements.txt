@@ -19,6 +19,7 @@ scipy
 
 # Web server
 flask
+gunicorn
 
 # Environment variables
 python-dotenv
