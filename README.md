@@ -5,9 +5,25 @@ real time. It fuses satellite tracking, GPS jamming detection, live flight
 and marine vessel monitoring, war/political event timelines, and AI-generated
 analytical reports into a single 3D Cesium globe interface.
 
-> **Note:** This is a local application, not a hosted website by default.
-> Pick one of the four ways to load it below — nothing appears just from
-> browsing this repository.
+> **New here?** The fastest way to try it is clicking **Open in Colab** in
+> [Option A](#option-a--google-colab-no-install) below — no install needed.
+> This is a local application, not a hosted website by default: nothing
+> appears just from browsing this repository — pick one of the four ways
+> to load it below.
+
+## Table of Contents
+
+- [Features](#features)
+- [Choose How to Load the System](#choose-how-to-load-the-system)
+  - [A — Google Colab](#option-a--google-colab-no-install)
+  - [B — Run Locally](#option-b--run-locally)
+  - [C — Public Shareable Link](#option-c--public-shareable-link)
+  - [D — Deploy Online (Permanent)](#option-d--deploy-online-permanent)
+- [Data Files](#data-files)
+- [API Keys Required](#api-keys-required)
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Troubleshooting](#troubleshooting)
 
 ## Features
 
@@ -30,12 +46,16 @@ analytical reports into a single 3D Cesium globe interface.
 | ☁️ | [Deploy online](#option-d--deploy-online-permanent) | A permanent hosted instance | Yes — a permanent public URL |
 
 ### Option A — Google Colab (no install)
-Click the badge below to open a ready-to-run notebook. It clones the repo,
-asks for your API keys, builds the data, and displays the dashboard inline.
+
+Click the badge to open a ready-to-run notebook. It clones the repo, asks
+for your API keys, builds the data, and displays the dashboard inline.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aimanaltoubi/situational-room/blob/main/FusionIntell_Colab.ipynb)
 
 ### Option B — Run locally
+
+<details>
+<summary>Show setup steps</summary>
 
 ```bash
 # 1. Install dependencies
@@ -72,7 +92,12 @@ click **"Load System"** to open the live dashboard.
 Use `python3 app.py --refresh` to rebuild the pipeline before serving, or
 `python3 app.py --port 8080` to use a different port.
 
+</details>
+
 ### Option C — Public shareable link
+
+<details>
+<summary>Show setup steps</summary>
 
 Run locally (or from the Colab notebook) with a live tunnel — no deployment
 needed:
@@ -89,7 +114,12 @@ while your process keeps running. Set `SITE_USERNAME`/`SITE_PASSWORD` first
 dashboard backed by your billed API keys. The link disappears once you stop
 the process; it's for temporary sharing, not permanent hosting.
 
+</details>
+
 ### Option D — Deploy online (permanent)
+
+<details>
+<summary>Show setup steps</summary>
 
 For a URL that stays up on its own, host it on a server. Set
 `SITE_USERNAME` + `SITE_PASSWORD` here too — `/status` stays open for
@@ -112,6 +142,8 @@ docker run -p 5000:5000 --env-file .env situational-room
 **Any Python PaaS with a Procfile (Railway, Heroku-style):** push the repo —
 it will run `gunicorn app:app` via the included [`Procfile`](Procfile). Make
 sure the platform's runtime includes a JRE (needed by H2O).
+
+</details>
 
 ## Data Files
 
@@ -137,6 +169,9 @@ All keys are loaded from `.env` (never hardcoded):
 | `DATALASTIC_KEY` | Datalastic | Marine vessel tracking |
 
 ## Project Structure
+
+<details>
+<summary>Show folder layout</summary>
 
 ```
 situational-room/
@@ -178,6 +213,8 @@ situational-room/
 └── output/                # Generated HTML (git-ignored)
 ```
 
+</details>
+
 ## Requirements
 
 - Python 3.9+
@@ -193,3 +230,4 @@ situational-room/
   first to generate `output/ifs_globe.html`.
 - **Missing API key errors** — run `python3 verify_setup.py` to confirm
   which keys/data files are missing.
+
