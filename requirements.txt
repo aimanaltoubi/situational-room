@@ -21,6 +21,9 @@ scipy
 flask
 gunicorn
 
+# Public shareable link (optional — only needed for `app.py --public`)
+pyngrok
+
 # Environment variables
 python-dotenv
 

@@ -1,21 +1,13 @@
 # FusionIntell — Middle East Conflict Situational Room
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aimanaltoubi/situational-room/blob/main/FusionIntell_Colab.ipynb)
-
 A self-hosted intelligence dashboard for tracking the Middle East conflict in
 real time. It fuses satellite tracking, GPS jamming detection, live flight
 and marine vessel monitoring, war/political event timelines, and AI-generated
 analytical reports into a single 3D Cesium globe interface.
 
-> **Note:** This is a local application, not a hosted website. After you
-> install and launch it (see below), a **main page** opens in your browser
-> with a description of the system and a **"Load System"** button that
-> opens the live dashboard. Nothing will appear until you run the server —
-> simply browsing the GitHub repository will not show the button.
->
-> Don't want to install anything? Click **"Open in Colab"** above — it
-> clones the repo, asks for your API keys, builds the data, and loads the
-> dashboard inline inside the notebook. No local Python setup required.
+> **Note:** This is a local application, not a hosted website by default.
+> Pick one of the four ways to load it below — nothing appears just from
+> browsing this repository.
 
 ## Features
 
@@ -28,7 +20,22 @@ analytical reports into a single 3D Cesium globe interface.
 - 📊 **Analytics panel** — event timelines, casualty/impact stats, risk indicators
 - 🤖 **AI-powered reporting** — Claude-generated weekly prediction reports
 
-## Launch the System
+## Choose How to Load the System
+
+| | Option | Best for | Shareable with others? |
+|---|---|---|---|
+| 🧪 | [Google Colab](#option-a--google-colab-no-install) | Trying it instantly, no install | Only inside your session (unless you add a public link, see below) |
+| 💻 | [Run locally](#option-b--run-locally) | Development, full control | No — localhost only |
+| 🌍 | [Public link](#option-c--public-shareable-link) | Sharing with anyone right now | Yes — a temporary public URL |
+| ☁️ | [Deploy online](#option-d--deploy-online-permanent) | A permanent hosted instance | Yes — a permanent public URL |
+
+### Option A — Google Colab (no install)
+Click the badge below to open a ready-to-run notebook. It clones the repo,
+asks for your API keys, builds the data, and displays the dashboard inline.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aimanaltoubi/situational-room/blob/main/FusionIntell_Colab.ipynb)
+
+### Option B — Run locally
 
 ```bash
 # 1. Install dependencies
@@ -65,11 +72,28 @@ click **"Load System"** to open the live dashboard.
 Use `python3 app.py --refresh` to rebuild the pipeline before serving, or
 `python3 app.py --port 8080` to use a different port.
 
-## Deploying Online
+### Option C — Public shareable link
 
-The dashboard uses billed API keys, so if you host it publicly, set
-`SITE_USERNAME` + `SITE_PASSWORD` (see `.env.example`) to require a login —
-`/status` stays open for platform health checks.
+Run locally (or from the Colab notebook) with a live tunnel — no deployment
+needed:
+
+```bash
+python3 app.py --public
+```
+
+Requires a free `NGROK_AUTHTOKEN` in `.env`
+([get one here](https://dashboard.ngrok.com/get-started/your-authtoken)).
+Prints a URL like `https://xxxx.ngrok-free.app` that **anyone** can open
+while your process keeps running. Set `SITE_USERNAME`/`SITE_PASSWORD` first
+(see `.env.example`) — otherwise anyone with the link has full access to a
+dashboard backed by your billed API keys. The link disappears once you stop
+the process; it's for temporary sharing, not permanent hosting.
+
+### Option D — Deploy online (permanent)
+
+For a URL that stays up on its own, host it on a server. Set
+`SITE_USERNAME` + `SITE_PASSWORD` here too — `/status` stays open for
+platform health checks.
 
 **Render (recommended, easiest):**
 1. Push this repo to GitHub.

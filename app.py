@@ -149,6 +149,9 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=5000)
     parser.add_argument("--refresh", action="store_true",
                         help="Run pipeline before starting server")
+    parser.add_argument("--public", action="store_true",
+                        help="Open a shareable public link via ngrok "
+                             "(requires NGROK_AUTHTOKEN in .env)")
     args = parser.parse_args()
 
     if args.refresh:
@@ -159,5 +162,23 @@ if __name__ == "__main__":
     print(f"  Dashboard: http://localhost:{args.port}/dashboard")
     print(f"  Status:    http://localhost:{args.port}/status")
     print(f"  Weekly:    http://localhost:{args.port}/weekly")
-    print(f"  Login:     {'required (SITE_USERNAME/SITE_PASSWORD)' if _auth_enabled() else 'disabled — set SITE_USERNAME/SITE_PASSWORD in .env before exposing this publicly'}\n")
+    print(f"  Login:     {'required (SITE_USERNAME/SITE_PASSWORD)' if _auth_enabled() else 'disabled — set SITE_USERNAME/SITE_PASSWORD in .env before exposing this publicly'}")
+
+    if args.public:
+        ngrok_token = os.environ.get("NGROK_AUTHTOKEN", "")
+        if not ngrok_token:
+            print("  Public link: skipped — set NGROK_AUTHTOKEN in .env "
+                  "(free at https://dashboard.ngrok.com/get-started/your-authtoken)")
+        else:
+            try:
+                from pyngrok import ngrok
+                ngrok.set_auth_token(ngrok_token)
+                public_url = ngrok.connect(args.port, "http").public_url
+                print(f"  Public link: {public_url}  (anyone with this URL can reach the app)")
+                if not _auth_enabled():
+                    print("  WARNING: no login set — set SITE_USERNAME/SITE_PASSWORD before sharing this link.")
+            except ImportError:
+                print("  Public link: skipped — run: pip install pyngrok")
+    print()
     app.run(host="0.0.0.0", port=args.port, debug=False)
+
