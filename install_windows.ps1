@@ -47,6 +47,31 @@ function Get-Python311 {
     return $python.Trim()
 }
 
+function Find-Java {
+    $javaCommand = Get-Command java.exe -ErrorAction SilentlyContinue
+    if ($javaCommand) {
+        return $javaCommand.Source
+    }
+
+    $programFilesX86 = [Environment]::GetEnvironmentVariable("ProgramFiles(x86)")
+    $searchRoots = @(
+        (Join-Path $env:ProgramFiles "Eclipse Adoptium"),
+        (Join-Path $env:LOCALAPPDATA "Programs\Eclipse Adoptium"),
+        (Join-Path $env:ProgramFiles "Java"),
+        (Join-Path $programFilesX86 "Eclipse Adoptium")
+    )
+    foreach ($root in $searchRoots) {
+        if (Test-Path $root) {
+            $javaFile = Get-ChildItem -Path $root -Filter java.exe -File -Recurse `
+                -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($javaFile) {
+                return $javaFile.FullName
+            }
+        }
+    }
+    return $null
+}
+
 function Test-RequiredApiKeys {
     $requiredKeys = @("GEMINI_API_KEY", "CESIUM_TOKEN", "ADSBX_KEY", "DATALASTIC_KEY")
     $contents = Get-Content -LiteralPath $envFile
@@ -82,12 +107,15 @@ if ($firstInstall) {
 }
 
 $pythonExe = Get-Python311
-if (!(Get-Command java -ErrorAction SilentlyContinue)) {
+$javaExe = Find-Java
+if (!$javaExe) {
     Install-WingetPackage "EclipseAdoptium.Temurin.17.JRE"
+    $javaExe = Find-Java
 }
-if (!(Get-Command java -ErrorAction SilentlyContinue)) {
+if (!$javaExe) {
     throw "Java was not found after installation. Install a Java 17 runtime and rerun this command."
 }
+$env:Path = "$(Split-Path $javaExe -Parent);$env:Path"
 
 if (!(Test-Path $venvPython)) {
     Write-Host "Creating the application environment and installing dependencies..."
