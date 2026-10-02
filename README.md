@@ -59,6 +59,29 @@ for your API keys, builds the data, and displays the dashboard inline.
 <details>
 <summary>Show setup steps</summary>
 
+#### Windows (CMD, first-time install)
+
+After this installer has been pushed to the repository's `main` branch, open
+Command Prompt and run this command. The installer downloads and extracts the
+app under `%LOCALAPPDATA%\SituationalRoom`, installs Python 3.11 and Java
+17 with `winget` if they are missing, installs Python dependencies, prompts
+you to enter API keys, builds the dashboard, and opens it in your browser.
+
+```cmd
+powershell -NoProfile -ExecutionPolicy Bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $script = Join-Path $env:TEMP 'situational-room-install.ps1'; Invoke-WebRequest 'https://raw.githubusercontent.com/aimanaltoubi/situational-room/main/install_windows.ps1' -OutFile $script; & $script"
+```
+
+`winget` is required if Python or Java needs to be installed automatically.
+The command starts a local web app, not a standalone `.exe`. Run the same
+command again to open it after setup. To stop its background server, use the
+PID printed by the installer with `taskkill /PID <PID> /T /F`.
+
+To use a different port, download the installer and run it with
+`-Port 8080` instead of invoking the default command. The setup expects all
+four API keys and the repository's included `data/` files.
+
+#### Linux / macOS
+
 ```bash
 # 1. Install dependencies
 pip install -r requirements.txt

@@ -19,28 +19,13 @@ import os
 #   Middle_East_clean_2026.csv  (ACLED — for H2O model)
 ######################################################################
 
-import subprocess, sys, os, json, re, time, warnings
-import webbrowser
+import os, json, re, time
 from datetime import datetime, timedelta
-warnings.filterwarnings('ignore')
 
 import pandas as pd
 import numpy as np
 import requests
-
-for pkg in ['h2o','scipy']:
-    try:
-        __import__(pkg)
-    except ModuleNotFoundError:
-        subprocess.run([sys.executable,"-m","pip","install",pkg,"--break-system-packages","-q"], check=True)
-
-java_check = subprocess.run(["java","-version"],capture_output=True,text=True)
-if java_check.returncode != 0:
-    subprocess.run(["sudo","apt-get","install","-y","default-jdk","-q"],check=False)
-
-import h2o
-from h2o.automl import H2OAutoML
-from scipy.spatial.distance import cdist
+from pipeline.c13_conflict_forecast import ConflictForecastContext, H2OConflictForecastStage
 
 print("\n" + "="*60)
 print("  WEEKLY CONFLICT REPORT — WITH CHARTS")
@@ -106,140 +91,20 @@ print(f"  Esc: {len(_ea.get('days',[]))} days | Pol: {len(ms)} milestones | Flt:
 # PART 2 — H2O MODEL (War-period, country-level)
 # ══════════════════════════════════════════════════════════════
 print("\n[2] H2O model...")
-
-# ── War-period filter + country-level aggregation ─────────────
-WAR_START_DATE = pd.Timestamp("2026-02-28")
-df_war = df[df['WEEK'] >= WAR_START_DATE].copy()
-print(f"  War data: {len(df_war)} rows, weeks: {sorted(df_war['WEEK'].dt.strftime('%Y-%m-%d').unique())}")
-
-weekly = df_war.groupby(['WEEK','COUNTRY']).agg(
-    event_count=('EVENTS','sum'),
-    grid_lat=('CENTROID_LATITUDE','mean'),
-    grid_lon=('CENTROID_LONGITUDE','mean'),
-    airstrike=('SUB_EVENT_TYPE', lambda x: df_war.loc[x.index,'EVENTS'][df_war.loc[x.index,'SUB_EVENT_TYPE']=='Air/drone strike'].sum()),
-    shelling=('SUB_EVENT_TYPE', lambda x: df_war.loc[x.index,'EVENTS'][df_war.loc[x.index,'SUB_EVENT_TYPE']=='Shelling/artillery/missile attack'].sum()),
-    armed_clash=('SUB_EVENT_TYPE', lambda x: df_war.loc[x.index,'EVENTS'][df_war.loc[x.index,'SUB_EVENT_TYPE']=='Armed clash'].sum()),
-    ied=('SUB_EVENT_TYPE', lambda x: df_war.loc[x.index,'EVENTS'][df_war.loc[x.index,'SUB_EVENT_TYPE']=='Remote explosive/landmine/IED'].sum()),
-).reset_index()
-weekly['has_conflict'] = (weekly['event_count']>0).astype(int)
-
-# ── Full panel: all countries × all war weeks ─────────────────
-countries_list = sorted(weekly['COUNTRY'].unique())
-all_weeks = sorted(weekly['WEEK'].unique())
-print(f"  Panel: {len(all_weeks)} weeks × {len(countries_list)} countries = {len(all_weeks)*len(countries_list)} rows")
-
-country_coords = weekly.groupby('COUNTRY').agg(lat=('grid_lat','mean'),lon=('grid_lon','mean')).to_dict('index')
-rows = []
-for country in countries_list:
-    for wk in all_weeks:
-        rows.append({'WEEK':wk,'COUNTRY':country,'grid_lat':country_coords.get(country,{}).get('lat',0),'grid_lon':country_coords.get(country,{}).get('lon',0)})
-panel = pd.DataFrame(rows)
-panel = panel.merge(weekly[['WEEK','COUNTRY','event_count','has_conflict','airstrike','shelling','armed_clash','ied']], on=['WEEK','COUNTRY'], how='left')
-panel[['event_count','has_conflict','airstrike','shelling','armed_clash','ied']] = panel[['event_count','has_conflict','airstrike','shelling','armed_clash','ied']].fillna(0).astype(int)
-panel = panel.sort_values(['COUNTRY','WEEK']).reset_index(drop=True)
-
-# ── Lag features ──────────────────────────────────────────────
-grp = panel.groupby('COUNTRY')
-for lag in [1,2]:
-    for col in ['events','conflict','air','shell','clash']:
-        src_col = {'events':'event_count','conflict':'has_conflict','air':'airstrike','shell':'shelling','clash':'armed_clash'}[col]
-        panel[f'tlag_{lag}w_{col}'] = grp[src_col].shift(lag)
-panel['wow_events'] = grp['event_count'].diff()
-panel['wow_air'] = grp['airstrike'].diff()
-panel['cum_events'] = grp['event_count'].cumsum().shift(1)
-panel['cum_air'] = grp['airstrike'].cumsum().shift(1)
-
-# ── Neighbor spillover ────────────────────────────────────────
-NEIGHBORS = {
-    'Iran':['Iraq','Kuwait','Bahrain','Qatar','United Arab Emirates','Oman','Saudi Arabia'],
-    'Iraq':['Iran','Kuwait','Syria','Jordan','Saudi Arabia'],
-    'Israel':['Lebanon','Syria','Jordan','Palestine'],
-    'Lebanon':['Israel','Syria'],
-    'Syria':['Lebanon','Israel','Jordan','Iraq'],
-    'Jordan':['Israel','Syria','Iraq','Saudi Arabia'],
-    'Saudi Arabia':['Iraq','Kuwait','Bahrain','Qatar','United Arab Emirates','Oman','Jordan','Yemen'],
-    'Kuwait':['Iraq','Iran','Saudi Arabia'],
-    'Bahrain':['Saudi Arabia','Qatar','Iran'],
-    'Qatar':['Saudi Arabia','Bahrain','United Arab Emirates','Iran'],
-    'United Arab Emirates':['Saudi Arabia','Qatar','Oman','Iran'],
-    'Oman':['Saudi Arabia','United Arab Emirates','Yemen','Iran'],
-    'Yemen':['Saudi Arabia','Oman'],
-    'Palestine':['Israel'],
-}
-panel['splag_events'] = 0.0
-panel['splag_conflict'] = 0.0
-for wk in all_weeks:
-    wk_mask = panel['WEEK'] == wk
-    wk_data = panel[wk_mask].set_index('COUNTRY')
-    for country in countries_list:
-        nbs = NEIGHBORS.get(country, [])
-        if nbs:
-            nb_data = wk_data[wk_data.index.isin(nbs)]
-            if not nb_data.empty:
-                cmask = wk_mask & (panel['COUNTRY'] == country)
-                panel.loc[cmask, 'splag_events'] = nb_data['event_count'].mean()
-                panel.loc[cmask, 'splag_conflict'] = nb_data['has_conflict'].mean()
-
-cc = {c:i for i,c in enumerate(countries_list)}
-panel['country_fe'] = panel['COUNTRY'].map(cc)
-panel['week_num'] = panel.groupby('WEEK').ngroup()
-
-# ── Train & Predict ──────────────────────────────────────────
-TARGET_WEEK = ACLED_CUTOFF + timedelta(days=14)
-FEATURES = ['tlag_1w_events','tlag_1w_conflict','tlag_1w_air','tlag_1w_shell','tlag_1w_clash',
-            'tlag_2w_events','tlag_2w_conflict','tlag_2w_air','tlag_2w_shell','tlag_2w_clash',
-            'wow_events','wow_air','cum_events','cum_air','splag_events','splag_conflict',
-            'country_fe','week_num','grid_lat','grid_lon']
-TARGET = 'has_conflict'
-
-h2o.init(max_mem_size="4G")
-train_df = panel[panel[FEATURES].notna().all(axis=1)].copy()
-train_df[TARGET] = train_df[TARGET].astype('category')
-print(f"  Training rows: {len(train_df)}")
-
-# Prediction base: last week shifted forward
-pred_base = panel[panel['WEEK']==panel['WEEK'].max()].copy()
-pred_base['WEEK'] = TARGET_WEEK
-pred_base['week_num'] = pred_base['week_num'] + 1
-last_week = panel[panel['WEEK']==panel['WEEK'].max()].set_index('COUNTRY')
-for col in ['events','conflict','air','shell','clash']:
-    src_col = {'events':'event_count','conflict':'has_conflict','air':'airstrike','shell':'shelling','clash':'armed_clash'}[col]
-    pred_base[f'tlag_2w_{col}'] = pred_base[f'tlag_1w_{col}']
-    pred_base[f'tlag_1w_{col}'] = pred_base['COUNTRY'].map(last_week[src_col]).fillna(0)
-pred_base['wow_events'] = 0
-pred_base['wow_air'] = 0
-pred_base['grid_id'] = pred_base.apply(lambda r: f"{r.grid_lat:.2f}_{r.grid_lon:.2f}", axis=1)
-pred_base['ADMIN1'] = pred_base['COUNTRY']
-
-train_h2o = h2o.H2OFrame(train_df[FEATURES+[TARGET]])
-train_h2o[TARGET] = train_h2o[TARGET].asfactor()
-pred_h2o = h2o.H2OFrame(pred_base[FEATURES])
-
-aml = H2OAutoML(max_runtime_secs=300, max_models=10, seed=42, sort_metric="AUC",
-                balance_classes=True, nfolds=3, keep_cross_validation_predictions=True)
-aml.train(x=FEATURES, y=TARGET, training_frame=train_h2o)
-best = aml.leader
-print(f"  Best: {best.model_id} | AUC: {best.auc(xval=True):.4f}")
-
-preds = best.predict(pred_h2o).as_data_frame()
-pred_base = pred_base.reset_index(drop=True)
-pred_base['prob_conflict'] = preds['p1'].values
-pred_base['confidence_tier'] = pd.cut(pred_base['prob_conflict'], bins=[0,0.25,0.5,0.75,1.0], labels=['Low','Medium','High','Very High'])
-
-cp_df = pred_base[['COUNTRY','prob_conflict','grid_lat','grid_lon']].copy()
-cp_df = cp_df.rename(columns={'prob_conflict':'mean_prob'})
-cp_df['risk_level'] = pd.cut(cp_df['mean_prob'], bins=[0,0.25,0.5,0.75,1.0], labels=['Low','Medium','High','Very High'])
-cp_df['total_grids'] = 1
-cp_df['high_risk_grids'] = (cp_df['mean_prob'] >= 0.5).astype(int)
-cp_df['max_prob'] = cp_df['mean_prob']
-cp_df = cp_df.sort_values('mean_prob', ascending=False)
-
-base_act = panel[panel['WEEK']==panel['WEEK'].min()].set_index('COUNTRY')['event_count']
-pred_base['early_activity'] = pred_base['COUNTRY'].map(base_act).fillna(0)
-pred_base['is_new_emergence'] = ((pred_base['prob_conflict']>=0.6) & (pred_base['early_activity']<5)).astype(int)
-
-model_cp_txt = "\n".join(f"  {r.COUNTRY:<25} risk={r.risk_level}" for _,r in cp_df.iterrows())
-h2o.shutdown(prompt=False)
+forecast = H2OConflictForecastStage().run(ConflictForecastContext(
+    acled_data=df,
+    acled_cutoff=ACLED_CUTOFF,
+    war_start=pd.Timestamp("2026-02-28"),
+))
+pred_base = forecast.predictions
+cp_df = forecast.country_risks
+TARGET_WEEK = forecast.target_week
+model_cp_txt = "\n".join(
+    f"  {row.COUNTRY:<25} risk={row.risk_level}"
+    for _, row in cp_df.iterrows()
+)
+print(f"  Training rows: {forecast.training_rows}")
+print(f"  Best: {forecast.model_id} | AUC: {forecast.cross_validation_auc:.4f}")
 
 # ══════════════════════════════════════════════════════════════
 # PART 3 — GEMINI PROMPT
