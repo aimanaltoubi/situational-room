@@ -24,7 +24,7 @@ function Install-WingetPackage([string]$PackageId) {
     }
 
     & $winget.Source install --id $PackageId --exact --silent `
-        --accept-package-agreements --accept-source-agreements
+        --accept-package-agreements --accept-source-agreements | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "winget could not install $PackageId (exit code $LASTEXITCODE)."
     }
