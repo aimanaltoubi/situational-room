@@ -39,6 +39,16 @@ LOGS_DIR    = _ws_paths["logs"]
 for _d in [DATA_DIR, CACHE_DIR, OUTPUT_DIR, LOGS_DIR]:
     os.makedirs(_d, exist_ok=True)
 
+
+def workspace_reference(filename, builtin, empty):
+    """Reference list for this room: data/<filename> if present, else the built-in
+    Middle East list when the workspace opts in (builtin_reference_data), else empty."""
+    path = os.path.join(DATA_DIR, filename)
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return builtin if WORKSPACE.get("builtin_reference_data") else empty
+
 # ── Compatibility aliases ─────────────────────────────────────
 # These match the variable names used throughout the notebook
 SCRIPT_DIR  = PROJECT_DIR

@@ -11,7 +11,7 @@ Usage:
   python3 app.py --refresh          # rebuild default workspace then serve
 """
 
-import os, re, sys, argparse, subprocess, hmac
+import os, re, sys, argparse, subprocess, hmac, threading, time
 from datetime import datetime
 from flask import (Flask, send_file, jsonify, request, Response,
                    render_template_string, redirect, url_for, flash, abort)
@@ -32,6 +32,7 @@ SITE_PASSWORD = os.environ.get("SITE_PASSWORD", "")
 app = Flask(__name__)
 # only used to sign the flash-message cookie
 app.secret_key = os.environ.get("FLASK_SECRET_KEY") or os.urandom(24)
+app.config["MAX_CONTENT_LENGTH"] = 100 * 1024 * 1024  # uploaded data files
 
 
 def _auth_enabled():
@@ -87,14 +88,55 @@ def _latest_report(slug):
 
 def _workspace_status(slug):
     path = _dashboard_path(slug)
+    building = _is_building(slug)
     if os.path.exists(path):
         return {
             "status": "ready",
+            "building": building,
             "size_kb": os.path.getsize(path) // 1024,
             "built_at": datetime.fromtimestamp(os.path.getmtime(path)).isoformat(),
             "analytics": _latest_report(slug) is not None,
         }
-    return {"status": "not_built", "analytics": _latest_report(slug) is not None}
+    return {"status": "not_built", "building": building,
+            "analytics": _latest_report(slug) is not None}
+
+
+# ── Background builds ───────────────────────────────────────────────
+# A marker file (not an in-memory flag) so every gunicorn worker sees the build.
+BUILD_STALE_SECONDS = 30 * 60
+
+
+def _build_marker(slug):
+    return os.path.join(ws.paths(slug)["logs"], ".building")
+
+
+def _is_building(slug):
+    marker = _build_marker(slug)
+    return os.path.exists(marker) and time.time() - os.path.getmtime(marker) < BUILD_STALE_SECONDS
+
+
+def _run_build(slug):
+    marker = _build_marker(slug)
+    os.makedirs(os.path.dirname(marker), exist_ok=True)
+    open(marker, "w").close()
+    try:
+        with open(os.path.join(os.path.dirname(marker), "build.log"), "w", encoding="utf-8") as log:
+            subprocess.run(
+                [sys.executable, os.path.join(PROJECT_DIR, "run_pipeline.py"),
+                 "-w", slug, "--skip-scrape"],
+                stdout=log, stderr=subprocess.STDOUT,
+            )
+    finally:
+        if os.path.exists(marker):
+            os.remove(marker)
+
+
+def start_build(slug):
+    """Start a rebuild in the background; returns False if one is already running."""
+    if _is_building(slug):
+        return False
+    threading.Thread(target=_run_build, args=(slug,), daemon=True).start()
+    return True
 
 
 # ── Shared styling ──────────────────────────────────────────────────
@@ -181,6 +223,7 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ w.name_ar }} — {{ system_ar }}</title>
+{% if state.building %}<meta http-equiv="refresh" content="5">{% endif %}
 <style>{{ style }}</style></head><body><div class="wrap">
   <div class="head">
     <div class="en">{{ system_en }} · {{ w.name_en }}</div>
@@ -190,6 +233,7 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
   {% with messages = get_flashed_messages() %}
     {% for m in messages %}<div class="flash">{{ m }}</div>{% endfor %}
   {% endwith %}
+  {% if state.building %}<div class="flash">جارٍ بناء المساحة… تُحدّث هذه الصفحة تلقائياً عند الانتهاء.</div>{% endif %}
   <div class="grid">
     <div class="card">
       <h2>🌍 غرفة الأوضاع</h2>
@@ -213,9 +257,34 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
       <div class="status">workspaces/{{ w.slug }}/data/events.csv</div>
       <a class="btn block" href="{{ url_for('list_incidents_route', slug=w.slug) }}">إدارة الأحداث</a>
       <form method="post" action="{{ url_for('rebuild_workspace', slug=w.slug) }}">
-        <button class="btn secondary block" style="width:100%" type="submit">إعادة البناء</button>
+        <button class="btn secondary block" style="width:100%" type="submit" {{ 'disabled' if state.building else '' }}>
+          {{ 'جارٍ البناء…' if state.building else 'إعادة البناء' }}</button>
       </form>
     </div>
+    <form class="card" method="post" enctype="multipart/form-data"
+          action="{{ url_for('upload_data', slug=w.slug) }}">
+      <h2>⬆ رفع بيانات المساحة</h2>
+      <div class="en">Data files belong to this workspace only</div>
+      {% for key, f in data_files.items() %}
+      <div class="field"><label>{{ f.label }} —
+        <span class="{{ 'ok' if f.present else 'bad' }}">{{ 'موجود' if f.present else 'غير موجود' }}</span></label>
+        <input type="file" name="{{ key }}"></div>
+      {% endfor %}
+      <button class="btn" type="submit">رفع وإعادة البناء</button>
+    </form>
+    <form class="card" method="post" action="{{ url_for('edit_workspace', slug=w.slug) }}">
+      <h2>⚙ إعدادات المساحة</h2>
+      <div class="en">Workspace settings</div>
+      <div class="field"><label>الاسم بالعربية</label>
+        <input name="name_ar" value="{{ w.name_ar }}" required maxlength="80"></div>
+      <div class="field"><label>الاسم بالإنجليزية</label>
+        <input name="name_en" value="{{ w.name_en }}" required maxlength="80" dir="ltr"></div>
+      <div class="field"><label>تاريخ البداية (YYYY-MM-DD)</label>
+        <input name="start_date" value="{{ w.start_date }}" required dir="ltr"></div>
+      <div class="field"><label>قناة تيليجرام (اختياري)</label>
+        <input name="telegram_channel" value="{{ w.telegram_channel }}" dir="ltr"></div>
+      <button class="btn" type="submit">حفظ</button>
+    </form>
   </div>
   <div class="footer"><a href="{{ url_for('index') }}">&rarr; كل مساحات العمل</a></div>
 </div></body></html>"""
@@ -391,6 +460,7 @@ def workspace_home(slug):
     w = _workspace_or_404(slug)
     return render_template_string(
         WORKSPACE_TEMPLATE, style=BASE_STYLE, w=w, state=_workspace_status(slug),
+        data_files=_data_file_info(slug),
         system_ar=ws.SYSTEM_NAME_AR, system_en=ws.SYSTEM_NAME_EN,
     )
 
@@ -426,13 +496,55 @@ def workspace_status(slug):
 @app.route("/w/<slug>/rebuild", methods=["POST"])
 def rebuild_workspace(slug):
     _workspace_or_404(slug)
-    subprocess.run(
-        [sys.executable, os.path.join(PROJECT_DIR, "run_pipeline.py"),
-         "-w", slug, "--skip-scrape"]
-    )
-    flash("أُعيد بناء المساحة من أحدث البيانات.")
+    if start_build(slug):
+        flash("بدأ بناء المساحة من أحدث البيانات.")
+    else:
+        flash("هناك عملية بناء جارية بالفعل.")
     if request.args.get("next") == "database":
         return redirect(url_for("list_incidents_route", slug=slug))
+    return redirect(url_for("workspace_home", slug=slug))
+
+
+def _data_file_info(slug):
+    data_dir = ws.paths(slug)["data"]
+    return {
+        key: {"label": label, "present": os.path.exists(os.path.join(data_dir, name))}
+        for key, (name, label) in ws.DATA_FILES.items()
+    }
+
+
+@app.route("/w/<slug>/upload", methods=["POST"])
+def upload_data(slug):
+    _workspace_or_404(slug)
+    data_dir = ws.paths(slug)["data"]
+    os.makedirs(data_dir, exist_ok=True)
+    saved = 0
+    for key, (name, _label) in ws.DATA_FILES.items():
+        f = request.files.get(key)
+        if f and f.filename:
+            f.save(os.path.join(data_dir, name))  # fixed names only — never the client's file name
+            saved += 1
+    if not saved:
+        flash("لم يُختَر أي ملف.")
+        return redirect(url_for("workspace_home", slug=slug))
+    flash(f"تم رفع {saved} ملف(ات) — جارٍ إعادة بناء المساحة.")
+    start_build(slug)
+    return redirect(url_for("workspace_home", slug=slug))
+
+
+@app.route("/w/<slug>/settings", methods=["POST"])
+def edit_workspace(slug):
+    _workspace_or_404(slug)
+    try:
+        ws.update_workspace(
+            slug, request.form.get("name_ar", ""), request.form.get("name_en", ""),
+            (request.form.get("start_date") or "").strip(),
+            request.form.get("telegram_channel", ""),
+        )
+    except ValueError as e:
+        flash(f"تعذّر الحفظ: {e}")
+    else:
+        flash("تم حفظ الإعدادات — اضغط «إعادة البناء» لتطبيقها.")
     return redirect(url_for("workspace_home", slug=slug))
 
 

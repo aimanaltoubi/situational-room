@@ -43,6 +43,8 @@ LIVE_VIP_REGS = {
     "TC-DAP","TC-GAP","SU-EGY","EP-IGA","EP-AJA","OD-MRL",
     "A4O-OMN","A4O-HMS","UR-ABA","ZZ336","F-RARF","B-2479",
 }
+LIVE_VIP_REGS = (set(workspace_reference("vip_aircraft.json", {}, {}))
+                 or (LIVE_VIP_REGS if WORKSPACE.get("builtin_reference_data") else set()))
 
 # ══════════════════════════════════════════════════════════════════
 #  INTEL SITES DATABASE (unchanged from original)
@@ -85,6 +87,7 @@ _INTEL_SITES = [
     {"name_ar":"الموصل","name_en":"Mosul","lat":36.3400,"lon":43.1300,"country":"Iraq","category":"city","notes":"Former ISIS capital."},
     {"name_ar":"حلب","name_en":"Aleppo","lat":36.2021,"lon":37.1343,"country":"Syria","category":"city","notes":"Syria's second city."},
 ]
+_INTEL_SITES = workspace_reference("intel_sites.json", _INTEL_SITES, [])
 
 _FIRS = [
     ("LLLL","Israel/Palestine",29.4,33.3,34.2,35.9),

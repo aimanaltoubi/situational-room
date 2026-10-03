@@ -17,6 +17,15 @@ SLUG_RE        = re.compile(r"^[a-z0-9][a-z0-9-]{1,40}$")
 SYSTEM_NAME_AR = "نظام تحليل البيانات الدولية"
 SYSTEM_NAME_EN = "International Data Analytics System"
 
+# Files a workspace can have in data/ — key: (fixed file name, Arabic label)
+DATA_FILES = {
+    "events":     ("events.csv", "الأحداث الميدانية (events.csv)"),
+    "political":  ("political-events.csv", "الأحداث السياسية (political-events.csv)"),
+    "vessels":    ("vessels-attack-dataset.txt", "السفن المهاجمة (vessels-attack-dataset.txt)"),
+    "acled":      ("Middle_East_clean_2026.csv", "بيانات ACLED للتوقعات (Middle_East_clean_2026.csv)"),
+    "analytical": ("analytical-dataset.txt", "السياق التحليلي (analytical-dataset.txt)"),
+}
+
 
 def is_valid_slug(slug):
     return bool(slug and SLUG_RE.match(slug))
@@ -79,6 +88,28 @@ def create_workspace(slug, name_ar, name_en, start_date=None, telegram_channel="
         "telegram_channel": (telegram_channel or "").strip().lstrip("@"),
     }
     with open(os.path.join(base, "workspace.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    return get_workspace(slug)
+
+
+def update_workspace(slug, name_ar, name_en, start_date, telegram_channel=""):
+    """Rewrite workspace.json for an existing workspace."""
+    if not get_workspace(slug):
+        raise ValueError("Workspace not found")
+    if not (name_ar or "").strip() or not (name_en or "").strip():
+        raise ValueError("Arabic and English names are required")
+    date.fromisoformat(start_date)
+    path = os.path.join(workspace_dir(slug), "workspace.json")
+    with open(path, encoding="utf-8") as f:
+        manifest = json.load(f)  # keep keys the form doesn't edit (e.g. builtin_reference_data)
+    manifest.update({
+        "name_ar": name_ar.strip(),
+        "name_en": name_en.strip(),
+        "start_date": start_date,
+        "telegram_channel": (telegram_channel or "").strip().lstrip("@"),
+    })
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
         f.write("\n")
     return get_workspace(slug)

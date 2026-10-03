@@ -141,6 +141,7 @@ VIP_AIRCRAFT = {
     # ── UKRAINE ──────────────────────────────────────────────────
     "UR-ABA":   {"label": "Ukraine — Zelenskyy Airbus ACJ319",          "country": "Ukraine",       "owner": "President Zelenskyy"},
 }
+VIP_AIRCRAFT = workspace_reference("vip_aircraft.json", VIP_AIRCRAFT, {})
 
 # ══════════════════════════════════════════════════════════════════
 #  18 KEY MIDDLE EAST AIRPORTS
