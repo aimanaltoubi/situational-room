@@ -246,7 +246,7 @@ def load_gpsjam_historical():
             pass
     
     # Build list of dates to fetch
-    war_start = datetime(2026, 2, 28)
+    war_start = datetime.strptime(WAR_START_STR, "%Y-%m-%d")
     today = datetime.now()
     dates_needed = []
     current = war_start

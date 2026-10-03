@@ -2,12 +2,13 @@
 # ACLED data cleaner
 # Auto-extracted from Cell 27
 
-import os
+import os, sys
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR    = os.path.join(PROJECT_DIR, "data")
-CACHE_DIR   = os.path.join(PROJECT_DIR, "cache")
-OUTPUT_DIR  = os.path.join(PROJECT_DIR, "output")
-LOGS_DIR    = os.path.join(PROJECT_DIR, "logs")
+sys.path.insert(0, PROJECT_DIR)
+from tools import workspace as _ws
+# Pick the workspace with: WORKSPACE=<slug> python3 tools/acled_cleaner.py
+_p = _ws.paths(os.environ.get("WORKSPACE", _ws.DEFAULT_SLUG))
+DATA_DIR, CACHE_DIR, OUTPUT_DIR, LOGS_DIR = _p["data"], _p["cache"], _p["output"], _p["logs"]
 
 ######################################################################
 # ACLED Data Cleaner — Prepare for H2O Predictions
@@ -38,7 +39,7 @@ print(f"\n[1] Raw data loaded: {len(df):,} rows | {df['WEEK'].nunique()} weeks")
 print(f"    Date range: {df['WEEK'].min()} → {df['WEEK'].max()}")
 
 # ── Filter to war period ─────────────────────────────────────────
-WAR_START = pd.Timestamp("2026-02-28")
+WAR_START = pd.Timestamp(_ws.get_workspace(os.environ.get("WORKSPACE", _ws.DEFAULT_SLUG))["start_date"])
 df = df[df['WEEK'] >= WAR_START].copy()
 print(f"\n[2] War period (>= {WAR_START.date()}): {len(df):,} rows")
 print(f"    Weeks: {sorted(df['WEEK'].dt.strftime('%Y-%m-%d').unique())}")

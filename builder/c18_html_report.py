@@ -212,7 +212,7 @@ function buildTextReportHTML(narrative){
   return `<div style="max-width:900px;margin:0 auto;padding:24px;font-family:'Noto Naskh Arabic',serif;direction:rtl;">
     <div style="background:linear-gradient(150deg,#3a0012,#7a0028);color:#fff;border-radius:10px;padding:24px;margin-bottom:20px;">
       <div style="font-size:22px;font-weight:700;margin-bottom:6px;">📊 التقرير التحليلي الشامل</div>
-      <div style="font-size:12px;opacity:.65;">منظومة الدمج الاستخباري · اليوم ${_war_day_num} · ${new Date().toLocaleDateString('ar-SA')}</div>
+      <div style="font-size:12px;opacity:.65;">__SYSTEM_NAME__ · اليوم ${_war_day_num} · ${new Date().toLocaleDateString('ar-SA')}</div>
       <div style="font-size:9px;color:rgba(255,255,255,.5);margin-top:8px;">★ الأرقام منذ بداية الحرب</div>
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;background:rgba(0,0,0,.2);border-radius:8px;padding:12px;margin-top:12px;">
         ${[['إجمالي الأحداث',evs.length],['الغارات الجوية',totalAir],['القتلى',ea.total_killed||0],
@@ -291,7 +291,7 @@ function openReportOverlay(htmlContent, rawText){
           التقرير التحليلي الشامل
         </div>
         <div style="font-size:11px;color:rgba(255,255,255,.7);">
-          منظومة الدمج الاستخباري · اليوم ${_war_day_num} · ${new Date().toLocaleDateString('ar-SA')}
+          __SYSTEM_NAME__ · اليوم ${_war_day_num} · ${new Date().toLocaleDateString('ar-SA')}
         </div>
       </div>
     </div>

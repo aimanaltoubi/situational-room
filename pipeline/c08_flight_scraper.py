@@ -34,8 +34,8 @@ HEADERS = {
     "x-rapidapi-key":  AERODATABOX_KEY,
 }
 OUTPUT_PATH = os.path.join(CACHE_DIR, "flight_historical.json")
-WAR_START   = datetime(2026, 2, 28)
-WAR_END     = datetime(2026, 3, 27)
+WAR_START   = datetime.strptime(WAR_START_STR, "%Y-%m-%d")
+WAR_END     = WAR_START + timedelta(days=27)
 
 # ══════════════════════════════════════════════════════════════════
 #  ALL KNOWN VIP / HEAD-OF-STATE AIRCRAFT
@@ -275,7 +275,7 @@ def step1_fetch_vip():
 
     for reg, info in VIP_AIRCRAFT.items():
         url = (f"https://aerodatabox.p.rapidapi.com/flights/reg/{reg}"
-               f"/2026-02-28T00:00/2026-03-27T23:59")
+               f"/{WAR_START:%Y-%m-%d}T00:00/{WAR_END:%Y-%m-%d}T23:59")
         try:
             r = requests.get(url, headers=HEADERS, timeout=15)
             if r.status_code == 200 and r.text and r.text not in ['null','']:
@@ -570,8 +570,8 @@ def step4_save(flights):
     result = {
         "fetched_at":      datetime.now().isoformat(),
         "source":          "AeroDataBox Mega — VIP registrations + ME airport queries",
-        "war_start":       "2026-02-28",
-        "war_end":         "2026-03-27",
+        "war_start":       WAR_START.strftime("%Y-%m-%d"),
+        "war_end":         WAR_END.strftime("%Y-%m-%d"),
         "airports_queried":list(ME_AIRPORTS.keys()),
         "vip_aircraft":    VIP_AIRCRAFT,
         "total_flights":   len(flights),

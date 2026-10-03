@@ -13,12 +13,12 @@ _P2 = """
 
 <!-- ═══════════════════════ LOADER ════════════════════════════ -->
 <div id="loader">
-  <div id="ld-title">منظومة الدمج الاستخباري</div>
-  <div id="ld-msg">جاري تحميل المنظومة…</div>
+  <div id="ld-title">__SYSTEM_NAME__</div>
+  <div id="ld-msg">جاري تحميل المنظومة… · __WORKSPACE_NAME__</div>
   <div id="pb-wrap"><div id="pb"></div></div>
   <div style="font-family:'JetBrains Mono',monospace;font-size:12px;
               color:rgba(255,255,255,.3);margin-top:8px;">
-    Intelligence Fusion System · OSINT
+    International Data Analytics System
   </div>
 </div>
 
@@ -27,40 +27,20 @@ _P2 = """
   <div id="topbar-row1">
 
     <div id="topbar-brand">
-      <div id="topbar-name">منظومة الدمج الاستخباري</div>
-      <div id="topbar-tagline" style="display:none;"></div>
+      <div id="topbar-name">__SYSTEM_NAME__</div>
+      <div id="topbar-tagline">__WORKSPACE_NAME__</div>
     </div>
 
     <div id="view-switcher">
+      <a class="vsw-btn" href="./" style="text-decoration:none" title="__WORKSPACE_NAME__">↩ المساحة</a>
       <button class="vsw-btn active" id="vsw-sa"
               onclick="switchView('sa')">🌍 ميداني</button>
       <button class="vsw-btn" id="vsw-analytics"
               onclick="switchView('analytics')">📊 تحليلات</button>
     </div>
 
-    <div id="topbar-layers" style="flex:1;display:flex;gap:5px;align-items:center;
-                                    min-width:0;overflow:hidden;padding:0 4px;">
-      <div class="lchip active" id="lchip-war" onclick="topToggle('war')">
-        <div class="lchip-dot" style="background:#b80038"></div>
-        <span class="lchip-name">أحداث الحرب</span>
-      </div>
-      <div class="lchip" id="lchip-jam" onclick="topToggle('jam')">
-        <div class="lchip-dot" style="background:#ff1144"></div>
-        <span class="lchip-name">تشويش GPS</span>
-      </div>
-      <div class="lchip" id="lchip-flt" onclick="topToggle('flt')">
-        <div class="lchip-dot" style="background:#0088cc"></div>
-        <span class="lchip-name">الرحلات</span>
-      </div>
-      <div class="lchip" id="lchip-vessel" onclick="toggleAttackedVessels()">
-        <div class="lchip-dot" style="background:#ff4400"></div>
-        <span class="lchip-name">السفن المهاجمة</span>
-      </div>
-      <!-- hidden aliases kept for JS compatibility -->
-      <span id="lchip-sat" style="display:none;"></span>
-      <span id="lchip-bases" style="display:none;"></span>
-      <span id="lchip-attacked" style="display:none;"></span>
-    </div>
+    <!-- layer toggles live only in the left panel (طبقات الخريطة) -->
+    <div id="topbar-layers" style="flex:1;min-width:0;"></div>
 
     <!-- Right: live · date · time · war day — all in one row -->
     <div id="topbar-right">
@@ -127,13 +107,13 @@ _P2 = """
     </div>
     <div class="dpad">
       <button class="cb empty"></button>
-      <button class="cb" id="btn-up">↑</button>
+      <button class="cb" id="btn-up" title="إمالة للأعلى">↑</button>
       <button class="cb empty"></button>
-      <button class="cb" id="btn-rl">←</button>
-      <button class="cb rst" id="btn-obs">◎</button>
-      <button class="cb" id="btn-rr">→</button>
+      <button class="cb" id="btn-rl" title="تدوير لليسار">←</button>
+      <button class="cb rst" id="btn-obs" title="منظور مائل 45°">◎</button>
+      <button class="cb" id="btn-rr" title="تدوير لليمين">→</button>
       <button class="cb empty"></button>
-      <button class="cb" id="btn-dn">↓</button>
+      <button class="cb" id="btn-dn" title="إمالة للأسفل">↓</button>
       <button class="cb empty"></button>
     </div>
     <div class="zoom-row" style="margin-top:2px;">
@@ -201,13 +181,6 @@ _P2 = """
           </div>
           <div class="tog off" id="lt-civ"></div>
         </div>
-        <div class="layer-row" onclick="toggleLayer('spy')">
-          <div class="layer-left">
-            <div class="l-dot" style="background:#ffd700"></div>
-            <div class="l-name">أقمار الاستطلاع</div>
-          </div>
-          <div class="tog on" id="lt-sat"></div>
-        </div>
         <div class="layer-row" onclick="toggleMarine()">
           <div class="layer-left">
             <div class="l-dot" style="background:#00b4d8"></div>
@@ -226,13 +199,13 @@ _P2 = """
     </div>
   </div>
 
-  <!-- ── تصنيف الأقمار — collapsible, starts collapsed ── -->
+  <!-- ── الأقمار — collapsible ── -->
   <div class="filter-section">
     <div class="filter-section-title" onclick="_toggleSection('sat-filter','arr-sat')">
-      <span>تصنيف الأقمار</span>
-      <span class="sec-arrow collapsed" id="arr-sat">▾</span>
+      <span>الأقمار</span>
+      <span class="sec-arrow" id="arr-sat">▾</span>
     </div>
-    <div class="filter-section-body collapsed" id="sat-filter">
+    <div class="filter-section-body" id="sat-filter">
       <div style="padding:0 10px;">
         <div class="layer-row" onclick="toggleLayer('spy')">
           <div class="layer-left">
@@ -278,13 +251,13 @@ _P2 = """
     </div>
   </div>
 
-  <!-- ── تصنيف الرحلات — collapsible, starts collapsed ── -->
+  <!-- ── الرحلات — collapsible ── -->
   <div class="filter-section">
     <div class="filter-section-title" onclick="_toggleSection('flt-filter','arr-flt')">
       <span>تصنيف الرحلات</span>
-      <span class="sec-arrow collapsed" id="arr-flt">▾</span>
+      <span class="sec-arrow" id="arr-flt">▾</span>
     </div>
-    <div class="filter-section-body collapsed" id="flt-filter">
+    <div class="filter-section-body" id="flt-filter">
       <div style="padding:0 10px;">
         <div class="layer-row" onclick="toggleLayer('vip')">
           <div class="layer-left">
@@ -331,23 +304,12 @@ _P2 = """
     <span id="lt-chokepoint"></span><span id="lt-city"></span>
     <span id="arr-intel"></span>
   </div>
-
-  <!-- ── Live Dropdown Button ── -->
-  <div style="padding:8px 10px;border-top:1px solid var(--ui-border2);flex-shrink:0;margin-top:auto;">
-    <button onclick="if(typeof initLiveDropdown==='function'&&!document.getElementById('live-drop-wrap')){initLiveDropdown();}if(typeof toggleLiveDropdown==='function')toggleLiveDropdown();"
-            style="width:100%;padding:7px;border-radius:6px;border:1px solid var(--burg-300);
-                   background:rgba(180,0,56,.08);color:var(--burg-600);font-weight:700;
-                   font-size:12px;cursor:pointer;display:flex;align-items:center;
-                   justify-content:center;gap:6px;font-family:'Noto Naskh Arabic',serif;">
-      <div class="live-dot"></div>العرض المباشر
-    </button>
-  </div>
 </div>
 
 <!-- ═══════════════════ RIGHT PANEL — Telegram Feed ══════════════ -->
 <div class="panel" id="right-panel">
   <div class="p-head">
-    <span class="p-head-title">نشرة مباشرة · @iranmonitor</span>
+    <span class="p-head-title">نشرة مباشرة · @__TELEGRAM_CHANNEL__</span>
     <div class="live-badge"><div class="live-dot"></div>مباشر</div>
   </div>
   <div style="padding:4px 10px;font-size:10px;color:var(--text-faint);border-bottom:1px solid var(--ui-border);">
@@ -502,9 +464,9 @@ _P2 = """
     <!-- Header -->
     <div id="an-header">
       <div>
-        <div id="an-title">لوحة التحليلات</div>
+        <div id="an-title">__ANALYTICS_NAME__</div>
         <div id="an-subtitle" style="font-size:13px;color:var(--text-muted);direction:rtl;margin-top:3px;">
-          منظومة الدمج الاستخباري · تقييم يوم <span id="an-war-day">—</span>
+          __SYSTEM_NAME__ · تقييم يوم <span id="an-war-day">—</span>
           · <span id="an-war-phase" style="font-weight:700;color:var(--burg-500);"></span>
           · بُني في <span id="an-ts">__BUILD_TIME__</span>
         </div>

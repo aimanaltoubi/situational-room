@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 
 def build_html():
     required = [
-        "HTML_TEMPLATE","CESIUM_TOKEN","WAR_START","OUTPUT_HTML",
+        "HTML_TEMPLATE","CESIUM_TOKEN","WAR_START","WAR_START_STR","OUTPUT_HTML",
         "SAT_DATA","JAM_DATA","GPSJAM_DATA",
         "INTEL_DATA","WAR_DATA","HIST_SAT_DATA","TELEGRAM_DATA",
     ]
@@ -191,7 +191,7 @@ def build_html():
     # ── HIST_SAT_DATA ─────────────────────────────────────────────
     if isinstance(HIST_SAT_DATA, dict):
         hist_lean = {
-            "war_start":   HIST_SAT_DATA.get("war_start", "2026-02-28"),
+            "war_start":   HIST_SAT_DATA.get("war_start", WAR_START_STR),
             "computed_at": HIST_SAT_DATA.get("computed_at", ""),
             "sat_count":   HIST_SAT_DATA.get("sat_count", 0),
             "days": [
@@ -212,7 +212,7 @@ def build_html():
         )
     else:
         hist_json = json.dumps(
-            {"war_start": "2026-02-28", "days": [], "sat_count": 0},
+            {"war_start": WAR_START_STR, "days": [], "sat_count": 0},
             separators=(",", ":"),
         )
 
@@ -223,7 +223,7 @@ def build_html():
         )
     else:
         telegram_json = json.dumps(
-            {"channel": "iranmonitor_org", "count": 0,
+            {"channel": TELEGRAM_CHANNEL, "count": 0,
              "messages": [], "error": True},
             separators=(",", ":"),
         )
@@ -247,6 +247,11 @@ def build_html():
     html = html.replace("__TOKEN__",          CESIUM_TOKEN)
     html = html.replace("__GEMINI_KEY__",     api_key)
     html = html.replace("__WAR_DAY__",        str(war_day))
+    html = html.replace("__WAR_START__",      WAR_START_STR)
+    html = html.replace("__TELEGRAM_CHANNEL__", TELEGRAM_CHANNEL)
+    html = html.replace("__SYSTEM_NAME__",    SYSTEM_NAME_AR)
+    html = html.replace("__WORKSPACE_NAME__", WORKSPACE_NAME_AR)
+    html = html.replace("__ANALYTICS_NAME__", WORKSPACE["analytics_name_ar"])
     html = html.replace("__BUILD_TIME__",     build_ts)
     html = html.replace("__SAT_JSON__",       sat_json)
     html = html.replace("__JAM_JSON__",       jam_json)
@@ -336,7 +341,7 @@ def build_html():
 
     # ── Unreplaced token check ────────────────────────────────────
     remaining = [t for t in [
-        "__TOKEN__", "__GEMINI_KEY__", "__WAR_DAY__", "__BUILD_TIME__",
+        "__TOKEN__", "__GEMINI_KEY__", "__WAR_DAY__", "__WAR_START__", "__BUILD_TIME__",
         "__SAT_JSON__", "__JAM_JSON__", "__GPSJAM_JSON__", "__FLIGHT_JSON__",
         "__INTEL_JSON__", "__WAR_JSON__", "__HIST_SAT_JSON__",
         "__TELEGRAM_JSON__", "__MARINE_JSON__", "__POLITICAL_JSON__", "__PREDICTION_JSON__", "__REPORT_TEXT__",
@@ -367,7 +372,7 @@ def build_html():
 
     print(f"      Output     : {OUTPUT_HTML}")
     print(f"      Size       : {size_kb:.0f} KB")
-    print(f"      War day    : {war_day}  (start: 2026-02-28)")
+    print(f"      War day    : {war_day}  (start: {WAR_START_STR})")
     print(f"      Build time : {build_ts}")
     print(f"      API key    : {'present' if api_key else 'MISSING'}")
     print(f"      Satellites : {SAT_DATA.get('count', 0)}")
@@ -465,7 +470,7 @@ if result:
         <div style="font-family:Inter,sans-serif;background:#3a0012;color:#fff;
                     padding:14px 20px;border-radius:6px;display:inline-block;
                     margin-top:10px;line-height:2.2">
-          <b style="font-size:14px">منظومة الدمج الاستخباري — Intelligence Fusion System</b><br>
+          <b style="font-size:14px">{SYSTEM_NAME_AR} — {SYSTEM_NAME_EN}</b><br>
           <a href="{url}" target="_blank"
              style="color:#ffd700;font-size:13px">{url}</a><br>
           <span style="color:rgba(255,255,255,.4);font-size:12px">

@@ -56,22 +56,24 @@ for key, (level, purpose) in keys.items():
 
 # ── 2. Check data files ───────────────────────────────────────
 print("\n── Data Files ──")
-data_files = {
-    "iran_war_clean.csv":       "Required — war event timeline",
-    "political-events.csv":     "Required — political trajectory",
-    "vessels-attack-dataset.txt":"Optional — attacked vessels",
-    "Middle_East_clean_2026.csv":"Optional — ACLED predictions",
-    "analytical-dataset.txt":   "Optional — analytical briefing",
-}
-for fname, desc in data_files.items():
-    path = os.path.join("data", fname)
-    if os.path.exists(path):
-        size = os.path.getsize(path)
-        ok(f"{fname} ({size:,} bytes) — {desc}")
-    elif "Required" in desc:
-        fail(f"{fname} MISSING — {desc}")
-    else:
-        warn(f"{fname} missing — {desc}")
+sys.path.insert(0, PROJECT_DIR)
+from tools import workspace as _ws
+for _w in _ws.list_workspaces():
+    print(f"  [{_w['slug']}] {_w['name_ar']}")
+    data_files = {
+        "events.csv":                "Optional — event timeline",
+        "political-events.csv":      "Optional — political trajectory",
+        "vessels-attack-dataset.txt":"Optional — attacked vessels",
+        "Middle_East_clean_2026.csv":"Optional — ACLED predictions",
+        "analytical-dataset.txt":    "Optional — analytical briefing",
+    }
+    for fname, desc in data_files.items():
+        path = os.path.join(_ws.paths(_w["slug"])["data"], fname)
+        if os.path.exists(path):
+            size = os.path.getsize(path)
+            ok(f"{fname} ({size:,} bytes) — {desc}")
+        else:
+            warn(f"{fname} missing — {desc}")
 
 # ── 3. Check Python dependencies ──────────────────────────────
 print("\n── Python Packages ──")

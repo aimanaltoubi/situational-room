@@ -1,9 +1,10 @@
 ######################################################################
 # config.py — Centralized Configuration
-# Middle East Conflict Situational Room
+# نظام تحليل البيانات الدولية — International Data Analytics System
 #
 # All API keys loaded from .env (never hardcoded)
-# All paths relative to PROJECT_DIR
+# Paths and names come from the active workspace (env var WORKSPACE,
+# default: middle-east-conflict) — see workspaces/<slug>/workspace.json
 ######################################################################
 
 import os, sys, json
@@ -14,11 +15,26 @@ from dotenv import load_dotenv
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(PROJECT_DIR, ".env"))
 
+# ── Active workspace ──────────────────────────────────────────
+if PROJECT_DIR not in sys.path:
+    sys.path.insert(0, PROJECT_DIR)
+from tools import workspace as _wsmod
+
+WORKSPACE_SLUG = os.environ.get("WORKSPACE", _wsmod.DEFAULT_SLUG)
+WORKSPACE = _wsmod.get_workspace(WORKSPACE_SLUG)
+if WORKSPACE is None:
+    raise SystemExit(f"Unknown workspace '{WORKSPACE_SLUG}' — see workspaces/")
+SYSTEM_NAME_AR = _wsmod.SYSTEM_NAME_AR
+SYSTEM_NAME_EN = _wsmod.SYSTEM_NAME_EN
+WORKSPACE_NAME_AR = WORKSPACE["name_ar"]
+TELEGRAM_CHANNEL  = WORKSPACE["telegram_channel"]
+
 # ── Directory layout ──────────────────────────────────────────
-DATA_DIR    = os.path.join(PROJECT_DIR, "data")
-CACHE_DIR   = os.path.join(PROJECT_DIR, "cache")
-OUTPUT_DIR  = os.path.join(PROJECT_DIR, "output")
-LOGS_DIR    = os.path.join(PROJECT_DIR, "logs")
+_ws_paths   = _wsmod.paths(WORKSPACE_SLUG)
+DATA_DIR    = _ws_paths["data"]
+CACHE_DIR   = _ws_paths["cache"]
+OUTPUT_DIR  = _ws_paths["output"]
+LOGS_DIR    = _ws_paths["logs"]
 
 for _d in [DATA_DIR, CACHE_DIR, OUTPUT_DIR, LOGS_DIR]:
     os.makedirs(_d, exist_ok=True)
@@ -48,8 +64,9 @@ ADSBX_KEY         = os.environ.get("ADSBX_KEY", "")
 AERODATABOX_KEY   = os.environ.get("AERODATABOX_KEY", "")
 DATALASTIC_KEY    = os.environ.get("DATALASTIC_KEY", "")
 
-# ── Conflict start date ───────────────────────────────────────
-WAR_START = datetime(2026, 2, 28, tzinfo=timezone.utc)
+# ── Workspace start date ──────────────────────────────────────
+WAR_START_STR = WORKSPACE["start_date"]
+WAR_START = datetime.strptime(WAR_START_STR, "%Y-%m-%d").replace(tzinfo=timezone.utc)
 
 # ── Middle East bounding box ──────────────────────────────────
 MIDDLE_EAST_BOX = dict(
@@ -61,6 +78,7 @@ MIDDLE_EAST_BOX = dict(
 print("=" * 60)
 print("CONFIG LOADED")
 print("=" * 60)
+print(f"  Workspace   : {WORKSPACE_SLUG}  ({WORKSPACE_NAME_AR})")
 print(f"  Project dir : {PROJECT_DIR}")
 print(f"  Data dir    : {DATA_DIR}")
 print(f"  Cache dir   : {CACHE_DIR}")
@@ -156,7 +174,7 @@ print("[CELL 1] ✓ Config complete")
 print(f"         Output HTML         : {OUTPUT_HTML}")
 print(f"         Hist positions cache: {HIST_POSITIONS_CACHE}")
 print(f"         API key             : {'SET (' + str(len(GEMINI_API_KEY)) + ' chars)' if GEMINI_API_KEY else 'NOT SET'}")
-print(f"         Conflict start      : {WAR_START.date()}  (28 Feb 2026)")
+print(f"         Workspace start     : {WAR_START.date()}")
 print(f"         Region box          : lat {MIDDLE_EAST_BOX['lat_min']}–{MIDDLE_EAST_BOX['lat_max']}N  lon {MIDDLE_EAST_BOX['lon_min']}–{MIDDLE_EAST_BOX['lon_max']}E")
 print("         Ready — run Cell 2 next")
 

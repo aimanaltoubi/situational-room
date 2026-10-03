@@ -1,4 +1,31 @@
-# FusionIntell — Middle East Conflict Situational Room
+# نظام تحليل البيانات الدولية — International Data Analytics System
+
+A self-hosted intelligence platform organised into **workspaces**. Each
+workspace (e.g. Middle East conflict, terrorism, sanctions) has its own
+situational room (3D Cesium globe), its own analytics report and its own
+incidents database, all stored under `workspaces/<slug>/`.
+
+| Workspace | Folder |
+|---|---|
+| الصراع في الشرق الأوسط | `workspaces/middle-east-conflict` |
+| الإرهاب — التركيز على الشرق الأوسط | `workspaces/terrorism` |
+| العقوبات — التركيز على الشرق الأوسط | `workspaces/sanctions` |
+
+### Workspaces
+
+Create a new empty workspace from the main page (**+ مساحة عمل جديدة**) or:
+
+```bash
+python3 tools/workspace.py create <slug> --name-ar "..." --name-en "..." [--start-date YYYY-MM-DD]
+python3 run_pipeline.py -w <slug>      # build that workspace
+```
+
+Each workspace folder contains `workspace.json` (names, start date, optional
+`telegram_channel`), `data/` (`events.csv`, `political-events.csv`,
+`vessels-attack-dataset.txt`, `Middle_East_clean_2026.csv`,
+`analytical-dataset.txt`), `cache/`, `logs/` and `output/`. Routes per
+workspace: `/w/<slug>/` (home), `/w/<slug>/dashboard`, `/w/<slug>/analytics`,
+`/w/<slug>/database`.
 
 A self-hosted intelligence dashboard for tracking the Middle East conflict in
 real time. It fuses satellite tracking, GPS jamming detection, live flight
@@ -76,6 +103,14 @@ The command starts a local web app, not a standalone `.exe`. Run the same
 command again to open it after setup. To stop its background server, use the
 PID printed by the installer with `taskkill /PID <PID> /T /F`.
 
+To update an existing install to the latest `main`, stop the server, then run
+the installer with `-Update` (it keeps your `.env` and your workspaces' `data/`
+files, and rebuilds every workspace):
+
+```cmd
+powershell -NoProfile -ExecutionPolicy Bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $script = Join-Path $env:TEMP 'situational-room-install.ps1'; Invoke-WebRequest 'https://raw.githubusercontent.com/aimanaltoubi/situational-room/main/install_windows.ps1' -OutFile $script; & $script -Update"
+```
+
 To use a different port, download the installer and run it with
 `-Port 8080` instead of invoking the default command. The setup expects all
 four API keys and the repository's included `data/` files.
@@ -109,10 +144,11 @@ click **"Load System"** to open the live dashboard.
 
 | Route | Purpose |
 |-------|---------|
-| `/` | Main page — description + "Load System" button |
-| `/dashboard` | The live Cesium globe dashboard |
-| `/status` | JSON build status of the dashboard |
-| `/weekly` | Latest AI-generated weekly prediction report |
+| `/` | Hub — list of workspaces + create new workspace |
+| `/w/<slug>/` | Workspace home (room, analytics, incidents database) |
+| `/w/<slug>/dashboard` | The workspace's live Cesium globe dashboard |
+| `/w/<slug>/analytics` | The workspace's latest analytics report |
+| `/status` | JSON build status of all workspaces |
 
 Use `python3 app.py --refresh` to rebuild the pipeline before serving, or
 `python3 app.py --port 8080` to use a different port.

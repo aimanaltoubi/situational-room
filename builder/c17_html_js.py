@@ -137,11 +137,11 @@ function showDayBrief(indices,dayNum){const card=$('war-brief-card');if(!card)re
 
 function showJamBrief(hotspot,day){const card=$('war-brief-card');if(!card)return;const col='#ff1111';const _s=(id,val)=>{const el=$(id);if(el)el.textContent=val;};_s('wbc-id','J'+String(day.dayNum).padStart(4,'0'));_s('wbc-time',day.date);const dot=$('wbc-type-dot');if(dot){dot.style.width='8px';dot.style.height='8px';dot.style.borderRadius='50%';dot.style.flexShrink='0';dot.style.background=col;}_s('wbc-type-label','GPS JAMMING');_s('wbc-title',hotspot.label||('تشويش GPS في '+hotspot.lat.toFixed(1)+'° / '+hotspot.lon.toFixed(1)+'°'));const $det=$('wbc-detail');if($det){$det.style.maxHeight='';$det.style.overflowY='';$det.style.padding='';$det.style.borderLeft='';$det.textContent='شدة: '+Math.round((hotspot.intensity||0)*100)+'% | D'+day.dayNum+' | '+hotspot.lat.toFixed(2)+'°, '+hotspot.lon.toFixed(2)+'°';}const $meta=$('wbc-meta');if($meta)$meta.innerHTML='<span class="wbc-chip" style="border-color:#ff1111;color:#ff1111">GPS '+Math.round((hotspot.intensity||0)*100)+'% تشويش</span>';card.style.borderLeftColor=col;card.classList.add('visible');const fill=$('wbc-progress-fill');if(fill){fill.style.transition='none';fill.style.width='100%';fill.getBoundingClientRect();fill.style.transition='width 10s linear';fill.style.width='0%';}clearTimeout(window._wbcTimer);window._wbcTimer=setTimeout(closeWarBrief,10000);}
 
-var jamTlOn=false;function buildJamDailyData(){const WAR_START=new Date('2026-02-28').getTime();const today=new Date();today.setUTCHours(0,0,0,0);const days=[];let d=new Date(WAR_START);const hist=(GPSJAM_DATA&&GPSJAM_DATA.history)||[];while(d<=today){const ds=d.toISOString().slice(0,10);const hEntry=hist.find(h=>h.date===ds);const dayNum=Math.round((d.getTime()-WAR_START)/86400000)+1;let intensity;if(hEntry){intensity=hEntry.me_avg||hEntry.top_intensity||0;}else{const base=Math.max(0.3,0.92-(dayNum-1)*0.018);const spike=[1,2,4,7,11,13].includes(dayNum)?0.12:0;intensity=Math.min(0.98,base+spike+(Math.sin(dayNum*0.7)*0.05));}days.push({date:ds,dayNum,intensity:Math.max(0,intensity)});d.setUTCDate(d.getUTCDate()+1);}return days;}
+var jamTlOn=false;function buildJamDailyData(){const WAR_START=new Date('__WAR_START__').getTime();const today=new Date();today.setUTCHours(0,0,0,0);const days=[];let d=new Date(WAR_START);const hist=(GPSJAM_DATA&&GPSJAM_DATA.history)||[];while(d<=today){const ds=d.toISOString().slice(0,10);const hEntry=hist.find(h=>h.date===ds);const dayNum=Math.round((d.getTime()-WAR_START)/86400000)+1;let intensity;if(hEntry){intensity=hEntry.me_avg||hEntry.top_intensity||0;}else{const base=Math.max(0.3,0.92-(dayNum-1)*0.018);const spike=[1,2,4,7,11,13].includes(dayNum)?0.12:0;intensity=Math.min(0.98,base+spike+(Math.sin(dayNum*0.7)*0.05));}days.push({date:ds,dayNum,intensity:Math.max(0,intensity)});d.setUTCDate(d.getUTCDate()+1);}return days;}
 
 const JAM_DAY_MAP={1:{lat:26.5,lon:56.5,intensity:0.95,label:'مضيق هرمز'},2:{lat:26.22,lon:50.59,intensity:0.88,label:'البحرين'},3:{lat:35.69,lon:51.39,intensity:0.93,label:'طهران'},4:{lat:26.5,lon:56.5,intensity:0.92,label:'مضيق هرمز'},5:{lat:6.03,lon:80.22,intensity:0.85,label:'جالي - سريلانكا'},6:{lat:39.21,lon:45.41,intensity:0.75,label:'نخجيفان'},7:{lat:25.12,lon:51.31,intensity:0.88,label:'قاعدة العديد'},8:{lat:29.04,lon:48.17,intensity:0.90,label:'ميناء شعيبة'},9:{lat:33.49,lon:48.35,intensity:0.82,label:'فلك الأفلاك'},10:{lat:26.27,lon:50.65,intensity:0.88,label:'مطار البحرين'},11:{lat:26.5,lon:56.5,intensity:0.95,label:'مضيق هرمز'},12:{lat:33.34,lon:44.40,intensity:0.80,label:'بغداد'},13:{lat:29.25,lon:50.32,intensity:0.92,label:'جزيرة خارك'},14:{lat:32.66,lon:51.68,intensity:0.88,label:'أصفهان'},15:{lat:27.09,lon:57.08,intensity:0.85,label:'ميناء ميناب'},16:{lat:25.20,lon:55.27,intensity:0.82,label:'مطار دبي'},17:{lat:24.34,lon:56.74,intensity:0.80,label:'صحار - عمان'}};
 
-function buildJamTimeline(){const canvas=$('tl-jam-canvas'),density=$('tl-jam-density');if(!canvas||!density)return;density.innerHTML='';const days=buildJamDailyData();if(!days.length)return;const n=days.length;const maxI=Math.max(...days.map(d=>d.intensity),0.01);const WAR_START=new Date('2026-02-28').getTime();const WAR_END=new Date(days[days.length-1].date).getTime();const span=Math.max(WAR_END-WAR_START,86400000);days.forEach((day)=>{const t=new Date(day.date).getTime();const pct=((t-WAR_START)/span)*94+3;const hp=Math.max(4,Math.round((day.intensity/maxI)*40));const alpha=0.4+0.55*(day.intensity/maxI);const r=day.intensity>0.7?Math.round(30+200*day.intensity):Math.round(day.intensity*60);const g2=day.intensity<0.5?Math.round(150+50*day.intensity):Math.round(180-100*(day.intensity-0.5));const bar=document.createElement('div');bar.className='jam-bar';bar.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.8,(94/n)).toFixed(2)+'%;height:'+hp+'px;background:rgba('+r+','+g2+',40,'+alpha.toFixed(2)+')';bar.title='D'+day.dayNum+' ('+day.date+'): '+Math.round(day.intensity*100)+'% تشويش';bar.addEventListener('click',()=>{const cur=$('jam-cursor');if(cur)cur.style.left=pct.toFixed(2)+'%';const td=$('jam-time-display');if(td)td.textContent=day.date;const id=$('jam-intensity-display');if(id)id.textContent='D'+day.dayNum+' — '+Math.round(day.intensity*100)+'%';const mapped=JAM_DAY_MAP[day.dayNum];const cells=(GPSJAM_DATA&&GPSJAM_DATA.cells)||[];let top;if(mapped){const found=cells.find(c=>Math.abs(c.lat-mapped.lat)<0.5&&Math.abs(c.lon-mapped.lon)<0.5);top=found||mapped;if(!top.label)top.label=mapped.label;}else{const sorted=cells.slice().sort((a,b)=>(b.intensity||0)-(a.intensity||0));top=sorted[day.dayNum%Math.max(sorted.length,1)]||sorted[0];}if(!top||!viewer)return;clearJamming();jammingOn=true;const tog=$('lt-jam-tl');if(tog){tog.classList.add('on');tog.classList.remove('off');}const jalpha=Math.min(0.40+top.intensity*0.55,0.95);const jcol=Cesium.Color.fromCssColorString('#ff1111').withAlpha(jalpha);const radius=50000+top.intensity*130000;const ent=viewer.entities.add({name:top.label||'GPS Jamming',position:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500),point:{pixelSize:Math.round(10+top.intensity*14),color:jcol,outlineColor:Cesium.Color.WHITE.withAlpha(0.85),outlineWidth:1.5,disableDepthTestDistance:Number.POSITIVE_INFINITY,scaleByDistance:new Cesium.NearFarScalar(5e5,1.4,2e7,0.5)},ellipse:{semiMajorAxis:radius,semiMinorAxis:radius,height:0,material:new Cesium.ColorMaterialProperty(Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.07)),outline:true,outlineColor:Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.45),outlineWidth:1}});ent._jamLat=top.lat;ent._jamLon=top.lon;ent._jamData=top;jamEntities.push(ent);showJamBrief(top,day);viewer.camera.cancelFlight();viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500000),duration:1.5,easingFunction:Cesium.EasingFunction.CUBIC_IN_OUT});});density.appendChild(bar);if(day.dayNum%3===1||day.dayNum===1){const line=document.createElement('div');line.className='jam-day-line';line.style.left=pct.toFixed(2)+'%';density.appendChild(line);const lbl2=document.createElement('div');lbl2.className='jam-day-lbl';lbl2.style.left=pct.toFixed(2)+'%';lbl2.textContent='D'+day.dayNum;density.appendChild(lbl2);}});}
+function buildJamTimeline(){const canvas=$('tl-jam-canvas'),density=$('tl-jam-density');if(!canvas||!density)return;density.innerHTML='';const days=buildJamDailyData();if(!days.length)return;const n=days.length;const maxI=Math.max(...days.map(d=>d.intensity),0.01);const WAR_START=new Date('__WAR_START__').getTime();const WAR_END=new Date(days[days.length-1].date).getTime();const span=Math.max(WAR_END-WAR_START,86400000);days.forEach((day)=>{const t=new Date(day.date).getTime();const pct=((t-WAR_START)/span)*94+3;const hp=Math.max(4,Math.round((day.intensity/maxI)*40));const alpha=0.4+0.55*(day.intensity/maxI);const r=day.intensity>0.7?Math.round(30+200*day.intensity):Math.round(day.intensity*60);const g2=day.intensity<0.5?Math.round(150+50*day.intensity):Math.round(180-100*(day.intensity-0.5));const bar=document.createElement('div');bar.className='jam-bar';bar.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.8,(94/n)).toFixed(2)+'%;height:'+hp+'px;background:rgba('+r+','+g2+',40,'+alpha.toFixed(2)+')';bar.title='D'+day.dayNum+' ('+day.date+'): '+Math.round(day.intensity*100)+'% تشويش';bar.addEventListener('click',()=>{const cur=$('jam-cursor');if(cur)cur.style.left=pct.toFixed(2)+'%';const td=$('jam-time-display');if(td)td.textContent=day.date;const id=$('jam-intensity-display');if(id)id.textContent='D'+day.dayNum+' — '+Math.round(day.intensity*100)+'%';const mapped=JAM_DAY_MAP[day.dayNum];const cells=(GPSJAM_DATA&&GPSJAM_DATA.cells)||[];let top;if(mapped){const found=cells.find(c=>Math.abs(c.lat-mapped.lat)<0.5&&Math.abs(c.lon-mapped.lon)<0.5);top=found||mapped;if(!top.label)top.label=mapped.label;}else{const sorted=cells.slice().sort((a,b)=>(b.intensity||0)-(a.intensity||0));top=sorted[day.dayNum%Math.max(sorted.length,1)]||sorted[0];}if(!top||!viewer)return;clearJamming();jammingOn=true;const tog=$('lt-jam-tl');if(tog){tog.classList.add('on');tog.classList.remove('off');}const jalpha=Math.min(0.40+top.intensity*0.55,0.95);const jcol=Cesium.Color.fromCssColorString('#ff1111').withAlpha(jalpha);const radius=50000+top.intensity*130000;const ent=viewer.entities.add({name:top.label||'GPS Jamming',position:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500),point:{pixelSize:Math.round(10+top.intensity*14),color:jcol,outlineColor:Cesium.Color.WHITE.withAlpha(0.85),outlineWidth:1.5,disableDepthTestDistance:Number.POSITIVE_INFINITY,scaleByDistance:new Cesium.NearFarScalar(5e5,1.4,2e7,0.5)},ellipse:{semiMajorAxis:radius,semiMinorAxis:radius,height:0,material:new Cesium.ColorMaterialProperty(Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.07)),outline:true,outlineColor:Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.45),outlineWidth:1}});ent._jamLat=top.lat;ent._jamLon=top.lon;ent._jamData=top;jamEntities.push(ent);showJamBrief(top,day);viewer.camera.cancelFlight();viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500000),duration:1.5,easingFunction:Cesium.EasingFunction.CUBIC_IN_OUT});});density.appendChild(bar);if(day.dayNum%3===1||day.dayNum===1){const line=document.createElement('div');line.className='jam-day-line';line.style.left=pct.toFixed(2)+'%';density.appendChild(line);const lbl2=document.createElement('div');lbl2.className='jam-day-lbl';lbl2.style.left=pct.toFixed(2)+'%';lbl2.textContent='D'+day.dayNum;density.appendChild(lbl2);}});}
 
 function toggleJamTimeline(){jamTlOn=!jamTlOn;const tog=$('lt-jam-tl'),label=$('jam-toggle-label'),canvas=$('tl-jam-canvas');if(tog){tog.classList.toggle('on',jamTlOn);tog.classList.toggle('off',!jamTlOn);}if(label)label.textContent=jamTlOn?'GPS جدول تشويش ✓':'GPS جدول تشويش';if(canvas)canvas.style.display=jamTlOn?'block':'none';if(jamTlOn){buildJamTimeline();const td=$('jam-time-display');if(td)td.textContent='منذ 28 فبراير 2026';if(!jammingOn)toggleJamming();}else{const td=$('jam-time-display');if(td)td.textContent='التشويش متوقف';const id=$('jam-intensity-display');if(id)id.textContent='';}}
 function toggleBtEventList(){const el=$('war-event-list'),btn=$('bt-event-list-btn');if(!el)return;const open=el.style.display==='block';el.style.display=open?'none':'block';if(btn)btn.textContent=open?'أحداث ▲':'أحداث ▼';}
@@ -333,7 +333,7 @@ function toggleAttackedVessels(){
       _s('wbc-id','---');
       _s('wbc-type-label','لا توجد بيانات');
       _s('wbc-title','السفن المهاجمة — لا توجد بيانات');
-      _s('wbc-detail','يتطلب ملف vessels-attack-dataset.txt في مجلد data/ — راجع README');
+      _s('wbc-detail','يتطلب ملف vessels-attack-dataset.txt في مجلد data/ لهذه المساحة — راجع README');
       const mm=$('wbc-meta');if(mm)mm.innerHTML='';
       card.classList.add('visible');
       clearTimeout(window._wbcTimer);
@@ -342,8 +342,8 @@ function toggleAttackedVessels(){
     return;
   }
   _attackedVisible = !_attackedVisible;
-  const chip = $('lchip-attacked');
-  if(chip) chip.classList.toggle('active', _attackedVisible);
+  const ltap=$('lt-attacked-panel');
+  if(ltap){ltap.classList.toggle('on',_attackedVisible);ltap.classList.toggle('off',!_attackedVisible);}
   if(_attackedVisible) renderAttackedVessels();
   else clearAttackedEntities();
 }
@@ -673,7 +673,7 @@ function buildTimeline(){
   ['war','jam','sat','flt'].forEach(id=>{const c=$('tl-canvas-'+id);if(c)c.innerHTML='';});
   axisRow.innerHTML='';
   const span=warSpan();
-  const WAR_START_MS=new Date('2026-02-28').getTime();
+  const WAR_START_MS=new Date('__WAR_START__').getTime();
   const totalDays=Math.ceil(span/86400000);
 
   // ── ROW 1: WAR EVENTS — binned by DAY ──────────────────────────
@@ -1117,7 +1117,7 @@ function renderBriefingFeed(){
   const data=TELEGRAM_DATA;
   const ftEl=$('tg-fetch-time');
   if(!data||data.error||!data.messages||!data.messages.length){
-    feed.innerHTML='<div class="briefing-error">\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u062a\u063a\u0630\u064a\u0629.<br><br><a href="https://t.me/iranmonitor_org" target="_blank">\u2197 \u0627\u0644\u0642\u0646\u0627\u0629</a></div>';
+    feed.innerHTML='<div class="briefing-error">\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u062a\u063a\u0630\u064a\u0629.<br><br><a href="https://t.me/__TELEGRAM_CHANNEL__" target="_blank">\u2197 \u0627\u0644\u0642\u0646\u0627\u0629</a></div>';
     return;}
   if(ftEl)ftEl.textContent=data.fetched_at?data.fetched_at.slice(0,16).replace('T',' ')+' UTC':'\u2014';
 
@@ -1127,12 +1127,12 @@ function renderBriefingFeed(){
   });
 
   if(!briefs.length){
-    feed.innerHTML='<div style="padding:12px;text-align:center;color:var(--text-muted);font-size:12px;">\u0644\u0627 \u062a\u0648\u062c\u062f \u0625\u062d\u0627\u0637\u0629 \u0635\u0628\u0627\u062d\u064a\u0629 \u062d\u0627\u0644\u064a\u0627\u064b<br><a href="https://t.me/iranmonitor_org" target="_blank" style="color:var(--burg-500);">\u2197 \u0627\u0644\u0642\u0646\u0627\u0629</a></div>';
+    feed.innerHTML='<div style="padding:12px;text-align:center;color:var(--text-muted);font-size:12px;">\u0644\u0627 \u062a\u0648\u062c\u062f \u0625\u062d\u0627\u0637\u0629 \u0635\u0628\u0627\u062d\u064a\u0629 \u062d\u0627\u0644\u064a\u0627\u064b<br><a href="https://t.me/__TELEGRAM_CHANNEL__" target="_blank" style="color:var(--burg-500);">\u2197 \u0627\u0644\u0642\u0646\u0627\u0629</a></div>';
     return;
   }
 
   feed.innerHTML=briefs.map(function(msg){
-    var url=msg.url||'https://t.me/iranmonitor_org';
+    var url=msg.url||'https://t.me/__TELEGRAM_CHANNEL__';
     var raw=(msg.text||'');
     // Extract title
     var dashIdx=raw.indexOf(' The ');
@@ -1638,12 +1638,12 @@ function printAnalytics(){
     + '@media print { body { padding:10px 15px; } .an-grid-2, .an-grid-3 { display:block; } .an-grid-2 > *, .an-grid-3 > * { margin-bottom:8px; } }'
     + '</style></head><body>'
     + '<div style="text-align:center;margin-bottom:16px;padding:14px;background:linear-gradient(135deg,#3a0012,#7a0028);color:#fff;border-radius:8px;">'
-    + '<div style="font-size:18px;font-weight:700;">لوحة التحليلات</div>'
-    + '<div style="font-size:11px;opacity:.8;">منظومة الدمج الاستخباري · ' + new Date().toLocaleDateString('ar-SA') + '</div>'
+    + '<div style="font-size:18px;font-weight:700;">__ANALYTICS_NAME__</div>'
+    + '<div style="font-size:11px;opacity:.8;">__SYSTEM_NAME__ · ' + new Date().toLocaleDateString('ar-SA') + '</div>'
     + '</div>'
     + clone.innerHTML
     + '<div style="margin-top:16px;padding:8px;border-top:1px solid #e8d0d8;font-size:9px;color:#999;text-align:center;">'
-    + 'منظومة الدمج الاستخباري · ' + new Date().toISOString().slice(0,10)
+    + '__SYSTEM_NAME__ · ' + new Date().toISOString().slice(0,10)
     + '</div>'
     + '</body></html>';
 
@@ -1692,7 +1692,7 @@ const SHIP_ICONS={
 };
 function toggleMarine(){
   marineOn=!marineOn;
-  topSyncChip('lchip-marine',marineOn);
+  const tog=$('lt-vessel');if(tog){tog.classList.toggle('on',marineOn);tog.classList.toggle('off',!marineOn);}
   if(marineOn)renderMarine();else clearMarine();
 }
 function clearMarine(){marineEntities.forEach(e=>{if(e===window._searchHighlight)return;try{viewer.entities.remove(e);}catch(x){}});marineEntities=[];}
@@ -1740,7 +1740,8 @@ const SEARCH_PLACEHOLDERS={
   sat:  '\u0627\u0633\u0645 \u0627\u0644\u0642\u0645\u0631 \u0623\u0648 \u0631\u0642\u0645 NORAD\u2026',
   flt:  '\u0631\u0645\u0632 \u0627\u0644\u0631\u062d\u0644\u0629 \u0623\u0648 ICAO\u2026',
   ship: '\u0627\u0633\u0645 \u0627\u0644\u0633\u0641\u064a\u0646\u0629 \u0623\u0648 MMSI\u2026',
-  war:  '\u062d\u062f\u062b\u060c \u0645\u0648\u0642\u0639\u060c \u062a\u0641\u0635\u064a\u0644\u2026'
+  war:  '\u062d\u062f\u062b\u060c \u0645\u0648\u0642\u0639\u060c \u062a\u0641\u0635\u064a\u0644\u2026',
+  intel:'مدينة أو موقع…'
 };
 function setSearchTab(el,cat){
   document.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));
@@ -1839,7 +1840,7 @@ function buildSearchResults(q,tab){
       evIdx:WEVS.indexOf(e)
     }));
   }
-  if(want('loc')){
+  if(want('loc')||tab==='intel'){
     CITY_DB.filter(c=>
       c.n.toLowerCase().includes(nq)||c.ar.includes(q)||c.co.toLowerCase().includes(nq)
     ).slice(0,5).forEach(c=>results.push({
@@ -1970,7 +1971,7 @@ var tlSpeed = 1;
 var tlDragging = false;
 var tlCurrentDay = 1;
 const TL_TOTAL_DAYS = 28;
-const TL_WAR_START  = new Date('2026-02-28').getTime();
+const TL_WAR_START  = new Date('__WAR_START__').getTime();
 
 function tlSetCategory(cat){
   tlCurrentCat = cat;
@@ -2538,29 +2539,7 @@ function toggleLiveView(){
   }
 }
 
-// ══════════════════════════════════════════════════════════════
-// TOP TOGGLE (generic chip toggle)
-// ══════════════════════════════════════════════════════════════
-function topToggle(cat){
-  const chip = $('lchip-'+cat);
-  if(!chip) return;
-  const on = chip.classList.toggle('active');
-  if(cat==='war'){
-    layerOn.war = on;
-    if(on) renderWarMarkers(); else clearWarEntities();
-  } else if(cat==='flt'){
-    layerOn.flt = on;
-    if(on) renderCivFlights(); else clearCivFlights();
-  } else if(cat==='jam'){
-    layerOn.jam = on;
-    if(on) renderJamming(); else clearJamming();
-  } else if(cat==='vessel'){
-    layerOn.vessel = on;
-    _attackedVisible = on;
-    const ltap=$('lt-attacked-panel');if(ltap){ltap.classList.toggle('on',on);ltap.classList.toggle('off',!on);}
-    if(on) renderAttackedVessels(); else clearAttackedEntities();
-  }
-}
+// Layer toggles live only in the left panel; there is no separate top-bar toggle.
 
 
 // ══════════════════════════════════════════════════════════════════

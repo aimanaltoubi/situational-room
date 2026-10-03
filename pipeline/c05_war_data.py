@@ -1,11 +1,11 @@
 # c05_war_data.py
-# WAR_DATA builder (iran_war_clean.csv)
+# WAR_DATA builder (events.csv)
 # Auto-extracted from Cell 5
 
 ######################################################################
 # CELL 4 — WAR_DATA builder
 # Middle East Conflict Situational Room
-# Loads iran_war_clean.csv and builds structured event list
+# Loads events.csv and builds structured event list
 # for the Cesium globe timeline
 # Dynamic geocoding via Nominatim for unmatched locations
 ######################################################################
@@ -14,7 +14,7 @@ import pandas as pd, os, math, json, time, requests
 from datetime import datetime, timezone
 from collections import Counter
 
-DATASET_PATH        = os.path.join(DATA_DIR, "iran_war_clean.csv")
+DATASET_PATH        = os.path.join(DATA_DIR, "events.csv")
 GEOCODE_CACHE_PATH  = os.path.join(CACHE_DIR, "ifs_geocode_cache.json")
 
 # ── Location coordinates ──────────────────────────────────────────
@@ -410,7 +410,7 @@ def build_war_data(path):
 
     df = pd.read_csv(path, parse_dates=["date","datetime"])
     df = df.sort_values("datetime").reset_index(drop=True)
-    df = df[df["date"] >= "2026-02-27"].copy()
+    df = df[df["date"] >= (pd.Timestamp(WAR_START_STR) - pd.Timedelta(days=1))].copy()
     print(f"  ✓ {len(df)} rows loaded")
 
     GEOCODE_CACHE = load_geocode_cache()
@@ -509,7 +509,7 @@ def build_war_data(path):
 
 WIKI_DATA = {
     "fetched_at": datetime.now(timezone.utc).isoformat(),
-    "source":     "iran_war_clean.csv",
+    "source":     "events.csv",
     "count":      0,
     "events":     [],
 }

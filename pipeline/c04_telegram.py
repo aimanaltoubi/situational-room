@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 
 TELEGRAM_CACHE = os.path.join(CACHE_DIR, "ifs_telegram_cache.json")
-TELEGRAM_URL   = "https://t.me/s/iranmonitor_org"
+TELEGRAM_URL   = f"https://t.me/s/{TELEGRAM_CHANNEL}"
 CACHE_TTL_MIN  = 30
 MAX_PAGES      = 6    # ~120 posts back
 MAX_BRIEFS     = 7    # keep last 7 morning briefs
@@ -22,16 +22,19 @@ MAX_BRIEFS     = 7    # keep last 7 morning briefs
 def _empty_result():
     return {
         "fetched_at":   datetime.now(timezone.utc).isoformat(),
-        "channel":      "iranmonitor_org",
-        "channel_url":  "https://t.me/iranmonitor_org",
-        "channel_name": "Iran Monitor",
+        "channel":      TELEGRAM_CHANNEL,
+        "channel_url":  f"https://t.me/{TELEGRAM_CHANNEL}" if TELEGRAM_CHANNEL else "",
+        "channel_name": TELEGRAM_CHANNEL,
         "count":        0,
         "messages":     [],
         "error":        True,
     }
 
 def fetch_telegram_feed():
-    print("[TELEGRAM] Fetching @iranmonitor_org Morning Briefings...")
+    if not TELEGRAM_CHANNEL:
+        print("[TELEGRAM] No telegram_channel set for this workspace — skipped")
+        return _empty_result()
+    print(f"[TELEGRAM] Fetching @{TELEGRAM_CHANNEL} Morning Briefings...")
 
     # ── Cache check ───────────────────────────────────────────────
     if os.path.exists(TELEGRAM_CACHE):
@@ -138,7 +141,7 @@ def fetch_telegram_feed():
                     "datetime_iso": datetime_iso,
                     "text":         raw_text,
                     "preview":      preview,
-                    "url":          msg_url or f"https://t.me/iranmonitor_org/{msg_id}",
+                    "url":          msg_url or f"https://t.me/{TELEGRAM_CHANNEL}/{msg_id}",
                 })
 
                 print(f"      ✓ Page {page_num}: Found brief [{date_str}]")
@@ -175,9 +178,9 @@ def fetch_telegram_feed():
 
     result = {
         "fetched_at":   datetime.now(timezone.utc).isoformat(),
-        "channel":      "iranmonitor_org",
-        "channel_url":  "https://t.me/iranmonitor_org",
-        "channel_name": "Iran Monitor",
+        "channel":      TELEGRAM_CHANNEL,
+        "channel_url":  f"https://t.me/{TELEGRAM_CHANNEL}",
+        "channel_name": TELEGRAM_CHANNEL,
         "count":        len(all_briefs),
         "messages":     all_briefs,
         "pages_fetched": pages_fetched,
@@ -201,7 +204,7 @@ def fetch_telegram_feed():
 
 # ── Run ───────────────────────────────────────────────────────────
 print("=" * 60)
-print("CELL 3 — Morning Briefing (@iranmonitor_org)")
+print(f"CELL 3 — Morning Briefing (@{TELEGRAM_CHANNEL})")
 print("=" * 60)
 
 TELEGRAM_DATA = fetch_telegram_feed()

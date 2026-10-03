@@ -22,8 +22,9 @@ import pandas as pd
 from datetime import datetime, timedelta
 from collections import defaultdict
 
-WAR_START = datetime(2026, 2, 28)
-WAR_DAY0  = datetime(2026, 2, 27)
+WAR_START = datetime.strptime(WAR_START_STR, "%Y-%m-%d")
+WAR_DAY0  = WAR_START - timedelta(days=1)
+WAR_DAY0_STR = WAR_DAY0.strftime("%Y-%m-%d")
 
 print("=" * 60)
 print("CELL 9 — Analytics Intelligence Extraction")
@@ -213,7 +214,7 @@ for day in range(0, max_war_day + 1):
 
     esc_days.append({
         "day":       day,
-        "date":      _date_of_day(day) if day > 0 else "2026-02-27",
+        "date":      _date_of_day(day) if day > 0 else WAR_DAY0_STR,
         "n":         n,
         "killed":    killed,
         "injured":   injured,
@@ -321,7 +322,7 @@ for day in range(0, max_pol_day+1):
     evs = pol_by_day.get(day, [])
     if not evs:
         pol_days.append({
-            "day": day, "date": _date_of_day(day) if day>0 else "2026-02-27",
+            "day": day, "date": _date_of_day(day) if day>0 else WAR_DAY0_STR,
             "n": 0, "esc_count": 0, "de_esc_count": 0, "neut_count": 0,
             "day_score": 0, "cumulative": round(cumulative,1),
             "war_phase": "", "actors": [], "high_sig": [],
@@ -345,7 +346,7 @@ for day in range(0, max_pol_day+1):
 
     pol_days.append({
         "day":           day,
-        "date":          _date_of_day(day) if day>0 else "2026-02-27",
+        "date":          _date_of_day(day) if day>0 else WAR_DAY0_STR,
         "n":             len(evs),
         "esc_count":     len(esc),
         "de_esc_count":  len(de_esc),
@@ -856,7 +857,7 @@ vip_flights = [f for f in all_flights if f.get("category")=="VIP_KNOWN"]
 priv_flights = [f for f in all_flights if f.get("category") in ("PRIVATE_JET","VIP_CALLSIGN")]
 
 # ── E1: Evacuation index ────────────────────────────────────────
-d1_key = "2026-02-28"
+d1_key = WAR_START_STR
 d1_total = _sf(flt_summary.get(d1_key,{}).get("total_flights",0))
 all_totals = [_sf(s.get("total_flights",0)) for s in flt_summary.values()]
 avg_total = sum(all_totals)/len(all_totals) if all_totals else 1
@@ -986,7 +987,7 @@ vip_ranking = sorted(
 # ── E7: VIP by day (for bar chart) ──────────────────────────────
 vip_by_day = []
 for day in range(0, max_war_day+1):
-    ds = _date_of_day(day) if day > 0 else "2026-02-27"
+    ds = _date_of_day(day) if day > 0 else WAR_DAY0_STR
     summ = flt_summary.get(ds, {})
     vip_by_day.append({
         "day":     day,

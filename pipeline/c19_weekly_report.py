@@ -37,6 +37,24 @@ print("="*60)
 print("\n[0] Detecting boundaries...")
 
 CLEAN_PATH = os.path.join(DATA_DIR, "Middle_East_clean_2026.csv")
+if not os.path.exists(CLEAN_PATH):
+    # Empty workspace: write a placeholder analytics page instead of failing
+    _d = datetime.now().strftime("%Y-%m-%d")
+    _ph = f"""<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{WORKSPACE['analytics_name_ar']} — {SYSTEM_NAME_AR}</title>
+<style>body{{font-family:'Noto Naskh Arabic',serif;background:#f5f0f2;color:#0f172a;margin:0;padding:40px 16px;text-align:center}}
+.hdr{{max-width:760px;margin:0 auto 18px;background:linear-gradient(150deg,#3a0012,#7a0028);color:#fff;border-radius:12px;padding:26px 30px}}
+.card{{max-width:760px;margin:0 auto;background:#fff;border:1px solid #f0e0e8;border-radius:10px;padding:40px 24px;line-height:1.9}}
+a{{color:#7a0028}}</style></head><body>
+<div class="hdr"><div style="font-size:22px;font-weight:700">{WORKSPACE['analytics_name_ar']}</div>
+<div style="font-size:12px;opacity:.85">{SYSTEM_NAME_AR} · {_d}</div></div>
+<div class="card"><div style="font-size:18px;font-weight:700;color:#7a0028">لا توجد بيانات تحليلية بعد لهذه المساحة</div>
+<div style="font-size:14px;color:#8a5060">أضف ملفات البيانات إلى workspaces/{WORKSPACE_SLUG}/data ثم أعد بناء المساحة.</div>
+<div style="margin-top:18px"><a href="./">← العودة إلى المساحة</a></div></div></body></html>"""
+    with open(os.path.join(OUTPUT_DIR, f"weekly_prediction_{_d}.html"), "w", encoding="utf-8") as _f:
+        _f.write(_ph)
+    raise ModuleSkipped(f"{CLEAN_PATH} not found — placeholder analytics page written")
 df = pd.read_csv(CLEAN_PATH)
 df['WEEK'] = pd.to_datetime(df['WEEK'])
 ACLED_CUTOFF = df['WEEK'].max()
@@ -94,7 +112,7 @@ print("\n[2] H2O model...")
 forecast = H2OConflictForecastStage().run(ConflictForecastContext(
     acled_data=df,
     acled_cutoff=ACLED_CUTOFF,
-    war_start=pd.Timestamp("2026-02-28"),
+    war_start=pd.Timestamp(WAR_START_STR),
 ))
 pred_base = forecast.predictions
 cp_df = forecast.country_risks
@@ -663,7 +681,7 @@ HTML = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>التقرير التحليلي — {date_iso}</title>
+<title>{WORKSPACE['analytics_name_ar']} — {date_iso}</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -697,9 +715,10 @@ body{{font-family:"Noto Naskh Arabic",serif;background:#f5f0f2;color:#0f172a;dir
 
 <div class="hdr">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;">
-    <div><div class="hdr-title">التقرير التحليلي الشامل</div>
-    <div class="hdr-sub">منظومة الدمج الاستخباري · {date_iso} · المرحلة: {"حرب نشطة" if "Active" in str(current_phase) else "استقرار" if "Stabil" in str(current_phase) else "انهيار" if "Collaps" in str(current_phase) else "استنزاف" if "Attrition" in str(current_phase) else "صدمة" if "Shock" in str(current_phase) else current_phase}</div></div>
-    <button class="pbtn" onclick="window.print()">طباعة / PDF</button>
+    <div><div class="hdr-title">{WORKSPACE['analytics_name_ar']}</div>
+    <div class="hdr-sub">{SYSTEM_NAME_AR} · {date_iso} · المرحلة: {"حرب نشطة" if "Active" in str(current_phase) else "استقرار" if "Stabil" in str(current_phase) else "انهيار" if "Collaps" in str(current_phase) else "استنزاف" if "Attrition" in str(current_phase) else "صدمة" if "Shock" in str(current_phase) else current_phase}</div></div>
+    <div><a class="pbtn" href="./" style="text-decoration:none;display:inline-block">← المساحة</a>
+    <button class="pbtn" onclick="window.print()">طباعة / PDF</button></div>
   </div>
   <div class="hdr-strip">
     <div><div class="v">{total_events}</div><div class="l">إجمالي الأحداث</div></div>
@@ -811,7 +830,7 @@ body{{font-family:"Noto Naskh Arabic",serif;background:#f5f0f2;color:#0f172a;dir
 {findings_html}
 
 <div class="ft">
-  <span>منظومة الدمج الاستخباري · {date_iso}</span>
+  <span>{SYSTEM_NAME_AR} · {WORKSPACE_NAME_AR} · {date_iso}</span>
   <span style="font-family:monospace">ACLED > {ACLED_CUTOFF.date()}</span>
 </div>
 </div>

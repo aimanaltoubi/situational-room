@@ -18,7 +18,7 @@ _P1 = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FusionIntell</title>
+<title>__SYSTEM_NAME__ — __WORKSPACE_NAME__</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -746,6 +746,26 @@ html,body{width:100%;height:100%;background:#e8e0e4;
 .an-coincidence .gap.near{background:rgba(200,120,0,.12);color:#cc6600;}
 .an-coincidence .actor-line{font-size:12px;color:var(--text-secondary);padding:2px 0;}
 @media(max-width:900px){.an-grid-2,.an-grid-3{grid-template-columns:1fr;}}
+
+/* ═══ Responsive fit ═══ */
+#war-brief-card{max-width:calc(100vw - var(--panel-w) - var(--right-w) - 28px);}
+@media(max-width:1280px){:root{--panel-w:160px;--right-w:240px;}}
+@media(max-width:1000px){
+  :root{--right-w:0px;}
+  #right-panel{display:none;}
+}
+@media(max-width:700px){
+  :root{--panel-w:132px;--tl-selector-w:84px;}
+  #topbar-tagline,#topbar-date,#topbar-clock,.live-badge{display:none;}
+  .vsw-btn{padding:3px 6px;font-size:11px;}
+  #war-brief-card{width:calc(100vw - var(--panel-w) - 24px);right:12px;}
+}
+/* short screens: let the whole left panel scroll so layer toggles stay reachable */
+@media(max-height:780px){
+  :root{--bottom-h:136px;}
+  #left-panel{overflow-y:auto;}
+  #left-scroll{flex:none;overflow:visible;}
+}
 
 
 /* ═══ Print Styles ═══ */

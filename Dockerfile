@@ -16,4 +16,4 @@ EXPOSE 5000
 
 # Run the pipeline once at image build time is NOT done here since it needs
 # secrets/API keys — run it at container start instead, then serve.
-CMD sh -c "python3 run_pipeline.py --skip-scrape || true; gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120"
+CMD for w in $(ls workspaces); do python3 run_pipeline.py -w "$w" --skip-scrape || true; done; gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120

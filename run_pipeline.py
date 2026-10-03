@@ -2,7 +2,7 @@
 """
 ╔══════════════════════════════════════════════════════════════╗
 ║  RUN_PIPELINE.PY                                            ║
-║  Middle East Conflict Situational Room                      ║
+║  International Data Analytics System                        ║
 ║                                                             ║
 ║  Runs all pipeline modules in sequence, replicating         ║
 ║  the Jupyter notebook execution flow.                       ║
@@ -10,6 +10,7 @@
 ║  Usage:                                                     ║
 ║    python3 run_pipeline.py              # full pipeline     ║
 ║    python3 run_pipeline.py --skip-scrape # skip live APIs   ║
+║    python3 run_pipeline.py -w terrorism # pick a workspace  ║
 ╚══════════════════════════════════════════════════════════════╝
 """
 
@@ -22,7 +23,15 @@ os.chdir(PROJECT_DIR)
 parser = argparse.ArgumentParser(description="Run the Situational Room pipeline")
 parser.add_argument("--skip-scrape", action="store_true",
                     help="Skip flight scraper (Cell 8) — uses cached data")
+parser.add_argument("-w", "--workspace", default=None,
+                    help="Workspace slug under workspaces/ (default: middle-east-conflict)")
 args = parser.parse_args()
+if args.workspace:
+    os.environ["WORKSPACE"] = args.workspace
+
+
+class ModuleSkipped(Exception):
+    """Raised by a module that has nothing to do for this workspace."""
 
 # ── Module execution order ────────────────────────────────────
 # This matches the notebook cell execution order exactly.
@@ -59,7 +68,7 @@ modules += [
 # ── Shared namespace ──────────────────────────────────────────
 # This dict acts as the "kernel" — all modules share it,
 # so SAT_DATA defined in c02 is visible in c12, etc.
-ns = {"__builtins__": __builtins__, "__name__": "__main__"}
+ns = {"__builtins__": __builtins__, "__name__": "__main__", "ModuleSkipped": ModuleSkipped}
 
 total_start = time.time()
 failed = []
@@ -82,6 +91,8 @@ for mod_path, description in modules:
         ns["__file__"] = full_path; ns["__file__"] = full_path; exec(compile(code, full_path, "exec"), ns)
         elapsed = time.time() - start
         print(f"  ✓ Done ({elapsed:.1f}s)")
+    except ModuleSkipped as e:
+        print(f"  ↷ Skipped: {e}")
     except Exception as e:
         elapsed = time.time() - start
         print(f"  ✗ FAILED after {elapsed:.1f}s: {e}")
@@ -96,8 +107,8 @@ if failed:
     print(f"  ⚠ {len(failed)} module(s) had errors:")
     for mod, err in failed:
         print(f"    ✗ {mod}: {err}")
-output = ns.get("OUTPUT_HTML", os.path.join(PROJECT_DIR, "output", "ifs_globe.html"))
-if os.path.exists(output):
+output = ns.get("OUTPUT_HTML")
+if output and os.path.exists(output):
     size_mb = os.path.getsize(output) / (1024 * 1024)
     print(f"  ✓ Output: {output} ({size_mb:.1f} MB)")
 else:

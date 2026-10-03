@@ -60,7 +60,7 @@ if not _use_enhanced_cache:
     print("=" * 60)
     
     if 'MARINE_DATA' not in dir() or not MARINE_DATA.get('vessels'):
-        raise RuntimeError("MARINE_DATA not found — run Cell 7 first")
+        raise ModuleSkipped("no marine vessels loaded (Cell 7 returned none)")
     
     DATALASTIC_KEY = os.environ.get("DATALASTIC_KEY", "")
     if not DATALASTIC_KEY:
@@ -72,7 +72,7 @@ if not _use_enhanced_cache:
     
     vessels = MARINE_DATA['vessels']
     print(f"  Starting with {len(vessels)} vessels from Cell 7")
-    WAR_START = "2026-02-28"
+    WAR_START = WAR_START_STR
     
     # ══════════════════════════════════════════════════════════════════
     # 0. VESSEL ENRICHMENT — Full specs from /vessel_pro
