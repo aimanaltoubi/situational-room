@@ -28,6 +28,8 @@ SYSTEM_NAME_AR = _wsmod.SYSTEM_NAME_AR
 SYSTEM_NAME_EN = _wsmod.SYSTEM_NAME_EN
 WORKSPACE_NAME_AR = WORKSPACE["name_ar"]
 TELEGRAM_CHANNEL  = WORKSPACE["telegram_channel"]
+FEATURES = WORKSPACE["features"]
+LABELS   = WORKSPACE["labels"]
 
 # ── Directory layout ──────────────────────────────────────────
 _ws_paths   = _wsmod.paths(WORKSPACE_SLUG)

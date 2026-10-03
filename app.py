@@ -147,35 +147,37 @@ body{
   background:radial-gradient(circle at 50% 20%,#3a0012,#1a0008 70%);
   font-family:'IBM Plex Sans Arabic','Noto Naskh Arabic',Arial,sans-serif;color:#f0e8ec;
 }
-a{color:#d4a017}
+a{color:#fff}
 .wrap{max-width:980px;margin:0 auto}
 .head{text-align:center;margin-bottom:28px}
-.head .en{color:#c8a0b0;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.head h1{font-size:30px;color:#d4a017;margin:6px 0}
-.head p{color:#e8dce2;font-size:14px;line-height:1.8}
+.head .en{color:#e0c4cf;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.head h1{font-size:30px;color:#fff;margin:6px 0}
+.head p{color:#f0e8ec;font-size:14px;line-height:1.8}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .card{
-  background:rgba(26,0,8,.55);border:1px solid rgba(184,134,11,.35);
+  background:rgba(26,0,8,.55);border:1px solid rgba(255,255,255,.22);
   border-radius:14px;padding:24px;box-shadow:0 10px 40px rgba(0,0,0,.5);
 }
-.card h2{font-size:19px;color:#d4a017;margin-bottom:4px}
-.card .en{color:#c8a0b0;font-size:11px;margin-bottom:14px}
+.card h2{font-size:19px;color:#fff;margin-bottom:4px}
+.card .en{color:#e0c4cf;font-size:11px;margin-bottom:14px}
 .status{font-size:12px;margin-bottom:14px}
-.ok{color:#22a050}.bad{color:#ff6a50}
+.ok{color:#5fe08a}.bad{color:#ff9a88}
 .btn{
   display:inline-block;padding:10px 20px;font-size:14px;font-weight:700;
-  text-decoration:none;color:#1a0008;border:none;cursor:pointer;font-family:inherit;
-  background:linear-gradient(135deg,#d4a017,#b8860b);border-radius:8px;margin:3px 0;
+  text-decoration:none;color:#3a0012;border:none;cursor:pointer;font-family:inherit;
+  background:#fff;border-radius:8px;margin:3px 0;
 }
-.btn.secondary{background:transparent;color:#d4a017;border:1px solid rgba(184,134,11,.5)}
+.btn:hover{background:#f3e4ea}
+.btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+.btn.secondary:hover{background:rgba(255,255,255,.1)}
 .btn.block{display:block;text-align:center;margin:8px 0}
-.flash{background:rgba(34,160,80,.15);border:1px solid #22a050;color:#8ef0b0;
+.flash{background:rgba(34,160,80,.15);border:1px solid #22a050;color:#a8f5c4;
   padding:8px 14px;border-radius:6px;margin-bottom:16px;font-size:13px}
 .field{margin-bottom:12px}
-.field label{display:block;font-size:12px;color:#c8a0b0;margin-bottom:4px}
-.field input{width:100%;padding:8px 10px;background:#2a0410;border:1px solid rgba(184,134,11,.3);
-  color:#f0e8ec;border-radius:6px;font-size:13px;font-family:inherit}
-.footer{margin-top:28px;text-align:center;font-size:11px;color:#9a6070}
+.field label{display:block;font-size:12px;color:#f0e8ec;margin-bottom:4px}
+.field input{width:100%;padding:8px 10px;background:#2a0410;border:1px solid rgba(255,255,255,.3);
+  color:#fff;border-radius:6px;font-size:13px;font-family:inherit}
+.footer{margin-top:28px;text-align:center;font-size:11px;color:#e0c4cf}
 """
 
 HUB_TEMPLATE = """<!DOCTYPE html>
@@ -283,6 +285,15 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
         <input name="start_date" value="{{ w.start_date }}" required dir="ltr"></div>
       <div class="field"><label>قناة تيليجرام (اختياري)</label>
         <input name="telegram_channel" value="{{ w.telegram_channel }}" dir="ltr"></div>
+      <div class="field"><label>وحدات المراقبة المفعّلة في هذه الغرفة</label>
+        {% for key, label in feature_labels.items() %}
+        <label style="display:block;color:#f0e8ec"><input type="checkbox" name="feat_{{ key }}" value="1"
+          style="width:auto" {{ 'checked' if w.features[key] else '' }}> {{ label }}</label>
+        {% endfor %}</div>
+      {% for key, label in label_fields.items() %}
+      <div class="field"><label>{{ label }}</label>
+        <input name="lbl_{{ key }}" value="{{ w.labels[key] }}"></div>
+      {% endfor %}
       <button class="btn" type="submit">حفظ</button>
     </form>
   </div>
@@ -461,6 +472,7 @@ def workspace_home(slug):
     return render_template_string(
         WORKSPACE_TEMPLATE, style=BASE_STYLE, w=w, state=_workspace_status(slug),
         data_files=_data_file_info(slug),
+        feature_labels=ws.FEATURE_LABELS, label_fields=ws.LABEL_FIELDS,
         system_ar=ws.SYSTEM_NAME_AR, system_en=ws.SYSTEM_NAME_EN,
     )
 
@@ -540,6 +552,8 @@ def edit_workspace(slug):
             slug, request.form.get("name_ar", ""), request.form.get("name_en", ""),
             (request.form.get("start_date") or "").strip(),
             request.form.get("telegram_channel", ""),
+            features={k: request.form.get(f"feat_{k}") == "1" for k in ws.FEATURE_LABELS},
+            labels={k: request.form.get(f"lbl_{k}", "") for k in ws.DEFAULT_LABELS},
         )
     except ValueError as e:
         flash(f"تعذّر الحفظ: {e}")

@@ -163,7 +163,7 @@ _P2 = """
         <div class="layer-row" onclick="toggleWarTimeline()">
           <div class="layer-left">
             <div class="l-dot" style="background:#b80038"></div>
-            <div class="l-name">أحداث الحرب</div>
+            <div class="l-name">__LBL_EVENTS__</div>
           </div>
           <div class="tog on" id="lt-war"></div>
         </div>
@@ -398,7 +398,7 @@ _P2 = """
     <div id="tl-selector">
       <div class="tl-cat active" id="tlcat-war" onclick="tlSetCategory('war')">
         <div class="tl-cat-dot" style="background:#b80038"></div>
-        <span class="tl-cat-label">الحرب</span>
+        <span class="tl-cat-label">__LBL_TIMELINE__</span>
         <span class="tl-cat-count" id="tlcc-war"></span>
       </div>
       <div class="tl-cat" id="tlcat-flt" onclick="tlSetCategory('flt')">
@@ -507,7 +507,7 @@ _P2 = """
 
     <!-- ═══ B. ESCALATION ARC ═════════════════════════════════════ -->
     <div class="an-section">
-      <div class="an-section-title">مسار التصعيد اليومي — من بداية الحرب</div>
+      <div class="an-section-title">__LBL_ESCALATION__</div>
 
       <!-- B4: Daily strikes by weapon type + actor overlay -->
       <div class="an-card" style="height:340px;position:relative;">
@@ -665,6 +665,32 @@ _P2 = """
       </div>
     </div>
 
+    <!-- ═══ MARITIME DETAIL CARDS (hidden when the room has no marine feature) ═══ -->
+    <div class="an-card-container" id="an-hormuz-flow-section">
+      <h3 class="an-card-title">تدفق الناقلات في مضيق هرمز</h3>
+      <div id="an-hormuz-flow" style="display:flex;gap:12px;flex-wrap:wrap;"></div>
+    </div>
+    <div class="an-card-container" id="an-sea-routes-section">
+      <h3 class="an-card-title">المسارات البحرية — هرمز مقابل رأس الرجاء الصالح</h3>
+      <div id="an-sea-routes" style="padding:10px;"></div>
+    </div>
+    <div class="an-card-container" id="an-global-mil-section">
+      <h3 class="an-card-title">القوات البحرية العالمية — المنطقة مقابل العالم</h3>
+      <div id="an-global-mil" style="padding:10px;"></div>
+    </div>
+    <div class="an-card-container" id="an-vessel-hist-section">
+      <h3 class="an-card-title">تاريخ حركة السفن المشبوهة — آخر 30 يوماً</h3>
+      <div id="an-vessel-hist" style="padding:10px;"></div>
+    </div>
+    <div class="an-card-container" id="an-inspections-section">
+      <h3 class="an-card-title">التفتيشات والاحتجازات في موانئ المنطقة</h3>
+      <div id="an-inspections" style="padding:10px;"></div>
+    </div>
+    <div class="an-card-container" id="an-companies-section">
+      <h3 class="an-card-title">الشركات البحرية المرتبطة بالسفن المرصودة</h3>
+      <div id="an-companies" style="padding:10px;"></div>
+    </div>
+
     <!-- ═══ F. FLIGHT INTELLIGENCE ════════════════════════════════ -->
     <div class="an-section">
       <div class="an-section-title">تحليل حركة الطيران — حركة كبار المسؤولين</div>
@@ -693,43 +719,6 @@ _P2 = """
       <div class="an-grid-2">
         <!-- F34: Shuttle corridors -->
         <div class="an-card">
-
-<!-- ═══ HORMUZ TRAFFIC FLOW ═══ -->
-<div class="an-card-container" id="an-hormuz-flow-section">
-  <h3 class="an-card-title">تدفق الناقلات في مضيق هرمز</h3>
-  <div id="an-hormuz-flow" style="display:flex;gap:12px;flex-wrap:wrap;"></div>
-</div>
-
-<!-- ═══ SEA ROUTE COMPARISON ═══ -->
-<div class="an-card-container" id="an-sea-routes-section">
-  <h3 class="an-card-title">المسارات البحرية — هرمز مقابل رأس الرجاء الصالح</h3>
-  <div id="an-sea-routes" style="padding:10px;"></div>
-</div>
-
-<!-- ═══ GLOBAL MILITARY ═══ -->
-<div class="an-card-container" id="an-global-mil-section">
-  <h3 class="an-card-title">القوات البحرية العالمية — المنطقة مقابل العالم</h3>
-  <div id="an-global-mil" style="padding:10px;"></div>
-</div>
-
-<!-- ═══ VESSEL HISTORIES ═══ -->
-<div class="an-card-container" id="an-vessel-hist-section">
-  <h3 class="an-card-title">تاريخ حركة السفن المشبوهة — آخر 30 يوماً</h3>
-  <div id="an-vessel-hist" style="padding:10px;"></div>
-</div>
-
-<!-- ═══ INSPECTIONS ═══ -->
-<div class="an-card-container" id="an-inspections-section">
-  <h3 class="an-card-title">التفتيشات والاحتجازات في موانئ المنطقة</h3>
-  <div id="an-inspections" style="padding:10px;"></div>
-</div>
-
-<!-- ═══ COMPANY PROFILES ═══ -->
-<div class="an-card-container" id="an-companies-section">
-  <h3 class="an-card-title">الشركات البحرية المرتبطة بالسفن المرصودة</h3>
-  <div id="an-companies" style="padding:10px;"></div>
-</div>
-
           <div class="an-card-title">ممرات الدبلوماسية المكوكية — أكثر المسارات نشاطاً</div>
           <div id="an-shuttle-corridors"></div>
         </div>

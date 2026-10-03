@@ -280,8 +280,13 @@ print("="*60)
 print("CELL 6 — Flights + Intel Sites")
 print("="*60)
 
-FLIGHT_DATA      = fetch_flights()
-FLIGHT_HIST_DATA = load_flight_history()
+if FEATURES["flights"]:
+    FLIGHT_DATA      = fetch_flights()
+    FLIGHT_HIST_DATA = load_flight_history()
+else:
+    FLIGHT_DATA      = {"aircraft": [], "total": 0, "counts": {}, "fir_summary": [], "proximity_alerts": []}
+    FLIGHT_HIST_DATA = {"flights": [], "daily_summary": {}, "by_day": {},
+                        "total_flights": 0, "vip_flights": 0, "private_flights": 0}
 INTEL_DATA       = build_intel_data()
 
 print()

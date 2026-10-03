@@ -2,5 +2,17 @@
   "name_ar": "العقوبات — التركيز على الشرق الأوسط",
   "name_en": "Sanctions (Middle East Focus)",
   "start_date": "2026-10-03",
-  "telegram_channel": ""
+  "telegram_channel": "",
+  "features": {
+    "gps_jamming": false,
+    "satellites": false,
+    "flights": false,
+    "marine": true,
+    "attacked_vessels": false
+  },
+  "labels": {
+    "events_layer": "إجراءات العقوبات",
+    "timeline_cat": "الإجراءات",
+    "escalation_title": "مسار إجراءات العقوبات اليومي"
+  }
 }

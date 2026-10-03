@@ -21,6 +21,7 @@ const ATTACKED_VESSELS     = __ATTACKED_JSON__;
 const ESCALATION_ANALYSIS  = __ESCALATION_JSON__;
 const ISR_CUEING           = __ISR_CUEING_JSON__;
 const ATTACK_PATTERNS      = __ATTACK_PATTERNS_JSON__;
+const FEATURES             = __FEATURES_JSON__;
 
 const POLITICAL_ANALYSIS  = __POLITICAL_JSON__;
 const DIPLOMATIC_INDEX    = __DIPLOMATIC_JSON__;
@@ -147,6 +148,23 @@ function toggleJamTimeline(){jamTlOn=!jamTlOn;const tog=$('lt-jam-tl'),label=$('
 function toggleBtEventList(){const el=$('war-event-list'),btn=$('bt-event-list-btn');if(!el)return;const open=el.style.display==='block';el.style.display=open?'none':'block';if(btn)btn.textContent=open?'أحداث ▲':'أحداث ▼';}
 
 var currentView='sa';
+// Hide the layers, timeline rows and analytics sections this room does not monitor
+function applyFeatures(){
+  const hide=el=>{if(el)el.classList.add('feat-off');};
+  const row=id=>{const t=$(id);return t?t.closest('.layer-row'):null;};
+  const group=id=>{const b=$(id);return b?b.closest('.filter-section'):null;};
+  const sec=sel=>{const n=document.querySelector(sel);return n?n.closest('.an-section'):null;};
+  if(!FEATURES.gps_jamming){hide(row('lt-jam'));hide($('tlcat-jam'));hide(sec('#an-chart-jamming'));}
+  if(!FEATURES.satellites){hide(group('sat-filter'));hide($('tlcat-sat'));hide(sec('#an-chart-isr'));}
+  if(!FEATURES.flights){hide(row('lt-civ'));hide(group('flt-filter'));hide($('tlcat-flt'));hide(sec('#an-coincidences'));}
+  if(!FEATURES.marine){
+    hide(row('lt-vessel'));hide(sec('#an-chart-country-vessels'));hide(sec('#an-mar-zones'));
+    ['an-hormuz-flow-section','an-sea-routes-section','an-global-mil-section','an-vessel-hist-section','an-inspections-section','an-companies-section'].forEach(id=>hide($(id)));
+  }
+  if(!FEATURES.attacked_vessels){hide(row('lt-attacked-panel'));hide($('tlcat-vessel'));}
+  if(!FEATURES.telegram)document.documentElement.classList.add('no-telegram');
+  ['sat','flt','jam','vessel'].forEach(k=>{if($('tlcat-'+k)&&$('tlcat-'+k).classList.contains('feat-off')&&tlCurrentCat===k)tlSetCategory('war');});
+}
 function switchView(view){
   if(view===currentView)return;
   currentView=view;
@@ -172,14 +190,17 @@ function switchView(view){
     setMsg('\u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u2026',30);await applyMode('satellite');
     viewer.camera.setView({destination:Cesium.Cartesian3.fromDegrees(50,20,19000000),orientation:{heading:0,pitch:Cesium.Math.toRadians(-90),roll:0}});
     setMsg('\u062d\u0633\u0627\u0628 \u0627\u0644\u0645\u062f\u0627\u0631\u0627\u062a\u2026',60);
+    applyFeatures();
     initBadges();propagateAndRender();initControls();renderBriefingFeed();
     // Auto-show war events and jamming on startup
     initWarTimeline();warOn=true;renderWarMarkers();
     const _lt=$('lt-war');if(_lt){_lt.classList.add('on');_lt.classList.remove('off');}
     topSyncChip('lchip-war',true);
+    if(FEATURES.gps_jamming){
     jammingOn=true;renderJamming();
     const _lj=$('lt-jam');if(_lj){_lj.classList.add('on');_lj.classList.remove('off');}
     topSyncChip('lchip-jam',true);
+    }
     // Attacked vessels shown on demand via button click
     setInterval(propagateAndRender,15000);viewer.screenSpaceEventHandler.
 setInputAction(function(click){

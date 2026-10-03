@@ -748,6 +748,10 @@ html,body{width:100%;height:100%;background:#e8e0e4;
 @media(max-width:900px){.an-grid-2,.an-grid-3{grid-template-columns:1fr;}}
 
 /* ═══ Responsive fit ═══ */
+.feat-off{display:none!important;}
+/* no Telegram channel for this room: give the globe the freed width */
+html.no-telegram{--right-w:0px;}
+html.no-telegram #right-panel{display:none;}
 #war-brief-card{max-width:calc(100vw - var(--panel-w) - var(--right-w) - 28px);}
 @media(max-width:1280px){:root{--panel-w:160px;--right-w:240px;}}
 @media(max-width:1000px){

@@ -252,6 +252,12 @@ def build_html():
     html = html.replace("__SYSTEM_NAME__",    SYSTEM_NAME_AR)
     html = html.replace("__WORKSPACE_NAME__", WORKSPACE_NAME_AR)
     html = html.replace("__ANALYTICS_NAME__", WORKSPACE["analytics_name_ar"])
+    import html as _htmllib
+    html = html.replace("__LBL_EVENTS__",     _htmllib.escape(LABELS["events_layer"]))
+    html = html.replace("__LBL_TIMELINE__",   _htmllib.escape(LABELS["timeline_cat"]))
+    html = html.replace("__LBL_ESCALATION__", _htmllib.escape(LABELS["escalation_title"]))
+    html = html.replace("__FEATURES_JSON__", _escape_script(json.dumps(
+        {**FEATURES, "telegram": bool(TELEGRAM_CHANNEL)}, separators=(",", ":"))))
     html = html.replace("__BUILD_TIME__",     build_ts)
     html = html.replace("__SAT_JSON__",       sat_json)
     html = html.replace("__JAM_JSON__",       jam_json)

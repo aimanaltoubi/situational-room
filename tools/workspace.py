@@ -17,6 +17,26 @@ SLUG_RE        = re.compile(r"^[a-z0-9][a-z0-9-]{1,40}$")
 SYSTEM_NAME_AR = "نظام تحليل البيانات الدولية"
 SYSTEM_NAME_EN = "International Data Analytics System"
 
+# Monitoring modules a room can switch on (key: Arabic label). Events, political
+# trajectory and the Telegram feed (when a channel is set) are always available.
+FEATURE_LABELS = {
+    "gps_jamming":     "تشويش GPS",
+    "satellites":      "أقمار الاستطلاع",
+    "flights":         "الرحلات الجوية وكبار المسؤولين",
+    "marine":          "الملاحة البحرية (AIS)",
+    "attacked_vessels":"السفن المهاجمة",
+}
+DEFAULT_LABELS = {
+    "events_layer":     "أحداث الحرب",
+    "timeline_cat":     "الحرب",
+    "escalation_title": "مسار التصعيد اليومي — من بداية الحرب",
+}
+LABEL_FIELDS = {
+    "events_layer":     "اسم طبقة الأحداث",
+    "timeline_cat":     "اسم الأحداث في الجدول الزمني",
+    "escalation_title": "عنوان مسار الأحداث في التحليلات",
+}
+
 # Files a workspace can have in data/ — key: (fixed file name, Arabic label)
 DATA_FILES = {
     "events":     ("events.csv", "الأحداث الميدانية (events.csv)"),
@@ -56,6 +76,9 @@ def get_workspace(slug):
     ws.setdefault("name_ar", slug)
     ws.setdefault("start_date", date.today().isoformat())
     ws.setdefault("telegram_channel", "")
+    # A manifest without "features" keeps every module on (the original Middle East room)
+    ws["features"] = {k: bool(ws.get("features", {}).get(k, True)) for k in FEATURE_LABELS}
+    ws["labels"] = {**DEFAULT_LABELS, **ws.get("labels", {})}
     ws["analytics_name_ar"] = "تحليلات " + ws["name_ar"]
     ws["analytics_name_en"] = ws["name_en"] + " Analytics"
     return ws
@@ -68,8 +91,10 @@ def list_workspaces():
     return [w for w in found if w]
 
 
-def create_workspace(slug, name_ar, name_en, start_date=None, telegram_channel=""):
-    """Create an empty workspace with the standard folder layout."""
+def create_workspace(slug, name_ar, name_en, start_date=None, telegram_channel="",
+                     features=None, labels=None):
+    """Create an empty workspace with the standard folder layout.
+    New rooms start with every optional monitoring module off."""
     if not is_valid_slug(slug):
         raise ValueError("Slug must be 2-41 chars: lowercase letters, digits, hyphens")
     if not (name_ar or "").strip() or not (name_en or "").strip():
@@ -86,14 +111,18 @@ def create_workspace(slug, name_ar, name_en, start_date=None, telegram_channel="
         "name_en": name_en.strip(),
         "start_date": start,
         "telegram_channel": (telegram_channel or "").strip().lstrip("@"),
+        "features": {k: bool((features or {}).get(k, False)) for k in FEATURE_LABELS},
     }
+    if labels:
+        manifest["labels"] = {k: v.strip() for k, v in labels.items() if k in DEFAULT_LABELS and v.strip()}
     with open(os.path.join(base, "workspace.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
         f.write("\n")
     return get_workspace(slug)
 
 
-def update_workspace(slug, name_ar, name_en, start_date, telegram_channel=""):
+def update_workspace(slug, name_ar, name_en, start_date, telegram_channel="",
+                     features=None, labels=None):
     """Rewrite workspace.json for an existing workspace."""
     if not get_workspace(slug):
         raise ValueError("Workspace not found")
@@ -109,6 +138,10 @@ def update_workspace(slug, name_ar, name_en, start_date, telegram_channel=""):
         "start_date": start_date,
         "telegram_channel": (telegram_channel or "").strip().lstrip("@"),
     })
+    if features is not None:
+        manifest["features"] = {k: bool(features.get(k, False)) for k in FEATURE_LABELS}
+    if labels is not None:
+        manifest["labels"] = {k: v.strip() for k, v in labels.items() if k in DEFAULT_LABELS and v.strip()}
     with open(path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
         f.write("\n")

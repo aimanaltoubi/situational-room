@@ -65,6 +65,40 @@ modules += [
     ("builder/c21_build_html.py",        "Build final HTML"),
 ]
 
+# ── Per-room monitoring modules ───────────────────────────────────────
+# Modules that only make sense for some subjects are skipped when the
+# workspace switches that feature off (workspace.json -> "features").
+sys.path.insert(0, PROJECT_DIR)
+from tools import workspace as _wsmod
+_room = _wsmod.get_workspace(os.environ.get("WORKSPACE", _wsmod.DEFAULT_SLUG))
+if _room is None:
+    raise SystemExit(f"Unknown workspace '{os.environ.get('WORKSPACE')}' — see workspaces/")
+_features = _room["features"]
+_module_feature = {
+    "pipeline/c02_satellites.py":      "satellites",
+    "pipeline/c07_gps_jamming.py":     "gps_jamming",
+    "pipeline/c08_flight_scraper.py":  "flights",
+    "pipeline/c10_marine.py":          "marine",
+    "pipeline/c11_marine_enhanced.py": "marine",
+}
+modules = [(p, d) for p, d in modules if _features.get(_module_feature.get(p, ""), True)]
+
+# Empty stand-ins for the data a disabled module would have produced.
+_EMPTY_DEFAULTS = {
+    "satellites": '''
+SAT_DATA = {"count": 0, "satellites": [], "cats": {}, "fetched_at": datetime.now(timezone.utc).isoformat()}
+HIST_SAT_DATA = {"war_start": WAR_START_STR, "days": [], "sat_count": 0}
+''',
+    "gps_jamming": '''
+JAM_DATA = {"zones": []}
+GPSJAM_DATA = {"cells": [], "history": [], "me_avg": 0, "me_max": 0, "source": "disabled"}
+''',
+    "marine": '''
+MARINE_DATA = {"vessels": [], "total": 0, "counts": {}, "zones": [], "hormuz_vessels": [],
+               "moving_tankers": [], "stopped_tankers": [], "source": "disabled"}
+''',
+}
+
 # ── Shared namespace ──────────────────────────────────────────
 # This dict acts as the "kernel" — all modules share it,
 # so SAT_DATA defined in c02 is visible in c12, etc.
@@ -89,6 +123,13 @@ for mod_path, description in modules:
         with open(full_path, "r", encoding="utf-8") as f:
             code = f.read()
         ns["__file__"] = full_path; ns["__file__"] = full_path; exec(compile(code, full_path, "exec"), ns)
+        if mod_path == "config.py":
+            from datetime import datetime, timezone
+            ns.update(datetime=datetime, timezone=timezone)
+            for _feat, _src in _EMPTY_DEFAULTS.items():
+                if not _features[_feat]:
+                    exec(_src, ns)
+                    print(f"  ↷ '{_feat}' is off for this workspace — using empty data")
         elapsed = time.time() - start
         print(f"  ✓ Done ({elapsed:.1f}s)")
     except ModuleSkipped as e:

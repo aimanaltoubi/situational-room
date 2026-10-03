@@ -2,5 +2,17 @@
   "name_ar": "الإرهاب — التركيز على الشرق الأوسط",
   "name_en": "Terrorism (Middle East Focus)",
   "start_date": "2026-10-03",
-  "telegram_channel": ""
+  "telegram_channel": "",
+  "features": {
+    "gps_jamming": false,
+    "satellites": false,
+    "flights": false,
+    "marine": false,
+    "attacked_vessels": false
+  },
+  "labels": {
+    "events_layer": "الحوادث الإرهابية",
+    "timeline_cat": "الحوادث",
+    "escalation_title": "مسار الحوادث الإرهابية اليومي"
+  }
 }
