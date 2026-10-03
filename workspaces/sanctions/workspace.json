@@ -3,6 +3,7 @@
   "name_en": "Sanctions (Middle East Focus)",
   "start_date": "2026-10-03",
   "telegram_channel": "",
+  "analytics_profile": "sanctions",
   "features": {
     "gps_jamming": false,
     "satellites": false,

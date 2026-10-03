@@ -95,6 +95,12 @@ _P2 = """
 <!-- Globe -->
 <div id="globe"></div>
 
+<!-- Drill-down panel: records behind a clicked chart bar / table row / KPI / node -->
+<div id="drill-panel">
+  <div id="drill-head"><span id="drill-title"></span><button onclick="closeDrill()" aria-label="إغلاق">✕</button></div>
+  <div id="drill-body"></div>
+</div>
+
 <!-- Data quality modal -->
 <div id="dq-modal" onclick="if(event.target===this)toggleDataQuality()">
   <div id="dq-box">
@@ -495,6 +501,9 @@ _P2 = """
           <button id="print-analytics-btn" onclick="printAnalytics()" style="background:var(--ui-bg3);color:var(--burg-700);border:1px solid var(--burg-200);padding:8px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;">
             طباعة التحليلات
           </button>
+          <button id="an-edit-btn" onclick="toggleAnEdit()" style="background:var(--ui-bg3);color:var(--burg-700);border:1px solid var(--burg-200);padding:8px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;">
+            ✎ تحرير التحليلات
+          </button>
         </div>
         <div id="report-status"></div>
         <div id="report-loader" style="display:none;width:260px;">
@@ -511,7 +520,9 @@ _P2 = """
     </div>
 
     <!-- ═══ A. WAR STATUS STRIP ═══════════════════════════════════ -->
-    <div class="an-card" style="background:linear-gradient(135deg,var(--burg-900),var(--burg-700));color:#fff;border-radius:10px;padding:16px 20px;margin-bottom:14px;">
+    <div id="an-room-section"></div>
+
+    <div id="an-sec-status" class="an-card" style="background:linear-gradient(135deg,var(--burg-900),var(--burg-700));color:#fff;border-radius:10px;padding:16px 20px;margin-bottom:14px;">
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;text-align:center;">
         <div><div id="stat-events" style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;">—</div><div style="font-size:10px;opacity:.6;">إجمالي الأحداث</div></div>
         <div><div id="stat-countries" style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;">—</div><div style="font-size:10px;opacity:.6;">دولة منخرطة</div></div>
@@ -522,7 +533,7 @@ _P2 = """
     </div>
 
     <!-- ═══ B. ESCALATION ARC ═════════════════════════════════════ -->
-    <div class="an-section">
+    <div class="an-section" id="an-sec-escalation">
       <div class="an-section-title">__LBL_ESCALATION__</div>
 
       <!-- B4: Daily strikes by weapon type + actor overlay -->
@@ -547,7 +558,7 @@ _P2 = """
     </div>
 
     <!-- ═══ C. POLITICAL TRAJECTORY ═══════════════════════════════ -->
-    <div class="an-section">
+    <div class="an-section" id="an-sec-political">
       <div class="an-section-title">المسار السياسي — الأحداث التصعيدية والتهدئة يومياً</div>
 
       <!-- C10: Cumulative pressure line + C11: daily bars -->
@@ -791,7 +802,7 @@ _P2 = """
     </div>
 
     <!-- ═══ H. THREAT ASSESSMENT ═════════════════════════════════ -->
-    <div class="an-section">
+    <div class="an-section" id="an-sec-threat">
       <div class="an-section-title">تقييم مستوى التهديد الحالي — بناءً على آخر 3 أيام من البيانات</div>
       <div class="an-card">
         <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">

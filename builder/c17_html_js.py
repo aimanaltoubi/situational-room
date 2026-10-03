@@ -23,6 +23,7 @@ const ISR_CUEING           = __ISR_CUEING_JSON__;
 const ATTACK_PATTERNS      = __ATTACK_PATTERNS_JSON__;
 const FEATURES             = __FEATURES_JSON__;
 const DATA_QUALITY         = __DATA_QUALITY_JSON__;
+const ROOM_ANALYTICS       = __ROOM_ANALYTICS_JSON__;
 
 const POLITICAL_ANALYSIS  = __POLITICAL_JSON__;
 const DIPLOMATIC_INDEX    = __DIPLOMATIC_JSON__;
@@ -171,8 +172,9 @@ function initDataQuality(){
     const m=document.createElement('div');m.className='meta';m.textContent=s.source||'';
     a.appendChild(l);a.appendChild(m);
     const b=document.createElement('div');b.className='meta';
-    b.textContent=(s.count?s.count.toLocaleString()+' '+(s.unit||''):'—')+' · '+dqAgo(s.updated_at);
+    b.textContent=(s.count?s.count.toLocaleString()+' '+(s.unit||''):'—')+' · '+dqAgo(s.updated_at)+(s.grade?' · موثوقية '+s.grade:'');
     const c=document.createElement('div');c.className='note';c.textContent=s.note||'';
+    if(s.edit){row.style.cursor='pointer';row.title='فتح الملف للتعديل';row.onclick=()=>window.open('data/'+s.edit,'_blank');}
     row.appendChild(dot);row.appendChild(a);row.appendChild(b);row.appendChild(c);list.appendChild(row);
   });
 }
@@ -193,6 +195,12 @@ function applyFeatures(){
   }
   if(!FEATURES.attacked_vessels){hide(row('lt-attacked-panel'));hide($('tlcat-vessel'));}
   if(!FEATURES.telegram)document.documentElement.classList.add('no-telegram');
+  if(ROOM_ANALYTICS&&ROOM_ANALYTICS.profile!=='conflict'){
+    // war-specific blocks do not apply to this subject; its own analytics replace them
+    hide($('an-sec-status'));hide($('an-sec-escalation'));hide($('an-sec-threat'));hide($('generate-report-btn'));
+    const pol=((DATA_QUALITY&&DATA_QUALITY.sources)||[]).find(s=>s.key==='political');
+    if(!pol||pol.status==='empty')hide($('an-sec-political'));
+  }
   ['sat','flt','jam','vessel'].forEach(k=>{if($('tlcat-'+k)&&$('tlcat-'+k).classList.contains('feat-off')&&tlCurrentCat===k)tlSetCategory('war');});
 }
 function switchView(view){
@@ -2609,10 +2617,201 @@ function toggleLiveView(){
 
 var anReady=false, anChartEsc=null, anChartPol=null, anChartAlign=null, anChartDom=null, anChartJam=null, anChartJamCorr=null;
 
+// Subject-specific analytics (terrorism / sanctions / general rooms): rendered from the
+// declarative widget list built by pipeline/c12b_room_analytics.py
+const ROOM_PALETTE=['#b80038','#0077cc','#d97706','#16a34a','#8b5cf6','#0891b2','#be185d','#64748b'];
+const ROOM_TITLES={terrorism:'تحليلات الإرهاب',sanctions:'تحليلات العقوبات',general:'تحليلات الأحداث'};
+function _rEl(tag,cls,text,style){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;if(style)e.style.cssText=style;return e;}
+function renderRoomAnalytics(){
+  const host=$('an-room-section');
+  if(!host||!ROOM_ANALYTICS||ROOM_ANALYTICS.profile==='conflict')return;
+  host.querySelectorAll('canvas').forEach(cv=>{const ch=Chart.getChart(cv);if(ch)ch.destroy();});
+  host.textContent='';
+  host.appendChild(_rEl('div','an-section-title',ROOM_TITLES[ROOM_ANALYTICS.profile]||'تحليلات'));
+  const pos=id=>{const i=anCfg.order.indexOf(id);return i<0?1e6:i;};
+  const list=(ROOM_ANALYTICS.widgets||[]).map((w,i)=>({w,i})).sort((a,b)=>(pos(a.w.id)-pos(b.w.id))||(a.i-b.i)).map(x=>x.w);
+  window._roomIds=list.map(w=>w.id);
+  list.forEach(w=>{
+    const cfg=anCfg.widgets[w.id]||{};
+    if(cfg.hidden&&!anEdit)return;
+    const wrap=_rEl('div','an-wid'+(cfg.hidden?' an-hidden':''));wrap.dataset.wid=w.id;
+    wrap.appendChild(_roomToolbar(w,cfg));
+    wrap.appendChild(_roomWidget(w,cfg));
+    host.appendChild(wrap);
+  });
+}
+
+function _roomToolbar(w,cfg){
+  const tb=_rEl('div','an-tb');
+  const btn=(label,title,fn)=>{const b=_rEl('button',null,label);b.title=title;b.onclick=fn;tb.appendChild(b);};
+  btn('▲','تحريك للأعلى',()=>_anMove(w.id,-1));
+  btn('▼','تحريك للأسفل',()=>_anMove(w.id,1));
+  if(w.title!==undefined||w.type==='heading')btn('✎ اسم','تغيير العنوان',()=>{const cur=cfg.title||w.title||w.text;const n=prompt('العنوان الجديد',cur);if(n!==null)_anSet(w.id,{title:n.trim()||undefined});});
+  if(w.type==='chart'){
+    const sel=document.createElement('select');
+    [['bar','أعمدة'],['hbar','أعمدة أفقية'],['line','خط'],['doughnut','دائري']].forEach(([v,l])=>{const o=document.createElement('option');o.value=v;o.textContent=l;sel.appendChild(o);});
+    sel.value=cfg.kind||(w.horizontal&&w.kind==='bar'?'hbar':w.kind);
+    sel.onchange=()=>_anSet(w.id,{kind:sel.value});tb.appendChild(sel);
+  }
+  btn(cfg.hidden?'👁 إظهار':'👁 إخفاء','إخفاء/إظهار',()=>_anSet(w.id,{hidden:cfg.hidden?undefined:true}));
+  return tb;
+}
+
+function _roomWidget(w,cfg){
+  const title=cfg.title||w.title;
+  const kind=cfg.kind==='hbar'?'bar':(cfg.kind||w.kind);
+  const horizontal=cfg.kind?cfg.kind==='hbar':w.horizontal;
+  if(w.type==='kpis'){
+    const g=_rEl('div',null,null,'display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px;');
+    w.items.forEach(k=>{const c=_rEl('div','an-card an-stat-card'+(k.drill?' has-drill':''));
+      c.appendChild(_rEl('div','an-stat-value',typeof k.value==='number'?k.value.toLocaleString():k.value));c.appendChild(_rEl('div','an-stat-label',k.label));
+      if(k.drill)c.onclick=()=>openDrill([{file:k.drill.file,filters:k.drill.filters||[],ref:''}],k.label);g.appendChild(c);});
+    return g;
+  }
+  if(w.type==='insights'){
+    const c=_rEl('div','an-card');c.appendChild(_rEl('div','an-card-title',title));
+    const ul=_rEl('ul',null,null,'margin:0;padding:0 18px 0 0;line-height:2;font-size:13px;color:var(--text-secondary);direction:rtl;');
+    w.items.forEach(t=>ul.appendChild(_rEl('li',null,t)));c.appendChild(ul);return c;
+  }
+  if(w.type==='note')return _rEl('div','an-card',w.text,'font-size:13px;color:var(--text-muted);direction:rtl;line-height:1.8;');
+  if(w.type==='heading')return _rEl('div','an-section-title',cfg.title||w.text,'margin-top:18px;');
+  if(w.type==='table'){
+    const c=_rEl('div','an-card');c.appendChild(_rEl('div','an-card-title',title+(w.drill?'  — انقر أي سطر لعرض السجلات':'')));
+    const wrap=_rEl('div',null,null,'overflow-x:auto;');
+    const t=_rEl('table',null,null,'width:100%;border-collapse:collapse;font-size:12px;direction:rtl;');
+    const hr=_rEl('tr');w.columns.forEach(h=>hr.appendChild(_rEl('th',null,h,'text-align:right;padding:6px 8px;color:var(--burg-600);background:var(--ui-bg2);border-bottom:2px solid var(--ui-border2);white-space:nowrap;')));t.appendChild(hr);
+    w.rows.forEach(r=>{const tr=_rEl('tr',w.drill?'has-drill':null);r.forEach(v=>tr.appendChild(_rEl('td',null,v==null?'':String(v),'padding:5px 8px;border-bottom:1px solid var(--ui-border);')));
+      if(w.drill)tr.onclick=()=>{const val=String(r[w.drill.cell||0]);openDrill(w.drill.targets.map(tg=>({file:tg.file,filters:[{cols:tg.cols,val:val}],ref:val})),title+' — '+val);};
+      t.appendChild(tr);});
+    wrap.appendChild(t);c.appendChild(wrap);return c;
+  }
+  if(w.type==='network'){
+    const c=_rEl('div','an-card');c.appendChild(_rEl('div','an-card-title',title));
+    const NS='http://www.w3.org/2000/svg',W=720,H=460,cx=W/2,cy=H/2;
+    const svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    svg.style.cssText='width:100%;height:auto;max-height:520px;background:var(--ui-bg2);border-radius:8px;';
+    const des=w.nodes.filter(n=>n.group==='designated'),oth=w.nodes.filter(n=>n.group!=='designated'),pos={};
+    const ring=(arr,r)=>arr.forEach((n,i)=>{const a=2*Math.PI*i/Math.max(arr.length,1)-Math.PI/2;pos[n.id]={x:cx+r*Math.cos(a),y:cy+r*Math.sin(a)};});
+    if(des.length===1)pos[des[0].id]={x:cx,y:cy};else ring(des,Math.min(110,40+des.length*14));
+    ring(oth,190);
+    const mk=(tag,attrs)=>{const e=document.createElementNS(NS,tag);Object.keys(attrs).forEach(k=>e.setAttribute(k,attrs[k]));return e;};
+    w.edges.forEach(e=>{const a=pos[e.s],b=pos[e.t];if(!a||!b)return;const ln=mk('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:'#b0a0a8','stroke-width':1});const tt=document.createElementNS(NS,'title');tt.textContent=e.label;ln.appendChild(tt);svg.appendChild(ln);});
+    const COL={designated:'#b80038',risk:'#d97706',other:'#94a3b8'};
+    w.nodes.forEach(n=>{const p=pos[n.id];if(!p)return;
+      const g=mk('g',{});g.style.cursor='pointer';const ci=mk('circle',{cx:p.x,cy:p.y,r:n.group==='designated'?11:8,fill:COL[n.group]||COL.other,stroke:'#fff','stroke-width':1.5});
+      const tt=document.createElementNS(NS,'title');tt.textContent=n.label+' ('+n.kind+')';ci.appendChild(tt);g.appendChild(ci);
+      const tx=mk('text',{x:p.x,y:p.y+(n.group==='designated'?24:20),'text-anchor':'middle','font-size':9,fill:'#3a0012'});tx.textContent=n.label.length>18?n.label.slice(0,17)+'…':n.label;g.appendChild(tx);
+      if(w.drill)g.addEventListener('click',()=>openDrill(w.drill.targets.map(tg=>({file:tg.file,filters:[{cols:tg.cols,val:n.label}],ref:n.label})),n.label));
+      svg.appendChild(g);});
+    c.appendChild(svg);
+    c.appendChild(_rEl('div',null,'● مُدرجة   ● غير مدرجة عالية المخاطر   ● غير مدرجة أخرى — انقر أي عقدة لعرض سجلاتها','font-size:11px;color:var(--text-muted);margin-top:6px;direction:rtl;'));
+    return c;
+  }
+  // chart
+  const c=_rEl('div','an-card');c.appendChild(_rEl('div','an-card-title',title+(w.drill?'  — انقر أي عنصر لعرض السجلات':'')));
+  const box=_rEl('div',null,null,'position:relative;height:'+(kind==='doughnut'?'280':horizontal?'320':'300')+'px;');
+  const cv=document.createElement('canvas');box.appendChild(cv);c.appendChild(box);
+  const many=w.labels.length>40;
+  const datasets=w.datasets.map((d,i)=>{
+    const col=ROOM_PALETTE[i%ROOM_PALETTE.length];
+    if(kind==='doughnut')return {label:d.label,data:d.data,backgroundColor:w.labels.map((_,j)=>ROOM_PALETTE[j%ROOM_PALETTE.length])};
+    if(kind==='line')return {label:d.label,data:d.data,borderColor:col,backgroundColor:col,borderWidth:i?2.5:1.2,pointRadius:0,tension:.25,fill:false};
+    return {label:d.label,data:d.data,backgroundColor:col,borderWidth:0,stack:w.stacked?'s':undefined};
+  });
+  const opts={responsive:true,maintainAspectRatio:false,animation:false,indexAxis:horizontal?'y':'x',plugins:{legend:{labels:{font:{size:10},boxWidth:10}}}};
+  if(kind!=='doughnut')opts.scales={x:{stacked:!!w.stacked,ticks:{font:{size:9},maxTicksLimit:many?14:undefined},grid:{display:false}},y:{stacked:!!w.stacked,beginAtZero:true,ticks:{font:{size:9}},grid:{color:'rgba(0,0,0,.05)'}}};
+  if(w.drill){
+    opts.onHover=(e,els)=>{if(e.native&&e.native.target)e.native.target.style.cursor=els.length?'pointer':'default';};
+    opts.onClick=(e,els)=>{if(!els.length)return;const el=els[0],label=w.labels[el.index],ds=w.datasets[el.datasetIndex],x=w.drill.x,f=[];
+      f.push(x.bucket?{col:x.col,bucket:x.bucket,val:label}:{col:x.col,val:label});
+      let extra='';if(w.drill.series&&ds&&ds.label!=='أخرى'){f.push({col:w.drill.series.col,val:ds.label});extra=' / '+ds.label;}
+      openDrill([{file:w.drill.file,filters:f,ref:label}],title+' — '+label+extra);};
+  }
+  setTimeout(()=>{new Chart(cv,{type:kind,data:{labels:w.labels,datasets},options:opts});},0);
+  return c;
+}
+
+// Edit mode: rename / hide / reorder / chart type, saved per room on the server
+var anCfg={widgets:{},order:[]},anEdit=false;
+async function loadAnCfg(){try{const r=await fetch('api/analytics-config');if(r.ok)anCfg=Object.assign({widgets:{},order:[]},await r.json());}catch(e){}}
+async function saveAnCfg(){try{await fetch('api/analytics-config',{method:'POST',headers:{'Content-Type':'application/json','X-Requested-With':'fetch'},body:JSON.stringify(anCfg)});}catch(e){}}
+function _clean(o){Object.keys(o).forEach(k=>{if(o[k]===undefined)delete o[k];});return o;}
+function _anSet(id,patch){anCfg.widgets[id]=_clean(Object.assign({},anCfg.widgets[id]||{},patch));saveAnCfg();renderRoomAnalytics();}
+function _anMove(id,dir){const ids=(window._roomIds||[]).slice(),i=ids.indexOf(id),j=i+dir;if(i<0||j<0||j>=ids.length)return;[ids[i],ids[j]]=[ids[j],ids[i]];anCfg.order=ids;saveAnCfg();renderRoomAnalytics();}
+function toggleAnEdit(){anEdit=!anEdit;document.body.classList.toggle('an-edit',anEdit);const b=$('an-edit-btn');if(b)b.textContent=anEdit?'✔ إنهاء التحرير':'✎ تحرير التحليلات';renderRoomAnalytics();applyStaticCfg();}
+// Built-in (conflict) sections are static HTML: same controls, keyed by a hash of their title
+function _hs(s){let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))|0;return (h>>>0).toString(36);}
+function applyStaticCfg(){
+  const body=$('an-body');if(!body)return;
+  const secs=[...body.children].filter(e=>e.classList.contains('an-section')||e.classList.contains('an-card-container'));
+  const spacer=body.lastElementChild;
+  secs.forEach(s=>{const t=s.querySelector('.an-section-title,.an-card-title');if(!t)return;
+    if(!t.dataset.orig)t.dataset.orig=t.textContent.trim();
+    s.dataset.wid='s-'+_hs(t.dataset.orig);
+    const cfg=anCfg.widgets[s.dataset.wid]||{};
+    t.textContent=cfg.title||t.dataset.orig;
+    s.classList.toggle('an-hidden',!!cfg.hidden&&anEdit);s.classList.toggle('cfg-off',!!cfg.hidden&&!anEdit);
+    if(!s.querySelector(':scope > .an-tb')){
+      const tb=_rEl('div','an-tb');const wid=s.dataset.wid;
+      const b=(l,fn)=>{const x=_rEl('button',null,l);x.onclick=fn;tb.appendChild(x);};
+      b('▲',()=>_anStaticMove(wid,-1));b('▼',()=>_anStaticMove(wid,1));
+      b('✎ اسم',()=>{const n=prompt('العنوان الجديد',(anCfg.widgets[wid]||{}).title||t.dataset.orig);if(n!==null)_anStaticSet(wid,{title:n.trim()||undefined});});
+      b('👁 إخفاء/إظهار',()=>_anStaticSet(wid,{hidden:(anCfg.widgets[wid]||{}).hidden?undefined:true}));
+      s.insertBefore(tb,s.firstChild);
+    }});
+  const ordered=(anCfg.order||[]).map(id=>secs.find(s=>s.dataset.wid===id)).filter(Boolean);
+  ordered.forEach(s=>body.insertBefore(s,spacer));
+}
+function _anStaticSet(id,patch){anCfg.widgets[id]=_clean(Object.assign({},anCfg.widgets[id]||{},patch));saveAnCfg();applyStaticCfg();}
+function _anStaticMove(id,dir){
+  const body=$('an-body');const secs=[...body.children].filter(e=>e.dataset&&e.dataset.wid&&(e.classList.contains('an-section')||e.classList.contains('an-card-container')));
+  const i=secs.findIndex(s=>s.dataset.wid===id),j=i+dir;if(i<0||j<0||j>=secs.length)return;
+  const ids=secs.map(s=>s.dataset.wid);[ids[i],ids[j]]=[ids[j],ids[i]];anCfg.order=ids;saveAnCfg();applyStaticCfg();
+}
+
+// Drill-down: the records behind any clicked chart element / table row / KPI / node
+function closeDrill(){const p=$('drill-panel');if(p)p.classList.remove('open');}
+async function openDrill(targets,title){
+  const p=$('drill-panel'),b=$('drill-body');if(!p||!b)return;
+  $('drill-title').textContent=title;b.textContent='…';p.classList.add('open');
+  try{
+    const r=await fetch('api/records?t='+encodeURIComponent(JSON.stringify(targets)),{headers:{'X-Requested-With':'fetch'}});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    renderDrill(await r.json(),b);
+  }catch(e){b.textContent='تعذّر تحميل السجلات — افتح النظام عبر الخادم (وليس كملف منفصل).';}
+}
+function renderDrill(res,b){
+  b.textContent='';
+  if(!res.length||res.every(x=>!x.total)){b.appendChild(_rEl('div',null,'لا توجد سجلات مطابقة.','color:var(--text-muted);padding:10px;'));return;}
+  res.forEach(r=>{
+    if(!r.total)return;
+    const h=_rEl('div','dr-h');h.appendChild(_rEl('span',null,r.label+' — '+r.total+' سجل'+(r.total>r.rows.length?' (أول '+r.rows.length+')':'')));
+    const full=_rEl('a',null,'فتح الملف');full.href='data/'+r.file;full.target='_blank';h.appendChild(full);b.appendChild(h);
+    (r.annotations||[]).forEach(a=>b.appendChild(_rEl('div','dr-note','📝 '+(a.tag?'['+a.tag+'] ':'')+a.note+' — '+a.author+' '+(a.ts||'').slice(0,10))));
+    const t=document.createElement('table');const hr=_rEl('tr');r.columns.concat(['']).forEach(c=>hr.appendChild(_rEl('th',null,c)));t.appendChild(hr);
+    r.rows.forEach(row=>{const tr=_rEl('tr');r.columns.forEach(c=>tr.appendChild(_rEl('td',null,row[c]==null?'':String(row[c]))));
+      const ac=_rEl('td');const ed=_rEl('a',null,'✎');ed.href='data/'+r.file+'?row='+row._i;ed.target='_blank';ed.title='تعديل هذا السجل';ac.appendChild(ed);
+      const nb=_rEl('button','dr-b','📝');nb.title='إضافة ملاحظة / وسم';
+      nb.onclick=()=>annotateRecord(r.file,row.name||row.entity_id||row.actor_grouped||row.target||row.date||'');ac.appendChild(nb);
+      tr.appendChild(ac);t.appendChild(tr);});
+    b.appendChild(t);
+  });
+}
+async function annotateRecord(file,ref){
+  const note=prompt('ملاحظة على: '+ref);if(note===null)return;
+  const tag=prompt('وسم (اختياري). للجهات غير المدرجة يمكن كتابة high_risk أو cleared لتعديل درجة المخاطر بعد إعادة البناء','')||'';
+  try{const r=await fetch('api/annotations',{method:'POST',headers:{'Content-Type':'application/json','X-Requested-With':'fetch'},body:JSON.stringify({file,ref,note,tag})});
+    if(!r.ok)throw new Error();alert('تم حفظ الملاحظة');}catch(e){alert('تعذّر حفظ الملاحظة');}
+}
+
 function initAnalytics(){
   if(anReady)return;
   requestAnimationFrame(function(){
     anReady=true;
+    loadAnCfg().then(()=>{
+      try{ renderRoomAnalytics(); }catch(e){ console.error('[Analytics] room:',e); }
+      try{ applyStaticCfg(); }catch(e){ console.error('[Analytics] layout:',e); }
+    });
     try{ renderWarStatus(); }catch(e){ console.error('[Analytics] status:',e); }
     try{ renderEscalationChart(); }catch(e){ console.error('[Analytics] escalation:',e); }
     try{ renderCountryHeatmap(); }catch(e){ console.error('[Analytics] heatmap:',e); }

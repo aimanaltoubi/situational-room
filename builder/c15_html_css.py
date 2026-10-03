@@ -749,6 +749,32 @@ html,body{width:100%;height:100%;background:#e8e0e4;
 
 /* ═══ Responsive fit ═══ */
 /* Data quality */
+/* Drill-down panel */
+#drill-panel{position:fixed;top:var(--topbar-h);bottom:0;right:0;width:min(600px,96vw);z-index:2500;background:#fff;
+  box-shadow:-8px 0 30px rgba(60,0,20,.3);transform:translateX(105%);transition:transform .2s;display:flex;
+  flex-direction:column;direction:rtl;}
+#drill-panel.open{transform:none;}
+#drill-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;color:#fff;font-weight:700;
+  font-size:13px;background:linear-gradient(135deg,var(--burg-800),var(--burg-600));}
+#drill-head button{background:none;border:none;color:#fff;font-size:16px;cursor:pointer;}
+#drill-body{flex:1;overflow:auto;padding:10px 12px;font-size:12px;}
+#drill-body table{width:100%;border-collapse:collapse;margin-bottom:8px;}
+#drill-body th{text-align:right;padding:5px 6px;background:var(--ui-bg2);color:var(--burg-600);font-size:10px;white-space:nowrap;position:sticky;top:0;}
+#drill-body td{padding:4px 6px;border-bottom:1px solid var(--ui-border);vertical-align:top;max-width:220px;overflow-wrap:anywhere;}
+#drill-body .dr-h{font-weight:700;color:var(--burg-700);margin:8px 0 4px;display:flex;justify-content:space-between;gap:8px;}
+#drill-body .dr-note{background:#fff8e6;border:1px solid #f0d890;border-radius:6px;padding:5px 8px;margin:4px 0;font-size:11px;}
+#drill-body a,#drill-body button.dr-b{font-size:10px;color:var(--burg-600);cursor:pointer;background:none;border:1px solid var(--burg-200);
+  border-radius:4px;padding:1px 6px;text-decoration:none;margin-left:3px;font-family:inherit;}
+.has-drill{cursor:pointer;}
+.has-drill:hover{background:rgba(184,0,56,.07)!important;}
+/* Analytics edit mode */
+.an-tb{display:none;gap:4px;align-items:center;justify-content:flex-end;margin:4px 0;direction:rtl;}
+body.an-edit .an-tb{display:flex;}
+.an-tb button,.an-tb select{font-size:11px;padding:2px 8px;border:1px solid var(--burg-200);border-radius:4px;background:#fff;
+  color:var(--burg-700);cursor:pointer;font-family:inherit;}
+body.an-edit .an-wid,body.an-edit .an-section,body.an-edit .an-card-container{outline:1px dashed var(--burg-200);outline-offset:3px;}
+.an-hidden{opacity:.35;}
+.cfg-off{display:none!important;}
 #dq-btn{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:4px;cursor:pointer;
   border:1px solid var(--ui-border2);background:var(--ui-bg2);font-size:11px;font-weight:700;
   color:var(--text-secondary);font-family:inherit;white-space:nowrap;}

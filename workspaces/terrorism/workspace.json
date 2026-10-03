@@ -3,6 +3,7 @@
   "name_en": "Terrorism (Middle East Focus)",
   "start_date": "2026-10-03",
   "telegram_channel": "",
+  "analytics_profile": "terrorism",
   "features": {
     "gps_jamming": false,
     "satellites": false,

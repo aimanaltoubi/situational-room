@@ -56,6 +56,8 @@ modules += [
     ("pipeline/c10_marine.py",           "Marine / AIS data"),
     ("pipeline/c11_marine_enhanced.py",  "Enhanced maritime intel"),
     ("pipeline/c12_analytics.py",        "Analytics extraction"),
+    ("pipeline/c12b_room_analytics.py",  "Subject-specific room analytics"),
+    ("pipeline/c12c_sanctions_network.py", "Sanctions network analytics"),
     ("pipeline/c14_logging.py",          "Logging"),
     ("builder/c15_html_css.py",          "HTML: CSS + head"),
     ("builder/c16_html_body.py",         "HTML: body"),

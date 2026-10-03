@@ -17,7 +17,7 @@ from flask import (Flask, send_file, jsonify, request, Response,
                    render_template_string, redirect, url_for, flash, abort)
 from dotenv import load_dotenv
 
-from tools import incidents_db as db
+import webdata
 from tools import workspace as ws
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -215,6 +215,12 @@ HUB_TEMPLATE = """<!DOCTYPE html>
         <input name="name_en" required maxlength="80" dir="ltr"></div>
       <div class="field"><label>تاريخ البداية (YYYY-MM-DD) — اختياري</label>
         <input name="start_date" dir="ltr" placeholder="{{ today }}"></div>
+      <div class="field"><label>نوع التحليلات</label>
+        <select name="profile" style="width:100%;padding:8px 10px;background:#2a0410;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:6px;font-family:inherit">
+          {% for key, label in profiles.items() if key != 'conflict' %}
+          <option value="{{ key }}">{{ label }}</option>
+          {% endfor %}
+        </select></div>
       <button class="btn" type="submit">إنشاء</button>
     </form>
   </div>
@@ -258,6 +264,9 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
       <div class="en">Incidents Database</div>
       <div class="status">workspaces/{{ w.slug }}/data/events.csv</div>
       <a class="btn block" href="{{ url_for('list_incidents_route', slug=w.slug) }}">إدارة الأحداث</a>
+      <a class="btn secondary block" href="{{ url_for('data.index', slug=w.slug) }}">كل ملفات البيانات</a>
+      <a class="btn secondary block" href="{{ url_for('data.editor', slug=w.slug, key='sources') }}">مصادر البيانات</a>
+      <a class="btn secondary block" href="{{ url_for('data.changes_page', slug=w.slug) }}">سجل التغييرات</a>
       <form method="post" action="{{ url_for('rebuild_workspace', slug=w.slug) }}">
         <button class="btn secondary block" style="width:100%" type="submit" {{ 'disabled' if state.building else '' }}>
           {{ 'جارٍ البناء…' if state.building else 'إعادة البناء' }}</button>
@@ -285,6 +294,12 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
         <input name="start_date" value="{{ w.start_date }}" required dir="ltr"></div>
       <div class="field"><label>قناة تيليجرام (اختياري)</label>
         <input name="telegram_channel" value="{{ w.telegram_channel }}" dir="ltr"></div>
+      <div class="field"><label>نوع التحليلات (موضوع الغرفة)</label>
+        <select name="profile" style="width:100%;padding:8px 10px;background:#2a0410;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:6px;font-family:inherit">
+          {% for key, label in profiles.items() %}
+          <option value="{{ key }}" {{ 'selected' if w.analytics_profile == key else '' }}>{{ label }}</option>
+          {% endfor %}
+        </select></div>
       <div class="field"><label>وحدات المراقبة المفعّلة في هذه الغرفة</label>
         {% for key, label in feature_labels.items() %}
         <label style="display:block;color:#f0e8ec"><input type="checkbox" name="feat_{{ key }}" value="1"
@@ -313,141 +328,7 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
   <div class="footer"><a href="{{ url_for('index') }}">&rarr; كل مساحات العمل</a></div>
 </div></body></html>"""
 
-# ── Incidents database pages ────────────────────────────────────────
-DB_STYLE = """
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:#1a0008;color:#f0e8ec;min-height:100vh;
-  font-family:'IBM Plex Sans Arabic',Arial,sans-serif;padding:24px;
-}
-a{color:#d4a017}
-h1{color:#d4a017;font-size:22px;margin-bottom:4px}
-.sub{color:#c8a0b0;font-size:12px;margin-bottom:20px}
-.toolbar{display:flex;gap:12px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
-.btn{
-  display:inline-block;padding:8px 18px;font-size:13px;font-weight:700;
-  text-decoration:none;color:#1a0008;background:linear-gradient(135deg,#d4a017,#b8860b);
-  border-radius:6px;border:none;cursor:pointer;
-}
-.btn.secondary{background:transparent;color:#d4a017;border:1px solid rgba(184,134,11,.5)}
-.btn.danger{background:linear-gradient(135deg,#e8004a,#960030);color:#fff}
-.flash{background:rgba(34,160,80,.15);border:1px solid #22a050;color:#8ef0b0;
-  padding:8px 14px;border-radius:6px;margin-bottom:16px;font-size:13px}
-table{width:100%;border-collapse:collapse;font-size:12px;background:rgba(255,255,255,.02)}
-th,td{padding:8px 10px;border-bottom:1px solid rgba(184,134,11,.15);text-align:left;vertical-align:top}
-th{color:#d4a017;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
-tr:hover{background:rgba(184,134,11,.05)}
-.desc-cell{max-width:320px}
-.actions form{display:inline}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:12px;color:#c8a0b0;margin-bottom:4px}
-.field input,.field select,.field textarea{
-  width:100%;padding:8px 10px;background:#2a0410;border:1px solid rgba(184,134,11,.3);
-  color:#f0e8ec;border-radius:6px;font-size:13px;font-family:inherit;
-}
-.field textarea{min-height:90px;resize:vertical}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}
-form.card{max-width:720px;background:rgba(26,0,8,.5);border:1px solid rgba(184,134,11,.25);
-  border-radius:10px;padding:24px}
-"""
-
-DB_LIST_TEMPLATE = """<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Incidents Database — {{ w.name_ar }}</title>
-<style>{{ style }}</style></head><body>
-  <h1>Incidents Database — {{ w.name_ar }}</h1>
-  <div class="sub">{{ incidents|length }} incidents · stored directly in workspaces/{{ w.slug }}/data/events.csv</div>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}{% for m in messages %}<div class="flash">{{ m }}</div>{% endfor %}{% endif %}
-  {% endwith %}
-  <div class="toolbar">
-    <a class="btn" href="{{ url_for('new_incident', slug=w.slug) }}">+ Add Incident</a>
-    <form method="post" action="{{ url_for('rebuild_workspace', slug=w.slug) }}?next=database">
-      <button class="btn secondary" type="submit">Rebuild Dashboard</button>
-    </form>
-    <a class="btn secondary" href="{{ url_for('workspace_home', slug=w.slug) }}">&larr; Workspace</a>
-  </div>
-  <table>
-    <tr><th>Date</th><th>Day</th><th>Country</th><th>Location</th><th>Type</th>
-        <th>Actor</th><th>Killed</th><th>Injured</th><th>Description</th><th></th></tr>
-    {% for i in incidents %}
-    <tr>
-      <td>{{ i.date }}</td>
-      <td>{{ i.day_of_war }}</td>
-      <td>{{ i.country }}</td>
-      <td>{{ i.location }}</td>
-      <td>{{ i.event_type }}</td>
-      <td>{{ i.actor }}</td>
-      <td>{{ i.killed }}</td>
-      <td>{{ i.injured }}</td>
-      <td class="desc-cell">{{ i.description }}</td>
-      <td class="actions">
-        <a class="btn secondary" href="{{ url_for('edit_incident', slug=w.slug, incident_id=i.id) }}">Edit</a>
-        <form method="post" action="{{ url_for('delete_incident_route', slug=w.slug, incident_id=i.id) }}"
-              onsubmit="return confirm('Delete this incident?');">
-          <button class="btn danger" type="submit">Delete</button>
-        </form>
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
-</body></html>"""
-
-DB_FORM_TEMPLATE = """<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ title }} — {{ w.name_ar }}</title>
-<style>{{ style }}</style></head><body>
-  <h1>{{ title }} — {{ w.name_ar }}</h1>
-  <div class="sub"><a href="{{ url_for('list_incidents_route', slug=w.slug) }}">&larr; Back to database</a></div>
-  <form class="card" method="post">
-    <div class="grid">
-      <div class="field"><label>Date (YYYY-MM-DD)</label>
-        <input name="date" value="{{ i.date }}" required></div>
-      <div class="field"><label>Datetime (YYYY-MM-DD HH:MM:SS)</label>
-        <input name="datetime" value="{{ i.datetime }}" required></div>
-      <div class="field"><label>Time source</label>
-        <select name="time_source">
-          <option value="known" {{ 'selected' if i.time_source=='known' else '' }}>known</option>
-          <option value="inferred" {{ 'selected' if i.time_source=='inferred' else '' }}>inferred</option>
-        </select></div>
-      <div class="field"><label>Day of war</label>
-        <input name="day_of_war" type="number" value="{{ i.day_of_war }}"></div>
-      <div class="field"><label>Country</label>
-        <input name="country" value="{{ i.country }}" required></div>
-      <div class="field"><label>Location</label>
-        <input name="location" value="{{ i.location }}" required></div>
-      <div class="field"><label>Event type</label>
-        <input name="event_type" value="{{ i.event_type }}" required></div>
-      <div class="field"><label>Actor</label>
-        <input name="actor" value="{{ i.actor }}"></div>
-      <div class="field"><label>Actor grouped</label>
-        <input name="actor_grouped" value="{{ i.actor_grouped }}"></div>
-      <div class="field"><label>Target</label>
-        <input name="target" value="{{ i.target }}"></div>
-      <div class="field"><label>Killed</label>
-        <input name="killed" type="number" value="{{ i.killed }}"></div>
-      <div class="field"><label>Injured</label>
-        <input name="injured" type="number" value="{{ i.injured }}"></div>
-      <div class="field"><label>Total casualties</label>
-        <input name="total_casualties" type="number" value="{{ i.total_casualties }}"></div>
-      <div class="field"><label>Has casualties</label>
-        <select name="has_casualties">
-          <option value="True" {{ 'selected' if i.has_casualties in ('True', True) else '' }}>True</option>
-          <option value="False" {{ 'selected' if i.has_casualties in ('False', False) else '' }}>False</option>
-        </select></div>
-    </div>
-    <div class="field"><label>Description</label>
-      <textarea name="description">{{ i.description }}</textarea></div>
-    <button class="btn" type="submit">Save</button>
-    <a class="btn secondary" href="{{ url_for('list_incidents_route', slug=w.slug) }}">Cancel</a>
-  </form>
-</body></html>"""
-
-_BLANK_INCIDENT = {c: "" for c in db.COLUMNS}
-_BLANK_INCIDENT.update({"day_of_war": 0, "killed": 0, "injured": 0, "total_casualties": 0})
-
+# Data files are edited in the generic editor (webdata.py)
 
 # ── Hub ─────────────────────────────────────────────────────────────
 @app.route("/")
@@ -459,7 +340,7 @@ def index():
     return render_template_string(
         HUB_TEMPLATE, style=BASE_STYLE, workspaces=items,
         system_ar=ws.SYSTEM_NAME_AR, system_en=ws.SYSTEM_NAME_EN,
-        today=datetime.now().strftime("%Y-%m-%d"),
+        today=datetime.now().strftime("%Y-%m-%d"), profiles=ws.PROFILES,
     )
 
 
@@ -470,7 +351,8 @@ def create_workspace_route():
     slug = re.sub(r"[^a-z0-9]+", "-", name_en.lower()).strip("-")
     try:
         w = ws.create_workspace(slug, name_ar, name_en,
-                                (request.form.get("start_date") or "").strip() or None)
+                                (request.form.get("start_date") or "").strip() or None,
+                                profile=request.form.get("profile", "general"))
     except ValueError as e:
         flash(f"تعذّر إنشاء المساحة: {e}")
         return redirect(url_for("index"))
@@ -487,7 +369,7 @@ def workspace_home(slug):
         data_files=_data_file_info(slug),
         quality=_data_quality(slug),
         status_ar={"ok": "سليمة", "partial": "جزئية", "stale": "قديمة", "empty": "فارغة"},
-        feature_labels=ws.FEATURE_LABELS, label_fields=ws.LABEL_FIELDS,
+        feature_labels=ws.FEATURE_LABELS, label_fields=ws.LABEL_FIELDS, profiles=ws.PROFILES,
         system_ar=ws.SYSTEM_NAME_AR, system_en=ws.SYSTEM_NAME_EN,
     )
 
@@ -532,11 +414,16 @@ def rebuild_workspace(slug):
     return redirect(url_for("workspace_home", slug=slug))
 
 
+def _profile_files(slug):
+    keys = ws.PROFILE_FILES.get(ws.get_workspace(slug)["analytics_profile"], ws.PROFILE_FILES["general"])
+    return {k: ws.DATA_FILES[k] for k in keys}
+
+
 def _data_file_info(slug):
     data_dir = ws.paths(slug)["data"]
     return {
         key: {"label": label, "present": os.path.exists(os.path.join(data_dir, name))}
-        for key, (name, label) in ws.DATA_FILES.items()
+        for key, (name, label) in _profile_files(slug).items()
     }
 
 
@@ -554,7 +441,7 @@ def upload_data(slug):
     data_dir = ws.paths(slug)["data"]
     os.makedirs(data_dir, exist_ok=True)
     saved = 0
-    for key, (name, _label) in ws.DATA_FILES.items():
+    for key, (name, _label) in _profile_files(slug).items():
         f = request.files.get(key)
         if f and f.filename:
             f.save(os.path.join(data_dir, name))  # fixed names only — never the client's file name
@@ -577,6 +464,7 @@ def edit_workspace(slug):
             request.form.get("telegram_channel", ""),
             features={k: request.form.get(f"feat_{k}") == "1" for k in ws.FEATURE_LABELS},
             labels={k: request.form.get(f"lbl_{k}", "") for k in ws.DEFAULT_LABELS},
+            profile=request.form.get("profile"),
         )
     except ValueError as e:
         flash(f"تعذّر الحفظ: {e}")
@@ -606,50 +494,16 @@ def legacy_weekly():
 # ── Incidents database (per workspace) ──────────────────────────────
 @app.route("/w/<slug>/database")
 def list_incidents_route(slug):
-    w = _workspace_or_404(slug)
-    return render_template_string(
-        DB_LIST_TEMPLATE, style=DB_STYLE, w=w, incidents=db.list_incidents(slug)
-    )
-
-
-@app.route("/w/<slug>/database/new", methods=["GET", "POST"])
-def new_incident(slug):
-    w = _workspace_or_404(slug)
-    if request.method == "POST":
-        db.add_incident(slug, request.form)
-        flash("Incident added.")
-        return redirect(url_for("list_incidents_route", slug=slug))
-    return render_template_string(
-        DB_FORM_TEMPLATE, style=DB_STYLE, w=w, title="Add Incident", i=_BLANK_INCIDENT
-    )
-
-
-@app.route("/w/<slug>/database/<int:incident_id>/edit", methods=["GET", "POST"])
-def edit_incident(slug, incident_id):
-    w = _workspace_or_404(slug)
-    incident = db.get_incident(slug, incident_id)
-    if not incident:
-        return "Incident not found", 404
-    if request.method == "POST":
-        db.update_incident(slug, incident_id, request.form)
-        flash("Incident updated.")
-        return redirect(url_for("list_incidents_route", slug=slug))
-    return render_template_string(
-        DB_FORM_TEMPLATE, style=DB_STYLE, w=w, title="Edit Incident", i=incident
-    )
-
-
-@app.route("/w/<slug>/database/<int:incident_id>/delete", methods=["POST"])
-def delete_incident_route(slug, incident_id):
     _workspace_or_404(slug)
-    db.delete_incident(slug, incident_id)
-    flash("Incident deleted.")
-    return redirect(url_for("list_incidents_route", slug=slug))
+    return redirect(url_for("data.editor", slug=slug, key="events"))
 
 
 @app.route("/database")
 def legacy_database():
     return redirect(url_for("list_incidents_route", slug=ws.DEFAULT_SLUG))
+
+
+app.register_blueprint(webdata.create_blueprint(start_build, _is_building))
 
 
 if __name__ == "__main__":

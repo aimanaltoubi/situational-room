@@ -162,8 +162,9 @@ if FEATURES["attacked_vessels"]:
 _acled_path = _data("Middle_East_clean_2026.csv")
 _acled_file = _mtime(_acled_path)
 if _acled_file is None:
-    _rows.append(_row("acled", "بيانات ACLED للتوقعات", "empty", 0, "", "Middle_East_clean_2026.csv", None,
-                      "غير متوفرة — لن يُنتَج التقرير التحليلي الأسبوعي."))
+    if WORKSPACE["analytics_profile"] == "conflict":
+        _rows.append(_row("acled", "بيانات ACLED للتوقعات", "empty", 0, "", "Middle_East_clean_2026.csv", None,
+                          "غير متوفرة — لن يُنتَج التقرير التحليلي الأسبوعي."))
 else:
     _last_week = None
     try:
@@ -176,6 +177,42 @@ else:
                       "Middle_East_clean_2026.csv", _acled_file,
                       (f"آخر أسبوع في البيانات {_last_week.date()}" if _last_week is not None else "")
                       + (" — قديمة، التوقعات لا تغطي الفترة الأخيرة." if _stale else "")))
+
+if WORKSPACE["analytics_profile"] == "sanctions":
+    for _key, _fname, _lbl, _hint in (
+        ("sanctions_entities", "sanctions-entities.csv", "الجهات المُدرجة", "لا تمكن تحليلات الشبكات والمخاطر بدونها."),
+        ("sanctions_relationships", "sanctions-relationships.csv", "علاقات الملكية والسيطرة", "لا تُحسب قاعدة 50% والشبكات بدونها."),
+    ):
+        _p = _data(_fname)
+        _n = 0
+        if os.path.exists(_p):
+            with open(_p, encoding="utf-8") as _f:
+                _n = max(0, sum(1 for _ in _f) - 1)
+        _rows.append(_row(_key, _lbl, "ok" if _n else "empty", _n, "سجل", _fname, _mtime(_p),
+                          "" if _n else f"ارفع الملف {_fname} — {_hint}"))
+    _sv = _data("sanctioned-vessels.csv")
+    _sv_n = 0
+    if os.path.exists(_sv):
+        with open(_sv, encoding="utf-8") as _f:
+            _sv_n = max(0, sum(1 for _ in _f) - 1)
+    if _sv_n:
+        _rows.append(_row("sanctioned_vessels", "السفن الخاضعة للعقوبات", "ok", _sv_n, "سفينة",
+                          "sanctioned-vessels.csv", _mtime(_sv), ""))
+
+_EDIT = {"events": "events", "political": "political", "attacked_vessels": "vessels", "acled": "acled",
+         "sanctions_entities": "sanctions_entities", "sanctions_relationships": "sanctions_relationships",
+         "sanctioned_vessels": "sanctioned_vessels"}
+_grades = {}
+_src_path = _data("sources.csv")
+if os.path.exists(_src_path):
+    import csv as _csv
+    with open(_src_path, newline="", encoding="utf-8-sig") as _f:
+        for _s in _csv.DictReader(_f):
+            if _s.get("dataset") and (_s.get("reliability") or _s.get("credibility")):
+                _grades[_s["dataset"]] = (_s.get("reliability", "") + _s.get("credibility", "")).strip()
+for _r in _rows:
+    _r["edit"] = _EDIT.get(_r["key"])
+    _r["grade"] = _grades.get(_r["edit"] or _r["key"], "")
 
 _issues = [r for r in _rows if r["status"] != "ok"]
 DATA_QUALITY = {

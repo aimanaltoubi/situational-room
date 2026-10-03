@@ -261,6 +261,9 @@ def build_html():
     html = html.replace("__DATA_QUALITY_JSON__", _escape_script(json.dumps(
         globals().get("DATA_QUALITY") or {"sources": [], "issues": 0},
         ensure_ascii=False, separators=(",", ":"))))
+    html = html.replace("__ROOM_ANALYTICS_JSON__", _escape_script(json.dumps(
+        globals().get("ROOM_ANALYTICS") or {"profile": "conflict", "widgets": []},
+        ensure_ascii=False, separators=(",", ":"), default=str)))
     html = html.replace("__BUILD_TIME__",     build_ts)
     html = html.replace("__SAT_JSON__",       sat_json)
     html = html.replace("__JAM_JSON__",       jam_json)
