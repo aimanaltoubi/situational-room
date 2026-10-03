@@ -62,6 +62,7 @@ modules += [
     ("builder/c17_html_js.py",           "HTML: JavaScript"),
     ("builder/c18_html_report.py",       "HTML: report + assembly"),
     ("pipeline/c19_weekly_report.py",    "Weekly report"),
+    ("pipeline/c20_data_quality.py",     "Data quality report"),
     ("builder/c21_build_html.py",        "Build final HTML"),
 ]
 

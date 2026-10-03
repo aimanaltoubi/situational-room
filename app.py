@@ -11,7 +11,7 @@ Usage:
   python3 app.py --refresh          # rebuild default workspace then serve
 """
 
-import os, re, sys, argparse, subprocess, hmac, threading, time
+import os, re, sys, argparse, subprocess, hmac, threading, time, json
 from datetime import datetime
 from flask import (Flask, send_file, jsonify, request, Response,
                    render_template_string, redirect, url_for, flash, abort)
@@ -297,6 +297,19 @@ WORKSPACE_TEMPLATE = """<!DOCTYPE html>
       <button class="btn" type="submit">حفظ</button>
     </form>
   </div>
+  {% if quality %}
+  <div class="card" style="margin-top:18px">
+    <h2>📋 جودة البيانات</h2>
+    <div class="en">Data quality · {{ quality.generated_at[:16].replace('T', ' ') }} UTC</div>
+    {% for s in quality.sources %}
+    <div style="display:grid;grid-template-columns:150px 1fr;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.12);font-size:13px">
+      <div><span class="{{ 'ok' if s.status == 'ok' else 'bad' }}">●</span> {{ s.label }}
+        <div style="font-size:11px;color:#e0c4cf">{{ status_ar[s.status] }}{% if s.count %} · {{ s.count }} {{ s.unit }}{% endif %}</div></div>
+      <div style="color:#f0e8ec">{{ s.note or s.source }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
   <div class="footer"><a href="{{ url_for('index') }}">&rarr; كل مساحات العمل</a></div>
 </div></body></html>"""
 
@@ -472,6 +485,8 @@ def workspace_home(slug):
     return render_template_string(
         WORKSPACE_TEMPLATE, style=BASE_STYLE, w=w, state=_workspace_status(slug),
         data_files=_data_file_info(slug),
+        quality=_data_quality(slug),
+        status_ar={"ok": "سليمة", "partial": "جزئية", "stale": "قديمة", "empty": "فارغة"},
         feature_labels=ws.FEATURE_LABELS, label_fields=ws.LABEL_FIELDS,
         system_ar=ws.SYSTEM_NAME_AR, system_en=ws.SYSTEM_NAME_EN,
     )
@@ -523,6 +538,14 @@ def _data_file_info(slug):
         key: {"label": label, "present": os.path.exists(os.path.join(data_dir, name))}
         for key, (name, label) in ws.DATA_FILES.items()
     }
+
+
+def _data_quality(slug):
+    path = os.path.join(ws.paths(slug)["output"], "data_quality.json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
 @app.route("/w/<slug>/upload", methods=["POST"])

@@ -22,6 +22,7 @@ const ESCALATION_ANALYSIS  = __ESCALATION_JSON__;
 const ISR_CUEING           = __ISR_CUEING_JSON__;
 const ATTACK_PATTERNS      = __ATTACK_PATTERNS_JSON__;
 const FEATURES             = __FEATURES_JSON__;
+const DATA_QUALITY         = __DATA_QUALITY_JSON__;
 
 const POLITICAL_ANALYSIS  = __POLITICAL_JSON__;
 const DIPLOMATIC_INDEX    = __DIPLOMATIC_JSON__;
@@ -138,16 +139,45 @@ function showDayBrief(indices,dayNum){const card=$('war-brief-card');if(!card)re
 
 function showJamBrief(hotspot,day){const card=$('war-brief-card');if(!card)return;const col='#ff1111';const _s=(id,val)=>{const el=$(id);if(el)el.textContent=val;};_s('wbc-id','J'+String(day.dayNum).padStart(4,'0'));_s('wbc-time',day.date);const dot=$('wbc-type-dot');if(dot){dot.style.width='8px';dot.style.height='8px';dot.style.borderRadius='50%';dot.style.flexShrink='0';dot.style.background=col;}_s('wbc-type-label','GPS JAMMING');_s('wbc-title',hotspot.label||('تشويش GPS في '+hotspot.lat.toFixed(1)+'° / '+hotspot.lon.toFixed(1)+'°'));const $det=$('wbc-detail');if($det){$det.style.maxHeight='';$det.style.overflowY='';$det.style.padding='';$det.style.borderLeft='';$det.textContent='شدة: '+Math.round((hotspot.intensity||0)*100)+'% | D'+day.dayNum+' | '+hotspot.lat.toFixed(2)+'°, '+hotspot.lon.toFixed(2)+'°';}const $meta=$('wbc-meta');if($meta)$meta.innerHTML='<span class="wbc-chip" style="border-color:#ff1111;color:#ff1111">GPS '+Math.round((hotspot.intensity||0)*100)+'% تشويش</span>';card.style.borderLeftColor=col;card.classList.add('visible');const fill=$('wbc-progress-fill');if(fill){fill.style.transition='none';fill.style.width='100%';fill.getBoundingClientRect();fill.style.transition='width 10s linear';fill.style.width='0%';}clearTimeout(window._wbcTimer);window._wbcTimer=setTimeout(closeWarBrief,10000);}
 
-var jamTlOn=false;function buildJamDailyData(){const WAR_START=new Date('__WAR_START__').getTime();const today=new Date();today.setUTCHours(0,0,0,0);const days=[];let d=new Date(WAR_START);const hist=(GPSJAM_DATA&&GPSJAM_DATA.history)||[];while(d<=today){const ds=d.toISOString().slice(0,10);const hEntry=hist.find(h=>h.date===ds);const dayNum=Math.round((d.getTime()-WAR_START)/86400000)+1;let intensity;if(hEntry){intensity=hEntry.me_avg||hEntry.top_intensity||0;}else{const base=Math.max(0.3,0.92-(dayNum-1)*0.018);const spike=[1,2,4,7,11,13].includes(dayNum)?0.12:0;intensity=Math.min(0.98,base+spike+(Math.sin(dayNum*0.7)*0.05));}days.push({date:ds,dayNum,intensity:Math.max(0,intensity)});d.setUTCDate(d.getUTCDate()+1);}return days;}
+var jamTlOn=false;function buildJamDailyData(){const WAR_START=new Date('__WAR_START__').getTime();const today=new Date();today.setUTCHours(0,0,0,0);const days=[];let d=new Date(WAR_START);const hist=(GPSJAM_DATA&&GPSJAM_DATA.history)||[];while(d<=today){const ds=d.toISOString().slice(0,10);const hEntry=hist.find(h=>h.date===ds);const dayNum=Math.round((d.getTime()-WAR_START)/86400000)+1;let intensity=null;if(hEntry){intensity=hEntry.me_avg||hEntry.top_intensity||0;}days.push({date:ds,dayNum,intensity:intensity===null?null:Math.max(0,intensity),entry:hEntry||null});d.setUTCDate(d.getUTCDate()+1);}return days;}
 
-const JAM_DAY_MAP={1:{lat:26.5,lon:56.5,intensity:0.95,label:'مضيق هرمز'},2:{lat:26.22,lon:50.59,intensity:0.88,label:'البحرين'},3:{lat:35.69,lon:51.39,intensity:0.93,label:'طهران'},4:{lat:26.5,lon:56.5,intensity:0.92,label:'مضيق هرمز'},5:{lat:6.03,lon:80.22,intensity:0.85,label:'جالي - سريلانكا'},6:{lat:39.21,lon:45.41,intensity:0.75,label:'نخجيفان'},7:{lat:25.12,lon:51.31,intensity:0.88,label:'قاعدة العديد'},8:{lat:29.04,lon:48.17,intensity:0.90,label:'ميناء شعيبة'},9:{lat:33.49,lon:48.35,intensity:0.82,label:'فلك الأفلاك'},10:{lat:26.27,lon:50.65,intensity:0.88,label:'مطار البحرين'},11:{lat:26.5,lon:56.5,intensity:0.95,label:'مضيق هرمز'},12:{lat:33.34,lon:44.40,intensity:0.80,label:'بغداد'},13:{lat:29.25,lon:50.32,intensity:0.92,label:'جزيرة خارك'},14:{lat:32.66,lon:51.68,intensity:0.88,label:'أصفهان'},15:{lat:27.09,lon:57.08,intensity:0.85,label:'ميناء ميناب'},16:{lat:25.20,lon:55.27,intensity:0.82,label:'مطار دبي'},17:{lat:24.34,lon:56.74,intensity:0.80,label:'صحار - عمان'}};
+// Jamming locations come only from the recorded per-day cells (GPSJAM_DATA.history); nothing is estimated.
 
-function buildJamTimeline(){const canvas=$('tl-jam-canvas'),density=$('tl-jam-density');if(!canvas||!density)return;density.innerHTML='';const days=buildJamDailyData();if(!days.length)return;const n=days.length;const maxI=Math.max(...days.map(d=>d.intensity),0.01);const WAR_START=new Date('__WAR_START__').getTime();const WAR_END=new Date(days[days.length-1].date).getTime();const span=Math.max(WAR_END-WAR_START,86400000);days.forEach((day)=>{const t=new Date(day.date).getTime();const pct=((t-WAR_START)/span)*94+3;const hp=Math.max(4,Math.round((day.intensity/maxI)*40));const alpha=0.4+0.55*(day.intensity/maxI);const r=day.intensity>0.7?Math.round(30+200*day.intensity):Math.round(day.intensity*60);const g2=day.intensity<0.5?Math.round(150+50*day.intensity):Math.round(180-100*(day.intensity-0.5));const bar=document.createElement('div');bar.className='jam-bar';bar.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.8,(94/n)).toFixed(2)+'%;height:'+hp+'px;background:rgba('+r+','+g2+',40,'+alpha.toFixed(2)+')';bar.title='D'+day.dayNum+' ('+day.date+'): '+Math.round(day.intensity*100)+'% تشويش';bar.addEventListener('click',()=>{const cur=$('jam-cursor');if(cur)cur.style.left=pct.toFixed(2)+'%';const td=$('jam-time-display');if(td)td.textContent=day.date;const id=$('jam-intensity-display');if(id)id.textContent='D'+day.dayNum+' — '+Math.round(day.intensity*100)+'%';const mapped=JAM_DAY_MAP[day.dayNum];const cells=(GPSJAM_DATA&&GPSJAM_DATA.cells)||[];let top;if(mapped){const found=cells.find(c=>Math.abs(c.lat-mapped.lat)<0.5&&Math.abs(c.lon-mapped.lon)<0.5);top=found||mapped;if(!top.label)top.label=mapped.label;}else{const sorted=cells.slice().sort((a,b)=>(b.intensity||0)-(a.intensity||0));top=sorted[day.dayNum%Math.max(sorted.length,1)]||sorted[0];}if(!top||!viewer)return;clearJamming();jammingOn=true;const tog=$('lt-jam-tl');if(tog){tog.classList.add('on');tog.classList.remove('off');}const jalpha=Math.min(0.40+top.intensity*0.55,0.95);const jcol=Cesium.Color.fromCssColorString('#ff1111').withAlpha(jalpha);const radius=50000+top.intensity*130000;const ent=viewer.entities.add({name:top.label||'GPS Jamming',position:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500),point:{pixelSize:Math.round(10+top.intensity*14),color:jcol,outlineColor:Cesium.Color.WHITE.withAlpha(0.85),outlineWidth:1.5,disableDepthTestDistance:Number.POSITIVE_INFINITY,scaleByDistance:new Cesium.NearFarScalar(5e5,1.4,2e7,0.5)},ellipse:{semiMajorAxis:radius,semiMinorAxis:radius,height:0,material:new Cesium.ColorMaterialProperty(Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.07)),outline:true,outlineColor:Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.45),outlineWidth:1}});ent._jamLat=top.lat;ent._jamLon=top.lon;ent._jamData=top;jamEntities.push(ent);showJamBrief(top,day);viewer.camera.cancelFlight();viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500000),duration:1.5,easingFunction:Cesium.EasingFunction.CUBIC_IN_OUT});});density.appendChild(bar);if(day.dayNum%3===1||day.dayNum===1){const line=document.createElement('div');line.className='jam-day-line';line.style.left=pct.toFixed(2)+'%';density.appendChild(line);const lbl2=document.createElement('div');lbl2.className='jam-day-lbl';lbl2.style.left=pct.toFixed(2)+'%';lbl2.textContent='D'+day.dayNum;density.appendChild(lbl2);}});}
+function buildJamTimeline(){const canvas=$('tl-jam-canvas'),density=$('tl-jam-density');if(!canvas||!density)return;density.innerHTML='';const days=buildJamDailyData();if(!days.length)return;const n=days.length;const maxI=Math.max(...days.map(d=>d.intensity||0),0.01);const WAR_START=new Date('__WAR_START__').getTime();const WAR_END=new Date(days[days.length-1].date).getTime();const span=Math.max(WAR_END-WAR_START,86400000);days.forEach((day)=>{const t=new Date(day.date).getTime();const pct=((t-WAR_START)/span)*94+3;if(day.intensity===null){const nb=document.createElement('div');nb.className='jam-bar';nb.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.8,(94/n)).toFixed(2)+'%;height:3px;background:rgba(150,150,150,.35)';nb.title='D'+day.dayNum+' ('+day.date+'): لا توجد بيانات';density.appendChild(nb);return;}const hp=Math.max(4,Math.round((day.intensity/maxI)*40));const alpha=0.4+0.55*(day.intensity/maxI);const r=day.intensity>0.7?Math.round(30+200*day.intensity):Math.round(day.intensity*60);const g2=day.intensity<0.5?Math.round(150+50*day.intensity):Math.round(180-100*(day.intensity-0.5));const bar=document.createElement('div');bar.className='jam-bar';bar.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.8,(94/n)).toFixed(2)+'%;height:'+hp+'px;background:rgba('+r+','+g2+',40,'+alpha.toFixed(2)+')';bar.title='D'+day.dayNum+' ('+day.date+'): '+Math.round(day.intensity*100)+'% تشويش';bar.addEventListener('click',()=>{const cur=$('jam-cursor');if(cur)cur.style.left=pct.toFixed(2)+'%';const td=$('jam-time-display');if(td)td.textContent=day.date;const id=$('jam-intensity-display');if(id)id.textContent='D'+day.dayNum+' — '+Math.round(day.intensity*100)+'%';const dayCells=(day.entry&&day.entry.cells)||[];const top=dayCells.slice().sort((a,b)=>(b.intensity||0)-(a.intensity||0))[0];if(!top||!viewer){if(td)td.textContent=day.date+' — لا توجد خلايا تشويش مسجّلة';return;}clearJamming();jammingOn=true;const tog=$('lt-jam-tl');if(tog){tog.classList.add('on');tog.classList.remove('off');}const jalpha=Math.min(0.40+top.intensity*0.55,0.95);const jcol=Cesium.Color.fromCssColorString('#ff1111').withAlpha(jalpha);const radius=50000+top.intensity*130000;const ent=viewer.entities.add({name:top.label||'GPS Jamming',position:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500),point:{pixelSize:Math.round(10+top.intensity*14),color:jcol,outlineColor:Cesium.Color.WHITE.withAlpha(0.85),outlineWidth:1.5,disableDepthTestDistance:Number.POSITIVE_INFINITY,scaleByDistance:new Cesium.NearFarScalar(5e5,1.4,2e7,0.5)},ellipse:{semiMajorAxis:radius,semiMinorAxis:radius,height:0,material:new Cesium.ColorMaterialProperty(Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.07)),outline:true,outlineColor:Cesium.Color.fromCssColorString('#ff1111').withAlpha(0.45),outlineWidth:1}});ent._jamLat=top.lat;ent._jamLon=top.lon;ent._jamData=top;jamEntities.push(ent);showJamBrief(top,day);viewer.camera.cancelFlight();viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(top.lon,top.lat,500000),duration:1.5,easingFunction:Cesium.EasingFunction.CUBIC_IN_OUT});});density.appendChild(bar);if(day.dayNum%3===1||day.dayNum===1){const line=document.createElement('div');line.className='jam-day-line';line.style.left=pct.toFixed(2)+'%';density.appendChild(line);const lbl2=document.createElement('div');lbl2.className='jam-day-lbl';lbl2.style.left=pct.toFixed(2)+'%';lbl2.textContent='D'+day.dayNum;density.appendChild(lbl2);}});}
 
 function toggleJamTimeline(){jamTlOn=!jamTlOn;const tog=$('lt-jam-tl'),label=$('jam-toggle-label'),canvas=$('tl-jam-canvas');if(tog){tog.classList.toggle('on',jamTlOn);tog.classList.toggle('off',!jamTlOn);}if(label)label.textContent=jamTlOn?'GPS جدول تشويش ✓':'GPS جدول تشويش';if(canvas)canvas.style.display=jamTlOn?'block':'none';if(jamTlOn){buildJamTimeline();const td=$('jam-time-display');if(td)td.textContent='منذ 28 فبراير 2026';if(!jammingOn)toggleJamming();}else{const td=$('jam-time-display');if(td)td.textContent='التشويش متوقف';const id=$('jam-intensity-display');if(id)id.textContent='';}}
 function toggleBtEventList(){const el=$('war-event-list'),btn=$('bt-event-list-btn');if(!el)return;const open=el.style.display==='block';el.style.display=open?'none':'block';if(btn)btn.textContent=open?'أحداث ▲':'أحداث ▼';}
 
 var currentView='sa';
+// Per-source status: what is loaded, how fresh it is, what is missing
+const DQ_STATUS={ok:'سليمة',partial:'جزئية',stale:'قديمة',empty:'فارغة'};
+function dqAgo(iso){if(!iso)return '—';const h=(Date.now()-new Date(iso).getTime())/3600000;if(isNaN(h))return '—';if(h<1)return 'قبل أقل من ساعة';if(h<48)return 'قبل '+Math.round(h)+' ساعة';return 'قبل '+Math.round(h/24)+' يوم';}
+function initDataQuality(){
+  const srcs=(DATA_QUALITY&&DATA_QUALITY.sources)||[];
+  const issues=srcs.filter(s=>s.status!=='ok');
+  const btn=$('dq-btn'),cnt=$('dq-count');
+  if(btn){btn.classList.toggle('warn',issues.length>0);btn.classList.toggle('bad',issues.some(s=>s.status==='empty'));}
+  if(cnt)cnt.textContent=issues.length?' · '+issues.length:'';
+  const ban=$('an-dq-banner');
+  if(ban&&issues.length){ban.style.display='block';ban.textContent='⚠ '+issues.length+' من مصادر البيانات تحتاج انتباهاً — قد تكون بعض المؤشرات ناقصة. اضغط للتفاصيل.';}
+  const sub=$('dq-sub'),list=$('dq-list');if(!list)return;
+  if(sub)sub.textContent=(srcs.length?srcs.length+' مصادر — '+(issues.length?issues.length+' تحتاج انتباهاً':'كلها سليمة'):'لا توجد معلومات عن المصادر')+' · أُنشئ في '+'__BUILD_TIME__';
+  list.textContent='';
+  srcs.forEach(s=>{
+    const row=document.createElement('div');row.className='dq-row';
+    const dot=document.createElement('div');dot.className='dot '+s.status;dot.title=DQ_STATUS[s.status]||s.status;
+    const a=document.createElement('div');
+    const l=document.createElement('div');l.className='lbl';l.textContent=s.label+' — '+(DQ_STATUS[s.status]||s.status);
+    const m=document.createElement('div');m.className='meta';m.textContent=s.source||'';
+    a.appendChild(l);a.appendChild(m);
+    const b=document.createElement('div');b.className='meta';
+    b.textContent=(s.count?s.count.toLocaleString()+' '+(s.unit||''):'—')+' · '+dqAgo(s.updated_at);
+    const c=document.createElement('div');c.className='note';c.textContent=s.note||'';
+    row.appendChild(dot);row.appendChild(a);row.appendChild(b);row.appendChild(c);list.appendChild(row);
+  });
+}
+function toggleDataQuality(){const m=$('dq-modal');if(m)m.classList.toggle('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=$('dq-modal');if(m&&m.classList.contains('open'))m.classList.remove('open');}});
 // Hide the layers, timeline rows and analytics sections this room does not monitor
 function applyFeatures(){
   const hide=el=>{if(el)el.classList.add('feat-off');};
@@ -191,6 +221,7 @@ function switchView(view){
     viewer.camera.setView({destination:Cesium.Cartesian3.fromDegrees(50,20,19000000),orientation:{heading:0,pitch:Cesium.Math.toRadians(-90),roll:0}});
     setMsg('\u062d\u0633\u0627\u0628 \u0627\u0644\u0645\u062f\u0627\u0631\u0627\u062a\u2026',60);
     applyFeatures();
+    initDataQuality();
     initBadges();propagateAndRender();initControls();renderBriefingFeed();
     // Auto-show war events and jamming on startup
     initWarTimeline();warOn=true;renderWarMarkers();
@@ -762,13 +793,21 @@ function buildTimeline(){
   if(jamCanvas){
     const jamDays=buildJamDailyData();
     if(jamDays.length){
-      const maxI=Math.max(...jamDays.map(d=>d.intensity),0.01);
+      const maxI=Math.max(...jamDays.map(d=>d.intensity||0),0.01);
       const n=jamDays.length;
       const realDates=new Set((GPSJAM_DATA&&GPSJAM_DATA.history||[]).map(h=>h.date));
       jamDays.forEach(day=>{
         const t=new Date(day.date).getTime();
         const pct=((t-WAR_T0)/span)*100;
         if(pct<0||pct>100)return;
+        if(day.intensity===null){
+          const nb=document.createElement('div');
+          nb.className='tl-bar';
+          nb.style.cssText='left:'+pct.toFixed(2)+'%;width:'+Math.max(0.5,(100/n)).toFixed(2)+'%;height:3%;position:absolute;bottom:0;background:rgba(150,150,150,.35);';
+          nb.title='D'+day.dayNum+' ('+day.date+'): لا توجد بيانات';
+          jamCanvas.appendChild(nb);
+          return;
+        }
         const hp=Math.max(3,Math.round((day.intensity/maxI)*100));
         const isReal=realDates.has(day.date);
         const alpha=isReal?(0.5+0.45*(day.intensity/maxI)):(0.15+0.1*(day.intensity/maxI));
@@ -784,7 +823,7 @@ function buildTimeline(){
         bar.title=(isReal?'[REAL] ':'[EST] ')+'D'+day.dayNum+' ('+day.date+'): '
           +Math.round(day.intensity*100)+'% jamming';
         bar.addEventListener('click',()=>{
-          const cells=(GPSJAM_DATA&&GPSJAM_DATA.cells)||[];
+          const cells=(day.entry&&day.entry.cells)||[];
           const top=cells.slice().sort((a,b)=>(b.intensity||0)-(a.intensity||0))[0];
           if(top){
             showJamBrief(top,day);

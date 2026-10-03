@@ -748,6 +748,33 @@ html,body{width:100%;height:100%;background:#e8e0e4;
 @media(max-width:900px){.an-grid-2,.an-grid-3{grid-template-columns:1fr;}}
 
 /* ═══ Responsive fit ═══ */
+/* Data quality */
+#dq-btn{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:4px;cursor:pointer;
+  border:1px solid var(--ui-border2);background:var(--ui-bg2);font-size:11px;font-weight:700;
+  color:var(--text-secondary);font-family:inherit;white-space:nowrap;}
+#dq-btn:hover{background:var(--ui-bg3);}
+#dq-dot{width:7px;height:7px;border-radius:50%;background:#22a050;}
+#dq-btn.warn #dq-dot{background:#e0a020;}#dq-btn.bad #dq-dot{background:#cc0020;}
+#dq-modal{display:none;position:fixed;inset:0;z-index:3000;background:rgba(26,0,8,.55);
+  align-items:flex-start;justify-content:center;padding-top:70px;}
+#dq-modal.open{display:flex;}
+#dq-box{width:min(720px,94vw);max-height:80vh;overflow:auto;background:#fff;border-radius:10px;
+  box-shadow:0 12px 40px rgba(0,0,0,.4);direction:rtl;}
+#dq-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;
+  background:linear-gradient(135deg,var(--burg-800),var(--burg-600));color:#fff;font-weight:700;font-size:14px;
+  border-radius:10px 10px 0 0;}
+#dq-head button{background:none;border:none;color:#fff;font-size:16px;cursor:pointer;}
+#dq-sub{padding:10px 16px;font-size:12px;color:var(--text-muted);border-bottom:1px solid var(--ui-border);}
+.dq-row{display:grid;grid-template-columns:14px 1.3fr 1fr 1.6fr;gap:10px;align-items:start;
+  padding:10px 16px;border-bottom:1px solid var(--ui-border);font-size:12px;}
+.dq-row .dot{width:10px;height:10px;border-radius:50%;margin-top:4px;}
+.dq-row .dot.ok{background:#22a050}.dq-row .dot.partial{background:#e0a020}
+.dq-row .dot.stale{background:#d97706}.dq-row .dot.empty{background:#cc0020}
+.dq-row .lbl{font-weight:700;color:var(--text-primary)}
+.dq-row .meta{color:var(--text-muted);font-size:11px}
+.dq-row .note{color:var(--text-secondary);line-height:1.6}
+#an-dq-banner{display:none;margin-bottom:12px;padding:10px 14px;border-radius:8px;cursor:pointer;
+  background:rgba(224,160,32,.12);border:1px solid #e0a020;color:#7a4a00;font-size:13px;font-weight:700;direction:rtl;}
 .feat-off{display:none!important;}
 /* no Telegram channel for this room: give the globe the freed width */
 html.no-telegram{--right-w:0px;}

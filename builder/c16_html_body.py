@@ -45,6 +45,9 @@ _P2 = """
     <!-- Right: live · date · time · war day — all in one row -->
     <div id="topbar-right">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:nowrap;">
+        <button id="dq-btn" onclick="toggleDataQuality()" title="حالة مصادر البيانات">
+          <span id="dq-dot"></span>جودة البيانات<span id="dq-count"></span>
+        </button>
         <div class="live-badge"><div class="live-dot"></div>مباشر</div>
         <div id="topbar-date" style="font-size:11px;color:var(--text-muted);">—</div>
         <div id="topbar-clock" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-secondary);">—</div>
@@ -91,6 +94,18 @@ _P2 = """
 
 <!-- Globe -->
 <div id="globe"></div>
+
+<!-- Data quality modal -->
+<div id="dq-modal" onclick="if(event.target===this)toggleDataQuality()">
+  <div id="dq-box">
+    <div id="dq-head">
+      <span>جودة البيانات — __WORKSPACE_NAME__</span>
+      <button onclick="toggleDataQuality()" aria-label="إغلاق">✕</button>
+    </div>
+    <div id="dq-sub"></div>
+    <div id="dq-list"></div>
+  </div>
+</div>
 
 <!-- ═══════════════════ LEFT PANEL ════════════════════════════ -->
 <div class="panel" id="left-panel">
@@ -460,6 +475,7 @@ _P2 = """
 <!-- ═══════════════ ANALYTICS VIEW ═══════════════════════════════ -->
 <div id="analytics-view">
   <div id="an-body" style="max-width:1400px;margin:0 auto;">
+    <div id="an-dq-banner" onclick="toggleDataQuality()"></div>
 
     <!-- Header -->
     <div id="an-header">

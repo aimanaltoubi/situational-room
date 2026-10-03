@@ -4,6 +4,7 @@
 # Generated output
 output/*.html
 workspaces/*/output/*.html
+workspaces/*/output/*.json
 
 # Runtime caches
 cache/
